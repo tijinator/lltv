@@ -1,0 +1,15 @@
+{
+  "name": "app",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The role for app servers",
+  "default_attributes": {
+    "postgresql": {
+      "version": "9.3"
+    },
+    "nodejs": {
+      "version": "0.10.22"
+    }
+  },
+  "run_list": ["recipe[locale]", "role[core]", "recipe[vim]", "recipe[tmux]", "role[rvm]", "role[redis]", "recipe[imagemagick]", "recipe[postgresql::client]", "role[elasticsearch]"]
+}

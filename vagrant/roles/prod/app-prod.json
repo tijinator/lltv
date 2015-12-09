@@ -1,0 +1,12 @@
+{
+  "name": "app-prod",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The role for app servers",
+  "default_attributes": {
+    "postgresql": {
+      "version": "9.3"
+    }
+  },
+  "run_list": ["recipe[locale]", "role[core-prod]", "role[rvm-prod]", "role[nginx-prod]", "recipe[redisio::install]", "recipe[redisio::enable]", "recipe[postgresql::client]", "recipe[imagemagick]", "role[elasticsearch-prod]"]
+}

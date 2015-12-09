@@ -1,0 +1,19 @@
+{
+  "name": "redis",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Install Redis server",
+  
+  "run_list": [
+      "recipe[redisio]",
+      "recipe[redisio::enable]"
+  ],
+
+  "default_attributes": {
+    "redisio": {
+      "servers": [
+        {"port": "6349"}
+      ]
+    }
+  }
+}

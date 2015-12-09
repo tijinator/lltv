@@ -1,0 +1,24 @@
+{
+  "name": "elasticsearch-prod",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Install ElasticSearch server",
+  "default_attributes": {
+    "java": {
+      "install_flavor": "openjdk",
+      "jdk_version": "7"
+    },
+    "elasticsearch": {
+      "cluster": {
+        "name": "elasticsearch"
+      },
+      "node": {
+        "name": "elasticsearch-node"
+      },
+      "bootstrap": {
+        "mlockall": false
+      }
+    }
+  },
+  "run_list": ["recipe[java]", "recipe[elasticsearch]"]
+}

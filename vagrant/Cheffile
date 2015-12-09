@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'https://supermarket.chef.io/api/v1'
+
+# Core server cookbooks
+cookbook 'locale'
+
+cookbook 'apt'
+
+cookbook 'git'
+
+cookbook 'vim'
+cookbook 'tmux'
+
+# App server cookbooks
+cookbook 'rvm'
+
+cookbook 'postgresql'
+
+cookbook 'imagemagick'
+
+# Web and App server cookbooks
+cookbook 'nginx'
+
+cookbook 'nodejs'
+
+cookbook 'redisio'
+
+cookbook 'java'
+cookbook 'elasticsearch'

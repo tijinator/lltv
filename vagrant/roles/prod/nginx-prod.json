@@ -1,0 +1,17 @@
+{
+    "name": "nginx_unicorn-prod",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "Using the Nginx web server",
+    
+    "default_attributes": {
+      "nginx": {
+        "version": "1.4.4",
+        "user": "ubuntu"
+      }
+    },
+
+    "run_list": [
+        "recipe[nginx]"
+    ]
+}
