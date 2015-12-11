@@ -11,23 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211172826) do
+ActiveRecord::Schema.define(version: 20151211181710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "parent_id"
     t.string   "name"
-    t.integer  "categorizable_id"
-    t.string   "categorizable_type"
+    t.integer  "rank"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
 
-  add_index "categories", ["categorizable_type", "categorizable_id"], name: "index_categories_on_categorizable_type_and_categorizable_id", using: :btree
+  add_index "categories", ["name"], name: "index_categories_on_name", using: :btree
+  add_index "categories", ["parent_id"], name: "index_categories_on_parent_id", using: :btree
+  add_index "categories", ["rank"], name: "index_categories_on_rank", using: :btree
+  add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
 
   create_table "chapters", force: :cascade do |t|
     t.integer  "user_id"
@@ -36,6 +41,9 @@ ActiveRecord::Schema.define(version: 20151211172826) do
     t.text     "description"
     t.text     "image_url"
     t.text     "video_url"
+    t.integer  "rank"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -48,15 +56,42 @@ ActiveRecord::Schema.define(version: 20151211172826) do
   create_table "courses", force: :cascade do |t|
     t.text     "description"
     t.text     "image_url"
+    t.integer  "rank"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
 
+  create_table "item_categories", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "categorizable_id"
+    t.string   "categorizable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "item_categories", ["categorizable_id", "categorizable_type", "category_id"], name: "item_categories_index", unique: true, using: :btree
+  add_index "item_categories", ["categorizable_type", "category_id"], name: "item_type_categories_index", using: :btree
+
+  create_table "item_tags", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "item_tags", ["taggable_id", "taggable_type", "tag_id"], name: "item_tags_index", unique: true, using: :btree
+  add_index "item_tags", ["taggable_type", "tag_id"], name: "item_type_tags_index", using: :btree
+
   create_table "roles", force: :cascade do |t|
-    t.integer "rank", default: 0, null: false
-    t.string  "name"
+    t.integer  "rank",       default: 0, null: false
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -64,6 +99,9 @@ ActiveRecord::Schema.define(version: 20151211172826) do
     t.integer  "user_id"
     t.integer  "tagable_id"
     t.string   "tagable_type"
+    t.integer  "rank"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -106,10 +144,12 @@ ActiveRecord::Schema.define(version: 20151211172826) do
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
   create_table "videos", force: :cascade do |t|
-    t.text    "description"
-    t.string  "video_url"
-    t.integer "videoable_id"
-    t.string  "videoable_type"
+    t.text     "description"
+    t.string   "video_url"
+    t.integer  "videoable_id"
+    t.string   "videoable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
