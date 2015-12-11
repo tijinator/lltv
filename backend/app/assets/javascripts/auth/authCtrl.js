@@ -1,18 +1,26 @@
-angular.module('flapperNews')
-.controller('AuthCtrl', [
+app.controller('AuthCtrl', [
 '$scope',
-'$state',
-'Auth',
-function($scope, $state, Auth) {
-  $scope.login = function() {
-    Auth.login($scope.user).then(function(){
-      $state.go('home');
-    });
+'$auth',
+'currentUser',
+function($scope, $auth, currentUser) {
+  $scope.submitRegistration = function() {
+    $auth.submitRegistration($scope.registrationForm)
+      .then(function(resp) {
+        currentUser.set(resp.data);
+      })
+      .catch(function(resp) {
+        // handle error response
+        alert('registration error');
+      });
   };
 
-  $scope.register = function() {
-    Auth.register($scope.user).then(function(){
-      $state.go('home');
-    });
+  $scope.submitLogin = function() {
+    $auth.submitLogin($scope.loginForm)
+      .then(function(resp) {
+        currentUser.set(resp);
+      })
+      .catch(function(resp) {
+        alert('login error');
+      });
   };
 }]);

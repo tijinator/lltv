@@ -16,7 +16,7 @@ cookbook 'tmux'
 # App server cookbooks
 cookbook 'rvm'
 
-cookbook 'postgresql'
+cookbook 'postgresql', github: "phlipper/chef-postgresql"
 
 cookbook 'imagemagick'
 

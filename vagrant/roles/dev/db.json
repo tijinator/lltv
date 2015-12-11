@@ -7,6 +7,9 @@
       "postgresql": {
         "version": "9.3",
         "listen_addresses": "0.0.0.0",
+        "password": {
+          "postgres": "iloverandompasswordsbutthiswilldo"
+        },
         "users": [
           {
             "username": "vagrant",
@@ -18,7 +21,7 @@
         ],
         "databases": [
           {
-            "name": "fitmoo",
+            "name": "lltv",
             "owner": "vagrant",
             "template": "template0",
             "encoding": "utf8",
@@ -42,9 +45,9 @@
       "recipe[postgresql::client]",
       "recipe[postgresql::server]",
       "recipe[postgresql::contrib]",
-      "recipe[postgresql::pg_user]",
+      "recipe[postgresql::setup_users]",
       "recipe[postgresql::configuration]",
-      "recipe[postgresql::pg_database]",
+      "recipe[postgresql::setup_databases]",
       "recipe[postgresql::libpq]",
       "recipe[postgresql::server_dev]"
     ]

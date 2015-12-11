@@ -11,3 +11,48 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore Key Files
+*.pem
+
+##################################################
+# Backend
+##################################################
+
+# Ignore ENV file
+backend/.env
+
+# Ignore bundler config.
+backend/.bundle
+
+# Ignore all logfiles and tempfiles.
+backend/log/*.log
+backend/tmp
+backend/config/database.yml
+backend/config/environments/development.rb
+backend/.env
+
+# Ignore Mac OSX folder setting
+.DS_Store
+
+# Ignore vendor assets
+backend/vendor
+
+# Ignore images
+backend/public/uploads
+backend/public/avatars
+
+
+##################################################
+# Vagrant
+##################################################
+
+# Vagrant Files
+.vagrant
+
+/vagrant/.vagrant
+/vagrant/cookbooks
+/vagrant/tmp
+/vagrant/vendor
+/vagrant/.bundle
+/vagrant/Gemfile.lock

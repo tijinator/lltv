@@ -1,0 +1,38 @@
+app.controller('NavCtrl', [
+'$rootScope',
+'$scope',
+'$auth',
+'currentUser',
+function($rootScope, $scope, $auth, currentUser) {
+  $scope.user = currentUser;
+
+  $scope.signedIn = function() {
+    return $scope.user.id;
+  }
+
+  $scope.signOut = function() {
+    currentUser.signOut();
+  };
+
+  $rootScope.$on('auth:validation-success', function(ev, userData) {
+    alert("HERE");
+    currentUser.set(userData);
+  });
+
+  $rootScope.$on('auth:validation-error', function(ev, userData) {
+    alert("THERE");
+  });
+
+  $rootScope.$on('auth:invalid', function(ev, userData) {
+    alert("SDFDFSDHERE");
+  });
+
+  $rootScope.$on('auth:login-success', function(ev, userData) {
+    currentUser.set(userData);
+  });
+
+  $rootScope.$on('auth:logout-success', function(ev) {
+    alert("OOOOT");
+    // currentUser.signOut();
+  });
+}]);
