@@ -4,6 +4,8 @@ class CreateTags < ActiveRecord::Migration
       t.string :name
       t.integer :user_id
       t.references :tagable, polymorphic: true, index: true
+      t.integer :rank
+      t.timestamps
     end
   end
 end

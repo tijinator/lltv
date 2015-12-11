@@ -4,6 +4,7 @@ class CreateVideos < ActiveRecord::Migration
       t.text :description
       t.string :video_url
       t.references :videoable, polymorphic: true
+      t.timestamps
     end
   end
 end

@@ -3,6 +3,8 @@ class CreateCourses < ActiveRecord::Migration
     create_table :courses do |t|
       t.text :description
       t.text :image_url
+      t.integer :rank
+      t.timestamps
     end
   end
 end
