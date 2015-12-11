@@ -7,6 +7,7 @@ class CreateChapters < ActiveRecord::Migration
       t.text :description
       t.text :image_url
       t.text :video_url
+      t.integer :rank
       t.timestamps
     end
 
