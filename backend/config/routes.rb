@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :skip => [:password], :controllers => {
-    :registrations => "users/registrations",
-    :sessions => "users/sessions"
-  }
+  devise_for :users
 
   constraints subdomain: 'admin' do
     get '/' => 'admin#home'
@@ -13,6 +10,7 @@ Rails.application.routes.draw do
     # get '/courses/:id' => 'admin#show_course'
 
     resources :users, controller: 'admin/user_admin'
+
     resources :courses, controller: 'admin/course_admin' do
       resources :chapters, controller: 'admin/chapter_admin' do
         member do
@@ -26,7 +24,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: redirect('/users/sign_in')
+  root to: 'application#home'
 
   namespace :api, defaults: { format: :json } do
     resources :users do

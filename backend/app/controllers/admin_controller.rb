@@ -1,13 +1,15 @@
 class AdminController < ApplicationController
   include RolesHelper
 
-  before_filter :require_data_entry
+  # before_filter :authenticate_user!
+  before_filter :user_signed_in?
+  # before_filter :require_data_entry
 
   def home
     if current_user.role >= RolesHelper.code('Superuser')
-      redirect_to '/courses'
+      users
     else
-      redirect_to '/users'
+      courses
     end
   end
 

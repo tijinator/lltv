@@ -9,19 +9,24 @@ class ApplicationController < ActionController::Base
   layout :layout_by_resource
 
   def after_sign_in_path_for(user)
-    if user.role > 0
+    if current_user.role > 0
       'http://admin.lltv.com:3000/'
     else
       redirect_to :root
     end
   end
 
-  def after_sign_out_path_for(user)
-    redirect_to :root
-  end
+  # def after_sign_out_path_for(user)
+  #   redirect_to 'https://google.com'
+  # end
 
   def lltv
     render 'layouts/application'
+  end
+
+  def home
+    @user = User.new
+    render 'users/sessions/new', layout: 'admin'
   end
 
   def admin_logged_in
@@ -37,23 +42,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def require_data_entry
-    unless current_user && current_user.role >= RolesHelper.code('Data Entry')
-      redirect_to root_url(host: request.domain)
-    end
-  end
 
-  def require_publisher
-    unless current_user && current_user.role >= RolesHelper.code('Publisher')
-      redirect_to courses_path
-    end
-  end
-
-  def require_superuser
-    unless current_user && current_user.role >= RolesHelper.code('Superuser')
-      redirect_to courses_path
-    end
-  end
 
   protected
 
