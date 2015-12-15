@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    ancestry (2.1.0)
+      activerecord (>= 3.0.0)
     angular-rails-templates (0.2.0)
       railties (>= 3.1)
       sprockets (~> 2)
@@ -118,8 +120,6 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (0.18.4)
-    pundit (1.0.1)
-      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -195,6 +195,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ancestry
   angular-rails-templates
   angular_rails_csrf
   byebug
@@ -205,7 +206,6 @@ DEPENDENCIES
   omniauth-linkedin-oauth2
   paperclip (~> 4.3)
   pg (~> 0.15)
-  pundit
   rails (= 4.2.5)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

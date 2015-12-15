@@ -1,4 +1,6 @@
 class Admin::UserAdminController < ApplicationController
+  before_filter :require_superuser
+
   def update
     user = User.find(params[:id])
     user.update_attributes(user_params)

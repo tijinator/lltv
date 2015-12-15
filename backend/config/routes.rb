@@ -14,11 +14,19 @@ Rails.application.routes.draw do
 
     resources :users, controller: 'admin/user_admin'
     resources :courses, controller: 'admin/course_admin' do
-      resources :chapters, controller: 'admin/chapter_admin'
+      resources :chapters, controller: 'admin/chapter_admin' do
+        member do
+          put '/update_published_status' => 'admin/chapter_admin#update_published_status'
+        end
+      end
+
+      member do
+        put '/update_published_status' => 'admin/course_admin#update_published_status'
+      end
     end
   end
 
-  root to: 'admin#home'
+  root to: redirect('/users/sign_in')
 
   namespace :api, defaults: { format: :json } do
     resources :users do

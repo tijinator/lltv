@@ -26,9 +26,11 @@ gem 'angular-rails-templates'
 gem 'devise'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-facebook'
-gem 'pundit'
+# gem 'pundit'  Model Level Policies, don't think necessary now
 
-gem "paperclip", "~> 4.3"
+gem 'paperclip', '~> 4.3'
+
+gem 'ancestry'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

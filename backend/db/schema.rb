@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211181710) do
+ActiveRecord::Schema.define(version: 20151215160205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,10 +36,8 @@ ActiveRecord::Schema.define(version: 20151211181710) do
 
   create_table "chapters", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "course_id"
-    t.integer  "parent_id",          default: 0
-    t.string   "title",                          null: false
-    t.text     "description",                    null: false
+    t.string   "title",                              null: false
+    t.text     "description",                        null: false
     t.text     "image_url"
     t.text     "video_url"
     t.integer  "rank"
@@ -49,24 +47,13 @@ ActiveRecord::Schema.define(version: 20151211181710) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "ancestry"
+    t.boolean  "published",          default: false, null: false
   end
 
-  add_index "chapters", ["course_id"], name: "index_chapters_on_course_id", using: :btree
-  add_index "chapters", ["parent_id"], name: "index_chapters_on_parent_id", using: :btree
-
-  create_table "courses", force: :cascade do |t|
-    t.integer  "user_id",                        null: false
-    t.string   "name",                           null: false
-    t.text     "description",                    null: false
-    t.text     "image_url"
-    t.integer  "rank",               default: 0, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
+  add_index "chapters", ["ancestry"], name: "index_chapters_on_ancestry", using: :btree
+  add_index "chapters", ["description"], name: "index_chapters_on_description", using: :btree
+  add_index "chapters", ["title"], name: "index_chapters_on_title", using: :btree
 
   create_table "item_categories", force: :cascade do |t|
     t.integer  "category_id"

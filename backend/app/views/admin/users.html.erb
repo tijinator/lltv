@@ -10,7 +10,7 @@
         <%= form_for(user) do |f| %>
           <div><%= user.full_name %></div>
           <div><%= user.email %></div>
-          <div><%= f.select(:role, [['General', 0], ['Data Entry', 10], ['Publisher', 20]]) %></div>
+          <div><%= f.select(:role, [['General', 0], ['Data Entry', 10], ['Publisher', 20], ['Superuser', 30]]) %></div>
           <div><%= f.submit('Update') %></div>
         <% end %> 
     <% end %>

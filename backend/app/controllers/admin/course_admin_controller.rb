@@ -1,19 +1,35 @@
 class Admin::CourseAdminController < ApplicationController
+  before_filter :require_data_entry
+  before_filter :require_publisher, only: [:update_published_status]
+
   def index
+    @type = "Course"
     @current_user = current_user
+    @is_publisher = current_user.role >= RolesHelper.code('Publisher')
     @course = Course.new
-    @courses = Course.all
+    @children = Course.roots
+    @root_level = true
     render 'admin/courses', layout: 'admin_logged'
   end
 
   def create
-    Course.create!(course_params.merge({user_id: current_user.id}))
+    Chapter.create!(course_params.merge({user_id: current_user.id}))
     redirect_to courses_url
+  end
+
+  def update_published_status
+    course = Course.find(params[:id])
+    course.update_attributes!(publish_params)
+    redirect_to :back
   end
 
   private
 
   def course_params
-    params.require(:course).permit(:name, :image, :description, :rank)
+    params.require(:course).permit(:title, :image, :description, :rank)
+  end
+
+  def publish_params
+    params.require(:course).permit(:published)
   end
 end
