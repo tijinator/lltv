@@ -4,7 +4,8 @@ class CreateChapters < ActiveRecord::Migration
       t.integer :user_id
       t.integer :course_id
       t.integer :parent_id, default: 0
-      t.text :description
+      t.string :title, null: false
+      t.text :description, null: false
       t.text :image_url
       t.text :video_url
       t.integer :rank

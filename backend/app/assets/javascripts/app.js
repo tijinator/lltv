@@ -15,7 +15,7 @@ app.config([
 '$authProvider',
 function(baseUrl, $stateProvider, $urlRouterProvider, $authProvider) {
   $authProvider.configure({
-    apiUrl: baseUrl,
+    apiUrl: baseUrl + '/api/v1',
     handleLoginResponse: function(resp) {
       // currentUserProvider.set(resp);
       return resp.data;

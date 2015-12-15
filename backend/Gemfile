@@ -24,7 +24,6 @@ gem 'angular_rails_csrf'
 gem 'angular-rails-templates'
 
 gem 'devise'
-gem 'devise_token_auth'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-facebook'
 gem 'pundit'

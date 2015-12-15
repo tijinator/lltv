@@ -38,7 +38,8 @@ ActiveRecord::Schema.define(version: 20151211181710) do
     t.integer  "user_id"
     t.integer  "course_id"
     t.integer  "parent_id",          default: 0
-    t.text     "description"
+    t.string   "title",                          null: false
+    t.text     "description",                    null: false
     t.text     "image_url"
     t.text     "video_url"
     t.integer  "rank"
@@ -54,9 +55,11 @@ ActiveRecord::Schema.define(version: 20151211181710) do
   add_index "chapters", ["parent_id"], name: "index_chapters_on_parent_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
-    t.text     "description"
+    t.integer  "user_id",                        null: false
+    t.string   "name",                           null: false
+    t.text     "description",                    null: false
     t.text     "image_url"
-    t.integer  "rank"
+    t.integer  "rank",               default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -87,13 +90,6 @@ ActiveRecord::Schema.define(version: 20151211181710) do
   add_index "item_tags", ["taggable_id", "taggable_type", "tag_id"], name: "item_tags_index", unique: true, using: :btree
   add_index "item_tags", ["taggable_type", "tag_id"], name: "item_type_tags_index", using: :btree
 
-  create_table "roles", force: :cascade do |t|
-    t.integer  "rank",       default: 0, null: false
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "tags", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -111,37 +107,34 @@ ActiveRecord::Schema.define(version: 20151211181710) do
   add_index "tags", ["tagable_type", "tagable_id"], name: "index_tags_on_tagable_type_and_tagable_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "provider",               default: "email", null: false
-    t.string   "uid",                    default: "",      null: false
-    t.string   "encrypted_password",     default: "",      null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,       null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "username"
-    t.string   "email"
-    t.integer  "role_id",                default: 0
-    t.json     "tokens"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "role",                   default: 0,  null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
   create_table "videos", force: :cascade do |t|
     t.text     "description"

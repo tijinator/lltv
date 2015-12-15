@@ -1,0 +1,43 @@
+<div class="col-xs-4 col-xs-offset-1">
+  <div>
+    <h2>Create Course</h2>
+  </div>
+  <div>
+    <%= form_for @course do |f| %>
+      <div class="form-group">
+        <%= label_tag :name, "Course Name" %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :image, "Course Image" %>
+        <%= f.file_field :image, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :description, "Course Description" %>
+        <%= f.text_area :description, size: "60x12",class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :rank, "Course Rank" %>
+        <%= f.text_field :rank, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Add Course", class: "form-control" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-xs-6 col-xs-offset-1">
+  <div>
+    <h2>Courses</h2>
+  </div>
+  <div class="table">
+    <div>
+      <div>Course Name</div>
+    </div>
+    <% @courses.each do |course| %>
+      <div>
+        <%= link_to course.name, course_chapter_path(course) %></div>
+      </div>
+    <% end %>
+</div>
