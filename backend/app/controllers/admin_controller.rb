@@ -6,10 +6,15 @@ class AdminController < ApplicationController
   # before_filter :require_data_entry
 
   def home
-    if current_user.role >= RolesHelper.code('Superuser')
-      users
+    if current_user
+      if current_user.role >= RolesHelper.code('Superuser')
+        users
+      else
+        courses
+      end
     else
-      courses
+      @user = User.new
+      render 'users/sessions/new', layout: 'admin'
     end
   end
 
