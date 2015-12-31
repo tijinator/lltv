@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-1">
+    <div class="row" style="border-bottom: 2px solid grey;">
+      <div>
+        <h2>Edit <%= @chapter.title %></h2>
+      </div>
+      <div>
+        <%= form_for @chapter do |f| %>
+          <div class="form-group">
+            <%= label_tag :title, "Chapter Title" %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :image, "Chapter Image" %>
+            <%= f.file_field :image, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :details, "Chapter Details" %>
+            <%= f.text_area :details, size: "60x12",class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :position, "Chapter Position" %>
+            <%= f.text_field :position, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Update Chapter", class: "form-control" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <h2>Add Video</h2>
+      </div>
+      <div>
+        <%= form_for @video  do |f| %>
+          <div class="form-group">
+            <%= label_tag :title, "Video Title" %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :details, "Video Details" %>
+            <%= f.text_area :details, size: "60x12",class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :video_url, "Video URL" %>
+            <%= f.text_field :video_url, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Add Video", class: "form-control" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-xs-offset-1">
+    <div>
+      <h2>Chapters</h2>
+    </div>
+    <div>
+      <% @chapters.each do |chapter| %>
+        <div class="row">
+          <div class="col-xs-4">
+            <%= link_to chapter.title, chapter_chapters_path(chapter) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

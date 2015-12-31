@@ -4,21 +4,23 @@ class Admin::CourseAdminController < ApplicationController
   before_filter :require_data_entry
   before_filter :require_publisher, only: [:update_published_status]
 
+  def create
+    Course.create!(course_params.merge({user_id: current_user.id}))
+    redirect_to courses_url
+  end
+
   def index
-    @type = "Course"
     @current_user = current_user
     @is_publisher = current_user.role >= RolesHelper.code('Publisher')
     @course = Course.new
     @children = Course.all
-    @root_level = true
-    # @chapters = Chapter.arrange(order: :rank)
-    # @level = 1
     render 'admin/courses', layout: 'sb2'
   end
 
-  def create
-    Chapter.create!(course_params.merge({user_id: current_user.id}))
-    redirect_to courses_url
+  def show
+    @course = Course.find(params[:id])
+    @chapters = @course.chapters
+    render 'admin/course', layout: 'sb2'
   end
 
   def update_published_status
@@ -36,7 +38,7 @@ class Admin::CourseAdminController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:title, :image, :description, :rank, :video)
+    params.require(:course).permit(:title, :image, :details, :position, :duration, :author_id)
   end
 
   def publish_params

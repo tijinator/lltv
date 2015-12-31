@@ -10,10 +10,11 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(user)
     if current_user.role > 0
-      'http://admin.lltv.com:3000/'
+      redirect_to courses_path
     else
       redirect_to :root
     end
+    return
   end
 
   # def after_sign_out_path_for(user)
@@ -24,13 +25,8 @@ class ApplicationController < ActionController::Base
     render 'layouts/application'
   end
 
-  def home
-    @user = User.new
-    render 'users/sessions/new', layout: 'admin'
-  end
-
   def admin_nav_setup
-    @chapters = Chapter.arrange(order: :rank)
+    @courses = Course.all.order(:position)
     @level = 2
   end
 

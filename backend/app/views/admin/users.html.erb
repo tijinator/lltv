@@ -26,7 +26,7 @@
               <div>
                 <%= form_for(user) do |f| %>
                   <span>
-                    <%= f.select(:role, options_for_select([['General', 0], ['Data Endivy', 10], ['Publisher', 20], ['Superuser', 30]])) %>
+                    <%= f.select(:role, [['General', 0], ['Data Endivy', 10], ['Publisher', 20], ['Superuser', 30]]) %>
                   </span>
                   <span>
                     <%= f.submit "Update" %>
@@ -41,9 +41,3 @@
    </div>
   </div>
 </div>
-
-<script>
-  // $(document).ready(function() {
-  //   $('#datatable').DataTable();
-  // });
-</script>

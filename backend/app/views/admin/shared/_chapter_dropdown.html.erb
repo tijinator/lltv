@@ -1,8 +1,17 @@
 <ul class="nav nav-<%= level.to_words ordinal: true %>-level collapse">
-  <% chapters.each do |chapter, children| %>
+  <% courses.each do |course| %>
+    <% chapters = course.chapters.order(:position) %>
     <li>
-      <a href="<%= course_chapters_path(chapter) %>"><%= chapter.title %><% if !children.empty? %><span class="fa arrow"></span><% end %></a>
-      <%= render( partial: 'admin/shared/chapter_dropdown', locals: { chapters: children, level: level + 1 }) if children %>
-    <li>
+      <a href="<%= course_path(course) %>" ><%= course.title %><% if !chapters.empty? %><span class="fa arrow"></span><% end %></a>
+    </li>
+    <% if !chapters.empty? %>
+      <ul class="nav nav-<%= (level + 1).to_words ordinal: true %>-level collapse">
+        <% chapters.each do |chapter| %>
+          <li>
+            <a href="<%= course_chapters_path(chapter) %>"><%= chapter.title %></a>
+          <li>
+        <% end %>
+      </ul>
+    <% end %>
   <% end %>
 </ul>

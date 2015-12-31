@@ -18,10 +18,10 @@ class Chapter < ActiveRecord::Base
 
   has_many :videos
 
-  after_video_post_process :set_needs_transcoding
-  after_commit :transcode_video
+  # after_video_post_process :set_needs_transcoding
+  # after_commit :transcode_video
 
-  attr_accessor :transcoding_needed
+  # attr_accessor :transcoding_needed
 
   def set_needs_transcoding
     if self.video.nil? || video_updated_at_changed?

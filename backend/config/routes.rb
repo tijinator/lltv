@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   constraints subdomain: 'admin' do
     get '/' => 'admin#home'
-    get '/users' => 'admin#users'
     get '/tags' => 'admin#tags'
     get '/categories' => 'admin#categories'
     # get '/courses' => 'admin#courses'
@@ -24,7 +23,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'application#home'
+  root to: 'home#home'
 
   namespace :api, defaults: { format: :json } do
     resources :users do
