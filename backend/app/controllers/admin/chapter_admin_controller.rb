@@ -1,4 +1,6 @@
 class Admin::ChapterAdminController < ApplicationController
+  before_action :admin_nav_setup
+  
   before_filter :require_data_entry
   before_filter :require_publisher, only: [:update_published_status]
 
@@ -9,7 +11,7 @@ class Admin::ChapterAdminController < ApplicationController
     @course = Course.find(params[:course_id])
     @chapter = Chapter.new
     @children = @course.children
-    render 'admin/courses', layout: 'admin_logged'
+    render 'admin/courses', layout: 'sb2'
   end
 
   def create

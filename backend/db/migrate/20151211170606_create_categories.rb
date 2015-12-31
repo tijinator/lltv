@@ -3,14 +3,15 @@ class CreateCategories < ActiveRecord::Migration
     create_table :categories do |t|
       t.integer :user_id
       t.integer :parent_id
-      t.string :name
-      t.integer :rank
+      t.string :title
+      t.text :details
+      t.integer :position
       t.timestamps
     end
 
     add_index :categories, :user_id
     add_index :categories, :parent_id
-    add_index :categories, :name
-    add_index :categories, :rank
+    add_index :categories, :title
+    add_index :categories, :details
   end
 end

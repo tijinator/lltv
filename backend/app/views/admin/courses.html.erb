@@ -1,11 +1,63 @@
-<div class="col-xs-4 col-xs-offset-1">
-  <% if @course %>
-    <div class="row" style="border-bottom: 2px solid grey;">
+<% if @course && !@root_level %>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <img src="<%= @course.image.url(:medium) %>"></img>
+      <% if @course.transcoded_video_url %>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+          controls preload="auto" width="640" height="264"
+          poster="<%= @course.image.url(:medium) %>"
+          data-setup='{"example_option":true}'>
+         <source src="<%= @course.transcoded_video_url %>" type='video/mp4' />
+         <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-1">
+    <% if @course && !@root_level%>
+      <div class="row" style="border-bottom: 2px solid grey;">
+        <div>
+          <h2>Edit <%= @course.title %></h2>
+        </div>
+        <div>
+          <%= form_for @course do |f| %>
+            <div class="form-group">
+              <%= label_tag :title, "#{@type} Name" %>
+              <%= f.text_field :title, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= label_tag :image, "#{@type} Image" %>
+              <%= f.file_field :image, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= label_tag :image, "#{@type} Video" %>
+              <%= f.file_field :video, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= label_tag :description, "#{@type} Description" %>
+              <%= f.text_area :description, size: "60x12",class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= label_tag :rank, "#{@type} Rank" %>
+              <%= f.text_field :rank, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.submit "Update #{@type}", class: "form-control" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="row">
       <div>
-        <h2>Edit <%= @course.title %></h2>
+        <h2>Create <%= @type %></h2>
       </div>
       <div>
-        <%= form_for @course do |f| %>
+        <%= form_for (@root_level ? @course : [@course, @chapter])  do |f| %>
           <div class="form-group">
             <%= label_tag :title, "#{@type} Name" %>
             <%= f.text_field :title, class: "form-control" %>
@@ -14,6 +66,10 @@
             <%= label_tag :image, "#{@type} Image" %>
             <%= f.file_field :image, class: "form-control" %>
           </div>
+            <div class="form-group">
+              <%= label_tag :image, "#{@type} Video" %>
+              <%= f.file_field :video, class: "form-control" %>
+            </div>
           <div class="form-group">
             <%= label_tag :description, "#{@type} Description" %>
             <%= f.text_area :description, size: "60x12",class: "form-control" %>
@@ -23,73 +79,44 @@
             <%= f.text_field :rank, class: "form-control" %>
           </div>
           <div class="form-group">
-            <%= f.submit "Update #{@type}", class: "form-control" %>
+            <%= f.submit "Add #{@type}", class: "form-control" %>
           </div>
         <% end %>
       </div>
     </div>
-  <% end %>
+  </div>
 
-  <div class="row">
+  <div class="col-xs-6 col-xs-offset-1">
     <div>
-      <h2>Create <%= @type %></h2>
+      <h2><%= @type + 's' %></h2>
     </div>
     <div>
-      <%= form_for (@root_level ? @course : [@course, @chapter])  do |f| %>
-        <div class="form-group">
-          <%= label_tag :title, "#{@type} Name" %>
-          <%= f.text_field :title, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= label_tag :image, "#{@type} Image" %>
-          <%= f.file_field :image, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= label_tag :description, "#{@type} Description" %>
-          <%= f.text_area :description, size: "60x12",class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= label_tag :rank, "#{@type} Rank" %>
-          <%= f.text_field :rank, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.submit "Add #{@type}", class: "form-control" %>
+      <% @children.each do |child| %>
+        <div class="row">
+          <div class="col-xs-4">
+            <%= link_to child.title, course_chapters_path(child) %>
+          </div>
+          <% if @root_level %>
+            <div class="col-xs-8">
+              <% if @is_publisher %>
+                <%= form_for (@root_level ? child : [@course, child]), url: (@root_level ? update_published_status_course_path(child) : update_published_status_course_chapter_path(@course, child) ), method: 'PUT' do |f| %>
+                  <%= label_tag :published, "Published" %>
+                  <%= f.check_box :published %>
+                  <div class="col-xs-8 pull-right">
+                    <%= f.submit "Update Published Status", class: "form-control" %>
+                  </div>
+                <% end %>
+              <% else %>
+                <% if child.published %>
+                  Published
+                <% else %>
+                  Not Published
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
-  </div>
-</div>
-
-<div class="col-xs-6 col-xs-offset-1">
-  <div>
-    <h2><%= @type + 's' %></h2>
-  </div>
-  <div>
-    <% @children.each do |child| %>
-      <div class="row">
-        <div class="col-xs-4">
-          <%= link_to child.title, course_chapters_path(child) %>
-        </div>
-        <% if @root_level %>
-          <div class="col-xs-8">
-            <% if @is_publisher %>
-              <%= form_for (@root_level ? child : [@course, child]), url: (@root_level ? update_published_status_course_path(child) : update_published_status_course_chapter_path(@course, child) ), method: 'PUT' do |f| %>
-                <%= label_tag :published, "Published" %>
-                <%= f.check_box :published %>
-                <div class="col-xs-8 pull-right">
-                  <%= f.submit "Update Published Status", class: "form-control" %>
-                </div>
-              <% end %>
-            <% else %>
-              <% if child.published %>
-                Published
-              <% else %>
-                Not Published
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
   </div>
 </div>

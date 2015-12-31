@@ -1,6 +1,28 @@
 /*
   *= require bootstrap/dist/css/bootstrap.min.css
-  *= require metisMenu/dist/metisMenu.min.css
+  *= require metisMenu/dist/metisMenu.css
   *= require startbootstrap-sb-admin-2/dist/css/sb-admin-2.css
   *= require font-awesome/css/font-awesome.min.css
+  *= require datatables
+  *= require video.js/dist/video-js
 */
+
+.table { display: table; } 
+.table>* { display: table-row; }
+.table>*>* { display: table-cell; }
+
+/*
+ * Require Bootstrap
+ * https://github.com/twbs/bootstrap
+*/
+.metismenu .tree-open > .glyphicon.arrow:before {
+  content: "\e114";
+}
+
+/*
+ * Require Font-Awesome
+ * http://fortawesome.github.io/Font-Awesome/
+*/
+.metismenu .tree-open > .fa.arrow:before {
+  content: "\f107";
+}

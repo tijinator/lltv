@@ -21,6 +21,8 @@
     "bootstrap": "~3.3.6",
     "angular": "~1.4.8",
     "ng-token-auth": "~0.0.28",
-    "angular-cookie": "~4.0.9"
+    "angular-cookie": "~4.0.9",
+    "metisMenu": "~2.2.0",
+    "video.js": "~5.4.6"
   }
 }

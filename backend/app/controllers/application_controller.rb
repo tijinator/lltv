@@ -29,20 +29,10 @@ class ApplicationController < ActionController::Base
     render 'users/sessions/new', layout: 'admin'
   end
 
-  def admin_logged_in
-    unless current_user
-      respond_to do |format|
-        format.html do
-          flash[:alert] = "Please log in to view this page."
-          redirect_to '/'
-        end
-
-        format.json { render status: 401, json: {errmsg: "Unauthorized"} }
-      end
-    end
+  def admin_nav_setup
+    @chapters = Chapter.arrange(order: :rank)
+    @level = 2
   end
-
-
 
   protected
 

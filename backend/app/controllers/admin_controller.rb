@@ -21,13 +21,16 @@ class AdminController < ApplicationController
   def users
     @user = User.new
     @users = User.order(:role).all #User.where("role > 0")
-    render 'admin/users', layout: 'admin_logged'
+    @chapters = Chapter.arrange(order: :rank)
+    @level = 2
+    render 'admin/users', layout: 'sb2'
   end
 
   def courses
     @current_user = current_user
     @course = Course.new
     @courses = Course.all
-    render 'admin/courses', layout: 'admin_logged'
+    @chapters = Chapter.arrange(order: :rank)
+    render 'admin/courses', layout: 'sb2'
   end
 end

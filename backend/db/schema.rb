@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215160205) do
+ActiveRecord::Schema.define(version: 20151215140348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20151215160205) do
   create_table "categories", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "parent_id"
-    t.string   "name"
-    t.integer  "rank"
+    t.string   "title"
+    t.text     "details"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -29,18 +30,18 @@ ActiveRecord::Schema.define(version: 20151215160205) do
     t.datetime "image_updated_at"
   end
 
-  add_index "categories", ["name"], name: "index_categories_on_name", using: :btree
+  add_index "categories", ["details"], name: "index_categories_on_details", using: :btree
   add_index "categories", ["parent_id"], name: "index_categories_on_parent_id", using: :btree
-  add_index "categories", ["rank"], name: "index_categories_on_rank", using: :btree
+  add_index "categories", ["title"], name: "index_categories_on_title", using: :btree
   add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
 
   create_table "chapters", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "title",                              null: false
-    t.text     "description",                        null: false
-    t.text     "image_url"
-    t.text     "video_url"
-    t.integer  "rank"
+    t.integer  "course_id"
+    t.string   "title",              null: false
+    t.text     "details",            null: false
+    t.integer  "duration"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -48,12 +49,32 @@ ActiveRecord::Schema.define(version: 20151215160205) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "ancestry"
-    t.boolean  "published",          default: false, null: false
   end
 
   add_index "chapters", ["ancestry"], name: "index_chapters_on_ancestry", using: :btree
-  add_index "chapters", ["description"], name: "index_chapters_on_description", using: :btree
+  add_index "chapters", ["details"], name: "index_chapters_on_details", using: :btree
   add_index "chapters", ["title"], name: "index_chapters_on_title", using: :btree
+
+  create_table "courses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "author_id"
+    t.string   "level"
+    t.string   "title",                              null: false
+    t.text     "details",                            null: false
+    t.integer  "duration"
+    t.integer  "position"
+    t.boolean  "published",          default: false, null: false
+    t.datetime "released_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "courses", ["details"], name: "index_courses_on_details", using: :btree
+  add_index "courses", ["title"], name: "index_courses_on_title", using: :btree
 
   create_table "item_categories", force: :cascade do |t|
     t.integer  "category_id"
@@ -78,11 +99,11 @@ ActiveRecord::Schema.define(version: 20151215160205) do
   add_index "item_tags", ["taggable_type", "tag_id"], name: "item_type_tags_index", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string   "name"
+    t.string   "title"
     t.integer  "user_id"
     t.integer  "tagable_id"
     t.string   "tagable_type"
-    t.integer  "rank"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -92,6 +113,7 @@ ActiveRecord::Schema.define(version: 20151215160205) do
   end
 
   add_index "tags", ["tagable_type", "tagable_id"], name: "index_tags_on_tagable_type_and_tagable_id", using: :btree
+  add_index "tags", ["title"], name: "index_tags_on_title", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -124,12 +146,21 @@ ActiveRecord::Schema.define(version: 20151215160205) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "videos", force: :cascade do |t|
-    t.text     "description"
+    t.integer  "chapter_id"
     t.string   "video_url"
-    t.integer  "videoable_id"
-    t.string   "videoable_type"
+    t.string   "title"
+    t.text     "details"
+    t.text     "transcript"
+    t.text     "faqs"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "videos", ["chapter_id"], name: "index_videos_on_chapter_id", using: :btree
+  add_index "videos", ["details"], name: "index_videos_on_details", using: :btree
+  add_index "videos", ["faqs"], name: "index_videos_on_faqs", using: :btree
+  add_index "videos", ["title"], name: "index_videos_on_title", using: :btree
+  add_index "videos", ["transcript"], name: "index_videos_on_transcript", using: :btree
 
 end
