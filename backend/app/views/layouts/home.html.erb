@@ -2,10 +2,11 @@
 <html>
 <head>
   <title>LLTV</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag    'homepage' %>
+  <%= javascript_include_tag 'home' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="lltv-homepage">
   <%= yield %>
 </body>
 </html>

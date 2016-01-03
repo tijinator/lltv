@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231155106) do
+ActiveRecord::Schema.define(version: 20151231235707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20151231155106) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "html_tab_id"
+    t.string   "html_tab_color"
+    t.string   "html_color"
   end
 
   add_index "categories", ["details"], name: "index_categories_on_details", using: :btree

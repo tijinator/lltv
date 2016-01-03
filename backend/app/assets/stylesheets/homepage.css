@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap/dist/css/bootstrap
+ */
+
+#lltv-homepage .container {
+  width: 100%;
+  padding: 10px 30px 0px 30px;
+}
+
+#lltv-homepage .navbar-brand {
+  height: auto;
+}
+
+#lltv-homepage .homepage-nav-links {
+  padding-top: 20px;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  text-transform: uppercase;
+}
+
+#lltv-homepage .homepage-nav-links li {
+  margin-left: 47px;
+}
+
+#lltv-homepage .homepage-nav-links .no-btn-nav {
+  margin-top: 10px;
+}
+
+#lltv-homepage .homepage-category-nav {
+  margin-top: -97px;
+}
+
+#lltv-homepage .homepage-category-nav li {
+  width: 20%;
+  height: 97px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 25px;
+  position: relative;
+}
+
+#lltv-homepage .homepage-category-nav li > div {
+  position: relative;
+  top: 50%;
+  margin-top: -12.5px;
+}
+
+#lltv-homepage .homepage-category-nav li.active:after {
+  content: '';
+  width:0; 
+  height: 0; 
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid #FFFFFF;
+  position: relative;
+  top: 18px;
+}
+
+#lltv-homepage .homepage-category-nav li.active > a {
+  background-color: rgba(0,0,0,0);
+  border: none;
+}
+
+.tab-content {
+  margin-top: 75px;
+}
+
+.category-details {
+  font-size: 19px;
+  line-height: 40px;
+}
+
+.bubble-btn {
+  padding: 10px 20px 10px 20px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-size: 13.5px;
+}
+
+.sign-up {
+  border: 2px solid #FFFFFF;
+  margin-top: -10px;
+}
+
+.create-account {
+  border: 2px solid #CCCCCC;
+  color: #AAAAAA;
+}
