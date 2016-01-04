@@ -1,19 +1,18 @@
-var app;
-
-app = angular.module('lltv', [
+angular.module('lltv', [
 'ui.router',
 'templates',
 'ipCookie',
-'ng-token-auth']);
-
-app.constant('baseUrl', 'http://lltv.com:3000');
-
-app.config([
+'ng-token-auth'])
+.constant('baseUrl', 'http://lltv.com:3000')
+.config([
 'baseUrl',
 '$stateProvider',
+'$locationProvider',
 '$urlRouterProvider',
 '$authProvider',
-function(baseUrl, $stateProvider, $urlRouterProvider, $authProvider) {
+function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authProvider) {
+  $locationProvider.html5Mode(true);
+
   $authProvider.configure({
     apiUrl: baseUrl + '/api/v1',
     handleLoginResponse: function(resp) {
@@ -26,36 +25,66 @@ function(baseUrl, $stateProvider, $urlRouterProvider, $authProvider) {
   });
 
   $stateProvider
-  //   .state('Admin', {
-  //     url: '/admin',
-  //     templateUrl: 'admin/_admin.html',
-  //     controller: 'AdminCtrl'
-  // //   })
-    .state('users', {
-      url: '/admin/users',
-      templateUrl: 'admin/_users.html',
-      controller: 'AdminUsersCtrl',
-      resolve: {
-        usersPromise: ['users', function(users) {
-          return users.getAll();
-        }]
+    .state('home', {
+      url: '/',
+      // templateUrl: 'home/_home.html',
+      controller: 'MainCtrl',
+      onEnter: function() {
+        $('#lltv-app-content').hide();
+        $('#landing-homepage').show();
       }
     })
-  //   .state('home', {
-  //     url: '/home',
-  //     templateUrl: 'home/_home.html',
-  //     controller: 'MainCtrl'
-  //   })
-    .state('login', {
-      url: '/login',
-      templateUrl: 'auth/_login.html',
-      controller: 'AuthCtrl'
+    .state('signin', {
+      url: '/sign_in',
+      templateUrl: 'auth/_sign_in.html',
+      controller: 'AuthCtrl',
+      onEnter: function() {
+        $('#landing-homepage').hide();
+        $('#lltv-app-content').show();
+      }
     })
     .state('register', {
       url: '/register',
       templateUrl: 'auth/_register.html',
       controller: 'AuthCtrl',
-    });
+      onEnter: function() {
+        $('#landing-homepage').hide();
+        $('#lltv-app-content').show();
+      }
+    },
+    .state('categories', {
+      url: '/categories',
+      templateUrl: 'categories/categories.html',
+      controller: 'CategoriesCtrl',
+      resolve: {
+        featuredCourse: ['CategoriesService',
+          function(categoriesService) {
+            return categoriesService.getFeaturedCourse();
+          }],
+        categories: ['CategoriesService',
+          function(categoriesService) {
+            return categoriesService.getCategories();
+          }]
+      },
+      controllerAs: 'categories'
+    }
+    .state('category', {
+      url: '/categories/:id',
+      templateUrl: 'categories/category.html',
+      controller: 'CategoryCtrl',
+      resolve: {
+        category: ['$stateParams', 'CategoriesService',
+          function($stateParams, categoriesService) {
+            return categoriesService.getCategory($stateParams.id);
+          }],
+        videos: ['$stateParams', 'CategoriesService',
+          function($stateParams, categoriesService) {
+            return categoriesService.getCategoryVideos($stateParams.id);
+          }]
+        },
+        controllerAs: 'category'
+      }
+    })));
 
-    $urlRouterProvider.otherwise('/admin/users');
+    $urlRouterProvider.otherwise('/home');
 }]);

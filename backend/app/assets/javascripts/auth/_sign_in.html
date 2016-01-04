@@ -1,0 +1,19 @@
+<div class="col-md-4 col-md-offset-4 auth-template">
+  <div class="row">
+    <img src="" style="margin: auto;">
+  </div>
+  <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
+    <div class="form-group">
+      <label>email or username</label>
+      <input type="email" name="email" ng-model="loginForm.email" required="required" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label>password</label>
+      <input type="password" name="password" ng-model="loginForm.password" required="required" class="form-control"/>
+    </div>
+
+    <a ui-sref="register"><div class="bubble-btn switch-btn pull-left">create account</div></a>
+    <button type="submit" class="bubble-btn submit-btn pull-right">Sign in</button>
+  </form>
+</div>

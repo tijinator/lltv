@@ -11,10 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap
- *= require_tree .
+ *= require homepage
+ *= require login_signup
  *= require_self
  */
-
-.table { display: table; } 
-.table>* { display: table-row; }
-.table>*>* { display: table-cell; }

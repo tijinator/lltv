@@ -1,6 +1,16 @@
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap
+//= require bootstrap/js/tab
 //= require angular
 //= require angular-cookie
 //= require ng-token-auth
 //= require angular-rails-templates
 //= require angular-ui-router
 //= require_tree .
+//= stub metisMenu
+//= stub raphael
+//= stub morrisjs
+//= stub datatables
+//= stub startbootstrap-sb-admin-2
+//= stub video.js/dist/video

@@ -25,6 +25,7 @@ gem 'angular-rails-templates'
 gem 'jquery-datatables-rails', '~> 3.3.0'
 
 gem 'devise'
+gem 'devise_token_auth'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-facebook'
 # gem 'pundit'  Model Level Policies, don't think necessary now
@@ -47,5 +48,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'seed_dump'
 end
 

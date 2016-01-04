@@ -1,0 +1,13 @@
+.auth-template {
+  padding-top: 200px;
+  text-transform: uppercase;
+}
+
+.switch-btn {
+  background-color: #4D4D4D;
+}
+
+.submit-btn {
+  border: 0px;
+  background-color: #33ACE0;
+}

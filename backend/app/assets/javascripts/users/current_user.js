@@ -1,4 +1,5 @@
-app.factory('currentUser', [
+angular.module('lltv')
+.factory('currentUser', [
 '$auth',
 function($auth) {
   var o = {

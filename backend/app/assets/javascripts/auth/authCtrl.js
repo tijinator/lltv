@@ -1,4 +1,5 @@
-app.controller('AuthCtrl', [
+angular.module('lltv')
+.controller('AuthCtrl', [
 '$scope',
 '$auth',
 'currentUser',

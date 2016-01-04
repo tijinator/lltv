@@ -1,4 +1,5 @@
-app.controller('NavCtrl', [
+angular.module('lltv')
+.controller('NavCtrl', [
 '$rootScope',
 '$scope',
 '$auth',

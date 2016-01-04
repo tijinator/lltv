@@ -13,35 +13,45 @@
  *= require bootstrap/dist/css/bootstrap
  */
 
-#lltv-homepage .container {
+#lltv .container {
   width: 100%;
   padding: 10px 30px 0px 30px;
 }
 
-#lltv-homepage .navbar-brand {
+#lltv .navbar-brand {
   height: auto;
 }
 
-#lltv-homepage .homepage-nav-links {
+#lltv .homepage-nav-links {
   padding-top: 20px;
   color: #FFFFFF;
   font-size: 13.5px;
   text-transform: uppercase;
 }
 
-#lltv-homepage .homepage-nav-links li {
+#lltv .homepage-nav-links li {
   margin-left: 47px;
 }
 
-#lltv-homepage .homepage-nav-links .no-btn-nav {
+#lltv .homepage-nav-links .no-btn-nav {
   margin-top: 10px;
 }
 
-#lltv-homepage .homepage-category-nav {
+#lltv .homepage-nav-links li > a {
+  color: #FFFFFF;
+  padding: 0px;
+  cursor: pointer;
+}
+
+#lltv .homepage-nav-links li > a:hover {
+  background-color: transparent;
+}
+
+#lltv .homepage-category-nav {
   margin-top: -97px;
 }
 
-#lltv-homepage .homepage-category-nav li {
+#lltv .homepage-category-nav li {
   width: 20%;
   height: 97px;
   text-align: center;
@@ -51,13 +61,13 @@
   position: relative;
 }
 
-#lltv-homepage .homepage-category-nav li > div {
+#lltv .homepage-category-nav li > div {
   position: relative;
   top: 50%;
   margin-top: -12.5px;
 }
 
-#lltv-homepage .homepage-category-nav li.active:after {
+#lltv .homepage-category-nav li.active:after {
   content: '';
   width:0; 
   height: 0; 
@@ -68,7 +78,7 @@
   top: 18px;
 }
 
-#lltv-homepage .homepage-category-nav li.active > a {
+#lltv .homepage-category-nav li.active > a {
   background-color: rgba(0,0,0,0);
   border: none;
 }
