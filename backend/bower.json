@@ -24,6 +24,7 @@
     "angular-cookie": "~4.0.9",
     "metisMenu": "~2.2.0",
     "video.js": "~5.4.6",
-    "angular-bootstrap": "~0.14.3"
+    "angular-bootstrap": "~0.14.3",
+    "startbootstrap-sb-admin-2": "~1.0.8"
   }
 }
