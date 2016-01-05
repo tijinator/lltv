@@ -3,7 +3,8 @@ angular.module('lltv')
 '$scope',
 '$auth',
 'currentUser',
-function($scope, $auth, currentUser) {
+'AuthService',
+function($scope, $auth, currentUser, authService) {
   $scope.submitRegistration = function() {
     $auth.submitRegistration($scope.registrationForm)
       .then(function(resp) {
@@ -24,4 +25,12 @@ function($scope, $auth, currentUser) {
         alert('login error');
       });
   };
+
+  $scope.switch = function(type) {
+    authService.switchModal(type);
+  }
+
+  $scope.close = function() {
+    authService.closeModal();
+  }
 }]);

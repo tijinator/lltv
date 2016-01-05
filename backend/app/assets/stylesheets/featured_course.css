@@ -1,0 +1,41 @@
+.featured-course {
+  position: relative;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.featured-course .course-banner {
+  bottom: 0px;
+}
+
+.featured-course .bubble-btn {
+  text-transform: uppercase;
+}
+
+.featured-course-content {
+  clear: both;
+}
+
+.featured-course-tag {
+  padding: 10px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 15px
+}
+
+.featured-course-data {
+  padding: 20px 20px 30px 20px;
+}
+
+.featured-course-title {
+  word-spacing: 9999999999999999px;
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.featured-course-details {
+  line-height: 20px;
+  margin: 20px 0px;
+  font-size: 15px;
+}

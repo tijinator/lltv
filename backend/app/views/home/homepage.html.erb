@@ -16,12 +16,12 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse pull-right homepage-nav-links" id="navbarCollapse">
           <ul class="nav navbar-nav">
-            <li class="active"><img src="<%= image_path('LLTV_searchicon.png') %>"></li>
+            <li class="active"><a ui-sref="categories.show"><img src="<%= image_path('LLTV_searchicon.png') %>"></a></li>
             <li>Business</li>
             <li>Academic</li>
             <li>Government</li>
-            <li><a ui-sref="signin">Sign In</a></li>
-            <li class="pull-right"><a ui-sref="register"><div class="bubble-btn sign-up">Sign Up</div></a></li>
+            <li ng-controller="AuthModalCtrl"><div ng-click="openModal(signin)">Sign In</div></li>
+            <li ng-controller="AuthModalCtrl"><div class="bubble-btn sign-up" ng-click="openModal('register')">Sign Up</div></li>
           </ul>
         </div>
       </div>
@@ -72,16 +72,18 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <a ui-sref="category({id: <%= category.id %>">
+                  <a ui-sref="category({id: <%= category.id %>})">
                     <div class="bubble-btn pull-left" style="background-color: <%= category.html_color %>;">
                       Browse <%= category.title %> Tutorials
                     </div>
                   </a>
-                  <a ui-sref="register">
-                    <div class="pull-right bubble-btn create-account">
+                  <!-- <a ui-sref="register"> -->
+                  <div ng-controller="AuthModalCtrl">
+                    <div class="pull-right bubble-btn create-account" ng-click="openModal('register')">
                         Create Account
                     </div>
-                  </a>
+                  </div>
+                  <!-- </a> -->
                 </div>
               </div>
             </div>
@@ -92,6 +94,8 @@
     <footer class="homepage-footer">
     </footer>
   </div>
+
+
 
   <div id="lltv-app-content" style="display: none;">
     <ui-view></ui-view>

@@ -1,5 +1,6 @@
 angular.module('lltv', [
 'ui.router',
+'ui.bootstrap',
 'templates',
 'ipCookie',
 'ng-token-auth'])
@@ -34,40 +35,58 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         $('#landing-homepage').show();
       }
     })
-    .state('signin', {
-      url: '/sign_in',
-      templateUrl: 'auth/_sign_in.html',
-      controller: 'AuthCtrl',
+    // .state('signin', {
+    //   url: '/sign_in',
+    //   templateUrl: 'auth/_sign_in.html',
+    //   controller: 'AuthCtrl',
+    //   onEnter: function() {
+    //     $('#landing-homepage').hide();
+    //     $('#lltv-app-content').show();
+    //   }
+    // })
+    // .state('register', {
+    //   url: '/register',
+    //   templateUrl: 'auth/_register.html',
+    //   controller: 'AuthCtrl',
+    //   onEnter: function() {
+    //     $('#landing-homepage').hide();
+    //     $('#lltv-app-content').show();
+    //   }
+    // })
+    .state('categories', {
+      templateUrl: 'categories/categoriesLayout.html',
+    })
+    .state('categories.show', {
+      url: '/categories',
+      views: {
+        featuredCourse: {
+          templateUrl: 'categories/featuredCourse.html',
+          controller: 'FeaturedCourseCtrl',
+          resolve: {
+            featuredCourse: ['CategoryService',
+              function(categoriesService) {
+                return categoriesService.getFeaturedCourse(null);
+              }
+            ]
+          }
+        },
+        categories: {
+          templateUrl: 'categories/categories.html',
+          controller: 'CategoriesCtrl'
+          // resolve: {
+          //   categories: ['CategoriesService',
+          //     function(categoriesService) {
+          //       return categoriesService.getCategories();
+          //     }
+          //   ]
+          // }
+        }
+      },
       onEnter: function() {
         $('#landing-homepage').hide();
         $('#lltv-app-content').show();
       }
     })
-    .state('register', {
-      url: '/register',
-      templateUrl: 'auth/_register.html',
-      controller: 'AuthCtrl',
-      onEnter: function() {
-        $('#landing-homepage').hide();
-        $('#lltv-app-content').show();
-      }
-    },
-    .state('categories', {
-      url: '/categories',
-      templateUrl: 'categories/categories.html',
-      controller: 'CategoriesCtrl',
-      resolve: {
-        featuredCourse: ['CategoriesService',
-          function(categoriesService) {
-            return categoriesService.getFeaturedCourse();
-          }],
-        categories: ['CategoriesService',
-          function(categoriesService) {
-            return categoriesService.getCategories();
-          }]
-      },
-      controllerAs: 'categories'
-    }
     .state('category', {
       url: '/categories/:id',
       templateUrl: 'categories/category.html',
@@ -82,9 +101,8 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
             return categoriesService.getCategoryVideos($stateParams.id);
           }]
         },
-        controllerAs: 'category'
-      }
-    })));
+      controllerAs: 'category'
+    });
 
     $urlRouterProvider.otherwise('/home');
 }]);

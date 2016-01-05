@@ -1,6 +1,37 @@
 .auth-template {
-  padding-top: 200px;
   text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.auth-template .modal-content {
+  background-color: transparent;
+  border: 0px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.auth-template .modal-dialog {
+  margin: 0px;
+  width: 100%;
+}
+
+.auth-template .auth-content {
+  clear: both;
+  margin: 0px auto;
+  padding-top: 150px;
+  width: 350px;
+}
+
+.auth-template input:not([type=submit]):not([type=file]) {
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  padding: 10px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.auth-close {
+  padding: 20px;
 }
 
 .switch-btn {
@@ -10,4 +41,8 @@
 .submit-btn {
   border: 0px;
   background-color: #33ACE0;
+}
+
+.modal-backdrop.auth-backdrop.in {
+  opacity: 0.88;
 }

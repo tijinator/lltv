@@ -1,25 +1,34 @@
-<div class="col-md-4 col-md-offset-4 auth-template">
-  <div class="page-header">
-    <h1>create account</h1>
+<div>
+  <img src="/images/LLTV_x.png" class="auth-close pull-right" ng-click="close()">
+</div>
+<div class="auth-content">
+  <div class="auth-header">
+    <div style="margin: auto; width: 188px;">
+      <img src="/images/LLTV_logo.png">
+    </div>
   </div>
 
   <form ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
-    <div class="form-group">
-      <label>email</label>
-      <input type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control"/>
+    <div class="auth-body">
+        <div class="form-group">
+          <label>email</label>
+          <input type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+          <label>password</label>
+          <input type="password" name="password" ng-model="registrationForm.password" required="required" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+          <label>password confirmation</label>
+          <input type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control"/>
+        </div>
     </div>
 
-    <div class="form-group">
-      <label>password</label>
-      <input type="password" name="password" ng-model="registrationForm.password" required="required" class="form-control"/>
+    <div class="auth-footer">
+      <div class="bubble-btn switch-btn pull-left" ng-click="switch('signin')">sign in</div>
+      <button type="submit" class="bubble-btn submit-btn pull-right">sign up</button>
     </div>
-
-    <div class="form-group">
-      <label>password confirmation</label>
-      <input type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control"/>
-    </div>
-
-    <a ui-sref="signin"><div class="bubble-btn switch-btn pull-left">sign in</div></a>
-    <button type="submit" class="bubble-btn submit-btn pull-right">sign up</button>
   </form>
 </div>

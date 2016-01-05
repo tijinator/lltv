@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # standard devise routes available at /users
-  # NOTE: make sure this comes first!!!
+  root to: 'home#home'
+
   devise_for :users
 
   # token auth routes available at /api/v1/auth
@@ -32,10 +32,11 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'home#home'
-
   namespace :api, defaults: { format: :json } do
-    resources :users do
+    resources :categories do
+      collection do
+        get 'featured_course' => 'categories#featured_course'
+      end
     end
   end
 end

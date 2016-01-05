@@ -7,6 +7,7 @@
 //= require ng-token-auth
 //= require angular-rails-templates
 //= require angular-ui-router
+//= require angular-bootstrap
 //= require_tree .
 //= stub metisMenu
 //= stub raphael

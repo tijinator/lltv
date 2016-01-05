@@ -1,6 +1,6 @@
 angular.module('lltv')
-.controller('CategoryCtrl', [
-$scope,
+.controller('CategoriesCtrl', [
+'$scope',
 function($scope) {
 
 }]);

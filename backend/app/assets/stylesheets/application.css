@@ -13,5 +13,6 @@
  *= require bootstrap/dist/css/bootstrap
  *= require homepage
  *= require login_signup
+ *= require featured_course
  *= require_self
  */
