@@ -27,9 +27,7 @@
     "angular-bootstrap": "~0.14.3",
     "startbootstrap-sb-admin-2": "~1.0.8"
   },
-  "overrides": {
-    "startbootstrap-sb-admin-2": {
-      "dependencies": []
-    }
+  "resolutions": {
+    "metisMenu": "~2.2.0"
   }
 }
