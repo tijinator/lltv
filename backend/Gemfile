@@ -59,4 +59,5 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-rbenv'
   gem 'capistrano-chruby'
+  gem 'capistrano-bower'
 end
