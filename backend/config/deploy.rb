@@ -3,6 +3,7 @@ lock '3.4.0'
 
 set :application, 'lltv'
 set :repo_url, 'git@github.com:tijinator/lltv.git' # Edit this to match your repository
+set :repo_tree, '/backend'
 set :branch, :master
 set :deploy_to, '/home/deploy/lltv'
 set :pty, true
@@ -13,7 +14,7 @@ set :rvm_type, :user
 set :rvm_ruby_version, '2.0.0-p643' # Edit this if you are using MRI Ruby
 set :rbenv, '2.0.0-p643'
 set :rbenv_ruby, '2.0.0-p643'
-set :bundle_gemfile, "backend/Gemfile"
+
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
