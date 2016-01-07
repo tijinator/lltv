@@ -1,0 +1,14 @@
+<div class="category-library">
+  <div class="category-library-header">
+    browse our library
+  </div>
+  <div>
+    <ul class="small-categories">
+      <li ng-repeat="category in categories" style="display: inline-block;">
+        <div class="small-category-block" style="background-image: url('{{category.small_image_url}}');">
+          {{category.title}}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

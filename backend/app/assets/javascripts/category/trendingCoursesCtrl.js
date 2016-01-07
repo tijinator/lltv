@@ -1,6 +1,5 @@
 angular.module('lltv')
-.controller('CategoriesLayoutCtrl', [
+.controller('TrendingCoursesCtrl', [
 '$scope',
 function($scope) {
-
 }]);

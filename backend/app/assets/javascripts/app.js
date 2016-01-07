@@ -70,16 +70,16 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
             ]
           }
         },
-        categories: {
-          templateUrl: 'categories/categories.html',
-          controller: 'CategoriesCtrl'
-          // resolve: {
-          //   categories: ['CategoriesService',
-          //     function(categoriesService) {
-          //       return categoriesService.getCategories();
-          //     }
-          //   ]
-          // }
+        categoryLibrary: {
+          templateUrl: 'categories/categoryLibrary.html',
+          controller: 'CategoryLibraryCtrl',
+          resolve: {
+            categories: ['CategoryService',
+              function(categoriesService) {
+                return categoriesService.getCategories();
+              }
+            ]
+          }
         }
       },
       onEnter: function() {
@@ -88,20 +88,38 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       }
     })
     .state('category', {
+      templateUrl: 'category/categoryLayout.html'
+    })
+    .state('category.show', {
       url: '/categories/:id',
-      templateUrl: 'categories/category.html',
-      controller: 'CategoryCtrl',
-      resolve: {
-        category: ['$stateParams', 'CategoriesService',
-          function($stateParams, categoriesService) {
-            return categoriesService.getCategory($stateParams.id);
-          }],
-        videos: ['$stateParams', 'CategoriesService',
-          function($stateParams, categoriesService) {
-            return categoriesService.getCategoryVideos($stateParams.id);
-          }]
+      views: {
+        categoryInfo: {
+          templateUrl: 'category/categoryInfo.html',
+          controller: 'CategoryInfoCtrl',
+          resolve: {
+            category: ['$stateParams', 'CategoryService',
+              function($stateParams, categoriesService) {
+                return categoriesService.getCategory($stateParams.id);
+              }
+            ]
+          }
         },
-      controllerAs: 'category'
+        categoryCourses: {
+          templateUrl: 'category/categoryCourses.html'
+        },
+        'trendingCourses@category.show': {
+          templateUrl: 'category/trendingCourses.html',
+          controller: "TrendingCoursesCtrl"
+        },
+        'recommendedCourses@category.show': {
+          templateUrl: 'category/recommendedCourses.html',
+          controller: "TrendingCoursesCtrl"
+        }
+      },
+      onEnter: function() {
+        $('#landing-homepage').hide();
+        $('#lltv-app-content').show();
+      }
     });
 
     $urlRouterProvider.otherwise('/home');

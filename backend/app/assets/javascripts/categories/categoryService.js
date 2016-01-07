@@ -14,14 +14,14 @@ function($http) {
   };
 
   this.getCategories = function() {
-    return $http.get('/api/categories').data;
+    return $http.get('/api/categories');
   };
   
   this.getCategory = function(id) {
-    return $http.get('/api/categories' + id).data;
+    return $http.get('/api/categories/' + id);
   };
 
   this.getCategoryCourses = function(id) {
-    return $http.get('/api/categories/' + id + '/courses').data;
+    return $http.get('/api/categories/' + id + '/courses');
   };
 }]);

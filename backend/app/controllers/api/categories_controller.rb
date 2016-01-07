@@ -5,4 +5,13 @@ class Api::CategoriesController < ApplicationController
       render json: FeaturedCourseSerializer.new(Course.where({featured: true}).first)
     end
   end
+
+  def index
+    render json: Category.where.not({small_image_url: nil}), root: false
+  end
+
+  def show
+    cat = Category.find(params[:id])
+    render json: cat, root: false
+  end
 end
