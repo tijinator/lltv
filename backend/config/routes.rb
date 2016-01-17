@@ -37,6 +37,9 @@ Rails.application.routes.draw do
       collection do
         get 'featured_course' => 'categories#featured_course'
       end
+      member do
+        get 'courses' => 'categories#courses'
+      end
     end
   end
 end

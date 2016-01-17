@@ -15,5 +15,6 @@
  *= require login_signup
  *= require featured_course
  *= require category_library
+ *= require category
  *= require_self
  */

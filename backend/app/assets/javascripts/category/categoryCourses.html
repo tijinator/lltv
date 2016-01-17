@@ -1,2 +1,17 @@
-<div ui-view="trendingCourses"></div> 
-<div ui-view="recommendedCourses"></div>
+<div class="col-md-3 category-page-options">
+  <div ui-view="categoryOptions"></div>
+</div>
+<div class="col-md-9 category-page-courses">
+  <div class="row category-courses-row">
+    <div class="col-md-12 category-trending-courses">
+      <div class="category-courses-title">trending {{category.title}} courses</div>
+      <div ui-view="trendingCourses"></div>
+    </div>
+  </div>
+  <div class="row category-courses-row">
+    <div class="col-md-12 category-trending-courses">
+      <div class="category-courses-title">recommended for you</div>
+      <div ui-view="recommendedCourses"></div>
+    </div>
+  </div>
+</div>

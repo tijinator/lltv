@@ -1,0 +1,52 @@
+.category-info {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.category-info .category-banner {
+  bottom: 0px;
+}
+
+.category-info-content {
+  clear: both;
+}
+
+.category-info-data {
+  padding: 20px 20px 30px 20px;
+}
+
+.category-info-details {
+  line-height: 20px;
+  margin: 20px 0px;
+  font-size: 15px;
+}
+
+.category-info-title {
+  word-spacing: 9999999999999999px;
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.category-page-details {
+  height: -webkit-calc(100vh - 300px);
+  height: -moz-calc(100vh - 300px);
+  height: calc(100vh - 300px);
+  color: #787D7F;
+}
+
+.category-page-options {
+  background-color: #EBEEF0;
+  height:100%;
+}
+
+.category-page-courses {
+  height: 100%;
+}
+
+.category-courses-title {
+  text-transform: uppercase;
+}

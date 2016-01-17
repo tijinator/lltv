@@ -14,4 +14,9 @@ class Api::CategoriesController < ApplicationController
     cat = Category.find(params[:id])
     render json: cat, root: false
   end
+
+  def courses
+    category = Category.find(params[:id])
+    render json: category.courses, root: false
+  end
 end

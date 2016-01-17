@@ -88,32 +88,50 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       }
     })
     .state('category', {
+      abstract: true,
       templateUrl: 'category/categoryLayout.html'
     })
     .state('category.show', {
       url: '/categories/:id',
+      resolve: {
+        category: ['$stateParams', 'CategoryService',
+          function($stateParams, categoriesService) {
+            return categoriesService.getCategory($stateParams.id);
+          }
+        ]
+      },
       views: {
         categoryInfo: {
           templateUrl: 'category/categoryInfo.html',
-          controller: 'CategoryInfoCtrl',
+          controller: 'CategoryInfoCtrl'
+        },
+        categoryCourses: {
+          templateUrl: 'category/categoryCourses.html',
+          controller: function($scope, category){
+              $scope.category = category.data;
+          }
+        },
+        'trendingCourses@category.show': {
+          templateUrl: 'category/categoryCourseList.html',
+          controller: "CategoryCourseListCtrl",
           resolve: {
-            category: ['$stateParams', 'CategoryService',
+            courses: ['$stateParams', 'CategoryService',
               function($stateParams, categoriesService) {
-                return categoriesService.getCategory($stateParams.id);
+                return categoriesService.getCategoryCourses($stateParams.id);
               }
             ]
           }
         },
-        categoryCourses: {
-          templateUrl: 'category/categoryCourses.html'
-        },
-        'trendingCourses@category.show': {
-          templateUrl: 'category/trendingCourses.html',
-          controller: "TrendingCoursesCtrl"
-        },
         'recommendedCourses@category.show': {
-          templateUrl: 'category/recommendedCourses.html',
-          controller: "TrendingCoursesCtrl"
+          templateUrl: 'category/categoryCourseList.html',
+          controller: "CategoryCourseListCtrl",
+          resolve: {
+            courses: ['$stateParams', 'CategoryService',
+              function($stateParams, categoriesService) {
+                return categoriesService.getCategoryCourses($stateParams.id);
+              }
+            ]
+          },
         }
       },
       onEnter: function() {
