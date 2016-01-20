@@ -5,9 +5,11 @@
   <div>
     <ul class="small-categories">
       <li ng-repeat="category in categories" style="display: inline-block;">
-        <div class="small-category-block" style="background-image: url('{{category.small_image_url}}');">
-          {{category.title}}
-        </div>
+        <a ui-sref="category.show({id: category.id})">
+          <div class="small-category-block" style="background-image: url('{{category.small_image_url}}');">
+            {{category.title}}
+          </div>
+        </a>
       </li>
     </ul>
   </div>

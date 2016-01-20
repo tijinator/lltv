@@ -11,6 +11,12 @@ function($rootScope, $scope, $auth, currentUser) {
     return $scope.user.id;
   }
 
+  $scope.$watch('assets', function(value) {
+  if (value) {
+    $scope.assets = JSON.parse(value);
+  }
+  });
+
   $scope.signOut = function() {
     currentUser.signOut();
   };
@@ -36,4 +42,5 @@ function($rootScope, $scope, $auth, currentUser) {
     alert("OOOOT");
     // currentUser.signOut();
   });
+
 }]);

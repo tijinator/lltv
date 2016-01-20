@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'home#home'
+
 
   devise_for :users
 
@@ -42,4 +42,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  get '/categories' => 'home#home'
+  get '/categories/:cat_id' => 'home#home'
+
+  root to: 'home#home'
 end

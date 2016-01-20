@@ -76,4 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+   # Register AngularJS template path in asset pipeline
+  config.assets.paths << File.join(Rails.root, 'app', 'assets', 'templates')
 end
