@@ -4,7 +4,7 @@ angular.module('lltv', [
 'templates',
 'ipCookie',
 'ng-token-auth'])
-.constant('baseUrl', 'http://lltv.com:3000')
+.constant('baseUrl', '/')
 .config([
 'baseUrl',
 '$stateProvider',
