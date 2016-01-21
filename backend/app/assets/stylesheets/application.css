@@ -12,9 +12,23 @@
  *
  *= require bootstrap/dist/css/bootstrap
  *= require homepage
+ *= require nav
  *= require login_signup
  *= require featured_course
  *= require category_library
  *= require category
  *= require_self
  */
+
+.content-container.ng-scope {
+    margin-top: 85px;
+}
+
+.content-container.ng-scope.homepage-content-container{
+ 	margin-top: 0;
+ }
+
+ .subhead{
+ 	font-weight: bold;
+ 	padding: 5px 0;
+ }

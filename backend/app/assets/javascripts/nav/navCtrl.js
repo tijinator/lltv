@@ -2,10 +2,19 @@ angular.module('lltv')
 .controller('NavCtrl', [
 '$rootScope',
 '$scope',
+'$location',
 '$auth',
 'currentUser',
-function($rootScope, $scope, $auth, currentUser) {
+function($rootScope, $scope, $location, $auth, currentUser) {
   $scope.user = currentUser;
+
+  $scope.isActive = function (route){
+    if(route == $location.path()){
+      return true;
+    }else{
+      return false;
+    }
+  }
 
   $scope.signedIn = function() {
     return $scope.user.id;

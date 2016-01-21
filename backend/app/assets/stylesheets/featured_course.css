@@ -14,13 +14,15 @@
 
 .featured-course-content {
   clear: both;
+  margin-top: 50px;
 }
 
 .featured-course-tag {
   padding: 10px;
   text-transform: uppercase;
   vertical-align: middle;
-  font-size: 15px
+  font-size: 15px;
+  margin-left: 20px;
 }
 
 .featured-course-data {

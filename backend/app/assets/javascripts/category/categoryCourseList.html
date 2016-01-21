@@ -1,6 +1,10 @@
 <div ng-repeat="course in courses">
   <div>
-    <img ng-src="{{course.banner_url}}" style="width: 300px; height: 200px">
-    {{course.title}}
+  	<a ui-sref="courses.show({id: course.id})">
+	    <img ng-src="{{course.banner_url}}" style="width: 300px; height: 200px">
+	    <div class="category-course-title">
+	    	{{course.title}}
+	    </div>
+    </a>
   </div>
 </div>

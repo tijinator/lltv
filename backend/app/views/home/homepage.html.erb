@@ -1,71 +1,63 @@
-<div id="main-container">
-  <div id="landing-homepage">
-    <img src="<%= image_path('LLTV_homepage.jpg')%>" style="width: 100%; position: relative; top: 0; left: 0">
-    
-    <div>
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs homepage-category-nav" role="tablist">
-        <% @categories.each_with_index do |category, idx| %>
-          <li role="presentation"
-            style="background-color: <%= category.html_tab_color %>"
-            <% if idx == 0 %>class="active"<% end %>>
-            
-            <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><%= category.title %></div></li>
-        <% end %>
-      </ul>
+<div id="landing-homepage">
+  <img src="<%= image_path('LLTV_homepage.jpg')%>" style="width: 100%; position: relative; top: 0; left: 0">
+  
+  <div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs homepage-category-nav" role="tablist">
+      <% @categories.each_with_index do |category, idx| %>
+        <li role="presentation"
+          style="background-color: <%= category.html_tab_color %>"
+          <% if idx == 0 %>class="active"<% end %>>
+          
+          <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><%= category.title %></div></li>
+      <% end %>
+    </ul>
 
-      <!-- Tab panes -->
-      <div class="tab-content container-fluid">
-        <% @categories.each_with_index do |category, idx| %>
-          <div role="tabpanel"
-            class="tab-pane row <% if idx == 0 %>active<% end %>" id="<%= category.html_tab_id %>">
+    <!-- Tab panes -->
+    <div class="tab-content container-fluid">
+      <% @categories.each_with_index do |category, idx| %>
+        <div role="tabpanel"
+          class="tab-pane row <% if idx == 0 %>active<% end %>" id="<%= category.html_tab_id %>">
 
-            <div class="col-md-6">
-              <div class="row">
-                <img src="<%= image_path('LLTV_designimage.jpg') %>">
+          <div class="col-md-6">
+            <div class="row">
+              <img src="<%= image_path('LLTV_designimage.jpg') %>">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-12">
+                <h3 style="color: <%= category.html_color %>">
+                <%= category.title %> Training + Tutorials
+                </h3>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-12">
-                  <h3 style="color: <%= category.html_color %>">
-                  <%= category.title %> Training + Tutorials
-                  </h3>
-                </div>
+            <div class="row">
+              <div class="col-md-12 category-details">
+                <p><%= category.details %></p>
               </div>
-              <div class="row">
-                <div class="col-md-12 category-details">
-                  <p><%= category.details %></p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <a ui-sref="category.show({id: <%= category.id %>})">
-                    <div class="bubble-btn pull-left" style="background-color: <%= category.html_color %>;">
-                      Browse <%= category.title %> Tutorials
-                    </div>
-                  </a>
-                  <!-- <a ui-sref="register"> -->
-                  <div ng-controller="AuthModalCtrl">
-                    <div class="pull-right bubble-btn create-account" ng-click="openModal('register')">
-                        Create Account
-                    </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <a ui-sref="category.show({id: <%= category.id %>})">
+                  <div class="bubble-btn pull-left" style="background-color: <%= category.html_color %>;">
+                    Browse <%= category.title %> Tutorials
                   </div>
-                  <!-- </a> -->
+                </a>
+                <!-- <a ui-sref="register"> -->
+                <div ng-controller="AuthModalCtrl">
+                  <div class="pull-right bubble-btn create-account" ng-click="openModal('register')">
+                      Create Account
+                  </div>
                 </div>
+                <!-- </a> -->
               </div>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
-    <footer class="homepage-footer">
-    </footer>
   </div>
-
-
-
-  <div id="lltv-app-content" style="display: none;">
-    <ui-view></ui-view>
-  </div>
+  <footer class="homepage-footer">
+  </footer>
 </div>

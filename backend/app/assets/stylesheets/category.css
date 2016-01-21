@@ -50,3 +50,11 @@
 .category-courses-title {
   text-transform: uppercase;
 }
+
+.category-recommended{
+  margin-top: 20px;
+}
+
+.category-course-title{
+  text-transform: capitalize;
+}

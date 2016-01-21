@@ -1,4 +1,4 @@
-<div ng-controller="NavCtrl">
+<nav ng-class="{'homepage-nav': isActive('/')}" class="navbar navbar-fixed-top" role="navigation">
  	<div class="container" style="position: relative; top: 0; left: 0">
  		<a class="navbar-brand" ng-href="/"><img ng-src="{{'images/LLTV_logo.png'}}" style="position: absolute; top: 10px; left: 15px"/></a>
 	    <div class="navbar-header">
@@ -21,4 +21,4 @@
 	      </ul>
 	    </div>
   	</div>
-</div>
+</nav>

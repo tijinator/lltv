@@ -9,9 +9,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="lltv" ng-app="lltv">
-	<nav id="home-nav" class="navbar navbar-fixed-top" role="navigation" style="background-image: url('<%= image_path('LLTV_blackgradient.png') %>'); min-height: 315px;">
-		<div ng-include="'nav/_nav.html'"></div>
-	</nav>
-	<ui-view><%=yield%></ui-view>
+	<div ng-include="'nav/_nav.html'" ng-controller="NavCtrl"></div>
+	<div class="content-container" ng-class="{'homepage-content-container': isActive('/')}" ng-controller="MainCtrl">
+    <ui-view><%=yield%></ui-view>
+  </div>
 </body>
 </html>

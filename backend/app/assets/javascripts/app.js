@@ -138,6 +138,58 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         $('#landing-homepage').hide();
         $('#lltv-app-content').show();
       }
+    })
+    .state('courses', {
+      abstract: true,
+      templateUrl: 'course/courseLayout.html'
+    })
+    .state('courses.show', {
+      url: '/courses/:id',
+      resolve: {
+        course: ['$stateParams', 'CourseService',
+          function($stateParams, coursesService) {
+            return coursesService.getCourse($stateParams.id);
+          }
+        ]
+      },
+      views: {
+        courseInfo: {
+          templateUrl: 'course/courseInfo.html',
+          controller: 'CourseInfoCtrl'
+        },
+        /*categoryCourses: {
+          templateUrl: 'course/categoryCourses.html',
+          controller: function($scope, category){
+              $scope.category = category.data;
+          }
+        },
+        'trendingCourses@category.show': {
+          templateUrl: 'category/categoryCourseList.html',
+          controller: "CategoryCourseListCtrl",
+          resolve: {
+            courses: ['$stateParams', 'CategoryService',
+              function($stateParams, categoriesService) {
+                return categoriesService.getCategoryCourses($stateParams.id);
+              }
+            ]
+          }
+        },
+        'recommendedCourses@category.show': {
+          templateUrl: 'category/categoryCourseList.html',
+          controller: "CategoryCourseListCtrl",
+          resolve: {
+            courses: ['$stateParams', 'CategoryService',
+              function($stateParams, categoriesService) {
+                return categoriesService.getCategoryCourses($stateParams.id);
+              }
+            ]
+          },
+        }*/
+      },
+      onEnter: function() {
+        $('#landing-homepage').hide();
+        $('#lltv-app-content').show();
+      }
     });
 
     $urlRouterProvider.otherwise('/home');

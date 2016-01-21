@@ -1,16 +1,16 @@
 <div class="col-md-3 category-page-options">
   <div ui-view="categoryOptions"></div>
 </div>
-<div class="col-md-9 category-page-courses">
+<div class="col-md-9 category-page-courses category-trending">
   <div class="row category-courses-row">
     <div class="col-md-12 category-trending-courses">
-      <div class="category-courses-title">trending {{category.title}} courses</div>
+      <h5 class="category-courses-title">trending {{category.title}} courses</h5>
       <div ui-view="trendingCourses"></div>
     </div>
   </div>
-  <div class="row category-courses-row">
+  <div class="row category-courses-row category-recommended">
     <div class="col-md-12 category-trending-courses">
-      <div class="category-courses-title">recommended for you</div>
+      <h5 class="category-courses-title">recommended {{category.title}} courses</h5>
       <div ui-view="recommendedCourses"></div>
     </div>
   </div>

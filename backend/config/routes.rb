@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: { format: :json } do
+
+    #Category routes
     resources :categories do
       collection do
         get 'featured_course' => 'categories#featured_course'
@@ -41,7 +43,14 @@ Rails.application.routes.draw do
         get 'courses' => 'categories#courses'
       end
     end
+
+    #courses routes
+    resources :courses do
+    end
   end
+
+  get '/courses' => 'home#home'
+  get '/courses/:course_id' => 'home#home'
 
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
