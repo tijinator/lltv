@@ -19,8 +19,7 @@
   "dependencies": {
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.6",
-    "angular": "latest",
-    "angular-route": "latest",
+    "angular": "~1.4.8",
     "ng-token-auth": "~0.0.28",
     "angular-cookie": "~4.0.9",
     "metisMenu": "~2.2.0",
