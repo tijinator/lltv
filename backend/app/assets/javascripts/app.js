@@ -107,9 +107,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         },
         categoryCourses: {
           templateUrl: 'category/categoryCourses.html',
-          controller: function($scope, category){
-              $scope.category_details = category.data;
-          }
+          controller: "CategoryCoursesCtrl",
         },
         'trendingCourses@category.show': {
           templateUrl: 'category/categoryCourseList.html',
