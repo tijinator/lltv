@@ -10,6 +10,7 @@
 
 .featured-course .bubble-btn {
   text-transform: uppercase;
+  background: transparent;
 }
 
 .featured-course-content {

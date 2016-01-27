@@ -17,6 +17,7 @@
  *= require featured_course
  *= require category_library
  *= require category
+ *= require course
  *= require_self
  */
 
@@ -33,4 +34,11 @@
  	padding: 5px 0;
  }
 
+html {
+   height: 100%;
+}
+
+body {
+   min-height: 100%;
+}
  

@@ -3,7 +3,7 @@ angular.module('lltv', [
 'ui.bootstrap',
 'templates',
 'ipCookie',
-'ng-token-auth'])
+'ng-token-auth','lltvFilters'])
 .constant('baseUrl', '/')
 .config([
 'baseUrl',

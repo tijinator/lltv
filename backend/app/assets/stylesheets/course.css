@@ -1,0 +1,115 @@
+.course-info-title{
+	text-transform: capitalize;
+	padding: 25px;
+	padding-bottom: 10px;
+}
+
+.course-info-details{
+	padding: 25px;
+}
+
+.course-info-content{
+	background: #000000;
+	color: #ffffff;
+}
+
+.course-chapter-content{
+	background: #232628;
+	color: #ffffff;
+}
+
+.chapter-tabs{
+	background: #232628;
+	color: #ffffff;
+	margin-left: -15px;
+}
+
+.chapter-tabs h5{
+	text-transform: uppercase;
+}
+
+.nav-tabs{
+	margin-left: 10px;
+}
+
+.nav-tabs > li{
+	width: 20%;
+	text-align: left;
+}
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus{
+	color: #ffffff;
+    cursor: default;
+    background-color: transparent;
+    text-transform: uppercase;
+    border: 0;
+}
+
+.nav-tabs > li > a:hover{
+	color: #ffffff;
+	background-color: transparent;
+	border: 0;
+}
+
+.nav-tabs > li > a{
+	border: 0;
+	color: #63686B;
+	text-transform: uppercase;
+	background-color: transparent;
+	padding: 10px 2px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #63686B;
+}
+
+.tab-content{
+	margin-top: 50px;
+	margin-left: 10px;
+	min-height: 350px;
+}
+
+.exp-all{
+	color: #63686B;
+}
+
+.course-chapter-content .exp-coll-all a{
+	color: #63686B;
+	text-decoration: none;
+}
+
+.chapters{
+	padding: 20px 0;
+}
+
+.chapter-index-row{
+	clear: both;
+}
+
+.course-chapter-content a{
+	color: #ffffff;
+}
+
+.chapter-index-element{
+	float: left;
+	padding: 0 10px 0;
+	text-align: left;
+	width: 50%;
+}
+
+.chapter-index-element.index-title-row {
+	background: black;
+    padding: 10px 20px;
+    margin: 10px;
+    color: #63686B;
+    width: 65%;
+}
+
+.chapter-index-element.index-title-row a{
+	color: #63686B;
+	text-transform: uppercase;
+}
+
+

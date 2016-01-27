@@ -6,7 +6,7 @@ class Chapter < ActiveRecord::Base
 
   belongs_to :course
 
-  has_ancestry
+  # has_ancestry
 
   has_many :tags, through: :item_tags, source: :taggable, source_type: 'Tag'
   has_many :categories, through: :item_categories, source: :categorizable, source_type: 'Category'
