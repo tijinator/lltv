@@ -4,6 +4,7 @@
 //= require bootstrap/js/tab
 //= require angular
 //= require angular-cookie
+//= require angular-animate
 //= require ng-token-auth
 //= require angular-rails-templates
 //= require angular-ui-router

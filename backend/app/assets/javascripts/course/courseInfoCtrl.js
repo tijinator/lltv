@@ -12,6 +12,8 @@ angular.module('lltv')
 		  $scope.collAll = function(){
 		  	alert("Collapsing All");
 		  }
+
+		  $scope.chapter_title_1 = false;
 		}
 	]
 );

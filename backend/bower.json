@@ -20,6 +20,7 @@
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.6",
     "angular": "~1.4.8",
+    "angular-animate": "~1.4.9",
     "ng-token-auth": "~0.0.28",
     "angular-cookie": "~4.0.9",
     "metisMenu": "~2.2.0",
