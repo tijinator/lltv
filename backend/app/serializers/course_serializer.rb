@@ -1,7 +1,7 @@
 class CourseSerializer < ActiveModel::Serializer
   self.root = false
 
-  attributes :id, :category, :title, :details, :banner_url, :chapter, :video, :author_id, :author
+  attributes :id, :category, :title, :details, :banner_url, :chapter, :video, :author_id, :author, :level, :duration, :released_on
 
   def category
     object.categories.order(:position).limit(1).first

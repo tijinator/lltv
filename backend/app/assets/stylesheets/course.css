@@ -8,6 +8,18 @@
 	padding: 25px;
 }
 
+.course-details {
+	font-size: 13px;
+	line-height: 30px;
+	color: #787D7F;
+}
+
+.author-name {
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
 .course-info-content{
 	background: #000000;
 	color: #ffffff;

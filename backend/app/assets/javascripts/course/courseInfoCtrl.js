@@ -5,6 +5,9 @@ angular.module('lltv')
 		function($scope, course) {
 		  $scope.course = course.data;
 		  console.log(course);
+		  // var course_release = course.data.released_on;
+		  // course_release = moment(course_release).format('MMMM Do YYYY');
+		  // console.log(course_release);
 
 		  $scope.expAll = function(){
 		  	alert("Expanding All");

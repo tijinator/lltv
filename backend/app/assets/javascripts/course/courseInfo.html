@@ -10,8 +10,15 @@
         <div class="row"> 
           <div class="course-info-details">
             <p>{{course.details}}</p>
-            <p> video: {{course.video.video_url}}</p>
-            <img src="{{course.author.avatar_file_name}}" alt="">
+            <!-- <p> video: {{course.video.video_url}}</p> -->
+            <p><span class="course-details">LEVEL:</span> {{course.level}}</p>
+            <p><span class="course-details">DURATION:</span> {{course.duration}}m</p>
+            <p><span class="course-details">RELEASED:</span> {{course.released_on | date : 'MMM d, y'}}</p>
+            <div display: "inline-block">
+              <img src="{{course.author.avatar_file_name}}" alt="">
+              <span class="course-details">BY:</span><span class="author-name"> {{course.author.first_name}} {{course.author.last_name}} </span>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -87,7 +94,7 @@
             <p>&nbsp;</p>
             <h5>Viewers: 400</h5>
             <p>&nbsp;</p>
-            <p>{{course.details}}</p>
+            <p>{{course.video.details}}</p>
           </div>
           <div role="tabpanel" class="tab-pane" id="transcript">
             <h5>Tutorial Transcript</h5>
