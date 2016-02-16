@@ -62,13 +62,13 @@
           </h6>
         </div>
         <div class="row">
-          <div class="chapters">
+          <div class="chapters" ng-repeat="chapter in course.chapter">
             <div class="chapter-index-row">
               <div class="chapter-index-element" style="width: 50%;">
-                <p>CH {{course.chapter.position}}</p>
+                <p>CH {{chapter.position}}</p>
               </div>
               <div class="chapter-index-element chapter-duration"  style="width: 50%;">
-                <small>{{course.chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</small>
+                <small>{{chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</small>
                 <a ng-click="chapter_title_1 = !chapter_title_1" href="">
                   <span class="glyphicon glyphicon-menu-up" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="chapter_title_1"></span>
                   <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="!chapter_title_1"></span>
@@ -77,7 +77,7 @@
             </div>
             <div class="chapter-index" ng-show="chapter_title_1">
               <div class="chapter-index-element index-title-row">
-                <a ng-click=""><small>{{course.chapter.title}}</small></a>
+                <a ng-click=""><small>{{chapter.title}}</small></a>
               </div>
             </div>
           </div>

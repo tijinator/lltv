@@ -8,7 +8,7 @@ class CourseSerializer < ActiveModel::Serializer
   end
 
   def chapter
-  	object.chapters.first
+  	object.chapters.all
   end
 
   def video
