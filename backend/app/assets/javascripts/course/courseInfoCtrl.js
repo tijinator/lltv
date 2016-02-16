@@ -4,6 +4,7 @@ angular.module('lltv')
 		'course',
 		function($scope, course) {
 		  $scope.course = course.data;
+		  console.log(course);
 
 		  $scope.expAll = function(){
 		  	alert("Expanding All");

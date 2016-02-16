@@ -2,7 +2,8 @@ class Api::CategoriesController < ApplicationController
   def featured_course
     if params[:category_id]
     else
-      render json: CourseSerializer.new(Course.where({featured: true}).first)
+       render json: Category.where.not({small_image_url: nil}), root: false
+       # render json: Course.where({featured: true})
     end
   end
 

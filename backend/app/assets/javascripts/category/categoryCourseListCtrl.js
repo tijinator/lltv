@@ -4,4 +4,5 @@ angular.module('lltv')
 'courses',
 function($scope, courses) {
   $scope.courses = courses.data;
+  console.log(courses);
 }]);
