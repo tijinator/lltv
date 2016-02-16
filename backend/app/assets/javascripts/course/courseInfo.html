@@ -9,7 +9,7 @@
         </div>
         <div class="row"> 
           <div class="course-info-details">
-            <p>{{course.details}}</p>
+            <p class="details-margin">{{course.details}}</p>
             <!-- <p> video: {{course.video.video_url}}</p> -->
             <p><span class="course-details">LEVEL:</span> {{course.level}}</p>
             <p><span class="course-details">DURATION:</span> {{course.duration}}m</p>
@@ -41,6 +41,14 @@
   <div class="row course-chapter-content">
     <div class="col-md-4">
       <div class="col-md-12 course-chapter-index">
+        <div class="row">
+          <div class="search-bar">
+            <img ng-click="search()" src="images/LLTV_searchicon.png" alt="">
+            <span class="search-chapter">Search this course</span>
+            <hr>
+          </div>
+
+        </div>
         <div class="row">
           <h6>
             <span class="exp-coll-all" style="float: left;">

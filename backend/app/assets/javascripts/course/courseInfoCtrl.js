@@ -17,6 +17,10 @@ angular.module('lltv')
 		  	alert("Collapsing All");
 		  }
 
+		  $scope.search = function() {
+		  	alert("Searching...");
+		  }
+
 		  $scope.chapter_title_1 = false;
 		}
 	]
