@@ -39,10 +39,12 @@
 
 .details-margin {
 	margin-bottom: 35px;
+	line-height: 30px;
 }
 
 .search-bar {
 	margin-top: 10px;
+	margin-right: 25px;
 }
 
 .search-bar hr {
@@ -57,12 +59,16 @@
 	margin-left: -15px;
 }
 
+#fix-background {
+	background: #2E3335;
+}
+
 .chapter-tabs h5{
 	text-transform: uppercase;
 }
 
 .nav-tabs{
-	margin-left: 10px;
+	margin-left: 35px;
 }
 
 .nav-tabs > li{
@@ -100,7 +106,7 @@
 
 .tab-content{
 	margin-top: 50px;
-	margin-left: 10px;
+	margin-left: 35px;
 	min-height: 350px;
 }
 
@@ -117,8 +123,13 @@
 	padding: 20px 0;
 }
 
+
 .chapter-index-row{
 	clear: both;
+}
+
+#adding-padding {
+	padding-right: 30px !important;
 }
 
 .course-chapter-content a{
@@ -133,6 +144,7 @@
 
 .chapter-duration{
 	color: #63686B;
+	text-align: right;
 }
 
 .chapter-index-element.index-title-row {
