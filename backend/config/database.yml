@@ -1,3 +1,4 @@
+
 development:
   adapter: postgresql
   host: 192.168.3.3
@@ -13,3 +14,5 @@ test:
   username: vagrant
   password: vagrant
   timeout: 5000
+
+

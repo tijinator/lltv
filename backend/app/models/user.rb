@@ -6,21 +6,22 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, 
+          :recoverable, :rememberable, :trackable, :validatable
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  # validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   before_create :set_username
-
+  before_save { self.email = email.downcase }
+  
   def set_username
     self.username = self.email.split('@').first
   end
 
-  def email=(val)
-    write_attribute(:email, val.downcase)
-  end
+  # def email=(val)
+  #   write_attribute(:email, val.downcase)
+  # end
 
   def devise_mapping
     Devise.mappings[:user]

@@ -1,4 +1,5 @@
 class Api::CategoriesController < ApplicationController
+  
   def featured_course
     if params[:category_id]
     else
