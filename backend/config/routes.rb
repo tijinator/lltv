@@ -40,17 +40,14 @@ Rails.application.routes.draw do
 
     #Category routes
     resources :categories do
-
       collection do
         get 'featured_course' => 'categories#featured_course'
       end
       member do
         get 'courses' => 'categories#courses'
       end
-
     end
-  
-    #courses routes
+
     resources :courses
   end
 

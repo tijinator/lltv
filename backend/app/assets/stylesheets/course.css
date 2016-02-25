@@ -1,16 +1,88 @@
+@font-face {
+   font-family: Avenir-Black;
+   src: url('<%= asset_path('fonts/AvenirLTStd-Black.otf') %>');
+}
+
+@font-face {
+   font-family: Avenir-Book;
+   src: url('<%= asset_path('fonts/AvenirLTStd-Book.otf') %>');
+}
+
+.course-info-row{
+	padding: 50px;
+	margin-top: -20px;
+}
 .course-info-title{
+	font-family: Avenir-Black;
 	text-transform: capitalize;
-	padding: 25px;
 	padding-bottom: 10px;
+	margin-top: -50;
+	font-size: 36px;
+	color: #FFF;
 }
 
 .course-info-details{
-	padding: 25px;
+	font-family: Avenir-Book;
+	font-size: 15px;
+	line-height: 30px;
+	color: #FFF;
 }
 
 .course-info-content{
-	background: #000000;
-	color: #ffffff;
+	background: #000;
+	color: #FFF;
+}
+
+.course-info-ldr{
+	margin-top: 35px;
+	font-size: 13px;
+	line-height: 30px;
+}
+
+.course-info-static-ldr{
+	text-transform: uppercase;
+	font-family: Avenir-Black;
+	color: #787D7F;
+	width: 120px; 
+	display: inline-block;
+}
+
+.course-info-dynamic-ldr{
+	color: #FFF;
+	font-family: Avenir-Book;
+	width: 200px; 
+	display: inline-block
+}
+
+.course-profile{
+	width: 100%;
+	margin-top: 40px;
+	display: block;
+	color: #FFF;
+}
+.course-profile-img{
+	font-size: 13px;
+	width: 20%;
+	display: inline-block;
+}
+.course-profile-img img{
+	width: 60px;
+	border-radius: 500px;
+}
+
+.course-profile-info{
+	width: 80$;
+	display: inline-block;
+	text-transform: uppercase;
+}
+.course-profile-info span{
+	font-family: Avenir-Black;
+	color: #787D7F;
+}
+
+video{
+	height: 475px;
+	width: 927px;
 }
 
 .course-chapter-content{

@@ -1,18 +1,24 @@
 
 development:
+  host: localhost
   adapter: postgresql
-  host: 192.168.3.3
-  database: lltv
-  username: vagrant
-  password: vagrant
-  timeout: 5000
+  database: app_development
+  pool: 5
+  # username: user_name
+  # password:
 
-test:
-  adapter: postgresql
-  host: 192.168.3.3
-  database: lltv_test
-  username: vagrant
-  password: vagrant
-  timeout: 5000
+# development:
+#   adapter: postgresql
+#   host: 192.168.3.3
+#   database: lltv
+#   username: vagrant
+#   password: vagrant
+#   timeout: 5000
 
-
+# test:
+#   adapter: postgresql
+#   host: 192.168.3.3
+#   database: lltv_test
+#   username: vagrant
+#   password: vagrant
+#   timeout: 5000

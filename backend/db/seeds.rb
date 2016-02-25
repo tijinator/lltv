@@ -1,7 +1,6 @@
 
 User.create!([
-  {provider: "email", uid: "bdanke@gmail.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 7, current_sign_in_at: "2015-12-31 17:29:32", last_sign_in_at: "2015-12-31 17:27:52", current_sign_in_ip: "192.168.3.1", last_sign_in_ip: "192.168.3.1", confirmation_token: "njUVNtTzAZa6jAdpgekA", confirmed_at: nil, confirmation_sent_at: "2016-01-03 22:34:07", unconfirmed_email: nil, first_name: "Brandon", last_name: "Danker", email: "bdanke@gmail.com", username: "bdanke", role: 30, tokens: {}, avatar_file_name: nil, avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil}
-  {provider: "email", uid: "test@test.com", password: "rr", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: "2015-12-31 17:29:32", last_sign_in_at: "2015-12-31 17:27:52", current_sign_in_ip: "192.168.3.1", last_sign_in_ip: "192.168.3.1", confirmation_token: "jjUVNtTzAZa6jAdpgekk", confirmed_at: nil, confirmation_sent_at: "2016-01-03 22:34:07", unconfirmed_email: nil, first_name: "Russel", last_name: "Kurt", email: "test@test.com", username: "russel", role: 30, tokens: {}, avatar_file_name: nil, avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil}
+  {provider: "email", uid: "test@test.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 7, current_sign_in_at: "2015-12-31 17:29:32", last_sign_in_at: "2015-12-31 17:27:52", current_sign_in_ip: "192.168.3.1", last_sign_in_ip: "192.168.3.1", confirmation_token: "njUVNtTzAZa6jAdpgekA", confirmed_at: nil, confirmation_sent_at: "2016-01-03 22:34:07", unconfirmed_email: nil, first_name: "Russel", last_name: "Kurt", email: "test@test.com", username: "", role: 30, tokens: {}, avatar_file_name: nil, avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil}
 ])
 
 Category.create!([
@@ -18,7 +17,7 @@ Category.create!([
 ])
 
 Course.create!([
-  { user_id: 2, 
+  { user_id: 1, 
     author_id: 1, 
     level: "beginner",
     title: "learn adobe illustrator",
