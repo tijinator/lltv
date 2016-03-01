@@ -23,32 +23,36 @@
               <ul>
                 <li>{{ course.level | capitalize }}</li>
                 <li>{{ course.duration }}</li>
-                <li>{{ course.released_on }}</li>
+                <!-- <li>{{ course.released_on }}</li> -->
+                <li> 25/15/2015 </li>
               </ul>
             </div>
             <br>
           </div>
-
           <div class='course-profile'>
             <div class='course-profile-img'>
                 <!-- <img src="/assets/{{course.author.avatar_file_name }}"> -->
-
                 <img src="/assets/{{course.author.avatar_file_name }}">
                 <!-- <img src="/assets/default_avatar.png"> -->
             </div>
             <div class="course-profile-info">
               <i class="fa fa-facebook-official"></i>
-              <span >by: </span> {{ course.author.first_name }} {{ course.author.last_name }}
+              <span>by: </span> {{ course.author.first_name + " " + course.author.last_name }}
             </div>
           </div>
-
+          <div class='course-profile-social'>
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-google-plus-square"></i>
+          </div>
         </div> <!-- end of row course-info-row-->
       </div> <!-- end of col-md-12 -->
     </div> <!-- end of col-md-4 -->
     <div class="col-md-8">
       <div class="row">
         <div class="course-video">
-          <video id="my-video" class="video-js" controls preload="auto" width="100%" poster="{{course.banner_url}}" data-setup="{}">
+          <video id="my-video" class="video-js" controls preload="auto" poster="{{course.banner_url}}" data-setup="{}">
             <source ng-src="{{'/videos/Vi1.mp4'}}" type='video/mp4'>
             <p class="vjs-no-js">
               To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -60,63 +64,79 @@
       </div>
     </div>
   </div> <!-- end of row course-info-content -->
-
   <div class="row course-chapter-content">
-    <div class="col-md-4">
+    <div class="col-md-4 course-chapter-box">
       <div class="col-md-12 course-chapter-index">
-        <div class="row">
+        <div class="row course-chapter-search">
+              <p>
+                <a ng-click="search_title = !search_title" href=""> 
+                  <i class="fa fa-search"></i> 
+                  <span ng-show="!search_title"> search this course </span>
+                </a>
+
+                <span ng-show="search_title" class='blinking-cursor'>
+                  <input name='search' type="text"  placeholder='search...'/>
+                </span>
+              </p>
+        </div>
+        <div class="row course-chapter-collaps">
           <h6>
-            <span class="exp-coll-all" style="float: left;">
-              <a href="#" id="exp-all" ng-click="expAll()">EXPAND ALL</a>
+            <span class="exp-coll-all">
+              <a href="#" id="exp-all" ng-click="expAll()">expand all</a>
             </span>
-          </h6>
-          <h6>
-            <span class="exp-coll-all" style="float: left;padding: 0 0 0 60px">
-              <a href="#" id="coll-all" ng-click="collAll()">COLLAPSE ALL</a>
+            <span class="exp-coll-all">
+              <a href="#" id="coll-all" ng-click="collAll()">collapse all</a>
             </span>
           </h6>
         </div>
-        <div class="row">
-          <div class="chapters">
-            <div class="chapter-index-row">
-              <div class="chapter-index-element" style="width: 50%;">
-                <p>CH {{course.chapter.position}}</p>
+        <div class="row course-chapters-list">
+          <div class="course-chapters">
+          <a href="">
+            <div class="chapter-index-row" ng-repeat='chapter in course.chapter' ng-click="chapter_title = !chapter_title">
+              <div class="chapter-index-element">
+                  <span id='chapter_position'> ch {{chapter.position}} </span>
+                  <span>{{chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</span>
+                  <span class="glyphicon glyphicon-menu-up" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="chapter_title"></span>
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="!chapter_title"></span>
               </div>
-              <div class="chapter-index-element chapter-duration"  style="width: 50%;">
-                <small>{{course.chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</small>
-                <a ng-click="chapter_title_1 = !chapter_title_1" href="">
-                  <span class="glyphicon glyphicon-menu-up" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="chapter_title_1"></span>
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="!chapter_title_1"></span>
-                </a>
-              </div>
+          </a>
+          <div class="chapter-index" ng-show="chapter_title">
+            <div class="chapter-index-element index-title-row">
+              <a ng-click="">{{chapter.title}}</a>
             </div>
-            <div class="chapter-index" ng-show="chapter_title_1">
-              <div class="chapter-index-element index-title-row">
-                <a ng-click=""><small>{{course.chapter.title}}</small></a>
-              </div>
+          </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 course-chapter-tab-box">
       <div class="chapter-tabs">
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#video-details" aria-controls="video-details" role="tab" data-toggle="tab">Video Details</a></li>
-          <li role="presentation"><a href="#transcript" aria-controls="transcript" role="tab" data-toggle="tab">Transcript</a></li>
-          <li role="presentation"><a href="#exercise-files" aria-controls="exercise-files" role="tab" data-toggle="tab">Exercise Files</a></li>
-          <li role="presentation"><a href="#discussion" aria-controls="discussion" role="tab" data-toggle="tab">Discussion</a></li>
-          <li role="presentation"><a href="#faqs" aria-controls="faqs" role="tab" data-toggle="tab">FAQs</a></li>
+        <ul class="nav nav-tabs chapter-tabs-ul" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#video-details" aria-controls="video-details" role="tab" data-toggle="tab">Video Details</a>
+          </li>
+          <li role="presentation">
+            <a href="#transcript" aria-controls="transcript" role="tab" data-toggle="tab">Transcript</a>
+          </li>
+          <li role="presentation" ><a href="#faqs" aria-controls="faqs" role="tab" data-toggle="tab">FAQs</a></li>
+          <li role="presentation">
+            <a href="#exercise-files" aria-controls="exercise-files" role="tab" data-toggle="tab">Exercise Files</a>
+          </li>
+          <li role="presentation" style='padding-right: 0px; margin-right: 0px'>
+            <a href="#discussion" aria-controls="discussion" role="tab" data-toggle="tab">Discussion</a>
+          </li>
         </ul>
-
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="video-details">
-            <h5>{{course.title}}</h5>
-            <p>&nbsp;</p>
-            <h5>Viewers: 400</h5>
-            <p>&nbsp;</p>
+          <div role="tabpanel" class="tab-panel active" id="video-details">
+            <div class="tab-inner-panel">
+              <h5>{{course.title}}</h5>
+              <p>&nbsp;</p>
+              <h5>Viewers: 400</h5>
+              <p>&nbsp;</p>
+            </div>
             <p>{{course.details}}</p>
           </div>
           <div role="tabpanel" class="tab-pane" id="transcript">
@@ -136,3 +156,15 @@
     </div>
   </div>
 </div>
+
+<script>
+    $('input[placeholder]').each(function(){
+        $(this).data('placeholder', $(this).attr('placeholder'));
+    });
+    setInterval(function () {
+        $('input[placeholder]').attr('placeholder', function () {
+            this.toggle = !this.toggle;
+            return this.toggle ? $(this).data('placeholder') : "";
+        });
+    }, 1000);
+</script>

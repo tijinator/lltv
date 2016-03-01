@@ -12,12 +12,15 @@ class Api::CategoriesController < ApplicationController
   end
 
   def show
-    cat = Category.find(params[:id])
-    render json: cat, root: false
+    category = Category.find(params[:id])
+    subcategory = Category.where(parent_id: params[:id])
+
+    render json: {category: category, subcategory: subcategory}, root: false
   end
 
   def courses
     category = Category.find(params[:id])
     render json: category.courses, root: false
   end
+  
 end
