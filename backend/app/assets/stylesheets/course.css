@@ -111,6 +111,9 @@
 	min-width: 500px;
 	display: block;
 }
+.player-button{
+	font-size: 120px;
+}
 
 .course-chapter-box{
 	padding: 0;

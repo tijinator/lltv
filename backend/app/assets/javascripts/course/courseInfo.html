@@ -52,13 +52,18 @@
     <div class="col-md-8">
       <div class="row">
         <div class="course-video">
+
           <video id="my-video" class="video-js" controls preload="auto" poster="{{course.banner_url}}" data-setup="{}">
-            <source ng-src="{{'/videos/Vi1.mp4'}}" type='video/mp4'>
-            <p class="vjs-no-js">
-              To view this video please enable JavaScript, and consider upgrading to a web browser that
-              <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-            </p>
+              <source ng-src="{{'/videos/Vi1.mp4'}}" type='video/mp4'>
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+              </p>
           </video>
+          <!-- <div class='player-button'>
+            <i class="fa fa-play-circle-o"></i>
+          </div> -->
           <!--<img src="{{course.banner_url}}" class="course-banner" style="width: 100%;">-->
         </div>
       </div>
@@ -167,4 +172,24 @@
             return this.toggle ? $(this).data('placeholder') : "";
         });
     }, 1000);
+</script>
+
+<script>
+var video = document.getElementById('my-video');
+video.addEventListener('click',function(){
+    if (video.paused) {
+        video.play();
+    }else{
+        video.pause();
+    }
+},false);
+
+// var vid = $('video');
+// var vid2 = $('.player-button');
+// var width = vid.width();
+// var height = vid.height();
+// console.log(width, width/2);
+// console.log(height, height/2);
+// x = vid2.html('<h1 style="width:'+width/2+'; height:'+height/2+'>HELLO</h1>')
+// console.log(x);
 </script>
