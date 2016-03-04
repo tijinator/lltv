@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+# Russel added
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'thin'
-gem 'pg'
+gem 'pg' #PostgreDB
 gem 'dotenv-rails'
 
 gem 'sprockets', '2.12.3'
@@ -45,9 +45,12 @@ group :development, :test do
 end
 
 group :development do
+  gem 'hirb'
+  gem "rails-erd"
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
+  
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'seed_dump'

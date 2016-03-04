@@ -1,4 +1,5 @@
 class Api::CoursesController < ApplicationController
+
   def featured_course
     if params[:category_id]
     else
@@ -17,4 +18,20 @@ class Api::CoursesController < ApplicationController
       render json: error_message('db'), root: false
     end
   end
+
+
+  # def create
+  #Success
+  #     render status: 200, json: {
+  #       message: "#{activity.kind.capitalize} activity has been Created successfully",
+  #       activity: activity
+  #     }.to_json
+
+  #fails
+  #     render status: 422, json: {
+  #       message: "Ouch, smth went wrong, FAILED.",
+  #       errors: acitivity.errors
+  #     }.to_json
+  # end
+
 end

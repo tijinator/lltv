@@ -1,5 +1,4 @@
 angular.module('lltv')
-.controller('CategoriesLayoutCtrl', [
-'$scope',
-function($scope) {
-}]);
+.controller('CategoriesLayoutCtrl', ['$scope',
+	function($scope) {}
+]);

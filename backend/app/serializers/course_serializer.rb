@@ -1,7 +1,11 @@
-class CourseSerializer < ActiveModel::Serializer
+class CourseSerializer < ActiveModel::Serializer  
   self.root = false
 
-  attributes :id, :category, :title, :details, :banner_url, :chapter, :video, :author_id, :author, :level, :duration, :released_on
+  attributes :id, :category, :title, :details, :banner_url, :level, :duration, :released_on, :author, :chapter, :video
+
+  def author
+    object.author
+  end
 
   def category
     object.categories.order(:position).limit(1).first
@@ -14,13 +18,5 @@ class CourseSerializer < ActiveModel::Serializer
   def video
   	Video.find_by_chapter_id(object.chapters.first.id)
   end
-
-  def author
-
-    auth_id = object.author_id
-    
-    Author.find_by_id(auth_id)
-  end
-
 
 end

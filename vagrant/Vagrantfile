@@ -16,7 +16,7 @@ boxes = [
     roles: ['app'],
     ip: '192.168.3.2',
     vbox_config: [
-      { '--memory' => '8192' }
+      { '--memory' => '768' }
     ],
     forwarded_ports: [
       { 80 => 8080 },
@@ -35,7 +35,7 @@ boxes = [
     roles: ['db'],
     ip: '192.168.3.3',
     vbox_config: [
-      { '--memory' => '2048' }
+      { '--memory' => '256' }
     ],
     forwarded_ports: [
       { 5432 => 5432 }

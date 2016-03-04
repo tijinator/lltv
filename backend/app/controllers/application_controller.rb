@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
   def after_sign_in_path_for(user)
     if current_user.role > 0
       redirect_to courses_path
