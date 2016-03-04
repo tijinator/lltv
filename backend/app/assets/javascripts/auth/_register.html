@@ -3,32 +3,56 @@
 </div>
 <div class="auth-content">
   <div class="auth-header">
-    <div style="margin: auto; width: 188px;">
-      <img src="/images/LLTV_logo.png">
+    <div>
+      <img src="/images/LLTV_login_logo.png">
     </div>
   </div>
 
   <form ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
     <div class="auth-body">
-        <div class="form-group">
-          <label>email</label>
-          <input type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control"/>
-        </div>
-
-        <div class="form-group">
-          <label>password</label>
-          <input type="password" name="password" ng-model="registrationForm.password" required="required" class="form-control"/>
-        </div>
-
+      <div class="col-md-6 auth-left-column">
+          <div class="form-group">
+            <label>email</label>
+            <input type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control"/>
+          </div>
+      </div>
+      <div class="col-md-6 auth-right-column">
+          <div class="form-group">
+            <label>username</label>
+            <input type="text" name="username" ng-model="registrationForm.username" required="required" class="form-control"/>
+          </div>
+      </div>
+      <div class="col-md-6 auth-left-column">
+          <div class="form-group">
+            <label>first name</label>
+            <input type="text" name="first_name" ng-model="registrationForm.first_name" required="required" class="form-control"/>
+          </div>
+      </div>
+      <div class="col-md-6 auth-right-column">
+          <div class="form-group">
+            <label>last name</label>
+            <input type="text" name="last_name" ng-model="registrationForm.last_name" required="required" class="form-control"/>
+          </div>
+      </div>
+      <div class="col-md-6 auth-left-column">
+          <div class="form-group">
+            <label>password</label>
+            <input type="password" name="password" ng-model="registrationForm.password" required="required" class="form-control"/>
+          </div>
+      </div>  
+      <div class="col-md-6 auth-right-column">
         <div class="form-group">
           <label>password confirmation</label>
           <input type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control"/>
         </div>
+      </div>  
     </div>
 
     <div class="auth-footer">
-      <div class="bubble-btn switch-btn pull-left" ng-click="switch('signin')">sign in</div>
-      <button type="submit" class="bubble-btn submit-btn pull-right">sign up</button>
+      <div class="col-md-12 auth-right-column">
+        <button type="submit" class="bubble-btn submit-btn submit-btn-sing-up pull-right">create account</button>
+        <div class="bubble-btn switch-btn switch-btn-sign-up text-center pull-right" ng-click="switch('signin')">sign in</div>
+      </div>
     </div>
   </form>
 </div>

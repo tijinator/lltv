@@ -1,10 +1,11 @@
-class Api::CategoriesController < ApplicationController
+class Api::CategoriesController < Api::ApiController
   
   def featured_course
     if params[:category_id]
     else
-       render json: Category.where.not({small_image_url: nil}), root: false
-       # render json: Course.where({featured: true})
+      # require "byebug"; byebug
+      # render json: CourseSerializer.new(Course.where({featured: true}).last)
+      render json: CourseSerializer.new(Course.where({featured: true}).first)
     end
   end
 
@@ -15,7 +16,6 @@ class Api::CategoriesController < ApplicationController
   def show
     category = Category.find(params[:id])
     subcategory = Category.where(parent_id: params[:id])
-
     render json: {category: category, subcategory: subcategory}, root: false
   end
 

@@ -6,14 +6,18 @@ angular.module('lltv')
 'AuthService',
 function($scope, $auth, currentUser, authService) {
   $scope.submitRegistration = function() {
-    $auth.submitRegistration($scope.registrationForm)
-      .then(function(resp) {
-        currentUser.set(resp.data);
+      console.log($scope.registrationForm);
+
+      $auth.submitRegistration($scope.registrationForm)
+      .then(function(res) {
+        console.log(res);
+        // currentUser.set(res.data);
       })
-      .catch(function(resp) {
+      .catch(function(res) {
         // handle error response
-        alert('registration error');
-      });
+        // alert('registration error');
+        console.log("REGISTRATION ERROR - Auth.JS", res);
+      })
   };
 
   $scope.submitLogin = function() {
@@ -23,6 +27,16 @@ function($scope, $auth, currentUser, authService) {
       })
       .catch(function(resp) {
         alert('login error');
+      });
+  };
+
+  $scope.submitSignOut = function() {
+    $auth.signOut()
+      .then(function(resp) {
+        // handle success response
+      })
+      .catch(function(resp) {
+        // handle error response
       });
   };
 

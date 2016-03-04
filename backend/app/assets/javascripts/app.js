@@ -6,7 +6,7 @@ angular.module('lltv', [
 'ng-token-auth',
 'lltvFilters',
 'ngAnimate'])
-.constant('baseUrl', '/')
+.constant('baseUrl', 'http://localhost:3000')
 .config([
 'baseUrl',
 '$stateProvider',
@@ -15,14 +15,15 @@ angular.module('lltv', [
 '$authProvider',
 function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authProvider) {
   $locationProvider.html5Mode(true);
-
+  console.log(baseUrl);
   $authProvider.configure({
     apiUrl: baseUrl + '/api/v1',
     handleLoginResponse: function(resp) {
-      // currentUserProvider.set(resp);
+      currentUserProvider.set(resp);
       return resp.data;
     },
     handleTokenValidationResponse: function(resp) {
+      console.log(resp);
       return resp.data;
     }
   });

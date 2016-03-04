@@ -97,7 +97,7 @@
         <div class="row course-chapters-list">
           <div class="course-chapters">
           <a href="">
-            <div class="chapter-index-row" ng-repeat='chapter in course.chapter' ng-click="chapter_title = !chapter_title">
+            <div class="chapter-index-row" ng-repeat='chapter in course.chapters' ng-click="chapter_title = !chapter_title">
               <div class="chapter-index-element">
                   <span id='chapter_position'> ch {{chapter.position}} </span>
                   <span>{{chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</span>
@@ -157,6 +157,7 @@
             FAQs
           </div>
         </div>
+
       </div>
     </div>
   </div>
