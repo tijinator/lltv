@@ -15,7 +15,6 @@ angular.module('lltv', [
 '$authProvider',
 function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authProvider) {
   $locationProvider.html5Mode(true);
-  console.log(baseUrl);
   $authProvider.configure({
     apiUrl: baseUrl + '/api/v1',
     handleLoginResponse: function(resp) {

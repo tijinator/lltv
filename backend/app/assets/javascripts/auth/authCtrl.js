@@ -6,8 +6,8 @@ angular.module('lltv')
 'AuthService',
 function($scope, $auth, currentUser, authService) {
   $scope.submitRegistration = function() {
-      console.log($scope.registrationForm);
-
+    console.log($scope.registrationForm);
+    
       $auth.submitRegistration($scope.registrationForm)
       .then(function(res) {
         console.log(res);
@@ -33,6 +33,7 @@ function($scope, $auth, currentUser, authService) {
   $scope.submitSignOut = function() {
     $auth.signOut()
       .then(function(resp) {
+        // currentUser.signOut(resp);
         // handle success response
       })
       .catch(function(resp) {

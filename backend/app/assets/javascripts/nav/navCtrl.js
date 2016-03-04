@@ -32,7 +32,7 @@ function($rootScope, $scope, $location, $auth, currentUser) {
 
   $rootScope.$on('auth:validation-success', function(ev, userData) {
     alert("HERE");
-    currentUser.set(userData);
+    // currentUser.set(userData);
   });
 
   $rootScope.$on('auth:validation-error', function(ev, userData) {
