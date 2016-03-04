@@ -7,7 +7,7 @@
 
     <div ui-view="categoryOptions" ng-repeat="subcategory in category_details.subcategory" class="category-sub-section">
       <a href="#" ng-click="showCategoryCourses">{{subcategory.title}}</a>
-      <!-- <a ui-sref="categories.show({id: category.id})">{{subcategory.title}}</a> -->
+      <!-- <a ui-sref="categories.show({id: subcategory.parent_id})">{{subcategory.title}}</a> -->
     </div>
   </div>
   <div class="col-md-9 category-page-courses category-trending">

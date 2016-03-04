@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules.
   devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :trackable, :validatable
-          # :confirmable, :omniauthable
+          :recoverable, :rememberable, :trackable, :validatable,:confirmable, :omniauthable
           
   include DeviseTokenAuth::Concerns::User
   # Include default devise modules. Others available are:
@@ -14,10 +13,15 @@ class User < ActiveRecord::Base
   # validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   before_create :set_username
+  # before_save :set_username
   before_save { self.email = email.downcase }
   
   def set_username
-    self.username = self.email.split('@').first
+    if username
+       self.username = username
+    else
+       self.username = self.email.split('@').first
+    end
   end
 
   # def email=(val)
