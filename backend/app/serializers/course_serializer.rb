@@ -3,7 +3,7 @@ class CourseSerializer < ActiveModel::Serializer
   attributes :id, :level, :title, :details, :duration, :position, :banner_url, :chapters
   # attributes :id, :level, :title, :details, :banner_url, :duration, :released_on, :author, :chapter, :video
 
-  has_many :chapters, serializer: ChapterSerializer
+  has_many :chapters
   has_one :author
 
   # def categories
@@ -11,7 +11,7 @@ class CourseSerializer < ActiveModel::Serializer
   # end
 
   # def chapter
-  # 	@chapters = object.chapters.all
+  # 	object.chapters.first
   # end
 
   # def video

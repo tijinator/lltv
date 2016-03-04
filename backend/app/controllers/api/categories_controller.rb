@@ -3,6 +3,8 @@ class Api::CategoriesController < Api::ApiController
   def featured_course
     if params[:category_id]
     else
+      # require "byebug"; byebug
+      # render json: CourseSerializer.new(Course.where({featured: true}).last)
       render json: CourseSerializer.new(Course.where({featured: true}).first)
     end
   end
