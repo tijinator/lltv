@@ -12,7 +12,9 @@ class CourseSerializer < ActiveModel::Serializer
   end
 
   def video
+
   	Video.find_by_chapter_id(object.chapters.first.id)
+
   end
 
 

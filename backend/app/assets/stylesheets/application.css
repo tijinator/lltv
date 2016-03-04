@@ -29,6 +29,10 @@
  	margin-top: 0;
  }
 
+ .content-container{
+   overflow-x: hidden;
+ }
+
  .subhead{
  	font-weight: bold;
  	padding: 5px 0;
@@ -41,7 +45,7 @@ html {
 body {
    min-height: 100%;
 }
- 
+
 
 .fade.ng-show-add {
   transition:0.5s linear all;

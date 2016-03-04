@@ -1,8 +1,10 @@
 class Api::CoursesController < ApplicationController
   def featured_course
     if params[:category_id]
+
     else
       render json: CourseSerializer.new(Course.where({featured: true}).first)
+
     end
   end
 

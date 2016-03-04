@@ -1,3 +1,10 @@
+# development:
+#   adapter: postgresql
+#   host: localhost
+#   database: app_development
+#   pool: 5
+
+
 development:
   adapter: postgresql
   host: 192.168.3.3

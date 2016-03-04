@@ -4,4 +4,5 @@ angular.module('lltv')
 'category',
 function($scope, category) {
   $scope.category = category.data;
+  // console.log($scope.category.category.title);
 }]);
