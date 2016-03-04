@@ -21,9 +21,9 @@ function($rootScope, $scope, $location, $auth, currentUser) {
   }
 
   $scope.$watch('assets', function(value) {
-  if (value) {
-    $scope.assets = JSON.parse(value);
-  }
+    if (value) {
+      $scope.assets = JSON.parse(value);
+    }
   });
 
   $scope.signOut = function() {

@@ -1,4 +1,4 @@
-class Api::CoursesController < ApplicationController
+class Api::CoursesController < Api::ApiController
 
   def featured_course
     if params[:category_id]
@@ -8,7 +8,8 @@ class Api::CoursesController < ApplicationController
   end
 
   def index
-    render json: Course.where("id > 0"), root: false
+    # render json: Course.where("id > 0"), root: false
+    render json: Course.all, root: false
   end
 
   def show

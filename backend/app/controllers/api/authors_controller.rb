@@ -1,3 +1,3 @@
-class Api::AuthorsController < ApplicationController
+class Api::AuthorsController < Api::ApiController
 	
 end

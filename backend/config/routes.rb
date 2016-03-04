@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root to: 'home#home'
 
   # User Table related
-  devise_for :users
-  resources :users, controller: 'admin/user_admin'
+  # devise_for :users
+  # resources :users, controller: 'admin/user_admin'
 
 
   # token auth routes available at /api/v1/auth
@@ -37,7 +37,6 @@ Rails.application.routes.draw do
 
   # Api's  /api/course/:id 
   namespace :api, defaults: { format: :json } do
-
     #Category routes
     resources :categories do
       collection do

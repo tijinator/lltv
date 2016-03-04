@@ -1,4 +1,4 @@
-class Api::CategoriesController < ApplicationController
+class Api::CategoriesController < Api::ApiController
   
   def featured_course
     if params[:category_id]
@@ -14,7 +14,6 @@ class Api::CategoriesController < ApplicationController
   def show
     category = Category.find(params[:id])
     subcategory = Category.where(parent_id: params[:id])
-
     render json: {category: category, subcategory: subcategory}, root: false
   end
 

@@ -1,16 +1,3 @@
-*{
-	outline: 0px red solid;
-}
-
-@font-face {
-   font-family: Avenir-Black;
-   src: url('<%= asset_path('fonts/AvenirLTStd-Black.otf') %>');
-}
-
-@font-face {
-   font-family: Avenir-Book;
-   src: url('<%= asset_path('fonts/AvenirLTStd-Book.otf') %>');
-}
 
 .course-info-row{
 	padding: 50px;
@@ -120,7 +107,7 @@
 }
 
 .course-chapter-index{
-	height: 400px;
+	height: 500px;
 	background: #222628;
 	padding: 0 45px;
 	overflow: auto;
@@ -196,8 +183,10 @@
 	color: #ffffff;
 	margin-left: -15px;
 	padding: 0 20px;
-	height: 400px;
+	height: 500px;
 }
+
+.chapter-tabs
 
 .chapter-tabs h5{
 	text-transform: uppercase;
@@ -227,6 +216,13 @@
 	}
 }
 
+@media screen and (min-width: 2000px) {
+	.chapter-tabs-ul > li {
+		margin-right: 6%;
+	}
+}
+
+
 .nav-tabs > li.active > a, 
 .nav-tabs > li.active > a:hover, 
 .nav-tabs > li.active > a:focus{
@@ -255,10 +251,12 @@
     border-bottom: 1px solid #353A3D;
 }
 
-.tab-content{
-	margin-top: 50px;
-	margin-left: 10px;
-	min-height: 280px;
+@media screen and (min-width: 1500px) {
+	.tab-content{
+		width: 900px;
+		margin: 50px 10px 0;
+		padding-bottom: 0px;
+	}
 }
 
 .tab-panel{

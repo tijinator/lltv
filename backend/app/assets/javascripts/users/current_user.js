@@ -10,7 +10,8 @@ function($auth) {
   }
 
   var set = function(userData) {
-    angular.extend(o, userData);
+    console.log(userData);
+    // angular.extend(o, userData);
   };
 
   var signOut = function() {
