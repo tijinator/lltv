@@ -43,4 +43,4 @@ backend/public/avatars
 /vagrant/.bundle
 /vagrant/Gemfile.lock
 /vagrant/machines
-vagrant/.vagrant/machines
+/vagrant/.vagrant/machines
