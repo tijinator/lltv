@@ -23,14 +23,16 @@
 }
 
 #lltv .homepage-nav-links {
-  padding-top: 20px;
+  padding-top: 37px; /*was 20x */
   color: #FFFFFF;
   font-size: 13.5px;
   text-transform: uppercase;
+  font-family: avenir-black;
 }
 
 #lltv .homepage-nav-links li {
-  margin-left: 47px;
+  /*was 47px*/
+  margin-left: 43px;
 }
 
 #lltv .homepage-nav-links .no-btn-nav {
@@ -69,8 +71,8 @@
 
 #lltv .homepage-category-nav li.active:after {
   content: '';
-  width:0; 
-  height: 0; 
+  width:0;
+  height: 0;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
   border-bottom: 25px solid #FFFFFF;
