@@ -10,7 +10,7 @@
 </head>
 <body id="lltv" ng-app="lltv">
 	<div ng-include="'nav/_nav.html'" ng-controller="NavCtrl"></div>
-	<div class="content-container" ng-class="{'homepage-content-container': isActive('/')}" ng-controller="MainCtrl">
+	<div class="content-container" ng-class="{'homepage-content-container': isActive('/')}" ng-controller="MainCtrl" style="position: absolute; height: 100%;">
     <ui-view><%=yield%></ui-view>
   </div>
 </body>

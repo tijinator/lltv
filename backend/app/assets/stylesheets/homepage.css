@@ -22,6 +22,13 @@
   height: auto;
 }
 
+#lltv .header{
+   height: 100%;
+   background-size: cover;
+   background-position: center;
+   background-image: url('../images/LLTV_homepage.jpg');
+}
+
 #lltv .homepage-nav-links {
   padding-top: 37px; /*was 20x */
   color: #FFFFFF;

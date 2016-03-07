@@ -1,17 +1,26 @@
-<div id="landing-homepage">
-  <img src="<%= image_path('LLTV_homepage.jpg')%>" style="width: 100%; position: relative; top: 0; left: 0">
-  
-  <div>
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs homepage-category-nav" role="tablist">
-      <% @categories.each_with_index do |category, idx| %>
-        <li role="presentation"
-          style="background-color: <%= category.html_tab_color %>"
-          <% if idx == 0 %>class="active"<% end %>>
-          
-          <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><%= category.title %></div></li>
-      <% end %>
-    </ul>
+<div id="landing-homepage" style="height: 100%;">
+
+  <div class="row" style="height: 100%;">
+
+    <div class="container" style="height: 100%; padding: 0;">
+      <div class="col-md-12 header">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs homepage-category-nav" role="tablist">
+          <% @categories.each_with_index do |category, idx| %>
+            <li role="presentation"
+              style="background-color: <%= category.html_tab_color %>"
+              <% if idx == 0 %>class="active"<% end %>>
+
+              <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><%= category.title %></div></li>
+          <% end %>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
 
     <!-- Tab panes -->
     <div class="tab-content container-fluid">
@@ -57,7 +66,6 @@
         </div>
       <% end %>
     </div>
-  </div>
   <footer class="homepage-footer">
   </footer>
 </div>
