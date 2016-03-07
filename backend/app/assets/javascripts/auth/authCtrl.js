@@ -25,10 +25,10 @@ function($scope, $auth, currentUser, authService) {
         currentUser.set(resp);
         $scope.close();
       })
-      // .catch(function(resp) {
-      //   // alert('login error');
-      //   console.log('authCtrl - login error', resp.errors[0]);
-      // });
+      .catch(function(resp) {
+        // alert('login error');
+        console.log('authCtrl - login error', resp.errors[0]);
+      });
   };
 
   // $scope.submitSignOut = function() {
