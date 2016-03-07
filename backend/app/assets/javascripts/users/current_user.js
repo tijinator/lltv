@@ -3,6 +3,7 @@ angular.module('lltv')
 '$auth',
 function($auth) {
   var o = {
+    id: null,
     first_name: null,
     last_name: null,
     username: null,
@@ -10,20 +11,22 @@ function($auth) {
   }
 
   var set = function(userData) {
-    console.log(userData);
-    // angular.extend(o, userData);
+    angular.extend(o, userData);
   };
 
   var signOut = function() {
     $auth.signOut()
       .then(function(resp) {
-        o = {
-          set: set,
-          signOut: signOut
-        };
+        console.log(resp);
+        o=null;
+        // o = {
+        //   set: set,
+        //   signOut: signOut
+        // };
       })
       .catch(function(resp) {
-        alert("signOut error");
+        // alert("signOut error");
+        console.log("signOut error");
       });
   }
 
