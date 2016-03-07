@@ -6,17 +6,16 @@ angular.module('lltv')
 'AuthService',
 function($scope, $auth, currentUser, authService) {
   $scope.submitRegistration = function() {
-    console.log($scope.registrationForm);
-    
-      $auth.submitRegistration($scope.registrationForm)
+    // console.log($scope.registrationForm);
+
+    $auth.submitRegistration($scope.registrationForm)
       .then(function(res) {
-        console.log(res);
-        // currentUser.set(res.data);
+        currentUser.set(res.data.data);
+        $scope.close();
       })
       .catch(function(res) {
         // handle error response
-        // alert('registration error');
-        console.log("REGISTRATION ERROR - Auth.JS", res);
+        console.log("REGISTRATION ERROR - Auth.JS", res.data.errors.full_messages);
       })
   };
 
@@ -24,22 +23,25 @@ function($scope, $auth, currentUser, authService) {
     $auth.submitLogin($scope.loginForm)
       .then(function(resp) {
         currentUser.set(resp);
+        $scope.close();
       })
-      .catch(function(resp) {
-        alert('login error');
-      });
+      // .catch(function(resp) {
+      //   // alert('login error');
+      //   console.log('authCtrl - login error', resp.errors[0]);
+      // });
   };
 
-  $scope.submitSignOut = function() {
-    $auth.signOut()
-      .then(function(resp) {
-        // currentUser.signOut(resp);
-        // handle success response
-      })
-      .catch(function(resp) {
-        // handle error response
-      });
-  };
+  // $scope.submitSignOut = function() {
+    // console.log("HAHA");
+    // $auth.signOut()
+    //   .then(function(resp) {
+    //     currentUser.signOut(resp);
+    //     // handle success response
+    //   })
+    //   .catch(function(resp) {
+    //     // handle error response
+    //   });
+  // };
 
   $scope.switch = function(type) {
     authService.switchModal(type);
