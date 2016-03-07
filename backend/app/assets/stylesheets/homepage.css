@@ -57,7 +57,10 @@
 }
 
 #lltv .homepage-category-nav {
-  margin-top: -97px;
+  /*margin-top: -97px; turn off*/
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   margin-left: 0;
 }
 
