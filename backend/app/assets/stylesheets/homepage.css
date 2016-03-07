@@ -51,6 +51,7 @@
 
 #lltv .homepage-category-nav {
   margin-top: -97px;
+  margin-left: 0;
 }
 
 #lltv .homepage-category-nav li {
@@ -59,7 +60,8 @@
   text-align: center;
   color: #FFFFFF;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 13.5px; /*was 25px */
+  font-family: avenir-black;
   position: relative;
 }
 
@@ -77,7 +79,7 @@
   border-right: 25px solid transparent;
   border-bottom: 25px solid #FFFFFF;
   position: relative;
-  top: 18px;
+  top: 46px; /*was 18px */
 }
 
 #lltv .homepage-category-nav li.active > a {
