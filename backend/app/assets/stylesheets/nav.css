@@ -1,10 +1,10 @@
-nav.navbar.navbar-fixed-top.ng-scope{ 
+nav.navbar.navbar-fixed-top.ng-scope{
     background-color: #000000;
     min-height: 85px;
 }
 
 nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   background: transparent;
-  background-image: url('/images/LLTV_blackgradient.png'); 
-  min-height: 315px;
+  /*background-image: url('/images/LLTV_blackgradient.png'); */
+  min-height: 100px;
 }
