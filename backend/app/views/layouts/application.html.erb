@@ -4,13 +4,15 @@
   <title>LLTV</title>
   <base href="/">
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body id="lltv" ng-app="lltv">
 	<div ng-include="'nav/_nav.html'" ng-controller="NavCtrl"></div>
-	<div class="content-container" ng-class="{'homepage-content-container': isActive('/')}" ng-controller="MainCtrl" style="position: absolute; height: 100%;">
+	<div class="content-container" ng-class="{'homepage-content-container': isActive('/')}" ng-controller="MainCtrl" style="position: absolute; height: 100%; width: 100%;">
     <ui-view><%=yield%></ui-view>
   </div>
 </body>

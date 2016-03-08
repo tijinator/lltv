@@ -37,8 +37,8 @@
 	text-align: left;
 }
 
-.nav-tabs > li.active > a, 
-.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus{
 	color: #ffffff;
     cursor: default;
@@ -68,7 +68,7 @@
 .tab-content{
 	margin-top: 50px;
 	margin-left: 10px;
-	min-height: 350px;
+	min-height: 500px; /* it was 350px */
 }
 
 .exp-all{
@@ -114,5 +114,3 @@
 	color: #63686B;
 	text-transform: uppercase;
 }
-
-

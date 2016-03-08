@@ -57,12 +57,19 @@
   background-color: transparent;
 }
 
+
+#lltv .colored-bar{
+  position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin-left: 0;
+}
 #lltv .homepage-category-nav {
   /*margin-top: -97px; turn off*/
-  position: absolute;
+  /*position: absolute;
   width: 100%;
   bottom: 0;
-  margin-left: 0;
+  margin-left: 0;*/
 }
 
 #lltv .homepage-category-nav li {
@@ -70,7 +77,7 @@
   height: 97px;
   text-align: center;
   color: #FFFFFF;
-  cursor: pointer;
+  /*cursor: pointer; turn off*/
   font-size: 13.5px; /*was 25px */
   font-family: avenir-black;
   text-transform: uppercase;
@@ -104,9 +111,34 @@
   margin-top: 75px;
 }
 
+/*.tab-category{
+  margin-top: 50px;
+	margin-left: 10px;
+	min-height: 400px;
+}*/
+
+.category-titles h3{
+  font-size: 41px;
+  font-family: avenir-black;
+  margin-top: 25px;
+  margin-bottom: 61px;
+}
+
 .category-details {
   font-size: 19px;
+  font-family: avenir-light;
   line-height: 40px;
+  width: 511px;
+}
+
+.category-details p{
+  margin-bottom: 61px;
+}
+
+.category-buttons li{
+  height: 100%;
+  float: left;
+  padding-right: 20px;
 }
 
 .bubble-btn {
