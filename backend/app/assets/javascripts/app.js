@@ -15,14 +15,15 @@ angular.module('lltv', [
 '$authProvider',
 function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authProvider) {
   $locationProvider.html5Mode(true);
+
   $authProvider.configure({
     apiUrl: baseUrl + '/api/v1',
     handleLoginResponse: function(resp) {
-      currentUserProvider.set(resp);
+      // currentUserProvider.set(resp);
       return resp.data;
     },
     handleTokenValidationResponse: function(resp) {
-      console.log(resp);
+      // console.log(resp);
       return resp.data;
     }
   });

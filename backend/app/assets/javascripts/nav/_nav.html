@@ -16,9 +16,11 @@
 	      <ul class="nav navbar-nav">
 	        <li ui-sref-active=""><a ui-sref="categories.show"><img ng-src="{{'images/LLTV_searchicon.png'}}"></a></li>
 	        <li><a ui-sref="category.show({id: 3})">Business</a></li>
-	        <!-- <button class="btn btn-primary btn-lg" ng-click='signOut()'>Sign out</button> -->
-	        <li ng-controller="AuthModalCtrl"><div ng-click="openModal(signin)">Sign In</div></li>
-	        <li ng-controller="AuthModalCtrl"><div class="bubble-btn sign-up" ng-click="openModal('register')">Sign Up</div></li>
+	        <li ng-show='isLoggedIn()'>ID: {{currentUser.id}}</li>
+	        
+	        <li ng-controller="NavCtrl" ng-show='isLoggedIn()'><div ng-click="signOut()">Sign Out</div></li>
+	        <li ng-controller="AuthModalCtrl" ng-hide='isLoggedIn()'><div ng-click="openModal(signin)">Sign In</div></li>
+	        <li ng-controller="AuthModalCtrl" ng-hide='isLoggedIn()'><div class="bubble-btn sign-up" ng-click="openModal('register')">Sign Up</div></li>
 	      </ul>
 	    </div>
   	</div>
