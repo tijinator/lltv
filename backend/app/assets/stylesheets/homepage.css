@@ -23,10 +23,11 @@
 }
 
 #lltv .header{
-   height: 100%;
-   background-size: cover;
-   background-position: center;
-   background-image: url('../images/LLTV_homepage.jpg');
+  padding: 0;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../images/LLTV_homepage.jpg');
 }
 
 #lltv .homepage-nav-links {
@@ -72,6 +73,7 @@
   cursor: pointer;
   font-size: 13.5px; /*was 25px */
   font-family: avenir-black;
+  text-transform: uppercase;
   position: relative;
 }
 
@@ -81,15 +83,16 @@
   margin-top: -12.5px;
 }
 
+/*colored bar white arrow*/
 #lltv .homepage-category-nav li.active:after {
   content: '';
   width:0;
   height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-bottom: 25px solid #FFFFFF;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-bottom: 13px solid #FFFFFF;
   position: relative;
-  top: 46px; /*was 18px */
+  top: 58px; /*was 18px */
 }
 
 #lltv .homepage-category-nav li.active > a {
