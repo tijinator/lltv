@@ -15,13 +15,14 @@ function($rootScope, $scope, $location, $auth, currentUser) {
       return false;
     }
   }
+  
+  $scope.signedIn = function() {
+    // return $scope.user.id;
+    return $scope.user.username;
+  }
 
   $scope.isLoggedIn = function() {
     return ($scope.user.id) ? true : false;
-  }
-  
-  $scope.signedIn = function() {
-    return $scope.user.id;
   }
 
   $scope.$watch('assets', function(value) {
