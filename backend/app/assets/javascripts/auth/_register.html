@@ -7,7 +7,7 @@
       <img src="/images/LLTV_login_logo.png">
     </div>
   </div>
-
+  <div ng-if='errors.length > 0' class="alert alert-danger">{{ errors }}</div>
   <form ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
     <div class="auth-body">
       <div class="col-md-6 auth-left-column">
