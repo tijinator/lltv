@@ -28,6 +28,15 @@
   background-size: cover;
   background-position: center;
   background-image: url('../images/LLTV_homepage.jpg');
+  /*background: transparent;*/
+}
+
+.quote-container{
+  margin-top: 300px;
+}
+
+.quote-container img{
+  margin: 0 calc(100vh/4);
 }
 
 #lltv .homepage-nav-links {
@@ -120,8 +129,8 @@
 .category-titles h3{
   font-size: 41px;
   font-family: avenir-black;
-  margin-top: 25px;
-  margin-bottom: 61px;
+  margin-top: 15px;
+  margin-bottom: 41px;
 }
 
 .category-details {
@@ -132,7 +141,7 @@
 }
 
 .category-details p{
-  margin-bottom: 61px;
+  margin-bottom: 31px;
 }
 
 .category-buttons li{

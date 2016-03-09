@@ -6,6 +6,17 @@
       <div class="col-md-12 header">
 
         <!-- Nav tabs -->
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+
+            <div class="quote-container">
+              <img src="<%= image_path('LLTV_overlay_text_1.png')%>" >
+            </div>
+
+
+          </div>
+        </div>
+
         <div class="colored-bar" id="cat-bar">
           <ul class="nav nav-tabs homepage-category-nav" role="tablist">
             <% @categories.each_with_index do |category, idx| %>
@@ -23,7 +34,7 @@
         $("#category-button div, active").click(function() {
           $('html, body').animate({
               scrollTop: $("#cat-bar").offset().top
-          }, 1000 );
+          }, "slow");
         });
         </script>
 
