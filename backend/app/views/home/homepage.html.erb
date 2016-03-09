@@ -33,9 +33,13 @@
         <script type="text/javascript">
         $("#category-button div, active").click(function() {
           $('html, body').animate({
-              scrollTop: $("#cat-bar").offset().top
+              // scrollTop: $("#cat-bar").offset().top
+              scrollTop: $(document).height() * 0.753 - $(window).height()
           }, "slow");
         });
+
+
+        // $('html,body').animate({ scrollTop: $(document).height() * 0.9 - $(window).height() }, 500);
         </script>
 
       </div>
