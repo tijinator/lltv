@@ -130,7 +130,7 @@
   font-size: 41px;
   font-family: avenir-black;
   margin-top: 15px;
-  margin-bottom: 41px;
+  margin-bottom: 31px; /* it was 41px */
 }
 
 .category-details {
@@ -141,7 +141,7 @@
 }
 
 .category-details p{
-  margin-bottom: 31px;
+  margin-bottom: 21px; /* it was 31px */
 }
 
 .category-buttons li{
@@ -156,6 +156,8 @@
   text-transform: uppercase;
   color: #FFFFFF;
   font-size: 13.5px;
+  font-family: avenir-black;
+  font-weight: bold;
 }
 
 .sign-up {
