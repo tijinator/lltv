@@ -8,15 +8,12 @@ function($scope, $auth, currentUser, authService) {
   $scope.errors = '';
 
   $scope.submitRegistration = function() {
-    localStorage.setItem("email", $scope.registrationForm.email);
-    localStorage.setItem("password", $scope.registrationForm.password);
-    console.log(localStorage.email, localStorage.password);
+    var obj = {"email": $scope.registrationForm.email, "password": $scope.registrationForm.password};
     $auth.submitRegistration($scope.registrationForm)
       .then(function(res) {
-        $auth.submitLogin({'email': localStorage.email, 'password': $scope.registrationForm.password});
-        currentUser.set(res.data.data);
-        localStorage.clear();
+        $scope.submitLogin(obj);
         $scope.close();
+        delete obj;
       })
       .catch(function(res) {
         // handle error response
@@ -25,11 +22,12 @@ function($scope, $auth, currentUser, authService) {
       })
   };
 
-  $scope.submitLogin = function() {
-    console.log($scope.loginForm);
+  $scope.submitLogin = function(obj) {
+    $scope.loginForm = obj || $scope.loginForm;
     $auth.submitLogin($scope.loginForm)
       .then(function(resp) {
         currentUser.set(resp);
+        console.log("login",  resp);
         $scope.close();
       })
       .catch(function(resp) {
