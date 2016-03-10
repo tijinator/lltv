@@ -18,29 +18,29 @@
         </div>
 
         <div class="colored-bar" id="cat-bar">
+
           <ul class="nav nav-tabs homepage-category-nav" role="tablist">
             <% @categories.each_with_index do |category, idx| %>
 
-              <li id="category-button" role="presentation"
+            <li id="category-button" role="presentation"
                 style="background-color: <%= category.html_tab_color %>"
                 <% if idx == 0 %>class="active"<% end %>>
 
-                <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><%= category.title %></div></li>
+                <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><p><%= category.title %><p></div></li>
             <% end %>
           </ul>
+
         </div>
 
         <script type="text/javascript">
-        $("#category-button div, active").click(function() {
+        $("#category-button div").click(function() {
           $('html, body').animate({
-              // scrollTop: $("#cat-bar").offset().top
-              scrollTop: $(document).height() * 0.753 - $(window).height()
-          }, "slow");
+              scrollTop: $(".colored-bar").offset().top - 103
+              // scrollTop: $(document).height() * 0.753 - $(window).height()
+          }, 600, "easeOutCirc");
         });
-
-
-        // $('html,body').animate({ scrollTop: $(document).height() * 0.9 - $(window).height() }, 500);
         </script>
+
 
       </div>
 
