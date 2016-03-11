@@ -7,23 +7,24 @@
       <img src="/images/LLTV_login_logo.png">
     </div>
   </div>
-
   <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
-    <div class="auth-body">
-      <div class="form-group">
-        <label>email or username</label>
-        <input type="email" name="email" ng-model="loginForm.email" required="required" class="form-control"/>
-      </div>
+    <div class="col-md-6 auth-login-center">
+      <div class="auth-body">
+        <div class="form-group">
+          <label>email or username</label>
+          <input type="email" name="email" ng-model="loginForm.email" required="required" class="form-control"/>
+        </div>
 
-      <div class="form-group">
-        <label>password</label>
-        <input type="password" name="password" ng-model="loginForm.password" required="required" class="form-control"/>
+        <div class="form-group">
+          <label>password</label>
+          <input type="password" name="password" ng-model="loginForm.password" required="required" class="form-control"/>
+          <p class='pull-right'> <a href="#">forgot password?</a></p>
+        </div>
       </div>
-    </div>
-
-    <div class="auth-footer">
-      <div class="bubble-btn switch-btn pull-left" ng-click="switch('register')">create account</div>
-      <button type="submit" class="bubble-btn submit-btn pull-right">Sign in</button>
+      <div class="auth-footer">
+        <div class="bubble-btn switch-btn switch-btn-sign-in pull-left" ng-click="switch('register')">create account</div>
+        <button type="submit" class="bubble-btn submit-btn pull-right">Sign in</button>
+      </div>
     </div>
   </form>
 </div>

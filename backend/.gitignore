@@ -11,4 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
+
 /node_modules
+
+./node_modules

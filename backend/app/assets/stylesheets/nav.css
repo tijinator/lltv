@@ -1,10 +1,33 @@
+.navbar-brand-logo{
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	margin-left: 50px;
+}
+
 nav.navbar.navbar-fixed-top.ng-scope{
     background-color: #000000;
-    min-height: 85px;
+    min-height: 95px;
 }
 
 nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   background: transparent;
   background-image: url('/images/LLTV_blackgradient.png');
   min-height: 103px;
+  /*min-height: 315px;*/
+}
+
+/*logo styling*/
+.logo-img{
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  margin-top: 12px;
+  margin-left: 50px;
+  max-height: 100%;
+
+  /*left: 15px; it was before*/
+  /*width: 144px;
+  height: 46px;*/
+  /*background-size: cover;*/
 }

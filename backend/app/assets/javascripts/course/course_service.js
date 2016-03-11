@@ -1,7 +1,5 @@
-angular.module('lltv')
-.service('CourseService', [
-'$http',
-function($http) {
+angular.module('lltv').service('CourseService', ['$http', function($http) {
+  
   this.getCourses = function() {
     return $http.get('/api/courses');
   };

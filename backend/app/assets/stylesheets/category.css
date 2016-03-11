@@ -1,6 +1,11 @@
+/*.category-side-navbar{
+  position: absolute;
+  height: 100%;
+}*/
+
 .category-info {
   position: relative;
-  height: 300px;
+  height: 286px;
   overflow: hidden;
   background-color: #000000;
   color: #FFFFFF;
@@ -12,43 +17,113 @@
 
 .category-info-content {
   clear: both;
+  height: 100%;
+  width: 30%;
 }
 
 .category-info-data {
-  padding: 20px 20px 30px 20px;
+  /*padding: 20px 20px 30px 20px;*/
+  height: 100%;
 }
 
 .category-info-details {
-  line-height: 20px;
-  margin: 20px 0px;
-  font-size: 15px;
+  line-height: 30px;
+  margin: 0px 35px;
+  font-size: 13px;
+  font-family: avenir-book;
 }
 
 .category-info-title {
   word-spacing: 9999999999999999px;
   text-transform: capitalize;
-  font-size: 30px;
+  /*font-size: 30px;*/
+  margin-left: 35px;
   font-weight: bold;
+  font-size: 36px;
+  font-family: avenir-black;
+}
+
+.category-banner-section{
+  height: 100%;
+  width: 70%;
 }
 
 .category-page-details {
-  height: -webkit-calc(100vh - 300px);
-  height: -moz-calc(100vh - 300px);
-  height: calc(100vh - 300px);
+  height: -webkit-calc(100vh - 40px);
+  height: -moz-calc(100vh - 40px);
+  height: calc(100vh - 40px);
   color: #787D7F;
+
+  position: relative;
 }
 
 .category-page-options {
   background-color: #EBEEF0;
   height:100%;
+  width: 30%;
+  line-height: 30px;
 }
+
+.category-page-option-title, .category-sub-section{ margin-left: 35px;}
+
+/*.category-page-option-title p{
+  size: 12px;
+  color: #787D7F;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 40px;
+}*/
+
+.category-page-option-title h5{
+  /*size: 12px;*/
+  color: #787D7F;
+  text-transform: uppercase;
+  /*font-weight: bold;*/
+  margin-top: 35px;
+  margin-bottom: 20px;
+  font-family: avenir-black;
+  font-size: 12px;
+}
+
+.category-sub-section a{
+  /*size: 12px;*/
+  font-size: 12px;
+  color: #000;
+  text-transform: uppercase;
+  /*font-weight: bold;*/
+  font-family: avenir-black;
+
+}
+
 
 .category-page-courses {
   height: 100%;
+  width: 70%;
 }
 
 .category-courses-title {
   text-transform: uppercase;
+  float: left;
+  margin-left: 25px;
+  margin-bottom: 30px;
+  font-size: 12px;
+}
+
+/*.category-seeall-link{
+  margin-right: 20px;
+  float: right;
+  size: 12px;
+}*/
+
+.category-seeall-link{
+  float: right;
+  margin-right: 25px;
+  font-size: 12px;
+}
+
+.category-seeall-link, .category-courses-title{
+  /*size: 12px;*/
+  font-family: avenir-black;
 }
 
 .category-recommended{
@@ -57,4 +132,50 @@
 
 .category-course-title{
   text-transform: capitalize;
+}
+
+.category-trending-courses{
+  margin-left: 0px;
+  /*margin-left: 25px;*/
+
+}
+
+.category-video-thumbnail{
+  margin-right: 22px;
+  margin-bottom: 40px;
+}
+
+.category-thumbnail-overlay{
+  position: relative;
+}
+
+.cat-course-title-overlay{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  color: #fff;
+  height: 20%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 9px;
+  opacity: 0.75;
+  padding: 6px 10px;
+}
+
+.playbtn-overlay{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*.trending-scroll{
+  overflow-x: scroll;
+  white-space: nowrap;
+}*/
+
+.trending-scroll{
+
 }
