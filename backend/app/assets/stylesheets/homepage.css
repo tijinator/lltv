@@ -133,10 +133,10 @@
 }*/
 
 .category-titles h3{
-  font-size: 41px;
+  font-size: 36px; /* it was 41px */
   font-family: avenir-black;
   margin-top: 15px;
-  margin-bottom: 31px; /* it was 41px */
+  margin-bottom: 21px; /* it was 41px */
 }
 
 .category-details {
