@@ -1,8 +1,6 @@
 //= require jquery
-//= require jquery-ui
 //= require jquery_ujs
 //= require jquery.easing
-//= require jquery.scrollTo
 //= require bootstrap
 //= require bootstrap/js/tab
 //= require angular
@@ -19,4 +17,3 @@
 //= stub datatables
 //= stub startbootstrap-sb-admin-2
 //= stub video.js/dist/video
-//= require scroll

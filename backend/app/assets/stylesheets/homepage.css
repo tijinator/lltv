@@ -40,7 +40,11 @@
 }
 
 #lltv .homepage-nav-links {
+/*<<<<<<< HEAD*/
   padding-top: 37px; /*was 20x */
+/*=======
+  padding-top: 25px;
+>>>>>>> 87157a6a41cd3b11b6b4708152941bab30fbacc0*/
   color: #FFFFFF;
   font-size: 13.5px;
   text-transform: uppercase;
@@ -79,7 +83,6 @@
   width: 100%;
   bottom: 0;
   margin-left: 0;*/
-  height: 100%;
 }
 
 #lltv .homepage-category-nav li {
@@ -114,6 +117,9 @@
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
   border-bottom: 13px solid #FFFFFF;
+  /*border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid #FFFFFF;*/
   position: relative;
   top: 67px; /*was 18px original code, it was 58px */
 }
@@ -123,9 +129,9 @@
   border: none;
 }
 
-/*.tab-content {
+.tab-content {
   margin-top: 75px;
-}*/
+}
 
 /*.tab-category{
   margin-top: 50px;

@@ -33,19 +33,12 @@
         </div>
 
         <script type="text/javascript">
-        // $(document).ready(function () {
-        $("#category-button .active, #category-button div").click(function() {
+        $("#category-button div").click(function() {
           $('html, body').animate({
-              scrollTop: $("#details").offset().top
-          }, 600, function(){
-            console.log('test');
-          });
-
-
-          // $("body,html").scrollTop($(".colored-bar").offset().top);
-
+              scrollTop: $(".colored-bar").offset().top - 103
+              // scrollTop: $(document).height() * 0.753 - $(window).height()
+          }, 600, "easeOutCirc");
         });
-        // });
         </script>
 
 
