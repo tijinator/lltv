@@ -20,12 +20,13 @@
  *= require category
  *= require course
  *= require_self
+ *= require jquery-ui
  */
 
 *{
 	outline: 0px red solid;
 }
- 
+
 .content-container.ng-scope {
     margin-top: 85px;
 }
