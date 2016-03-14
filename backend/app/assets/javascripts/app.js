@@ -6,7 +6,7 @@ angular.module('lltv', [
 'ng-token-auth',
 'lltvFilters',
 'ngAnimate'])
-.constant('baseUrl', 'http://localhost:3000')
+.constant('baseUrl', 'http://localhost:3000/')
 .config([
 'baseUrl',
 '$stateProvider',
