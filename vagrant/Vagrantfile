@@ -16,7 +16,7 @@ boxes = [
     roles: ['app'],
     ip: '192.168.3.2',
     vbox_config: [
-      { '--memory' => '768' }
+      { '--memory' => '8192' }
     ],
     forwarded_ports: [
       { 80 => 8080 },
@@ -35,7 +35,7 @@ boxes = [
     roles: ['db'],
     ip: '192.168.3.3',
     vbox_config: [
-      { '--memory' => '256' }
+      { '--memory' => '2048' }
     ],
     forwarded_ports: [
       { 5432 => 5432 }
@@ -71,7 +71,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       # forwarding ports
       opts[:forwarded_ports].each do |port|
         port.each do |guest, host|
-          config.vm.network :forwarded_port, guest: guest, host: host, auto_correct: true
+          config.vm.network :forwarded_port, guest: guest, host: host
         end
       end if opts[:forwarded_ports]
 

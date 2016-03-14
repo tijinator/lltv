@@ -4,9 +4,4 @@ angular.module('lltv')
 'category',
 function($scope, category) {
   $scope.category_details = category.data;
-
-  showCategoryCourses = function(argument) {
-  	console.log("obj");
-  }
-
 }]);

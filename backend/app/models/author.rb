@@ -1,8 +1,6 @@
 class Author < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
-  # validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-
-  has_many :courses
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   def full_name
     if self.first_name && self.last_name

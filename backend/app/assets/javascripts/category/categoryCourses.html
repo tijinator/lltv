@@ -1,40 +1,17 @@
-<div class="row" style="position: absolute; width: 100%; height: 100%; margin: 0;">
-
-  <div class="col-md-3 category-page-options">
-    <div class="category-page-option-title">
-      <h5>trending {{category_details.category.title}} courses</h5>
-    </div>
-
-    <div ui-view="categoryOptions" ng-repeat="subcategory in category_details.subcategory" class="category-sub-section">
-      <a href="#" ng-click="showCategoryCourses">{{subcategory.title}}</a>
-      <!-- <a ui-sref="categories.show({id: subcategory.parent_id})">{{subcategory.title}}</a> -->
+<div class="col-md-3 category-page-options">
+  <div ui-view="categoryOptions"></div>
+</div>
+<div class="col-md-9 category-page-courses category-trending">
+  <div class="row category-courses-row">
+    <div class="col-md-12 category-trending-courses">
+      <h5 class="category-courses-title">trending {{category_details.title}} courses</h5>
+      <div ui-view="trendingCourses"></div>
     </div>
   </div>
-  <div class="col-md-9 category-page-courses category-trending">
-    <div class="row category-courses-row" style="margin: 0; margin-top: 25px;">
-      <div class="col-md-12 category-trending-courses">
-
-        <div class="row">
-          <h5 class="category-courses-title">trending {{category_details.category.title}} courses</h5>
-          <!-- <h5 class="category-seeall-link" >See all</h5> -->
-        </div>
-
-        <div ui-view="trendingCourses" class="trending-scroll trending-row" style="padding: 0 10px;">
-        </div>
-
-      </div>
+  <div class="row category-courses-row category-recommended">
+    <div class="col-md-12 category-trending-courses">
+      <h5 class="category-courses-title">recommended {{category_details.title}} courses</h5>
+      <div ui-view="recommendedCourses"></div>
     </div>
-
-    <!-- save this code for phase#2 -->
-    <!-- <div class="row category-courses-row category-recommended" style="margin: 0; margin-top: 25px;">
-      <div class="col-md-12 category-trending-courses">
-        <h5 class="category-courses-title">recommended {{category_details.category.title}} for you</h5>
-
-        <div ui-view="recommendedCourses" class="trending-scroll" style="clear: both; padding: 0 10px;"></div>
-
-      </div>
-    </div> -->
-
   </div>
-
 </div>

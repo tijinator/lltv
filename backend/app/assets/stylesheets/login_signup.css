@@ -1,8 +1,3 @@
-.auth-header > div{
-  margin: auto; 
-  width: 222px;
-  padding-bottom: 67px;
-}
 .auth-template {
   text-transform: uppercase;
   color: #FFFFFF;
@@ -23,109 +18,29 @@
 .auth-template .auth-content {
   clear: both;
   margin: 0px auto;
-  padding-top: 50px;
-  width: 650px;
-}
-.auth-login-center{
-  margin-left: 160px;
-}
-
-/*.auth-login-center > div > div {
-  margin-bottom: 30px;
-}*/
-
-.auth-left-column{
-  padding-left: 0px;
-  padding-right: 30px;
-}
-
-.auth-right-column{
-  padding-left: 30px;
-  padding-right: 0px;
-}
-
-@media screen and (max-width: 1000px) {
-  .auth-right-column{
-    padding-left: 0px;
-  } 
-  .auth-left-column{
-    padding-right: 0px;
-  }
-}
-
-.auth-body .form-group{
-  margin-bottom: 30px;
-}
-
-.auth-body .form-group > p{
-  padding-top: 10px;
-}
-
-.auth-body .form-group > p > a{
-  color: #29aae1;
-  font-size: 12px;
-  font-family: Avenir-Black;
-}
-
-.auth-body .form-group > label{
-  font-size: 13px;
-  font-family: Avenir-Black;
-  color: #fff;
+  padding-top: 150px;
+  width: 350px;
 }
 
 .auth-template input:not([type=submit]):not([type=file]) {
   background-color: transparent;
-  border: 1px solid rgba(255,255,255, 0.3);
-  height: 40px;
-  border-radius: 25px;
-  opacity: 1;
-  font-size: 13px;
-  font-family: Avenir-Black;
-  color: #fff;
-}
-
-.auth-footer{
-  padding-top: 25px;
-}
-
-.auth-footer > .col-md-12{
-  margin-top: 24px;
+  border: 1px solid #FFFFFF;
+  padding: 10px;
+  height: 30px;
+  border-radius: 15px;
 }
 
 .auth-close {
   padding: 20px;
-  margin: 30px 30px 0 0;
 }
-
-.submit-btn {
-  border: none;
-  background-color: #33ACE0;
-  font-family: Avenir-Black;
-  font-size: 13px;
-  width: 120px;
-}
-.submit-btn-sing-up{
-  width: 161px;
-}
-
 
 .switch-btn {
   background-color: #4D4D4D;
-  border: none;
-  font-family: Avenir-Black;
-  font-size: 13px;
 }
 
-.switch-btn-sign-up {
-  width: 120px;
-  margin-right: 15px;
-}
-
-.switch-btn-sign-in {
-  width: 155px;
-  /*margin-right: 10px;*/
-  padding-right: 15px;
-  padding-left: 17px;
+.submit-btn {
+  border: 0px;
+  background-color: #33ACE0;
 }
 
 .modal-backdrop.auth-backdrop.in {

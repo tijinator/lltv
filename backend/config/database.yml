@@ -14,7 +14,6 @@ development:
 #   password: vagrant
 #   timeout: 5000
 #
-
 # test:
 #   adapter: postgresql
 #   host: 192.168.3.3

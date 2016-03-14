@@ -6,15 +6,13 @@ module RolesHelper
     'Superuser' => 30
   }
 
-class << self
-  def code(str)
+  def self.code(str)
     return @@roles[str]
   end
 
-  def value(id)
+  def self.value(id)
     return @@roles.key(id)
   end
-end
 
   def require_data_entry
     unless current_user && current_user.role >= RolesHelper.code('Data Entry')

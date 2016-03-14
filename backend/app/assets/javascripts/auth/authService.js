@@ -23,9 +23,7 @@ function($uibModal) {
   }
 
   this.switchModal = function(type) {
-    // this.modalInstance.dismiss('cancel');
-    this.closeModal()
+    this.modalInstance.dismiss('cancel');
     this.openModal(type);
   }
-  
 }]);
