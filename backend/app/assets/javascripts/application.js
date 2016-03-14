@@ -17,3 +17,4 @@
 //= stub datatables
 //= stub startbootstrap-sb-admin-2
 //= stub video.js/dist/video
+//= require homepage_colored_bar_scroll.js
