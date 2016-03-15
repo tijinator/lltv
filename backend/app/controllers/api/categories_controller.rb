@@ -15,7 +15,7 @@ class Api::CategoriesController < Api::ApiController
 
   def show
     category = Category.find(params[:id])
-    subcategory = Category.where(parent_id: params[:id])
+    subcategory = Category.select('id, parent_id, title').where(parent_id: params[:id])
     render json: {category: category, subcategory: subcategory}, root: false
   end
 

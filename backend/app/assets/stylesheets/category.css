@@ -34,7 +34,7 @@
 }
 
 .category-info-title {
-  word-spacing: 9999999999999999px;
+  /*word-spacing: 9999999999999999px;*/
   text-transform: capitalize;
   /*font-size: 30px;*/
   margin-left: 35px;

@@ -1,0 +1,42 @@
+<div class="chapter-tabs">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs chapter-tabs-ul" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#video-details" aria-controls="video-details" role="tab" data-toggle="tab">Video Details</a>
+    </li>
+    <li role="presentation">
+      <a href="#transcript" aria-controls="transcript" role="tab" data-toggle="tab">Transcript</a>
+    </li>
+    <li role="presentation" ><a href="#faqs" aria-controls="faqs" role="tab" data-toggle="tab">FAQs</a></li>
+    <li role="presentation">
+      <a href="#exercise-files" aria-controls="exercise-files" role="tab" data-toggle="tab">Exercise Files</a>
+    </li>
+    <li role="presentation" style='padding-right: 0px; margin-right: 0px'>
+      <a href="#discussion" aria-controls="discussion" role="tab" data-toggle="tab">Discussion</a>
+    </li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+      <div role="tabpanel" class="tab-panel active" id="video-details">
+        <div class="tab-inner-panel">
+          <h5>{{chapter.title}}</h5>
+          <!-- <p>&nbsp;</p> -->
+          <!-- <h5>Viewers: 400</h5> -->
+          <!-- <p>&nbsp;</p> -->
+          <p>{{chapter.details}}</p>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="transcript">
+        <h5>Tutorial Transcript</h5>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="exercise-files">
+        <h5>Exercise Files</h5>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="dicussion">
+        <h5>Discussion</h5>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="faqs">
+        FAQs
+      </div>
+  </div>
+</div>

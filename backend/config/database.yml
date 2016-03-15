@@ -1,12 +1,20 @@
 development:
-  host: localhost
-  adapter: postgresql
-  database: app_development
-  pool: 5
+ host: localhost
+ adapter: postgresql
+ database: app_development
+ pool: 5
   # username: user_name
   # password:
 
-# development:
+ # development:
+ #   adapter: postgresql
+ #   host: 192.168.3.3
+ #   database: lltv
+ #   username: vagrant
+ #   password: vagrant
+ #   timeout: 5000
+
+# test:
 #   adapter: postgresql
 #   host: 192.168.3.3
 #   database: lltv

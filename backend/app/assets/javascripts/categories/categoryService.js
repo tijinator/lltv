@@ -26,4 +26,5 @@ function($http) {
     console.log(id);
     return $http.get('/api/categories/' + id + '/courses');
   };
+  
 }]);

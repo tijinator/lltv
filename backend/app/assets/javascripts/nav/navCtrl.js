@@ -6,34 +6,30 @@ angular.module('lltv')
 '$auth',
 'currentUser',
 function($rootScope, $scope, $location, $auth, currentUser) {
-  // console.log("Current: ", currentUser);
+
 
   $scope.isActive = function (route){
-    if(route == $location.path()){
-      return true;
-    }else{
-      return false;
-    }
+    return (route == $location.path()) ? true : false
   }
   
   $scope.signedIn = function() {
-    // return $scope.user.id;
-    return $scope.user.username;
+    // return currentUser.username;
+    return $scope.user.first_name;
   }
 
   $scope.isLoggedIn = function() {
     return ($scope.user.id) ? true : false;
   }
 
+  $scope.signOut = function() {
+    currentUser.signOut();
+  };
+
   $scope.$watch('assets', function(value) {
     if (value) {
       $scope.assets = JSON.parse(value);
     }
   });
-
-  $scope.signOut = function() {
-    currentUser.signOut();
-  };
 
   $rootScope.$on('auth:validation-success', function(ev, userData) {
     console.log("validation: ");
