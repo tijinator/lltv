@@ -71,7 +71,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       # forwarding ports
       opts[:forwarded_ports].each do |port|
         port.each do |guest, host|
-          config.vm.network :forwarded_port, guest: guest, host: host
+          config.vm.network :forwarded_port, guest: guest, host: host, auto_correct: true
         end
       end if opts[:forwarded_ports]
 

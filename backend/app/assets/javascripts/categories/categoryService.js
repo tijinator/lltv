@@ -18,10 +18,12 @@ function($http) {
   };
   
   this.getCategory = function(id) {
+    console.log(id);
     return $http.get('/api/categories/' + id);
   };
 
   this.getCategoryCourses = function(id) {
+    console.log(id);
     return $http.get('/api/categories/' + id + '/courses');
   };
   
