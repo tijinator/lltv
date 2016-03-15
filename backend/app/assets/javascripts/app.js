@@ -157,6 +157,14 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         courseInfo: {
           templateUrl: 'course/courseInfo.html',
           controller: 'CourseInfoCtrl'
+        },
+        'chapterDetails@courses.show': {
+          templateUrl: 'course/chapterDetails.html',
+          controller: 'ChapterDetailsCtrl'
+        },
+        'chapterVideo@courses.show': {
+          templateUrl: 'course/chapterVideo.html',
+          controller: 'ChapterDetailsCtrl'
         }
       },
       onEnter: function() {

@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
   layout :layout_by_resource
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  serialization_scope :view_context
+  helper_method :user_signed_in?
+
 
   def error_message(type=nil)
     if type == nil

@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
   # Api's  /api/course/:id 
   namespace :api, defaults: { format: :json } do
-    resources :categories do
+    resources :categories, only: [:show, :index] do
       collection do
         get 'featured_course' => 'categories#featured_course'
       end
@@ -46,7 +46,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :courses
+    resources :courses, only: :show
   end
 
   get '/courses' => 'home#home'

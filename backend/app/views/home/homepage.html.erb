@@ -1,6 +1,5 @@
 <div id="landing-homepage">
   <img src="<%= image_path('LLTV_homepage.jpg')%>" style="width: 100%; position: relative; top: 0; left: 0">
-  
   <div>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs homepage-category-nav" role="tablist">
@@ -12,7 +11,6 @@
           <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><%= category.title %></div></li>
       <% end %>
     </ul>
-
     <!-- Tab panes -->
     <div class="tab-content container-fluid">
       <% @categories.each_with_index do |category, idx| %>

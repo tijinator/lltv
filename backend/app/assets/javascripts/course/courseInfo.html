@@ -49,40 +49,26 @@
         </div> <!-- end of row course-info-row-->
       </div> <!-- end of col-md-12 -->
     </div> <!-- end of col-md-4 -->
+    <!-- VIDEO -->
     <div class="col-md-8">
-      <div class="row">
-        <div class="course-video">
-
-          <video id="my-video" class="video-js" controls preload="auto" poster="{{course.banner_url}}" data-setup="{}">
-              <source ng-src="{{'/videos/Vi1.mp4'}}" type='video/mp4'>
-
-              <p class="vjs-no-js">
-                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-              </p>
-          </video>
-          <!-- <div class='player-button'>
-            <i class="fa fa-play-circle-o"></i>
-          </div> -->
-          <!--<img src="{{course.banner_url}}" class="course-banner" style="width: 100%;">-->
-        </div>
-      </div>
+      <div ui-view="chapterVideo"></div>
     </div>
+    <!-- VIDEO -->
   </div> <!-- end of row course-info-content -->
   <div class="row course-chapter-content">
     <div class="col-md-4 course-chapter-box">
       <div class="col-md-12 course-chapter-index">
         <div class="row course-chapter-search">
-              <p>
-                <a ng-click="search_title = !search_title" href=""> 
-                  <i class="fa fa-search"></i> 
-                  <span ng-show="!search_title"> search this course </span>
-                </a>
+          <p>
+            <a ng-click="search_title = !search_title" href=""> 
+              <i class="fa fa-search"></i> 
+              <span ng-show="!search_title"> search this course </span>
+            </a>
 
-                <span ng-show="search_title" class='blinking-cursor'>
-                  <input name='search' type="text"  placeholder='search...'/>
-                </span>
-              </p>
+            <span ng-show="search_title" class='blinking-cursor'>
+              <input name='search' type="text"  placeholder='search...'/>
+            </span>
+          </p>
         </div>
         <div class="row course-chapter-collaps">
           <h6>
@@ -97,69 +83,31 @@
         <div class="row course-chapters-list">
           <div class="course-chapters">
           <a href="">
-            <div class="chapter-index-row" ng-repeat='chapter in course.chapters' ng-click="chapter_title = !chapter_title">
-              <div class="chapter-index-element">
+            <div class="chapter-index-row" ng-repeat='chapter in course.chapters'>
+              <div class="chapter-index-element" ng-click="chapter_title = !chapter_title">
                   <span id='chapter_position'> ch {{chapter.position}} </span>
                   <span>{{chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</span>
                   <span class="glyphicon glyphicon-menu-up" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="chapter_title"></span>
                   <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="!chapter_title"></span>
               </div>
           </a>
-          <div class="chapter-index" ng-show="chapter_title">
-            <div class="chapter-index-element index-title-row">
-              <a ng-click="">{{chapter.title}}</a>
-            </div>
-          </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-8 course-chapter-tab-box">
-      <div class="chapter-tabs">
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs chapter-tabs-ul" role="tablist">
-          <li role="presentation" class="active">
-            <a href="#video-details" aria-controls="video-details" role="tab" data-toggle="tab">Video Details</a>
-          </li>
-          <li role="presentation">
-            <a href="#transcript" aria-controls="transcript" role="tab" data-toggle="tab">Transcript</a>
-          </li>
-          <li role="presentation" ><a href="#faqs" aria-controls="faqs" role="tab" data-toggle="tab">FAQs</a></li>
-          <li role="presentation">
-            <a href="#exercise-files" aria-controls="exercise-files" role="tab" data-toggle="tab">Exercise Files</a>
-          </li>
-          <li role="presentation" style='padding-right: 0px; margin-right: 0px'>
-            <a href="#discussion" aria-controls="discussion" role="tab" data-toggle="tab">Discussion</a>
-          </li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-panel active" id="video-details">
-            <div class="tab-inner-panel">
-              <h5>{{course.title}}</h5>
-              <p>&nbsp;</p>
-              <h5>Viewers: 400</h5>
-              <p>&nbsp;</p>
-            </div>
-            <p>{{course.details}}</p>
-          </div>
-          <div role="tabpanel" class="tab-pane" id="transcript">
-            <h5>Tutorial Transcript</h5>
-          </div>
-          <div role="tabpanel" class="tab-pane" id="exercise-files">
-            <h5>Exercise Files</h5>
-          </div>
-          <div role="tabpanel" class="tab-pane" id="dicussion">
-            <h5>Discussion</h5>
-          </div>
-          <div role="tabpanel" class="tab-pane" id="faqs">
-            FAQs
-          </div>
-        </div>
 
+            <div class="chapter-index" ng-show="chapter_title">
+              <div class="chapter-index-element index-title-row">
+                <a ng-href='#' ng-click="chapters(chapter.position)">{{chapter.title}}</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        </div>
       </div>
     </div>
+    <!-- chapter deails -->
+    <div class="col-md-8 course-chapter-tab-box">
+        <div ui-view="chapterDetails"></div>
+    </div>
+    <!-- CD END -->
   </div>
 </div>
 
@@ -176,14 +124,14 @@
 </script>
 
 <script>
-var video = document.getElementById('my-video');
-video.addEventListener('click',function(){
-    if (video.paused) {
-        video.play();
-    }else{
-        video.pause();
-    }
-},false);
+// var video = document.getElementById('my-video');
+// video.addEventListener('click',function(){
+//     if (video.paused) {
+//         video.play();
+//     }else{
+//         video.pause();
+//     }
+// },false);
 
 // var vid = $('video');
 // var vid2 = $('.player-button');

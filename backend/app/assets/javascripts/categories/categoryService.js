@@ -24,4 +24,5 @@ function($http) {
   this.getCategoryCourses = function(id) {
     return $http.get('/api/categories/' + id + '/courses');
   };
+  
 }]);

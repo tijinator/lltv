@@ -19,6 +19,7 @@ function($scope, $auth, currentUser, authService) {
         // handle error response
         // console.log("REGISTRATION ERROR - Auth.JS", res.data.errors.full_messages);
         $scope.errors = res.data.errors.full_messages.join(', ');
+        delete obj;
       })
   };
 
@@ -27,7 +28,7 @@ function($scope, $auth, currentUser, authService) {
     $auth.submitLogin($scope.loginForm)
       .then(function(resp) {
         currentUser.set(resp);
-        console.log("login",  resp);
+        // console.log("login",  resp);
         $scope.close();
       })
       .catch(function(resp) {

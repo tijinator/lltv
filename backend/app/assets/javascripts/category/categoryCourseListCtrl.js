@@ -3,5 +3,10 @@ angular.module('lltv')
 '$scope',
 'courses',
 function($scope, courses) {
-  $scope.courses = courses.data;
+    $scope.courses = courses.data;
+
+    $scope.$on('subcategory', function(e, courses) {
+		$scope.courses = courses.data;
+	});
+
 }]);

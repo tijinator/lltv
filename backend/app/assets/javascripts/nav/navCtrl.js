@@ -14,7 +14,7 @@ function($rootScope, $scope, $location, $auth, currentUser) {
   
   $scope.signedIn = function() {
     // return currentUser.username;
-    return $scope.user.username;
+    return $scope.user.first_name;
   }
 
   $scope.isLoggedIn = function() {
