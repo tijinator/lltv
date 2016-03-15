@@ -2,27 +2,34 @@ angular.module('lltv')
 .factory('currentUser', [
 '$auth',
 function($auth) {
-  var o = {
-    first_name: null,
-    last_name: null,
-    username: null,
-    email: null
-  }
+  // var o = {
+  //   id: null,
+  //   first_name: null,
+  //   last_name: null,
+  //   username: null,
+  //   email: null
+  // }
+  var o = {};
 
   var set = function(userData) {
-    angular.extend(o, userData);
+    console.log("Current User Set: ", userData);
+    // angular.extend(o, userData);
+    o = userData;
   };
 
   var signOut = function() {
     $auth.signOut()
       .then(function(resp) {
-        o = {
-          set: set,
-          signOut: signOut
-        };
+        o=null;
+
+        // o = {
+        //   set: set,
+        //   signOut: signOut
+        // };
       })
       .catch(function(resp) {
-        alert("signOut error");
+        // alert("signOut error");
+        console.log("signOut error");
       });
   }
 

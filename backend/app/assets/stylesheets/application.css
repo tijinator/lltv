@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap
+ *= require font-awesome/css/font-awesome
  *= require homepage
  *= require nav
  *= require login_signup
@@ -21,12 +22,20 @@
  *= require_self
  */
 
+*{
+	outline: 0px red solid;
+}
+ 
 .content-container.ng-scope {
     margin-top: 85px;
 }
 
 .content-container.ng-scope.homepage-content-container{
  	margin-top: 0;
+ }
+
+ .content-container{
+   overflow-x: hidden;
  }
 
  .subhead{
@@ -41,7 +50,7 @@ html {
 body {
    min-height: 100%;
 }
- 
+
 
 .fade.ng-show-add {
   transition:0.5s linear all;

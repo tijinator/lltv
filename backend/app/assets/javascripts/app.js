@@ -6,7 +6,7 @@ angular.module('lltv', [
 'ng-token-auth',
 'lltvFilters',
 'ngAnimate'])
-.constant('baseUrl', '/')
+.constant('baseUrl', 'http://beta.learninglibrary.tv')
 .config([
 'baseUrl',
 '$stateProvider',
@@ -23,6 +23,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       return resp.data;
     },
     handleTokenValidationResponse: function(resp) {
+      // console.log(resp);
       return resp.data;
     }
   });

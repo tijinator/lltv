@@ -1,6 +1,8 @@
 <nav ng-class="{'homepage-nav': isActive('/')}" class="navbar navbar-fixed-top" role="navigation">
  	<div class="container" style="position: relative; top: 0; left: 0">
- 		<a class="navbar-brand" ng-href="/"><img ng-src="{{'images/LLTV_logo.png'}}" style="position: absolute; top: 10px; left: 15px"/></a>
+ 		<a class="navbar-brand" ng-href="/">
+ 			<img class='navbar-brand-logo' ng-src="{{'images/LLTV_logo.png'}}"/>
+ 		</a>
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
 	        <span class="sr-only">Toggle navigation</span>
@@ -14,8 +16,14 @@
 	      <ul class="nav navbar-nav">
 	        <li ui-sref-active=""><a ui-sref="categories.show"><img ng-src="{{'images/LLTV_searchicon.png'}}"></a></li>
 	        <li><a ui-sref="category.show({id: 3})">Business</a></li>
-	        <li ng-controller="AuthModalCtrl"><div ng-click="openModal(signin)">Sign In</div></li>
-	        <li ng-controller="AuthModalCtrl"><div class="bubble-btn sign-up" ng-click="openModal('register')">Sign Up</div></li>
+
+	        <li ng-bind='signedIn()'></li>
+	       
+	        <li ng-controller="AuthModalCtrl" ng-hide='isLoggedIn()'><div ng-click="openModal(signin)">Sign In</div></li>
+	        <li ng-controller="AuthModalCtrl" ng-hide='isLoggedIn()'>
+	        	<div class="bubble-btn sign-up" ng-click="openModal('register')">Sign Up</div>
+	        </li>
+	        <li ng-controller="NavCtrl" ng-show='isLoggedIn()'><div ng-click="signOut()">Sign Out</div></li>
 	      </ul>
 	    </div>
   	</div>

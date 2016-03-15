@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  root to: 'home#home'
 
-
+  # User Table related
   devise_for :users
+  resources :users, controller: 'admin/user_admin'
+
 
   # token auth routes available at /api/v1/auth
   namespace :api do
@@ -10,14 +13,13 @@ Rails.application.routes.draw do
     end
   end
 
+  # Subdomains - 
   constraints subdomain: 'admin' do
     get '/' => 'admin#home'
     get '/tags' => 'admin#tags'
     get '/categories' => 'admin#categories'
     # get '/courses' => 'admin#courses'
     # get '/courses/:id' => 'admin#show_course'
-
-    resources :users, controller: 'admin/user_admin'
 
     resources :courses, controller: 'admin/course_admin' do
       resources :chapters, controller: 'admin/chapter_admin' do
@@ -32,9 +34,9 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :api, defaults: { format: :json } do
 
-    #Category routes
+  # Api's  /api/course/:id 
+  namespace :api, defaults: { format: :json } do
     resources :categories do
       collection do
         get 'featured_course' => 'categories#featured_course'
@@ -44,9 +46,7 @@ Rails.application.routes.draw do
       end
     end
 
-    #courses routes
-    resources :courses do
-    end
+    resources :courses
   end
 
   get '/courses' => 'home#home'
@@ -54,6 +54,4 @@ Rails.application.routes.draw do
 
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
-
-  root to: 'home#home'
 end
