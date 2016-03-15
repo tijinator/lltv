@@ -171,7 +171,7 @@
 @media screen and (max-width: 1230px) {
 	.course-chapter-collaps #exp-all{
 		margin-right: 38%;
-	}	
+	}
 }
 
 .course-chapter-tab-box{
@@ -223,8 +223,8 @@
 }
 
 
-.nav-tabs > li.active > a, 
-.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus{
 	color: #ffffff;
     cursor: default;
@@ -251,6 +251,7 @@
     border-bottom: 1px solid #353A3D;
 }
 
+
 @media screen and (min-width: 1500px) {
 	.tab-content{
 		width: 900px;
@@ -264,6 +265,11 @@
 	font-size: 15px;
 	line-height: 30px;
 	color: #FFF
+
+.tab-content{
+	margin-top: 50px;
+	margin-left: 10px;
+	min-height: 500px; /* it was 350px */
 }
 
 .tab-inner-panel{
@@ -346,5 +352,3 @@
 	color: #787D7F;
 	text-transform: uppercase;
 }
-
-

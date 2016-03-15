@@ -17,20 +17,20 @@ Category.create!([
 ])
 
 Course.create!([
-  { user_id: 1, 
-    author_id: 1, 
+  { user_id: 1,
+    author_id: 1,
     level: "beginner",
     title: "learn adobe illustrator",
-    details: "In this incredible tutorial, you will learn the fundamentals and basic design principles with the tools used in Adobe Illustrator CC. There are three levels for beginner, intermediate and advanced. Keep up with the trends of design with this video clip.", 
-    duration: nil, 
-    position: nil, 
+    details: "In this incredible tutorial, you will learn the fundamentals and basic design principles with the tools used in Adobe Illustrator CC. There are three levels for beginner, intermediate and advanced. Keep up with the trends of design with this video clip.",
+    duration: nil,
+    position: nil,
     published: false,
-    released_on: nil, 
-    image_file_name: nil, 
+    released_on: nil,
+    image_file_name: nil,
     image_content_type: nil,
-    image_file_size: nil, 
-    image_updated_at: nil, 
-    banner_url: "/images/LLTV_ai_banner.jpg", 
+    image_file_size: nil,
+    image_updated_at: nil,
+    banner_url: "/images/LLTV_ai_banner.jpg",
     featured: true }
 ])
 
@@ -42,5 +42,3 @@ ItemCategory.create!([
 Chapter.create!([
     { user_id: 1, course_id: 1, title: 'INTRO Illustrator', details: 'Cool Course about illustrator', duration: 185, position: 1}
 ])
-
-
