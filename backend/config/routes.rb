@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # Subdomains - 
+  # Subdomains -
   constraints subdomain: 'admin' do
     get '/' => 'admin#home'
     get '/tags' => 'admin#tags'
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   end
 
 
-  # Api's  /api/course/:id 
+  # Api's  /api/course/:id
   namespace :api, defaults: { format: :json } do
     resources :categories, only: [:show, :index] do
       collection do

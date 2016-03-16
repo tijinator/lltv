@@ -13,10 +13,12 @@ gem 'pg'
 gem 'dotenv-rails'
 
 gem 'sprockets', '2.12.3'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'angular_rails_csrf'
 gem 'angular-rails-templates'
 gem 'jquery-datatables-rails', '~> 3.3.0'
+
+gem 'jquery-easing-rails'
 
 gem 'devise'
 gem 'devise_token_auth'

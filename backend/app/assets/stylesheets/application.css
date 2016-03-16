@@ -25,7 +25,7 @@
 *{
 	outline: 0px red solid;
 }
- 
+
 .content-container.ng-scope {
     margin-top: 85px;
 }
@@ -34,9 +34,9 @@
  	margin-top: 0;
  }
 
- .content-container{
+ /*.content-container{
    overflow-x: hidden;
- }
+ } this prevent the scroll feature not to work!*/
 
  .subhead{
  	font-weight: bold;

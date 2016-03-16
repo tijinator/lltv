@@ -1,18 +1,49 @@
-<div id="landing-homepage">
-  <img src="<%= image_path('LLTV_homepage.jpg')%>" style="width: 100%; position: relative; top: 0; left: 0">
-  <div>
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs homepage-category-nav" role="tablist">
-      <% @categories.each_with_index do |category, idx| %>
-        <li role="presentation"
-          style="background-color: <%= category.html_tab_color %>"
-          <% if idx == 0 %>class="active"<% end %>>
-          
-          <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><%= category.title %></div></li>
-      <% end %>
-    </ul>
+<div id="landing-homepage" style="height: 100%;">
+
+  <div class="row" style="height: 100%;">
+
+    <div class="container" style="height: 100%; padding: 0;">
+      <div class="col-md-12 header">
+
+        <!-- Nav tabs -->
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+
+            <div class="quote-container">
+              <img src="<%= image_path('LLTV_overlay_text_1.png')%>" >
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="colored-bar" id="cat-bar">
+
+          <ul class="nav nav-tabs homepage-category-nav" role="tablist">
+            <% @categories.each_with_index do |category, idx| %>
+
+            <li id="category-button" role="presentation"
+                style="background-color: <%= category.html_tab_color %>"
+                <% if idx == 0 %>class="active"<% end %>>
+
+                <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><p><%= category.title %><p></div></li>
+            <% end %>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div><!-- end of row -->
+
+
+  <div class="row">
+
+
     <!-- Tab panes -->
-    <div class="tab-content container-fluid">
+    <div class="tab-content container-fluid" id="details">
       <% @categories.each_with_index do |category, idx| %>
         <div role="tabpanel"
           class="tab-pane row <% if idx == 0 %>active<% end %>" id="<%= category.html_tab_id %>">
@@ -24,7 +55,7 @@
           </div>
           <div class="col-md-6">
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 category-titles">
                 <h3 style="color: <%= category.html_color %>">
                 <%= category.title %> Training + Tutorials
                 </h3>
@@ -36,26 +67,43 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-12">
-                <a ui-sref="category.show({id: <%= category.id %>})">
-                  <div class="bubble-btn pull-left" style="background-color: <%= category.html_color %>;">
-                    Browse <%= category.title %> Tutorials
-                  </div>
-                </a>
-                <!-- <a ui-sref="register"> -->
-                <div ng-controller="AuthModalCtrl">
-                  <div class="pull-right bubble-btn create-account" ng-click="openModal('register')">
-                      Create Account
-                  </div>
-                </div>
-                <!-- </a> -->
-              </div>
+              <div class="col-md-12" style="height: 50px;">
+
+                <ul class="category-buttons" style="height: 100%;">
+
+                  <li>
+                    <a ui-sref="category.show({id: <%= category.id %>})">
+                      <div class="bubble-btn pull-left" style="background-color: <%= category.html_color %>;">
+                        Browse <%= category.title %> Tutorials
+                      </div>
+                    </a>
+
+                  </li>
+                    <!-- <a ui-sref="register"> -->
+
+                  <li>
+                    <div ng-controller="AuthModalCtrl">
+                      <div class="pull-right bubble-btn create-account" ng-click="openModal('register')">
+                          Create Account
+                      </div>
+                    </div>
+                    <!-- </a> -->
+
+                  </li>
+
+                </ul><!-- end ul category-buttons -->
+
+
+              </div><!-- end col-md-12 -->
             </div>
           </div>
         </div>
       <% end %>
-    </div>
+    </div><!-- end of container-fluid -->
+
   </div>
+
+
   <footer class="homepage-footer">
   </footer>
 </div>
