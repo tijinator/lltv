@@ -7,6 +7,7 @@ angular.module('lltv', [
 'lltvFilters',
 'ngAnimate'])
 .constant('baseUrl', 'http://beta.learninglibrary.tv')
+// .constant('baseUrl', 'http://localhost:3000')
 .config([
 'baseUrl',
 '$stateProvider',
