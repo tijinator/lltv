@@ -265,8 +265,9 @@
 	font-size: 15px;
 	line-height: 30px;
 	color: #FFF
+}
 
-.tab-content{
+.course-tab-content{
 	margin-top: 50px;
 	margin-left: 10px;
 	min-height: 500px; /* it was 350px */
