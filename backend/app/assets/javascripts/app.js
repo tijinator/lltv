@@ -6,7 +6,7 @@ angular.module('lltv', [
 'ng-token-auth',
 'lltvFilters',
 'ngAnimate'])
-.constant('baseUrl', 'http://beta.learninglibrary.tv')
+.constant('baseUrl', '/')
 .config([
 'baseUrl',
 '$stateProvider',
