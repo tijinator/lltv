@@ -17,11 +17,13 @@
 	        <li><a ui-sref="category.show({id: 3})">Business</a></li>
 
 	        <li ng-bind='signedIn()'></li>
-	        <li ng-controller="AuthModalCtrl" ng-hide='isLoggedIn()'><div ng-click="openModal(signin)">Sign In</div></li>
 
+          <li ng-controller="AuthModalCtrl" ng-if='!isLoggedIn()'><div ng-click="openModal(signin)">Sign In</div></li>
+	        <li ng-controller="AuthModalCtrl" ng-if='!isLoggedIn()'>
 	        	<div class="bubble-btn sign-up" ng-click="openModal('register')">Sign Up</div>
 	        </li>
 	        <li ng-controller="NavCtrl" ng-show='isLoggedIn()'><div ng-click="signOut()">Sign Out</div></li>
+
 	      </ul>
 	    </div>
   	</div>

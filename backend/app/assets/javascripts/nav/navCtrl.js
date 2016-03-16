@@ -7,11 +7,10 @@ angular.module('lltv')
 'currentUser',
 function($rootScope, $scope, $location, $auth, currentUser) {
 
-
   $scope.isActive = function (route){
     return (route == $location.path()) ? true : false
   }
-  
+
   $scope.signedIn = function() {
     // return currentUser.username;
     return $scope.user.first_name;
