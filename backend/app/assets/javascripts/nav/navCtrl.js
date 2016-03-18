@@ -19,14 +19,16 @@ function($rootScope, $scope, $location, $auth, currentUser) {
     // var ul = document.createElement('ul');
 
     // var domList = document.getElementsByClassName("call-me");
+    // <div class="profile-option-arrow"></div>
+
     var html = `
-    <a class="dropdown-toggle" data-toggle="dropdown"> Profile</a>
-    <ul class="dropdown-menu" role="menu">
-      <li><a href="/categories" style="color: #000;">account settings</a></li>
-      <li><a href="/courses/1" style="color: #000;">profile</a></li>
-      <li><a href="/categories/1" style="color: #000;">help</a></li>
-      <li><a href="/categories" style="color: #000;">contact us</a></li>
-      <li><a href="/courses/1" style="color: #000;">sign out</a></li>
+    <a class="dropdown-toggle" data-toggle="dropdown" style="background: none;">Profile <span class="glyphicon glyphicon-menu-down" style="padding-left: 6px;"></span></a>
+    <ul class="profile-dropdown dropdown-menu dropdown-menu-right" role="menu">
+      <li><a href="/categories" style="color: #787d7f; height: 15px;">account settings</a></li>
+      <li><a href="/courses/1" style="color: #787d7f; height: 15px;">profile</a></li>
+      <li><a href="/categories/1" style="color: #787d7f; height: 15px;">help</a></li>
+      <li><a href="/categories" style="color: #787d7f; height: 15px;">contact us</a></li>
+      <li><a href="/courses/1" style="color: #787d7f; height: 15px;">sign out</a></li>
     </ul>
     `
 
@@ -56,13 +58,6 @@ function($rootScope, $scope, $location, $auth, currentUser) {
     // // console.log(ulChildrenLi);
     // li.appendChild(ul);
 
-
-
-
-    // var domList = document.getElementsByClassName("profile-nav-menu");
-    // var $list = $(domList); //convert to jquery element
-    // var $ul = $('<ul class="dropdown-menu"></ul>');
-    // var $res = $list.append($ul);
   }
 
   $scope.isActive = function (route){
