@@ -209,8 +209,6 @@ GEM
     pry-awesome_print (9.6.10)
       awesome_print (>= 1.1.0, < 999)
       pry (>= 0.9.0, < 999)
-    pry-rails (0.3.4)
-      pry (>= 0.9.10)
     puma (2.15.3)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
@@ -348,7 +346,6 @@ DEPENDENCIES
   paperclip
   pg
   pry-awesome_print
-  pry-rails
   puma
   quiet_assets
   rails (= 4.2.5)

@@ -2,7 +2,7 @@
   <div class="row course-info-content">
     <div class="col-md-4">
       <div class="col-md-12 course-info-data">
-        <div class="row course-info-row"> 
+        <div class="row course-info-row">
           <div class="course-info-title">
             <h2>{{course.title}}</h2>
           </div>
@@ -11,7 +11,7 @@
             <!-- <p> video: {{course.video.video_url}}</p> -->
           </div>
           <div class='course-info-ldr'>
-            
+
             <div class='course-info-static-ldr'>
               <ul>
                 <li>level:</li>
@@ -60,8 +60,8 @@
       <div class="col-md-12 course-chapter-index">
         <div class="row course-chapter-search">
           <p>
-            <a ng-click="search_title = !search_title" href=""> 
-              <i class="fa fa-search"></i> 
+            <a class="search-field" ng-click="search_title = !search_title" href="">
+              <i class="fa fa-search"></i>
               <span ng-show="!search_title"> search this course </span>
             </a>
 
@@ -80,6 +80,7 @@
             </span>
           </h6>
         </div>
+
         <div class="row course-chapters-list">
           <div class="course-chapters">
           <a href="">
@@ -101,6 +102,7 @@
           </div>
         </div>
         </div>
+
       </div>
     </div>
     <!-- chapter deails -->

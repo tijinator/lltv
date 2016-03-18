@@ -5,6 +5,51 @@ nav.navbar.navbar-fixed-top.ng-scope{
 
 nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   background: transparent;
-  background-image: url('/images/LLTV_blackgradient.png');
+  background-image: url('/images/LLTV_blackgradient2.png');
   min-height: 103px;
 }
+
+/* profile nav options */
+
+.profile-dropdown{
+  border: 0;
+  padding: 0;
+  width: 229px;
+  /*height: 287px;*/
+  text-align: center;
+  font-size: 13px;
+  top: 48px;
+  right: -64px;
+}
+
+.profile-dropdown:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: 31px;
+  width: 0;
+  height: 0;
+  border-left: solid 13px transparent;
+  border-right: solid 13px transparent;
+  border-bottom: solid 13px #FFF;
+}
+
+#lltv .homepage-nav-links .profile-dropdown li{
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+#lltv .homepage-nav-links .profile-dropdown li:first-child{
+  margin-top: 40px;
+}
+
+#lltv .homepage-nav-links .profile-dropdown li:last-child{
+  margin-bottom: 40px;
+}
+
+/*#lltv .homepage-nav-links .profile-option-arrow{
+  background-image:url('/images/LLTV_responsive_mobile_downarrow.png');
+}*/
+
+/* end profile nav options */
