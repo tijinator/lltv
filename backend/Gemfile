@@ -17,7 +17,6 @@ gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'angular_rails_csrf'
 gem 'angular-rails-templates'
 gem 'jquery-datatables-rails', '~> 3.3.0'
-
 gem 'jquery-easing-rails'
 
 gem 'devise'
@@ -27,7 +26,8 @@ gem 'omniauth-facebook'
 # gem 'pundit'  Model Level Policies, don't think necessary now
 
 gem 'paperclip'
-gem 'aws-sdk-v1'
+# gem 'aws-sdk-v1'
+gem 'aws-sdk', '~> 2'
 gem 'elastic_transcoder'
 gem 'active_model_serializers'
 
