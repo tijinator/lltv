@@ -5,5 +5,5 @@ angular.module('lltv').controller('MainCtrl', ['$scope', '$location', function($
 	    }else{
 			return false;
 	    }
-  	}	
+  	}
 }]);

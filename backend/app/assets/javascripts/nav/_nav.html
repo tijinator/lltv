@@ -15,26 +15,19 @@
 	      <ul class="nav navbar-nav">
 	        <li ui-sref-active=""><a ui-sref="categories.show"><img ng-src="{{'images/LLTV_searchicon.png'}}"></a></li>
 	        <li><a ui-sref="category.show({id: 3})">Browse</a></li>
+          	<!-- <li class="dropdown-toggle" ng-click='signedIn()'> Call me </li> -->
+          	<li id='signedIn'></li>
 
-          <li class="dropdown-toggle" ng-click='callMe()'> Call me </li>
-          <li class='call-me'></li>
-	        <!-- <li class="profile-nav-menu" ng-bind='signedIn()'> -->
-          <li class="profile-nav-menu" ng-if='isLoggedIn()'>
-            <a class="dropdown-toggle" data-toggle="dropdown" ng-bind='signedIn()'></a>
-            <ul class="dropdown-menu" role="menu">
-              <li style="color: #000;">one</li>
-              <li style="color: #000;">two</li>
-              <li style="color: #000;">three</li>
-            </ul>
-          </li>
+			<li ng-controller="AuthModalCtrl" class='sign_up_in'>
+				<div ng-click="openModal(signin)">Sign In</div>
+			</li>
+			<li ng-controller="AuthModalCtrl" class='sign_up_in'>
+				<div class="bubble-btn sign-up" ng-click="openModal('register')">Sign Up</div>
+			</li>
 
-          <li ng-controller="AuthModalCtrl" ng-if='!isLoggedIn()'><div ng-click="openModal(signin)">Sign In</div></li>
-	        <li ng-controller="AuthModalCtrl" ng-if='!isLoggedIn()'>
-	        	<div class="bubble-btn sign-up" ng-click="openModal('register')">Sign Up</div>
-	        </li>
-	        <li ng-controller="NavCtrl" ng-show='isLoggedIn()'><div ng-click="signOut()">Sign Out</div></li>
-
-	      </ul>
+			<!-- <li ng-show='true'><div ng-click="signOut()">Sign Out</div></li> -->
+          </ul>
+          
 	    </div>
   	</div>
 </nav>
