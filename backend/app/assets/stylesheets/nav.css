@@ -48,6 +48,13 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   margin-bottom: 40px;
 }
 
+
+#lltv .sign-up-bubble{
+  border: 2px solid #FFFFFF;
+  border-radius: 25px;
+  padding: 10px 20px 10px 20px;
+  margin-top: -12px;
+}
 /*#lltv .homepage-nav-links .profile-option-arrow{
   background-image:url('/images/LLTV_responsive_mobile_downarrow.png');
 }*/

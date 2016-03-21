@@ -39,12 +39,8 @@
   left: calc(50% - 497px/2);
 }
 
-.quote-container img{
-  /*margin: 0 calc(100vh/4);*/
-}
-
 #lltv .homepage-nav-links {
-  padding-top: 37px; /*was 20x */
+  padding-top: 27px; /*was 37x */
   color: #FFFFFF;
   font-size: 13px;
   text-transform: uppercase;
