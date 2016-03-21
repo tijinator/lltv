@@ -184,3 +184,56 @@
   height: 236px;
   background-color: #000;
 }
+
+/* responsive design */
+
+@media (max-width: 1060px){
+  .category-img-container > div > img {
+    width: 80%;
+  }
+
+  .category-titles h3{
+    font-size: 29px;
+  }
+
+  .category-details{
+    width: 409px;
+    font-size: 15px;
+  }
+
+  .bubble-btn{
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 992px){
+  .category-img-container{
+    width: 50%;
+    float: left;
+  }
+
+  .category-details-container{
+    width: 50%;
+    float: left;
+  }
+
+  .category-img-container > div > img {
+    width: 80%;
+  }
+
+  /*.category-titles h3{
+    font-size: 29px;
+  }
+
+  .category-details{
+    width: 409px;
+    font-size: 15px;
+  }
+
+  .bubble-btn{
+    font-size: 11px;
+  }*/
+}
+
+
+/* end of responsive design */

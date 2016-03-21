@@ -5,18 +5,6 @@
     <div class="container" style="height: 100%; padding: 0;">
       <div class="col-md-12 header">
 
-        <!-- Nav tabs -->
-        <!-- <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-
-            <div class="quote-container">
-              <img src="<%= image_path('LLTV_overlay_text_1.png')%>" >
-            </div>
-
-
-          </div>
-        </div> -->
-
         <div class="quote-container">
           <img src="<%= image_path('LLTV_overlay_text_1.png')%>" >
         </div>
@@ -52,12 +40,12 @@
         <div role="tabpanel"
           class="tab-pane row <% if idx == 0 %>active<% end %>" id="<%= category.html_tab_id %>">
 
-          <div class="col-md-6">
+          <div class="col-md-6 category-img-container category-container">
             <div class="row">
               <img src="<%= image_path('LLTV_designimage.jpg') %>">
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 category-details-container category-container">
             <div class="row">
               <div class="col-md-12 category-titles">
                 <h3 style="color: <%= category.html_color %>">
