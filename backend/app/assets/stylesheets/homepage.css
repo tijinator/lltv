@@ -32,11 +32,15 @@
 }
 
 .quote-container{
-  margin-top: 300px;
+  /*margin-top: 300px;*/
+  position: absolute;
+  max-width: 500px;
+  top: 48%;
+  left: calc(50% - 497px/2);
 }
 
 .quote-container img{
-  margin: 0 calc(100vh/4);
+  /*margin: 0 calc(100vh/4);*/
 }
 
 #lltv .homepage-nav-links {
@@ -180,36 +184,3 @@
   height: 236px;
   background-color: #000;
 }
-
-/*@media screen and (min-width: 1280px) {
-  .quote-container {
-    margin-top: 35%;
-  }
-}*/
-
-/*@media screen and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) {
-    .quote-container{
-      margin-top: 35%;
-    }
-}*/
-
-/*@media screen and (width: 1024px) and (height: 768px){
-  .quote-container {
-    margin-top: 54%;
-  }
-}
-
-@media screen and (width: 1280px) and (min-height: 800px) and (max-height: 1050px){
-  .quote-container {
-    margin-top: 45%;
-  }
-}
-
-@media screen and (width: 1280px) and (height: 1024px){
-  .quote-container {
-    margin-top: 58%;
-  }
-}*/
