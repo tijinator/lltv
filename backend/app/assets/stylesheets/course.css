@@ -272,6 +272,7 @@
 	margin-top: 50px;
 	margin-left: 10px;
 	min-height: 350px;
+	margin-bottom: 50px; /*add space to white section on homepage */
 }
 
 .tab-inner-panel{
