@@ -1,4 +1,4 @@
-require 'aws'
+# require 'aws'
 
 class Chapter < ActiveRecord::Base
   # belongs_to :parent, class: 'Chapter'

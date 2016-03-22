@@ -7,4 +7,5 @@ function($scope, authService) {
   $scope.openModal = function(type) {
     authService.openModal(type);
   };
+  
 }]);
