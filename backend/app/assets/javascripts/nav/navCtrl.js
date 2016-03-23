@@ -85,12 +85,14 @@ function($rootScope, $scope, $location, $auth, currentUser, $compile) {
     // console.log("validation-log2: ", userData);
     // console.log("Login Success event: ", ev);
     console.log("Login Success: ", userData);
+    $location.path("categories");
     signedIn(userData);
   });
 
   $rootScope.$on('auth:logout-success', function(ev) {
     console.log("LogOut Success");
     // console.log('signOut: ', ev);
+    $location.path("/");
     signOut();
   });
 
