@@ -18,15 +18,20 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   
   def set_username
-    if username
-       self.username = username
-    else
-       self.username = self.email.split('@').first
-    end
+    username ? self.username = username : self.username = self.email.split('@').first
   end
 
   # def email=(val)
   #   write_attribute(:email, val.downcase)
+  # end
+
+  # DEVISE Auth Check for activation
+  # def active_for_authentication?
+  #   super && self.your_method_for_checking_active # i.e. super && self.is_active
+  # end
+
+  # def inactive_message
+  #   "Sorry, this account has been deactivated."
   # end
 
   def devise_mapping

@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   serialization_scope :view_context
-  # helper_method :user_signed_in?
+  helper_method :user_signed_in?
+  helper_method :current_user
 
   def error_message(type=nil)
     if type == nil
@@ -22,19 +23,6 @@ class ApplicationController < ActionController::Base
       return {"messsage" => "Record not found"}
     end
   end
-
-  def after_sign_in_path_for(user)
-    if current_user.role > 0
-      redirect_to courses_path
-    else
-      redirect_to :root
-    end
-    return
-  end
-
-  # def after_sign_out_path_for(user)
-  #   redirect_to 'https://google.com'
-  # end
 
   def lltv
     render 'layouts/application'
@@ -45,7 +33,21 @@ class ApplicationController < ActionController::Base
     @level = 2
   end
 
-  protected
+protected
+
+  def after_sign_in_path_for(user)
+    if user.role > 0
+      # redirect_to users_path
+      '/users'
+    else
+      # redirect_to :root
+      '/'
+    end
+  end
+
+  # def after_sign_out_path_for(user)
+  #   redirect_to 'https://google.com'
+  # end
 
   def layout_by_resource
     if devise_controller?

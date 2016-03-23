@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'home#home'
-
+  
   # User Table related
-  devise_for :users
-  resources :users, controller: 'admin/user_admin'
 
 
   # token auth routes available at /api/v1/auth
@@ -13,8 +10,18 @@ Rails.application.routes.draw do
     end
   end
 
+  
+  # devise_for :users
+
   # Subdomains -
   constraints subdomain: 'admin' do
+
+  devise_for :users, controllers: {
+    sessions:      'users/sessions',
+    registrations: 'users/registrations'  
+  }
+  resources :users, controller: 'admin/user_admin'
+
     get '/' => 'admin#home'
     get '/tags' => 'admin#tags'
     get '/categories' => 'admin#categories'
@@ -54,4 +61,6 @@ Rails.application.routes.draw do
 
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
+
+  root to: 'home#home'
 end
