@@ -3,4 +3,4 @@
 //= require bootstrap
 //= require metisMenu
 //= require startbootstrap-sb-admin-2
-//= require video.js/dist/video
+// require video.js/dist/video
