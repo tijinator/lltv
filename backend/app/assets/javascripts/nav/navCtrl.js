@@ -8,28 +8,54 @@ angular.module('lltv')
 '$compile',
 function($rootScope, $scope, $location, $auth, currentUser, $compile) {
 
-var jsRun = function(){
-  var a = document.createElement('a');
-      a.setAttribute('class','dropdown-toggle');
-      a.setAttribute('data-toggle','dropdown');
-      a.setAttribute('style','background: none');
-  var span = document.createElement('span');
-      span.setAttribute('class','glyphicon glyphicon-menu-down');
-      span.setAttribute('style','padding-left: 6px');
-      span.setAttribute('class','glyphicon glyphicon-menu-down');
-  var ul = document.createElement('ul');
-      ul.setAttribute('class','profile-dropdown dropdown-menu dropdown-menu-right');
-      ul.setAttribute('role','menu');
-      ul.setAttribute('id','profile-navbar');
+$scope.jsRun = function(userData){
   var li = document.createElement('li');
-  var la = document.createElement('a');
-      la.setAttribute('href', '/categories');
-      la.setAttribute('style', 'color: #787d7f; height: 15px');
-  var lo = document.createElement('a');
-      lo.setAttribute('ng-click', 'signOut()');
-      lo.setAttribute('style', 'color: #787d7f; height: 15px');
+      li.setAttribute('id', 'signedIn');
 
-      console.log("RUNNER");
+  var a = document.createElement('a');
+          a.setAttribute('class','dropdown-toggle');
+          a.setAttribute('data-toggle','dropdown');
+          a.setAttribute('style','background: none');
+  var userName = document.createTextNode($scope.user.username); 
+      a.appendChild(userName);
+
+  var span = document.createElement('span');
+          span.setAttribute('class','glyphicon glyphicon-menu-down');
+          span.setAttribute('style','padding-left: 6px');
+          span.setAttribute('class','glyphicon glyphicon-menu-down');
+          a.appendChild(span);
+      li.appendChild(a);
+
+  var ul = document.createElement('ul');
+          ul.setAttribute('class','profile-dropdown dropdown-menu dropdown-menu-right');
+          ul.setAttribute('role','menu');
+          ul.setAttribute('id','profile-navbar');
+
+  var innerLiOne = document.createElement('li');
+      var innerA = document.createElement('a');
+          innerA.setAttribute('href', '/categories');
+          innerA.setAttribute('style', 'color: #787d7f; height: 15px');
+          
+          var profile = document.createTextNode('Profile'); 
+          innerA.appendChild(profile);
+          innerLiOne.appendChild(innerA);
+      ul.appendChild(innerLiOne);
+
+  var innerLiTwo = document.createElement('li');
+      var innerO = document.createElement('a');
+          innerO.setAttribute('ng-click', 'signOut()');
+          innerO.setAttribute('style', 'color: #787d7f; height: 15px');
+          
+          var signOut = document.createTextNode('Sign Out'); 
+          innerO.appendChild(signOut);
+          innerLiTwo.appendChild(innerO);
+      ul.appendChild(innerLiTwo);
+
+      li.appendChild(ul);
+      console.log("RUNNER :", li);
+
+  return li;
+
 }
 
   var currentUserMenu = function(userData){
@@ -50,9 +76,13 @@ var jsRun = function(){
 
   var signedIn = function(userData) {
         // currentUser.set(userData);
-      var x = currentUserMenu(userData);
+      // var x = currentUserMenu(userData);
+
+      var x = $scope.jsRun(userData);
       $('.sign_up_in').hide();
+      // $('#signedIn').show().html(x);
       $('#signedIn').show().html($compile(x)($scope));
+      console.log(x);
   };
 
   var signOut = function(){
