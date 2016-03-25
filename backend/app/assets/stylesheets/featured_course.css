@@ -5,7 +5,7 @@
   background-color: #000000;
   color: #FFFFFF;
   padding: 0;
-  height: 286px;
+  height: 350px; /*it was 286px*/
 }
 
 .featured-course .course-banner {
@@ -18,8 +18,7 @@
 }
 
 .featured-course-content {
-  /*clear: both;*/
-  padding-top: 50px;
+  padding: 0;
   width: 30%;
   height: 100%;
 }
@@ -31,28 +30,41 @@
 }
 
 .featured-course-tag {
-  padding: 10px;
   text-transform: uppercase;
-  vertical-align: middle;
   font-size: 15px;
-  margin-left: 20px;
+  margin-top: 10px;
+  margin-right: 50px;
+  font-family: Avenir-black;
+  background-color: rgba(26, 157, 7, 0.78);
 }
 
 .featured-course-data {
-  padding: 20px 20px 30px 20px;
+  /*padding: 20px 20px 30px 20px;*/
+  padding: 0;
 }
 
 .featured-course-title {
-  word-spacing: 9999999999999999px;
+  /*word-spacing: 9999999999999999px;*/
   text-transform: capitalize;
   font-size: 30px;
   font-weight: bold;
+  font-family: avenir-black;
+  margin: 15px 50px 15px 50px;
+}
+
+.featured-course-title h1{
+  margin: 0;
 }
 
 .featured-course-details {
-  line-height: 20px;
-  margin: 20px 0px;
+  line-height: 30px;
+  margin: 0 50px;
   font-size: 15px;
+  font-family: avenir-book;
+}
+
+.featured-course-details p{
+  margin: 0;
 }
 
 .featured-course-img{
