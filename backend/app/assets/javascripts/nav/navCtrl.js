@@ -53,6 +53,7 @@ function($rootScope, $scope, $location, $auth, currentUser, $compile) {
   $rootScope.$on('auth:registration-email-success', function(ev, userData) {
     // alert("A registration email was sent to " + message.email);
     console.log('Register Success: ',userData);
+    $location.path("categories");
     signedIn(userData);
   });
 
@@ -85,12 +86,14 @@ function($rootScope, $scope, $location, $auth, currentUser, $compile) {
     // console.log("validation-log2: ", userData);
     // console.log("Login Success event: ", ev);
     console.log("Login Success: ", userData);
+    $location.path("categories");
     signedIn(userData);
   });
 
   $rootScope.$on('auth:logout-success', function(ev) {
     console.log("LogOut Success");
     // console.log('signOut: ', ev);
+    $location.path("/");
     signOut();
   });
 

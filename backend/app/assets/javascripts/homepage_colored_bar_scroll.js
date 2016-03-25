@@ -12,3 +12,5 @@ var coloredBarScroll = function(){
 }
 
 $(document).ready(coloredBarScroll);
+$(window).bind('page:change', coloredBarScroll);
+$(window).bind('unload', coloredBarScroll);

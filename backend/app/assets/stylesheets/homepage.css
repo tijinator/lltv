@@ -15,7 +15,7 @@
 
 #lltv .container {
   width: 100%;
-  padding: 10px 30px 0px 30px;
+  padding: 10px 80px 0px 30px; /*padding right was 30px*/
 }
 
 #lltv .navbar-brand {
@@ -32,15 +32,15 @@
 }
 
 .quote-container{
-  margin-top: 300px;
-}
-
-.quote-container img{
-  margin: 0 calc(100vh/4);
+  /*margin-top: 300px;*/
+  position: absolute;
+  max-width: 500px;
+  top: 48%;
+  left: calc(50% - 497px/2);
 }
 
 #lltv .homepage-nav-links {
-  padding-top: 37px; /*was 20x */
+  padding-top: 27px; /*was 37x */
   color: #FFFFFF;
   font-size: 13px;
   text-transform: uppercase;
@@ -181,35 +181,83 @@
   background-color: #000;
 }
 
-/*@media screen and (min-width: 1280px) {
-  .quote-container {
-    margin-top: 35%;
-  }
-}*/
+/* responsive design desktop/laptop*/
 
-/*@media screen and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) {
-    .quote-container{
-      margin-top: 35%;
-    }
-}*/
-
-/*@media screen and (width: 1024px) and (height: 768px){
-  .quote-container {
-    margin-top: 54%;
+@media (max-width: 1060px){
+  .category-img-container{
+    width: 50%;
   }
+  .category-img-container > div > img { width: 100%;
+  }
+
+  .category-titles h3{ font-size: 29px; }
+
+  .category-details{
+    width: 409px;
+    font-size: 15px;
+  }
+
+  .bubble-btn{ font-size: 14px; }
+
 }
 
-@media screen and (width: 1280px) and (min-height: 800px) and (max-height: 1050px){
-  .quote-container {
-    margin-top: 45%;
+@media (max-width: 992px){
+  .category-img-container{
+    width: 45%;
+    float: left;
   }
+
+  .category-details-container{
+    width: 50%;
+    float: left;
+  }
+
+  .category-img-container > div > img { width: 100%; }
+
+  .bubble-btn{ font-size: 12px; }
+
 }
 
-@media screen and (width: 1280px) and (height: 1024px){
-  .quote-container {
-    margin-top: 58%;
+@media (max-width: 850px){
+  .category-img-container{ display: none; } /*turn off category image container*/
+
+  .category-details-container{
+    width: 100%;
+    float: left;
+    margin: 0 calc(100%/4);
   }
-}*/
+
+  .quote-container{ left: calc(50% - 348px/2); }
+
+  .quote-container img{ width: 70%; }
+
+}
+
+@media (max-width: 700px){
+
+  /*.category-details-container{
+    width: 90%;
+    float: left;
+    margin: 0 calc(100%/16);
+  }*/
+
+  .category-details{ width: : 360px; }
+
+  #lltv .homepage-category-nav li { font-size: 10px; }
+
+  #lltv .homepage-category-nav li.active:after { top: 70px; }
+
+}
+
+@media (max-width: 600px){
+
+  .category-details-container{
+    width: 90%;
+    float: left;
+    margin: 0 calc(100%/16);
+  }
+
+}
+
+
+/* end of responsive design */

@@ -7,6 +7,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   background: transparent;
   background-image: url('/images/LLTV_blackgradient2.png');
   min-height: 103px;
+  background-repeat: no-repeat;
 }
 
 /* profile nav options */
@@ -18,7 +19,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   /*height: 287px;*/
   text-align: center;
   font-size: 13px;
-  top: 48px;
+  top: 58px;
   right: -64px;
 }
 
@@ -48,8 +49,107 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   margin-bottom: 40px;
 }
 
+
+#lltv #sign-up-bubble{
+  border: 2px solid #FFFFFF;
+  border-radius: 25px;
+  padding: 10px 20px 10px 20px;
+  margin-top: -12px;
+}
 /*#lltv .homepage-nav-links .profile-option-arrow{
   background-image:url('/images/LLTV_responsive_mobile_downarrow.png');
 }*/
 
 /* end profile nav options */
+
+/*@media (max-width: 797px) {
+	.icon-menu{
+    position: absolute;
+    top: 32px;
+    right: 50px;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+@media (min-width: 600px) {
+	.icon-menu{  display: none;}
+}*/
+
+#lltv .homepage-nav-links ul > li:first-child > .nav-search-text{
+  display: none;
+}
+
+.navbar-toggle{
+  margin-top: 25px;
+}
+
+.navbar-toggle .icon-bar{
+  width: 24px;
+  height: 4px;
+  background: white;
+}
+
+@media (max-width: 768px){
+  #lltv .homepage-nav-links li:first-child{
+    margin-top: 40px;
+  }
+
+  #lltv .homepage-nav-links li {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 40px;
+  }
+
+  #lltv #sign-up-bubble {
+   border: 0;
+   border-radius: 0;
+   padding: 0;
+   margin-top: 0;
+   }
+
+   #lltv .homepage-nav-links {
+    color: #787d7f;
+    background-color: white;
+    width: 160px;
+    text-align: center;
+    margin-right: -52px;
+    margin-top: 10px;
+    padding: 0;
+    border: 0px;
+  }
+
+  #lltv .homepage-nav-links .navbar-nav {
+    margin: 0;
+  }
+
+  #lltv .navbar-collapse:after {
+    content: '';
+    position: absolute;
+    top: 22%;
+    margin-left: 72px;
+    width: 0;
+    height: 0;
+    border-left: solid 13px transparent;
+    border-right: solid 13px transparent;
+    border-bottom: solid 13px #FFF;
+  }
+
+  #lltv .homepage-nav-links li > a{
+    color: #787d7f;
+  }
+
+  #lltv .homepage-nav-links ul > li:first-child > a:first-child{
+    display: none;
+  }
+
+  #lltv .homepage-nav-links ul > li:first-child > .nav-search-text{
+    display: block;
+  }
+}
+
+@media (min-width: 768px){
+  .navbar-toggle {
+    display: none;
+  }
+}
