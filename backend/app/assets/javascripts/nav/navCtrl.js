@@ -9,17 +9,17 @@ angular.module('lltv')
 function($rootScope, $scope, $location, $auth, currentUser, $compile) {
 
   var currentUserMenu = function(userData){
-    // return html = `
-    //   <a class="dropdown-toggle" data-toggle="dropdown" style="background: none;"> ${userData.username} <span class="glyphicon glyphicon-menu-down" style="padding-left: 6px;"></span></a>
-    //   <ul class="profile-dropdown dropdown-menu dropdown-menu-right" role="menu" id='profile-navbar'>
-    //     <li><a href="/categories" style="color: #787d7f; height: 15px;">account settings</a></li>
-    //     <li><a href="/courses/1" style="color: #787d7f; height: 15px;">profile</a></li>
-    //     <li><a href="/categories/1" style="color: #787d7f; height: 15px;">help</a></li>
-    //     <li><a href="/categories" style="color: #787d7f; height: 15px;">contact us</a></li>
-    //     <li><a ng-click="signOut()" style="color: #787d7f; height: 15px;">Sign Out</a></li>
-    //   </ul>`
+    return html = `
+      <a class="dropdown-toggle" data-toggle="dropdown" style="background: none;"> ${userData.username} <span class="glyphicon glyphicon-menu-down" style="padding-left: 6px;"></span></a>
+      <ul class="profile-dropdown dropdown-menu dropdown-menu-right" role="menu" id='profile-navbar'>
+        <li><a href="/categories" style="color: #787d7f; height: 15px;">account settings</a></li>
+        <li><a href="/courses/1" style="color: #787d7f; height: 15px;">profile</a></li>
+        <li><a href="/categories/1" style="color: #787d7f; height: 15px;">help</a></li>
+        <li><a href="/categories" style="color: #787d7f; height: 15px;">contact us</a></li>
+        <li><a ng-click="signOut()" style="color: #787d7f; height: 15px;">Sign Out</a></li>
+      </ul>`
     
-    console.log('HELLO CURRENT MENU ');
+    // console.log('HELLO CURRENT MENU ');
   };
 
   var signedIn = function(userData) {
