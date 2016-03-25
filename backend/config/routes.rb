@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  # User Table related
-
 
   # token auth routes available at /api/v1/auth
   namespace :api do
@@ -10,35 +8,47 @@ Rails.application.routes.draw do
     end
   end
 
-  
-  # devise_for :users
 
   # Subdomains -
   constraints subdomain: 'admin' do
 
-  devise_for :users, controllers: {
-    sessions:      'users/sessions',
-    registrations: 'users/registrations'  
-  }
-  resources :users, controller: 'admin/user_admin'
+    resources :chapters, controller: 'admin/chapters_admin'
+    
+    resources :categories, controller: 'admin/categories_admin' do
+      resources :courses, controller: 'admin/courses_admin' do
+      end
+    end
 
-    get '/' => 'admin#home'
-    get '/tags' => 'admin#tags'
-    get '/categories' => 'admin#categories'
+    # devise_for :users
+    devise_for :users, controllers: {
+      sessions:      'users/sessions',
+      registrations: 'users/registrations'  
+    }
+
+    # User Table related
+    resources :users, controller: 'admin/user_admin'
+
+    get '/' => 'admin/index_admin#home'
+    get '/dashboard' => 'admin/index_admin#dashboard'
+    # get '/categories' => 'admin/category_admin#index'
+
+    # get '/tags' => 'admin#tags'
+    # get '/categories' => 'admin#categories'
     # get '/courses' => 'admin#courses'
     # get '/courses/:id' => 'admin#show_course'
 
-    resources :courses, controller: 'admin/course_admin' do
-      resources :chapters, controller: 'admin/chapter_admin' do
-        member do
-          put '/update_published_status' => 'admin/chapter_admin#update_published_status'
-        end
-      end
+    # resources :courses, controller: 'admin/course_admin' do
+    #   resources :chapters, controller: 'admin/chapter_admin' do
+    #     member do
+    #       put '/update_published_status' => 'admin/chapter_admin#update_published_status'
+    #     end
+    #   end
 
-      member do
-        put '/update_published_status' => 'admin/course_admin#update_published_status'
-      end
-    end
+    #   member do
+    #     put '/update_published_status' => 'admin/course_admin#update_published_status'
+    #   end
+    # end
+
   end
 
 

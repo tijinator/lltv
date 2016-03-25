@@ -1,6 +1,4 @@
-class Admin::CourseAdminController < ApplicationController
-  before_action :admin_nav_setup
-
+class Admin::CourseAdminController < Admin::AdminController
   before_filter :require_data_entry
   before_filter :require_publisher, only: [:update_published_status]
 

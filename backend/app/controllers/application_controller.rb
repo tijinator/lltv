@@ -1,11 +1,6 @@
 class ApplicationController < ActionController::Base
   include DeviseTokenAuth::Concerns::SetUserByToken
-  include RolesHelper
-
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  # protect_from_forgery with: :exception
-
+  
   protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   respond_to :html, :json
@@ -28,22 +23,17 @@ class ApplicationController < ActionController::Base
     render 'layouts/application'
   end
 
-  def admin_nav_setup
-    @courses = Course.all.order(:position)
-    @level = 2
-  end
-
 protected
 
-  def after_sign_in_path_for(user)
-    if user.role > 0
-      # redirect_to users_path
-      '/users'
-    else
-      # redirect_to :root
-      '/'
-    end
-  end
+  # def after_sign_in_path_for(user)
+  #   if user.role > 0
+  #     # redirect_to users_path
+  #     '/users'
+  #   else
+  #     # redirect_to :root
+  #     '/'
+  #   end
+  # end
 
   # def after_sign_out_path_for(user)
   #   redirect_to 'https://google.com'

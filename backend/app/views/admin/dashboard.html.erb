@@ -1,0 +1,30 @@
+<h1 class='center' style='text-align: center'>Dashboard</h1>
+<hr>
+
+<div class='col-md-3'>
+	<h4>Categories</h4>
+	<% @categories.each do |category| %>
+		<%= category.title %>	<br>
+	<% end %>
+</div>
+
+<div class='col-md-3'>
+	<h4>Courses</h4>
+	<% @courses.each do |course| %>
+		<%= course.title %>	<br>
+	<% end %>
+</div>
+
+<div class='col-md-3'>
+	<h4>Chapters</h4>
+	<% @chapters.each do |chapter| %>
+		<%= chapter.title %>	<br>
+	<% end %>
+</div>
+
+<div class='col-md-3'>
+	<h4>Videos</h4>
+	<% @videos.each do |video| %>
+		<%= "#{video.title}: " "#{video.video_url}" %>	<br>
+	<% end %>
+</div>

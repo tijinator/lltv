@@ -25,7 +25,12 @@ gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-facebook'
 # gem 'pundit'  Model Level Policies, don't think necessary now
 
-gem 'paperclip'
+
+gem 'carrierwave'
+gem 'mini_magick'
+
+
+# gem 'paperclip'
 # gem 'aws-sdk-v1'
 gem 'aws-sdk', '~> 2'
 gem 'elastic_transcoder'

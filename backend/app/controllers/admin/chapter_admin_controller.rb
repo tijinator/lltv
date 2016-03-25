@@ -1,17 +1,15 @@
-class Admin::ChapterAdminController < ApplicationController
-  before_action :admin_nav_setup
-  
+class Admin::ChapterAdminController < Admin::AdminController
   before_filter :require_data_entry
   before_filter :require_publisher, only: [:update_published_status]
 
-  # def index
-  #   @current_user = current_user
-  #   @is_publisher = current_user.role >= RolesHelper.code('Publisher')
-  #   @course = Course.find(params[:course_id])
-  #   @chapter = Chapter.new
-  #   @chapters = @course.chapters
-    # render 'admin/courses', layout: 'sb2'
-  # end
+  def index
+    @current_user = current_user
+    @is_publisher = current_user.role >= RolesHelper.code('Publisher')
+    @course = Course.find(params[:course_id])
+    @chapter = Chapter.new
+    @chapters = @course.chapters
+    render 'admin/courses', layout: 'sb2'
+  end
 
   def show
     @chapter = Chapter.find(params[:chapter_id])

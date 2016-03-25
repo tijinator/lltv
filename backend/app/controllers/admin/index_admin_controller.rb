@@ -1,8 +1,9 @@
-class AdminController < ApplicationController
+class Admin::IndexAdminController < Admin::AdminController
   include RolesHelper
 
+  before_action :admin_nav_setup
+  before_action :user_signed_in?
   # before_filter :authenticate_user!
-  before_filter :user_signed_in?
   # before_filter :require_data_entry
 
   def home
@@ -16,6 +17,15 @@ class AdminController < ApplicationController
       @user = User.new
       render 'users/sessions/new', layout: 'admin'
     end
+  end
+
+  def dashboard
+    @categories = Category.all
+    @courses = Course.all
+    @chapters = Chapter.all
+    @videos = Video.all
+
+    render 'admin/dashboard', layout: 'sb2'
   end
 
   def users
@@ -33,4 +43,12 @@ class AdminController < ApplicationController
 
     render 'admin/courses', layout: 'sb2'
   end
+
+protected
+
+  def admin_nav_setup
+    @courses = Course.all.order(:position)
+    @level = 2
+  end
+
 end

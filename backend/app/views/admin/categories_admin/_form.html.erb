@@ -1,0 +1,69 @@
+<%= form_for(@category) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <ul>
+      <% @category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :parent_id %><br>
+    <%= f.number_field :parent_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :details %><br>
+    <%= f.text_field :details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.number_field :position %>
+  </div>
+
+  <div class="field">
+    <%= f.label :html_tab_id %><br>
+    <%= f.text_field :html_tab_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :html_tab_color %><br>
+    <%= f.text_field :html_tab_color %>
+  </div>
+
+  <div class="field">
+    <%= f.label :html_color %><br>
+    <%= f.text_field :html_color %>
+  </div>  
+
+  <div class="field">
+    <%= f.label :homepage_position %><br>
+    <%= f.number_field :homepage_position %>
+  </div>
+
+  <div class="field">
+    <%= f.label :small_image_url%><br>
+    <%= f.file_field :small_image_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :banner_url %><br>
+    <%#= f.text_field :banner_url %>
+    <%= f.file_field :banner_url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
