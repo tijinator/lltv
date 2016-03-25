@@ -53,6 +53,7 @@ function($rootScope, $scope, $location, $auth, currentUser, $compile) {
   $rootScope.$on('auth:registration-email-success', function(ev, userData) {
     // alert("A registration email was sent to " + message.email);
     console.log('Register Success: ',userData);
+    $location.path("categories");
     signedIn(userData);
   });
 
