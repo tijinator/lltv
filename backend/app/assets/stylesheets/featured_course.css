@@ -1,7 +1,11 @@
+/*main category css*/
+
 .featured-course {
   position: relative;
   background-color: #000000;
   color: #FFFFFF;
+  padding: 0;
+  height: 286px;
 }
 
 .featured-course .course-banner {
@@ -14,8 +18,16 @@
 }
 
 .featured-course-content {
-  clear: both;
-  margin-top: 50px;
+  /*clear: both;*/
+  padding-top: 50px;
+  width: 30%;
+  height: 100%;
+}
+
+.featured-course-banner-container{
+  width: 70%;
+  padding: 0;
+  height: 100%;
 }
 
 .featured-course-tag {

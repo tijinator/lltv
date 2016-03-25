@@ -1,5 +1,7 @@
 <div class="col-md-12 featured-course">
-  <div class="row">
+
+  <div class="row" style="height: 100%; margin: 0;">
+
     <div class="col-md-4 featured-course-content">
       <div class="row">
         <span class="featured-course-tag pull-left" style="background-color: {{featuredCourse.category.html_color}};">
@@ -30,11 +32,14 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-8">
-      <div class="row">
+    </div><!-- end col-md-4 featured-course-content -->
+
+    <div class="col-md-8 featured-course-banner-container">
+      <!-- <div class="row"> -->
         <img ng-src="{{featuredCourse[0]['banner_url']}}" class="course-banner" style="width: 100%;">
-      </div>
-    </div>
-  </div>
-</div>
+      <!-- </div> -->
+    </div><!-- end col-md-8 -->
+
+  </div><!-- end row -->
+
+</div><!-- end col-md-12 featured-course -->
