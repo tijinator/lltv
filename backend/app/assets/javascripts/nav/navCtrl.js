@@ -8,9 +8,35 @@ angular.module('lltv')
 '$compile',
 function($rootScope, $scope, $location, $auth, currentUser, $compile) {
 
+var jsRun = function(){
+  var a = document.createElement('a');
+      a.setAttribute('class','dropdown-toggle');
+      a.setAttribute('data-toggle','dropdown');
+      a.setAttribute('style','background: none');
+  var span = document.createElement('span');
+      span.setAttribute('class','glyphicon glyphicon-menu-down');
+      span.setAttribute('style','padding-left: 6px');
+      span.setAttribute('class','glyphicon glyphicon-menu-down');
+  var ul = document.createElement('ul');
+      ul.setAttribute('class','profile-dropdown dropdown-menu dropdown-menu-right');
+      ul.setAttribute('role','menu');
+      ul.setAttribute('id','profile-navbar');
+  var li = document.createElement('li');
+  var la = document.createElement('a');
+      la.setAttribute('href', '/categories');
+      la.setAttribute('style', 'color: #787d7f; height: 15px');
+  var lo = document.createElement('a');
+      lo.setAttribute('ng-click', 'signOut()');
+      lo.setAttribute('style', 'color: #787d7f; height: 15px');
+
+      console.log("RUNNER");
+}
+
   var currentUserMenu = function(userData){
     return html = `
-      <a class="dropdown-toggle" data-toggle="dropdown" style="background: none;"> ${userData.username} <span class="glyphicon glyphicon-menu-down" style="padding-left: 6px;"></span></a>
+      <a class="dropdown-toggle" data-toggle="dropdown" style="background: none;"> ${userData.username} 
+        <span class="glyphicon glyphicon-menu-down" style="padding-left: 6px;"></span>
+      </a>
       <ul class="profile-dropdown dropdown-menu dropdown-menu-right" role="menu" id='profile-navbar'>
         <li><a href="/categories" style="color: #787d7f; height: 15px;">account settings</a></li>
         <li><a href="/courses/1" style="color: #787d7f; height: 15px;">profile</a></li>
