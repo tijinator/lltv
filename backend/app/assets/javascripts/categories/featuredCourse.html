@@ -6,37 +6,46 @@
       <div class="row">
         <span class="featured-course-tag pull-left" style="background-color: {{featuredCourse.category.html_color}};">
         <span class="glyphicon glyphicon-star pull-left" style="margin: 3px 5px 0px 0px;"></span>
-        featured {{featuredCourse[0]['title']}} course
+        <!-- featured {{featuredCourse[0]['title']}} course -->
+        featured {{featuredCourse.title}} course
+
       </span>
       </div>
+
       <div class="col-md-12 featured-course-data">
+
         <div class="row">
           <div class="featured-course-title">
-            <h1>{{featuredCourse[0]['title']}}</h1>
+            <!-- <h1>{{featuredCourse[0]['title']}}</h1> -->
+            <h1>{{featuredCourse.title}}</h1>
           </div>
         </div>
         <div class="row">
           <div class="featured-course-details">
-            <p>{{featuredCourse[0]['details']}}</p>
+            <!-- <p>{{featuredCourse[0]['details']}}</p> -->
+            <p>{{featuredCourse.details}}</p>
           </div>
         </div>
-        <div class="row">
+
+        <!-- <div class="row">
           <div>
             <button class="bubble-btn pull-left" style="border: 2px solid {{featuredCourse.category.html_color}}" ui-sref="category.show({id: featuredCourse[0]['id']})">
-              <!-- browse {{featuredCourse.category.title}} -->
-              browse {{featuredCourse[0]['title']}}
+              browse {{featuredCourse.category.title}}
             </button>
             <div class="bubble-btn pull-right" style="border: 2px solid #FFFFFF;">
               watch now
             </div>
           </div>
-        </div>
-      </div>
+        </div> -->
+        <!-- end row -->
+
+      </div><!-- col-md-12 featured-course-data -->
     </div><!-- end col-md-4 featured-course-content -->
 
     <div class="col-md-8 featured-course-banner-container">
       <!-- <div class="row"> -->
-        <img ng-src="{{featuredCourse[0]['banner_url']}}" class="course-banner" style="width: 100%;">
+        <!-- <img ng-src="{{featuredCourse[0]['banner_url']}}" class="course-banner" style="width: 100%;"> -->
+        <img ng-src="{{featuredCourse.banner_url}}" class="course-banner featured-course-img" style="width: 100%;">
       <!-- </div> -->
     </div><!-- end col-md-8 -->
 

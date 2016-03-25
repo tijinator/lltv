@@ -54,3 +54,10 @@
   margin: 20px 0px;
   font-size: 15px;
 }
+
+.featured-course-img{
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+}
