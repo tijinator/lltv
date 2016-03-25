@@ -16,7 +16,8 @@ $scope.jsRun = function(userData){
           a.setAttribute('class','dropdown-toggle');
           a.setAttribute('data-toggle','dropdown');
           a.setAttribute('style','background: none');
-  var userName = document.createTextNode($scope.user.username); 
+  // var userName = document.createTextNode($scope.user.username); 
+  var userName = document.createTextNode(userData.username); 
       a.appendChild(userName);
 
   var span = document.createElement('span');
