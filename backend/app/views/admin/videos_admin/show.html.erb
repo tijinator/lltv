@@ -1,0 +1,9 @@
+<hr>
+<p><%= @video.title %></p>
+<%= @video.video_url %>
+
+<p>
+	<video width="500" height="350" controls>
+		 <source src="<%= @video.video_url %>" type="video/mp4">
+	</video>
+</p>

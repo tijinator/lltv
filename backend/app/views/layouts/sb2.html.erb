@@ -45,6 +45,9 @@
               </div>
             </li> -->
             <li>
+              <a href="/videos"><i class="fa fa-play fa-fw"></i>Video</a>
+            </li>
+            <li>
               <a href="/dashboard"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
             </li>
 <!--             <li>
@@ -74,10 +77,11 @@
     <div id="page-wrapper" style="min-height: 761px;">
 
       <ul>
+        <li> <%= current_user.email %> </li>
         <li> <%= link_to 'Categories', categories_path %> </li>
         <li> <%= link_to 'Chapters', chapters_path %> </li>
       </ul>
-
+      <hr>
       <%= yield %>
     </div>
   </div>

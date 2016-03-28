@@ -1,0 +1,5 @@
+<h1>Videos ALL</h1>
+
+<% @videos.each_with_index do |video, index| %>
+	<%= link_to "#{index}: #{video.title}", video %> <br>
+<% end %>
