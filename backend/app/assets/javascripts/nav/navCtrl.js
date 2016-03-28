@@ -8,23 +8,82 @@ angular.module('lltv')
 '$compile',
 function($rootScope, $scope, $location, $auth, currentUser, $compile) {
 
+$scope.jsRun = function(userData){
+  var li = document.createElement('li');
+      li.setAttribute('id', 'signedIn');
+
+  var a = document.createElement('a');
+          a.setAttribute('class','dropdown-toggle');
+          a.setAttribute('data-toggle','dropdown');
+          a.setAttribute('style','background: none');
+  // var userName = document.createTextNode($scope.user.username); 
+  var userName = document.createTextNode(userData.username); 
+      a.appendChild(userName);
+
+  var span = document.createElement('span');
+          span.setAttribute('class','glyphicon glyphicon-menu-down');
+          span.setAttribute('style','padding-left: 6px');
+          span.setAttribute('class','glyphicon glyphicon-menu-down');
+          a.appendChild(span);
+      li.appendChild(a);
+
+  var ul = document.createElement('ul');
+          ul.setAttribute('class','profile-dropdown dropdown-menu dropdown-menu-right');
+          ul.setAttribute('role','menu');
+          ul.setAttribute('id','profile-navbar');
+
+  var innerLiOne = document.createElement('li');
+      var innerA = document.createElement('a');
+          innerA.setAttribute('href', '/categories');
+          innerA.setAttribute('style', 'color: #787d7f; height: 15px');
+          
+          var profile = document.createTextNode('Profile'); 
+          innerA.appendChild(profile);
+          innerLiOne.appendChild(innerA);
+      ul.appendChild(innerLiOne);
+
+  var innerLiTwo = document.createElement('li');
+      var innerO = document.createElement('a');
+          innerO.setAttribute('ng-click', 'signOut()');
+          innerO.setAttribute('style', 'color: #787d7f; height: 15px');
+          
+          var signOut = document.createTextNode('Sign Out'); 
+          innerO.appendChild(signOut);
+          innerLiTwo.appendChild(innerO);
+      ul.appendChild(innerLiTwo);
+
+      li.appendChild(ul);
+      console.log("RUNNER :", li);
+
+  return li;
+
+}
+
   var currentUserMenu = function(userData){
-    return html = `
-      <a class="dropdown-toggle" data-toggle="dropdown" style="background: none;"> ${userData.username} <span class="glyphicon glyphicon-menu-down" style="padding-left: 6px;"></span></a>
-      <ul class="profile-dropdown dropdown-menu dropdown-menu-right" role="menu" id='profile-navbar'>
-        <li><a href="/categories" style="color: #787d7f; height: 15px;">account settings</a></li>
-        <li><a href="/courses/1" style="color: #787d7f; height: 15px;">profile</a></li>
-        <li><a href="/categories/1" style="color: #787d7f; height: 15px;">help</a></li>
-        <li><a href="/categories" style="color: #787d7f; height: 15px;">contact us</a></li>
-        <li><a ng-click="signOut()" style="color: #787d7f; height: 15px;">Sign Out</a></li>
-      </ul>`
+    // return html = `
+    //   <a class="dropdown-toggle" data-toggle="dropdown" style="background: none;"> ${userData.username} 
+    //     <span class="glyphicon glyphicon-menu-down" style="padding-left: 6px;"></span>
+    //   </a>
+    //   <ul class="profile-dropdown dropdown-menu dropdown-menu-right" role="menu" id='profile-navbar'>
+    //     <li><a href="/categories" style="color: #787d7f; height: 15px;">account settings</a></li>
+    //     <li><a href="/courses/1" style="color: #787d7f; height: 15px;">profile</a></li>
+    //     <li><a href="/categories/1" style="color: #787d7f; height: 15px;">help</a></li>
+    //     <li><a href="/categories" style="color: #787d7f; height: 15px;">contact us</a></li>
+    //     <li><a ng-click="signOut()" style="color: #787d7f; height: 15px;">Sign Out</a></li>
+    //   </ul>`
+    
+    // console.log('HELLO CURRENT MENU ');
   };
 
   var signedIn = function(userData) {
         // currentUser.set(userData);
-      var x = currentUserMenu(userData);
+      // var x = currentUserMenu(userData);
+
+      var x = $scope.jsRun(userData);
       $('.sign_up_in').hide();
+      // $('#signedIn').show().html(x);
       $('#signedIn').show().html($compile(x)($scope));
+      console.log(x);
   };
 
   var signOut = function(){
