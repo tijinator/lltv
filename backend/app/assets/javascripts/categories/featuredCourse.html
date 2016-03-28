@@ -18,13 +18,13 @@
         <div class="row" style="margin: 0;">
           <div class="featured-course-title">
             <!-- <h1>{{featuredCourse[0]['title']}}</h1> -->
-            <h1>{{featuredCourse.title}}</h1>
+            <h1>{{featuredCourse.title | limitTo: 11 }}</h1>
           </div>
         </div>
         <div class="row" style="margin: 0;">
           <div class="featured-course-details">
             <!-- <p>{{featuredCourse[0]['details']}}</p> -->
-            <p>{{featuredCourse.details}}</p>
+            <p>{{featuredCourse.details | limitTo: 133 }}</p>
           </div>
         </div>
 
