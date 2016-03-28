@@ -6,6 +6,7 @@
   color: #FFFFFF;
   padding: 0;
   height: 350px; /*it was 286px*/
+  top: 95px;
 }
 
 .featured-course .course-banner {
