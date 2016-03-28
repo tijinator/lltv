@@ -74,3 +74,13 @@
   width: 100%;
   background-repeat: no-repeat;
 }
+
+
+/*responsive design*/
+@media (max-width: 992px){
+  .featured-course-details { display: none;}
+
+  .featured-course-content { float: left;}
+
+  .featured-course-banner-container{ float: left;}
+}
