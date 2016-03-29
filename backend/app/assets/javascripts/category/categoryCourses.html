@@ -7,7 +7,7 @@
     </div>
 
     <div class="category-sub-section">
-      <a ng-href="#" ng-click='all_courses(category_details.category.id)' > All </a>
+      <a ng-href="#" ng-click='all_courses(category_details.category.id)' > Trending </a>
       <div ui-view="categoryOptions" ng-repeat="subcategory in category_details.subcategory">
         <!-- <a ui-sref="category.show({id: subcategory.id})"> {{subcategory.title}} </a> -->
         <a ng-href='#' ng-click='getSubs(subcategory.id)'> {{subcategory.title}} </a>
