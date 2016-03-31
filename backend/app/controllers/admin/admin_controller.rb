@@ -1,6 +1,6 @@
 class Admin::AdminController < ApplicationController
   include RolesHelper
-  layout 'sb2'
+  # layout 'sb2'
 
   before_action :admin_nav_setup
   before_action :user_signed_in?

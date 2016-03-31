@@ -10,7 +10,7 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
       user = User.find_by_email(params[:user][:email])
-      if user.role >= RolesHelper.code('Data Entry')
+      if user && user.role >= RolesHelper.code('Data Entry')
         super
       else
         @user = User.new

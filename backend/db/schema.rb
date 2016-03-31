@@ -21,10 +21,6 @@ ActiveRecord::Schema.define(version: 20160216163404) do
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -35,10 +31,6 @@ ActiveRecord::Schema.define(version: 20160216163404) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.string   "html_tab_id"
     t.string   "html_tab_color"
     t.string   "html_color"
@@ -55,16 +47,12 @@ ActiveRecord::Schema.define(version: 20160216163404) do
   create_table "chapters", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
-    t.string   "title",              null: false
-    t.text     "details",            null: false
+    t.string   "title",      null: false
+    t.text     "details",    null: false
     t.integer  "duration"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_index "chapters", ["details"], name: "index_chapters_on_details", using: :btree
@@ -74,20 +62,16 @@ ActiveRecord::Schema.define(version: 20160216163404) do
     t.integer  "user_id"
     t.integer  "author_id"
     t.string   "level"
-    t.string   "title",                              null: false
-    t.text     "details",                            null: false
+    t.string   "title",                       null: false
+    t.text     "details",                     null: false
     t.integer  "duration"
     t.integer  "position"
-    t.boolean  "published",          default: false, null: false
+    t.boolean  "published",   default: false, null: false
     t.datetime "released_on"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.string   "banner_url"
-    t.boolean  "featured",           default: false, null: false
+    t.boolean  "featured",    default: false, null: false
   end
 
   add_index "courses", ["details"], name: "index_courses_on_details", using: :btree
@@ -123,10 +107,6 @@ ActiveRecord::Schema.define(version: 20160216163404) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_index "tags", ["tagable_type", "tagable_id"], name: "index_tags_on_tagable_type_and_tagable_id", using: :btree
@@ -156,10 +136,6 @@ ActiveRecord::Schema.define(version: 20160216163404) do
     t.json     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

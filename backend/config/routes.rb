@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
 
   # token auth routes available at /api/v1/auth
   namespace :api do
@@ -12,11 +11,13 @@ Rails.application.routes.draw do
   # Subdomains -
   constraints subdomain: 'admin' do
 
-    resources :videos, controller: 'admin/videos_admin'
-    resources :chapters, controller: 'admin/chapters_admin'
+
     
     resources :categories, controller: 'admin/categories_admin' do
       resources :courses, controller: 'admin/courses_admin' do
+        resources :chapters, controller: 'admin/chapters_admin' do
+          resources :videos, controller: 'admin/videos_admin'
+        end
       end
     end
 
@@ -64,7 +65,8 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :courses, only: :show
+    resources :courses, controller: 'courses', only: [:index, :show]
+    # get 'courses' => 'api/courses#index'
   end
 
   get '/courses' => 'home#home'

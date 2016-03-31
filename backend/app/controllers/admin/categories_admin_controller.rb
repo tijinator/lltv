@@ -1,6 +1,6 @@
 class Admin::CategoriesAdminController < Admin::AdminController
 	before_action :set_category, only: [:show, :edit, :update, :destroy]
-	# layout 'sb2' # render 'admin/category_admin/index'
+	layout 'sb2' # render 'admin/category_admin/index'
 
 	def index
 		@categories = Category.all

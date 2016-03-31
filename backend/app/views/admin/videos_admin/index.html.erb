@@ -1,5 +1,7 @@
 <h1>Videos ALL</h1>
 
 <% @videos.each_with_index do |video, index| %>
-	<%= link_to "#{index}: #{video.title}", video %> <br>
+	<%#= link_to "#{index}: #{video.title}", video %> <%#= link_to 'DELETE', video, method: :delete %>
+
+	<%= video.title %><br>
 <% end %>
