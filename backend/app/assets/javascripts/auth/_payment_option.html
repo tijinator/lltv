@@ -1,0 +1,60 @@
+<div>
+  <img src="/images/LLTV_x.png" class="auth-close pull-right" ng-click="close()">
+</div>
+
+
+<form ng-submit="submitPaymentRegistration(paymentForm)" role="form" ng-init="paymentForm = {}">
+  <div class="auth-body">
+    <!-- <div class="col-md-6 auth-left-column">
+        <div class="form-group">
+          <label>email</label>
+          <input type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control"/>
+        </div>
+    </div>
+    <div class="col-md-6 auth-right-column">
+        <div class="form-group">
+          <label>username</label>
+          <input type="text" name="username" ng-model="registrationForm.username" required="required" class="form-control"/>
+        </div>
+    </div> -->
+    <div class="col-md-6 auth-left-column">
+        <div class="form-group">
+          <label>cardholder first name</label>
+          <input type="text" name="first_name" ng-model="paymentForm.first_name" required="required" class="form-control"/>
+        </div>
+    </div>
+    <div class="col-md-6 auth-left-column">
+        <div class="form-group">
+          <label>cardholder last name</label>
+          <input type="text" name="last_name" ng-model="paymentForm.last_name" required="required" class="form-control"/>
+        </div>
+    </div>
+    <div class="col-md-6 auth-left-column">
+        <div class="form-group">
+          <label>address</label>
+          <input type="text" name="address" ng-model="paymentForm.address" required="required" class="form-control"/>
+        </div>
+    </div>
+    <div class="col-md-6 auth-left-column">
+      <div class="form-group">
+        <label>city</label>
+        <input type="text" name="city" ng-model="paymentForm.city" required="required" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="col-md-6 auth-left-column">
+      <div class="form-group">
+        <label>country</label>
+        <select class="form-control bfh-countries" data-country="US"></select>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="auth-footer">
+    <div class="col-md-12 auth-right-column">
+      <button type="submit" class="bubble-btn submit-btn submit-btn-sing-up pull-right">create account</button>
+      <!-- <div class="bubble-btn switch-btn switch-btn-sign-up text-center pull-right" ng-click="switch('register')">sign in</div> -->
+    </div>
+  </div>
+</form>

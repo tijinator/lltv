@@ -27,6 +27,16 @@ function($scope, $auth, currentUser, authService) {
       });
   };
 
+  $scope.submitPaymentRegistration = function(obj){
+    $auth.submitPaymentRegistration($scope.paymentForm)
+      .then(function(resp){
+        $scope.close();
+      })
+      .catch(function(resp){
+        $scope.errors = "Card invalid....";
+      });
+  };
+
   // $scope.submitSignOut = function() {
     // console.log("HAHA");
     // $auth.signOut()

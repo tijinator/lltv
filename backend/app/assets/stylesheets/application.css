@@ -19,6 +19,7 @@
  *= require category_library
  *= require category
  *= require course
+ *= require bootstrap-formhelpers.min.css
  *= require_self
  */
 
