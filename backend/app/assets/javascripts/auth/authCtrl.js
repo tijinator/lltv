@@ -49,11 +49,19 @@ function($scope, $auth, currentUser, authService) {
     //   });
   // };
 
-  $scope.switch = function(type) {
-    authService.switchModal(type);
+  // $scope.switch = function(type) {
+  //   authService.switchModal(type);
+  // }
+
+  $scope.switch = function(type, obj) {
+    authService.switchModal(type, obj);
   }
 
   $scope.close = function() {
     authService.closeModal();
+  }
+
+  $scope.switchPayment = function(type, obj){
+    authService.switchModalPayment(type, obj);
   }
 }]);
