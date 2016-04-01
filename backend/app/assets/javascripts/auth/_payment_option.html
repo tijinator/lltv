@@ -45,7 +45,9 @@
     <div class="col-md-6 auth-left-column">
       <div class="form-group">
         <label>country</label>
-        <select class="form-control bfh-countries" data-country="US"></select>
+        <select ng-model="country" ng-options="country.name for country in countries track by country.code">
+          <option value="">United States</option>
+        </select>
       </div>
     </div>
   </div>
