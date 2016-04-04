@@ -27,14 +27,8 @@ function($scope, $auth, currentUser, authService) {
       });
   };
 
-  $scope.submitPaymentRegistration = function(obj){
-    $auth.submitPaymentRegistration($scope.paymentForm)
-      .then(function(resp){
-        $scope.close();
-      })
-      .catch(function(resp){
-        $scope.errors = "Card invalid....";
-      });
+  $scope.submitPaymentRegistration = function(){
+     console.log($scope.paymentForm);
   };
 
   // $scope.submitSignOut = function() {
