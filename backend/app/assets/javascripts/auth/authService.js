@@ -54,24 +54,27 @@ function($uibModal) {
   // }
 
   this.switchModal = function(type, obj) {
+    // if obj is exists
+    if(obj){
+      //save registratioform values in localStorage
 
-    //save registratioform values in localStorage
+      //set obj values
+      var email = obj.email;
+      var username = obj.username;
+      var first_name = obj.first_name;
+      var last_name = obj.last_name;
+      var password = obj.password;
+      var password_confirmation = obj.password_confirmation;
 
-    //set obj values
-    var email = obj.email;
-    var username = obj.username;
-    var first_name = obj.first_name;
-    var last_name = obj.last_name;
-    var password = obj.password;
-    var password_confirmation = obj.password_confirmation;
+      //save values in localStorage
+      localStorage.setItem("email", email);
+      localStorage.setItem("username", username);
+      localStorage.setItem("first_name", first_name);
+      localStorage.setItem("last_name", last_name);
+      localStorage.setItem("password", password);
+      localStorage.setItem("password_confirmation", password_confirmation);
 
-    //save values in localStorage
-    localStorage.setItem("email", email);
-    localStorage.setItem("username", username);
-    localStorage.setItem("first_name", first_name);
-    localStorage.setItem("last_name", last_name);
-    localStorage.setItem("password", password);
-    localStorage.setItem("password_confirmation", password_confirmation);
+    }
 
     this.closeModal();
     this.openModal(type);
