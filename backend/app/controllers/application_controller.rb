@@ -25,15 +25,15 @@ class ApplicationController < ActionController::Base
 
 protected
 
-  # def after_sign_in_path_for(user)
-  #   if user.role > 0
-  #     # redirect_to users_path
-  #     '/users'
-  #   else
-  #     # redirect_to :root
-  #     '/'
-  #   end
-  # end
+  def after_sign_in_path_for(user)
+    if user.role > 0
+      # redirect_to users_path
+      '/users'
+    else
+      # redirect_to :root
+      '/'
+    end
+  end
 
   # def after_sign_out_path_for(user)
   #   redirect_to 'https://google.com'
@@ -48,7 +48,7 @@ protected
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:username, :first_name, :last_name]
+    devise_parameter_sanitizer.for(:sign_up) << [:username, :first_name, :last_name, :stripe_card_token]
   end
 
   # def verified_request?

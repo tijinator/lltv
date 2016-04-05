@@ -25,7 +25,7 @@ gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-facebook'
 # gem 'pundit'  Model Level Policies, don't think necessary now
 
-gem 'stripe'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'carrierwave-aws'
