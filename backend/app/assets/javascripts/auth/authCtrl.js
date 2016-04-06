@@ -55,9 +55,9 @@ function($scope, $auth, currentUser, authService) {
     authService.closeModal();
   }
 
-  $scope.switchPayment = function(type, obj){
-    authService.switchModalPayment(type, obj);
-  }
+  // $scope.switchPayment = function(type, obj){
+  //   authService.switchModalPayment(type, obj);
+  // }
 
 
   $scope.countries = [
