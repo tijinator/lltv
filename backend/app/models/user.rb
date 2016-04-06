@@ -1,10 +1,13 @@
 class User < ActiveRecord::Base
+  
   # Include default devise modules.
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
          # :confirmable
-          
+     
   include DeviseTokenAuth::Concerns::User
+  attr_accessor :stripe_card_token 
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # devise :database_authenticatable, :registerable, 
@@ -46,4 +49,13 @@ class User < ActiveRecord::Base
     return self.last_name if self.last_name
     nil
   end
+
+  def save_with_payment
+    if valid?
+      customer = Stripe::Customer.create(description: email, source: stripe_card_token)
+      self.stripe_customer_token = customer.id
+      save!
+    end
+  end
+
 end

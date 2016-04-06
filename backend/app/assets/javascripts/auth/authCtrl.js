@@ -13,7 +13,8 @@ function($scope, $auth, currentUser, authService) {
         $scope.close();
       })
       .catch(function(res) {
-        $scope.errors = res.data.errors.full_messages.join(', ');
+        // $scope.errors = res.data.errors.full_messages.join(', ');
+        console.log('error in sign up');
       })
   };
 

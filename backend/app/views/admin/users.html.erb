@@ -26,7 +26,7 @@
               <div>
                 <%= form_for(user) do |f| %>
                   <span>
-                    <%= f.select(:role, [['General', 0], ['Data Entry', 10], ['Publisher', 20], ['Superuser', 30]]) %>
+                    <%= f.select(:role, RolesHelper.list_roles) %>
                   </span>
                   <span>
                     <%= f.submit "Update" %>

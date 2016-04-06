@@ -1,5 +1,5 @@
 module RolesHelper
-  @@roles = {
+  @roles = {
     'General' => 0,
     'Data Entry' => 10,
     'Publisher' => 20,
@@ -7,12 +7,17 @@ module RolesHelper
   }
 
 class << self
+
+  def list_roles
+    @roles.map{|k,v| [k,v] }
+  end
+
   def code(str)
-    return @@roles[str]
+    return @roles[str]
   end
 
   def value(id)
-    return @@roles.key(id)
+    return @roles.key(id)
   end
 end
 

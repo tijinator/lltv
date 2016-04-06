@@ -7,6 +7,10 @@ class Admin::AdminController < ApplicationController
   # before_filter :authenticate_user!
   # before_filter :require_data_entry
 
+  def payment_processer 
+    render plain: params
+  end
+
 protected
 
   def admin_nav_setup

@@ -9,7 +9,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
-  #   super
+  #   super do |res|
+  #   puts "*"*100
+  #   puts "ROVSHEN"
+  #   puts "*"*100 
+  #   res
+  #   end
   # end
 
   # GET /resource/edit
