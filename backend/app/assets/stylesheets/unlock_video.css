@@ -47,3 +47,43 @@
 .purchase-btn{
   float: right;
 }
+
+
+/*responsive design*/
+@media (max-width: 768px) {
+  .col-responsive{
+    padding: 0 150px;
+  }
+
+  .subscribe-btn, .purchase-btn{
+    float: none;
+  }
+
+  .gray-box{
+    width: 500px;
+    left: calc(50% - 500px/2);
+  }
+
+  .unlock-description{
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+
+  .subscribe-btn{ margin-bottom: 10px;}
+}
+
+@media (max-width: 500px) {
+
+  .close-unlock{
+    margin-right: 75px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 370px) {
+
+  .close-unlock{
+    margin-right: 125px;
+    cursor: pointer;
+  }
+}
