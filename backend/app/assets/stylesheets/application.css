@@ -20,9 +20,9 @@
  *= require category
  *= require course
  *= require unlock_video.css
- *= require bootstrap-formhelpers.min.css
  *= require_self
  */
+ @import "bootstrap-formhelpers";
 
 *{
 	outline: 0px red solid;

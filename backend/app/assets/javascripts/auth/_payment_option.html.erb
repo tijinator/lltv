@@ -31,16 +31,23 @@
       </div>
     </div>
 
+
     <div class="col-md-6 auth-left-column">
+      <div class="form-group">
+        <country-select cs-priorities="US" ng-model="paymentForm.country" required="required"></country-select>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-6 auth-left-column">
       <div class="form-group">
         <label>country</label>
         <select ng-model="country" ng-options="country.name for country in countries track by country.code">
           <option value="">United States</option>
         </select>
       </div>
-    </div>
+    </div> -->
 
-    <div class="col-md-6 auth-left-column">
+    <!-- <div class="col-md-6 auth-left-column">
       <div class="form-group">
         <select class="form-control" name="cc_exp_mo">
             <option value="01">January</option>
@@ -57,7 +64,7 @@
             <option value="12">December</option>
         </select>
       </div>
-    </div>
+    </div> -->
 
     <div class="col-md-6 auth-left-column">
       <div class="form-group">

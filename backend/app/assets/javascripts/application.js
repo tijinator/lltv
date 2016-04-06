@@ -10,6 +10,7 @@
 //= require angular-rails-templates
 //= require angular-ui-router
 //= require angular-bootstrap
+//= require ng-country-select
 //= require_tree .
 //= stub metisMenu
 //= stub raphael
@@ -17,4 +18,5 @@
 //= stub datatables
 //= stub startbootstrap-sb-admin-2
 //= stub video.js/dist/video
-//= require bootstrap-formhelpers.min.js
+//= require lang/en_US/bootstrap-formhelpers-countries.en_US
+//= require bootstrap-formhelpers-countries

@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/johnu/bootstrap-form-helpers-rails.git
+  revision: 05c9de1116b2e10a4adc7795f756935b8e30bc50
+  specs:
+    bootstrap-form-helpers-rails (2.0.0.1)
+      railties (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -307,6 +314,7 @@ DEPENDENCIES
   aws-sdk (~> 2)
   better_errors
   binding_of_caller
+  bootstrap-form-helpers-rails!
   bullet
   byebug
   capistrano
