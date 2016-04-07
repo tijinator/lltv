@@ -20,6 +20,7 @@
  *= require category
  *= require course
  *= require unlock_video.css
+ *= require payment_option.css
  *= require_self
  */
  @import "bootstrap-formhelpers";

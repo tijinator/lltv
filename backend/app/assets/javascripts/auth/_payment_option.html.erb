@@ -1,9 +1,100 @@
-<div>
-  <img src="/images/LLTV_x.png" class="auth-close pull-right" ng-click="close()">
-</div>
+<div class="row" style="height: 100%; margin: 0;">
+
+  <div class="payment-step-container">
+    <div class="row" style="margin: 0;">
+      <div>
+        <img src="/images/LLTV_x.png" class="close-unlock pull-right" ng-click="close()">
+      </div>
+    </div>
+
+    <div class="col-sm-12 slide payment-option active-slide" style="height: 100%; padding: 0;">
+      <div class="row" style="margin: 0;">
+        <h1 class="payment-option-title">Discover a library of courses, right at your fingertips.</h1>
+      </div>
+
+      <div class="row" style="margin: 0;">
+        <div class="col-sm-8 col-sm-offset-2" style="padding: 0; width: 67%; margin-left: 20%; width: 850px;">
+          <div class="row" style="margin: 0;">
+
+            <div class="col-sm-5 monthly-box" style="padding: 0;">
+              <div class="row" style="margin: 0;">
+                <p class="price-title">monthly</p>
+              </div>
+
+              <div class="row" style="margin: 0;">
+                <div class="price-item-container">
+                  <!-- <span>$39<sup>.99/month</sup></span> -->
+
+                  <span class="pricing-dollar">$39</span>
+                  <span class="change-container">
+                      <sup class="price-change"><span>.99</span>/month</sup>
+                  </span>
+                </div>
+              </div>
+
+              <div class="row" style="margin: 0;">
+                <div class="price-list">
+                  <ul>
+                    <li>4,500+ courses</li>
+                    <li>new courses added daily</li>
+                    <li>unlimited viewing</li>
+                    <li>learning paths</li>
+                    <li>courser discussion forums</li>
+                    <li>mobile and offline viewing</li>
+                    <li>downloadable exercise files</li>
+                    <li>course learning checks</li>
+                    <li>course completion certificates</li>
+                  </ul>
+
+                </div>
+
+              </div>
+
+              <div class="row" style="margin: 0;">
+                <div class="bubble-btn submit-btn subscribe-now-btn text-center">
+                  subscribe now
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-5 onetime-box" style="padding: 0;">
+              <div class="row" style="margin: 0;">
+                <p class="price-title">single purchase</p>
+              </div>
+
+              <div class="row" style="margin: 0;">
+                <div class="price-item-container">
+                  <!-- <span>$39<sup>.99/month</sup></span> -->
+
+                  <span class="pricing-dollar">$12</span>
+                  <span class="change-container">
+                      <sup class="price-change"><span>.99</span>/video</sup>
+                  </span>
+                </div>
+              </div>
+
+              <div class="row" style="margin: 0;">
+                <div class="bubble-btn switch-btn subscribe-now-btn text-center">
+                  purchase video
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- end payment-option slide -->
 
 
-<form ng-submit="submitPaymentRegistration(paymentForm)" role="form" ng-init="paymentForm = {}">
+  </div><!-- end payment-step-container -->
+
+</div> <!-- end row -->
+
+
+
+<!-- <form ng-submit="submitPaymentRegistration(paymentForm)" role="form" ng-init="paymentForm = {}">
   <div class="auth-body">
 
     <div class="col-md-6 auth-left-column">
@@ -37,57 +128,12 @@
         <country-select cs-priorities="US" ng-model="paymentForm.country" required="required"></country-select>
       </div>
     </div>
-
-    <!-- <div class="col-md-6 auth-left-column">
-      <div class="form-group">
-        <label>country</label>
-        <select ng-model="country" ng-options="country.name for country in countries track by country.code">
-          <option value="">United States</option>
-        </select>
-      </div>
-    </div> -->
-
-    <!-- <div class="col-md-6 auth-left-column">
-      <div class="form-group">
-        <select class="form-control" name="cc_exp_mo">
-            <option value="01">January</option>
-            <option value="02">February</option>
-            <option value="03">March</option>
-            <option value="04">April</option>
-            <option value="05">May</option>
-            <option value="06">June</option>
-            <option value="07">July</option>
-            <option value="08">August</option>
-            <option value="09">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-        </select>
-      </div>
-    </div> -->
-
-    <div class="col-md-6 auth-left-column">
-      <div class="form-group">
-        <select class="form-control" name="cc_exp_yr">
-          <option>2016</option>
-          <option>2017</option>
-          <option>2018</option>
-          <option>2019</option>
-          <option>2020</option>
-          <option>2021</option>
-          <option>2022</option>
-          <option>2023</option>
-          <option>2024</option>
-      </select>
-      </div>
-    </div>
   </div>
 
 
   <div class="auth-footer">
     <div class="col-md-12 auth-right-column">
       <button type="submit" class="bubble-btn submit-btn submit-btn-sing-up pull-right">Submit</button>
-      <!-- <div class="bubble-btn switch-btn switch-btn-sign-up text-center pull-right" ng-click="switch('register')">sign in</div> -->
     </div>
   </div>
-</form>
+</form> -->
