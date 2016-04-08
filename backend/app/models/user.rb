@@ -1,4 +1,5 @@
-class User < ActiveRecord::Base
+class User < ActiveRecord::Base 
+  has_many :orders
   
   # Include default devise modules.
   devise :database_authenticatable, :registerable,
@@ -6,7 +7,7 @@ class User < ActiveRecord::Base
          # :confirmable
      
   include DeviseTokenAuth::Concerns::User
-  attr_accessor :stripe_card_token 
+  # attr_accessor :stripe_card_token
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -45,12 +46,13 @@ class User < ActiveRecord::Base
     if self.first_name && self.last_name
       return self.first_name + " " + self.last_name
     end
-    return self.first_name if self.first_name
-    return self.last_name if self.last_name
+      return self.first_name if self.first_name
+      return self.last_name if self.last_name
     nil
   end
+  
 
-  def save_with_payment
+  def save_with_mothly_payment
     if valid?
       customer = Stripe::Customer.create(description: email, source: stripe_card_token)
       self.stripe_customer_token = customer.id

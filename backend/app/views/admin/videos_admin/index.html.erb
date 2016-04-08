@@ -1,7 +1,10 @@
+<h4> Add New Video</h4>
+<%= link_to 'Add Video', new_video_path %>
+<hr>
 <h1>Videos ALL</h1>
 
 <% @videos.each_with_index do |video, index| %>
 	<%#= link_to "#{index}: #{video.title}", video %> <%#= link_to 'DELETE', video, method: :delete %>
 
-	<%= video.title %><br>
+	<%= link_to video.title, video %> | <%= link_to "edit", edit_video_path(video) %><br>
 <% end %>

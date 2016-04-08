@@ -6,12 +6,12 @@ module DeviseToken
 			puts params
 			puts "*"*100
 			super do |res|
-				res
-				# if params[:username] == 'rr'
-				# 	res.save_with_payment
-				# else
-				# 	res.save
-				# end
+				if params[:username] == ''
+					# order = Order.create()
+					res.save_with_mothly_payment
+				else
+					res.save
+				end
 			end
 		end
 	end

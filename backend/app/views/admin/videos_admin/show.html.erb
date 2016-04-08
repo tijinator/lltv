@@ -1,9 +1,12 @@
+<h4>Video Details</h4>
+<%= @video.inspect %>
+
 <hr>
-<p><%= @video.title %></p>
+<h1><%= @video.title %></h1>
 <%= @video.video_url %>
 
 <p>
-	<video width="500" height="350" controls>
+	<video width="500" height="350" poster="parrots.jpg" controls >
 		 <source src="<%= @video.video_url %>" type="video/mp4">
 	</video>
 </p>

@@ -2,5 +2,5 @@
 
 
 <% @categories.each do |c| %>
-	<%= link_to c.title, c %> <br>
+	<%= link_to c.title, c %> | <%= link_to 'Edit', edit_category_path(c) %> <br>
 <% end %>

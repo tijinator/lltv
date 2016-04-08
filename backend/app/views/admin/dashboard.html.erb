@@ -30,41 +30,60 @@
 </div>
 
 
+
 <div class="col-md-12">
-<div class="col-md-6">
+	<div class="col-md-6">
 	<hr>
-<%= form_for (:payment), url: :payment, :html => {:id => "payment_form"} do |f| %>
+	<h1>Payment form TEST</h1>
+	<%= form_for (:user), url: :user, :html => {:id => "payment_form"} do |f| %>
 
-	<div class="form-group">
-		<%= label_tag :card_number, "Credit Card Number (4111 1111 1111 1111)" %>
-		<%= text_field_tag :card_number, nil, name: nil, class: 'form-control' %>
-	</div>
+		<div class="form-group">
+			<%= f.label :email %>
+			<%= f.email_field :email %>
+		</div>
 
-	<div class="form-group">
-		<%= label_tag :card_code, "Security Code on Card (CVV) (123)" %>
-		<%= text_field_tag :card_code, nil, name: nil, class: 'form-control' %>
-	</div>
+		<div class="form-group">
+			<%= f.label :passowrd %>
+			<%= f.password_field :password %>
+		</div>	
 
-	<div class="form-group">
-		<%= label_tag :card_month, "Card Expration (1-Jan/2018)" %>
-		<div class="row">
-			<div class="col-md-4 pull-left">
-				<%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: 'form-control'} %>
-			</div>
-			<div class="col-md-4 pull-left">
-				<%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 10}, {name: nil, id: "card_year", class: 'form-control'} %>
+		<div class="form-group">
+			<%= f.label :username %>
+			<%= f.text_field :username %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :subscription %>
+			<%#= f.select :amount, ["Monthly 9.99$": 999, "Monthly 9.99$": 999 ], {name: nil, id: "card_month", class: 'form-control'} %>
+			<%= f.select(:amount, [['Montly 9.99$', 999], ['One Time 5$', 500 ]]) %>
+		</div>		
+
+		<div class="form-group">
+			<%= label_tag :card_number, "Credit Card Number (4111 1111 1111 1111)" %>
+			<%= text_field_tag :card_number, nil, name: nil, class: 'form-control' %>
+		</div>
+
+		<div class="form-group">
+			<%= label_tag :card_code, "Security Code on Card (CVV) (123)" %>
+			<%= text_field_tag :card_code, nil, name: nil, class: 'form-control' %>
+		</div>
+
+		<div class="form-group">
+			<%= label_tag :card_month, "Card Expration (1-Jan/2018)" %>
+			<div class="row">
+				<div class="col-md-4 pull-left">
+					<%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: 'form-control'} %>
+				</div>
+				<div class="col-md-4 pull-left">
+					<%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 10}, {name: nil, id: "card_year", class: 'form-control'} %>
+				</div>
 			</div>
 		</div>
+
+		<div class="actions form-group">
+	    	<%= f.submit "Sign up", class: 'btn btn-success', id: 'form-submit-btn' %>
+		</div>
+			
+	<% end %>
 	</div>
-
-	<div class="actions form-group">
-    	<%= f.submit "Sign up", class: 'btn btn-success', id: 'form-submit-btn' %>
-	</div>
-		
-<% end %>
 </div>
-</div>
-
-
-
-

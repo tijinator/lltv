@@ -9,20 +9,26 @@ Rails.application.routes.draw do
     end
   end
 
-
   # Subdomains -
   constraints subdomain: 'admin' do
 
-    post 'payment' => 'admin/admin#payment_processer', as: :payment
+    #payment example TEMP
+    post 'user' => 'admin/admin#payment_processer', as: :user
           
+
     resources :videos, controller: 'admin/videos_admin'
     
     resources :categories, controller: 'admin/categories_admin' do
       resources :courses, controller: 'admin/courses_admin' do
         resources :chapters, controller: 'admin/chapters_admin' do
+          # resources :videos, controller: 'admin/videos_admin'
         end
       end
     end
+
+    
+    # User Table related
+    resources :users, controller: 'admin/user_admin'
 
     # devise_for :users
     devise_for :users, controllers: {
@@ -30,8 +36,6 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'  
     }
 
-    # User Table related
-    resources :users, controller: 'admin/user_admin'
 
     get '/' => 'admin/index_admin#home'
     get '/dashboard' => 'admin/index_admin#dashboard'
@@ -42,17 +46,17 @@ Rails.application.routes.draw do
     # get '/courses' => 'admin#courses'
     # get '/courses/:id' => 'admin#show_course'
 
-    # resources :courses, controller: 'admin/course_admin' do
-    #   resources :chapters, controller: 'admin/chapter_admin' do
-    #     member do
-    #       put '/update_published_status' => 'admin/chapter_admin#update_published_status'
-    #     end
-    #   end
+    resources :courses, controller: 'admin/course_admin' do
+      resources :chapters, controller: 'admin/chapter_admin' do
+        member do
+          put '/update_published_status' => 'admin/chapter_admin#update_published_status'
+        end
+      end
 
-    #   member do
-    #     put '/update_published_status' => 'admin/course_admin#update_published_status'
-    #   end
-    # end
+      member do
+        put '/update_published_status' => 'admin/course_admin#update_published_status'
+      end
+    end
 
   end
 

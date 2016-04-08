@@ -1,5 +1,9 @@
-<h1>SHOW</h1>
+<h1><%=@category.title %></h1>
+
+
 
 <ul>
-<li> <%= @category.title %></li>
+	<% @category.courses.each do |course| %>
+		<li> <%= course.title %> </li>
+	<% end %>
 </ul>

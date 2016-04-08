@@ -26,7 +26,7 @@ $(document).ready(function(){
 	}); //form submission
 
 		function stripeResponseHandler(status, response){
-			console.log('status: ', status);
+			// console.log('status: ', status);
 			// Get a reference to the form:
 			var f = $('#payment_form');
 			status == 200 ? success(response) : error(response)
@@ -34,11 +34,10 @@ $(document).ready(function(){
 			function success(response){
 				// Get the token from the response
 				var token = response.id;
+				console.log("Token: ", token);
 
 				// Add the token to the form:
-				f.append("<input type='hidden' name='payment[stripe_card_token]' value='" + token + "'/>");
-				// console.log("Before Submit: ", f);
-				// console.log("Token Submit: ", token);
+				f.append("<input type='hidden' name='user[stripe_card_token]' value='" + token + "'/>");
 
 				//submit the form
 				f.submit()

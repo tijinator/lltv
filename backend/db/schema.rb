@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405162829) do
+ActiveRecord::Schema.define(version: 20160407143420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,19 @@ ActiveRecord::Schema.define(version: 20160405162829) do
 
   add_index "item_tags", ["taggable_id", "taggable_type", "tag_id"], name: "item_tags_index", unique: true, using: :btree
   add_index "item_tags", ["taggable_type", "tag_id"], name: "item_type_tags_index", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.decimal  "amount"
+    t.string   "address"
+    t.string   "address_two"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zip_code"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "tags", force: :cascade do |t|
     t.string   "title"

@@ -9,13 +9,16 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
+    super do |res|
       user = User.find_by_email(params[:user][:email])
       if user && user.role >= RolesHelper.code('Data Entry')
-        super
+        res
       else
         @user = User.new
-        render 'users/sessions/new', layout: 'admin'
+        # render 'users/sessions/new', layout: 'admin'
+        redirect_to :back
       end
+    end
   end
 
   # DELETE /resource/sign_out
