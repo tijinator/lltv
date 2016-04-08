@@ -97,10 +97,55 @@
       <div class="row" style="margin: 0;">
         <div class="col-sm-8 col-sm-offset-2" style="padding: 0; width: 67%; margin-left: 20%;">
 
+          <div id="signup-row" class="row" style="margin: 0;">
+            <div class="col-sm-12" style="padding: 0; margin-bottom: 50px;">
+
+              <div class="row" style="margin: 0;">
+                <p class="payment-step">step 1 <span>create account</span></p>
+              </div>
+              <form class="credit-form" ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
+                <div class="auth-body">
+
+                  <div class="col-sm-6" style="padding: 0;">
+                    <div class="form-group">
+                      <label>email</label>
+                      <input type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                    <div class="form-group">
+                      <label>first name</label>
+                      <input type="text" name="first_name" ng-model="registrationForm.first_name" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                    <div class="form-group">
+                      <label>last name</label>
+                      <input type="text" name="last_name" ng-model="registrationForm.last_name" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6" style="padding: 0;">
+                    <div class="form-group">
+                      <label>username</label>
+                      <input type="text" name="username" ng-model="registrationForm.username" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                    <div class="form-group">
+                      <label>password</label>
+                      <input type="password" name="password" ng-model="registrationForm.password" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                    <div class="form-group">
+                      <label>confirm password</label>
+                      <input type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                  </div>
+
+                </div>
+
+              </form>
+            </div><!-- end col-sm-12 -->
+          </div><!-- end row signup-row -->
+
           <div class="row" style="margin: 0;">
             <div class="col-sm-12" style="padding: 0;">
 
-              <div class="row" style="margin: 0;">
+              <div id="payment-step-row" class="row" style="margin: 0;">
                 <p class="payment-step">step 2 <span>billing information</span></p>
               </div>
               <form class="credit-form" ng-submit="submitPaymentRegistration(paymentForm)" role="form" ng-init="paymentForm = {}">
@@ -193,7 +238,7 @@
 </div> <!-- end row -->
 
 <script>
-
+  //fade in/out animation
   $(".back-btn").click(function(){
     var $currentSlide = $(".active-slide");
     var $targetSlide = $(".payment-option");
@@ -209,4 +254,14 @@
     $currentSlide.fadeOut("slow").removeClass("active-slide");
     $targetSlide.fadeIn("slow").addClass("active-slide");
   });
+  // end of fade in/out animation
+
+  //remove signup form if user has already registered
+  if(userBoolean){
+    document.getElementById("signup-row").style.display="none";
+    document.getElementById("payment-step-row").style.display="none";
+  }
+  //end of if statement
+
+  
 </script>
