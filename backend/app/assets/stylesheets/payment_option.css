@@ -55,7 +55,7 @@
   font-size: 18px;
 }
 
-.country-dropdown{
+.country-dropdown, .year-select, .month-select{
   background-color: transparent;
   border: 1px solid rgba(255,255,255, 0.3);
   height: 40px;
@@ -66,6 +66,20 @@
   font-family: Avenir-Black;
   color: #fff;
 }
+
+.select-style{
+  background: transparent;
+  border: none;
+  color: white;
+  height: 40px;
+}
+
+.year-select, .month-select{
+  width: 170px;
+  float: left;
+}
+
+/*.month-select{ margin-right: 20px; }*/
 
 .country-dropdown-menu{
   background-color: transparent;
