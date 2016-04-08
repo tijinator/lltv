@@ -1,8 +1,10 @@
+/*payment option styling*/
+
 .payment-step-container{
   position: absolute;
   min-height: 100%;
   width: 100%;
-  /*background-color: #2E3335;*/
+  background-color: #2E3335;
 }
 
 .payment-option-title{
@@ -24,7 +26,6 @@
   border: 1px #B2B2B2 solid;
   width: 350px;
 }
-/*^^this can be used for onetime-box */
 
 .monthly-box{ margin-right: 60px;}
 
@@ -62,3 +63,50 @@
   margin-left: calc(50% - 210px/2);
   margin-bottom: 40px;
 }
+/*************************/
+
+/*payment form styling*/
+
+.payment-form-title{
+    text-transform: capitalize;
+    font-family: avenir-black;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.payment-step{
+  font-family: avenir-black;
+  color: #B2B2B2;
+}
+
+.payment-step > span{ padding-left: 25px;}
+
+.credit-form{
+  margin-top: 30px;
+}
+
+.credit-form input{ width: 85%; }/*form field width*/
+
+.agreement-container{ width: 90%; }
+
+.small-print-agreement{
+  font-size: 5px;
+  color: #b2b2b2;
+  letter-spacing: 1px;
+  line-height: 14px;
+}
+
+.back-btn, .submit-payment-btn{
+  width: 150px;
+  margin-top: 20px;
+}
+
+.submit-payment-btn{ margin-left: 30px;}
+/**************************/
+
+/*slide menu*/
+.slide{ display: none;}
+
+.active-slide{ display: block; }
+
+/*************/

@@ -7,7 +7,8 @@
       </div>
     </div>
 
-    <div class="col-sm-12 slide payment-option active-slide" style="height: 100%; padding: 0;">
+    <div class="col-sm-12 slide payment-option" style="height: 100%; padding: 0;">
+
       <div class="row" style="margin: 0;">
         <h1 class="payment-option-title">Discover a library of courses, right at your fingertips.</h1>
       </div>
@@ -51,7 +52,7 @@
               </div>
 
               <div class="row" style="margin: 0;">
-                <div class="bubble-btn submit-btn subscribe-now-btn text-center">
+                <div class="bubble-btn submit-btn subscribe-now-btn payment-btn text-center">
                   subscribe now
                 </div>
               </div>
@@ -74,7 +75,7 @@
               </div>
 
               <div class="row" style="margin: 0;">
-                <div class="bubble-btn switch-btn subscribe-now-btn text-center">
+                <div class="bubble-btn switch-btn subscribe-now-btn payment-btn text-center">
                   purchase video
                 </div>
               </div>
@@ -87,53 +88,125 @@
 
     </div><!-- end payment-option slide -->
 
+    <div class="col-sm-12 slide payment-form active-slide" style="height: 100%; padding: 0;">
+
+      <div class="row" style="margin: 0;">
+        <h1 class="payment-form-title">subscribe to us</h1>
+      </div><!-- end of row -->
+
+      <div class="row" style="margin: 0;">
+        <div class="col-sm-8 col-sm-offset-2" style="padding: 0; width: 67%; margin-left: 20%;">
+
+          <div class="row" style="margin: 0;">
+            <div class="col-sm-12" style="padding: 0;">
+
+              <div class="row" style="margin: 0;">
+                <p class="payment-step">step 2 <span>billing information</span></p>
+              </div>
+              <form class="credit-form" ng-submit="submitPaymentRegistration(paymentForm)" role="form" ng-init="paymentForm = {}">
+                <div class="auth-body">
+
+                  <div class="col-sm-6" style="padding: 0;">
+                    <div class="form-group">
+                      <label>cardholder first name</label>
+                      <input type="text" name="first_name" ng-model="paymentForm.first_name" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>cardholder last name</label>
+                      <input type="text" name="last_name" ng-model="paymentForm.last_name" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>address</label>
+                      <input type="text" name="address" ng-model="paymentForm.address" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>city</label>
+                      <input type="text" name="city" ng-model="paymentForm.city" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>state</label>
+                      <input type="text" name="state" ng-model="paymentForm.state" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                  </div><!-- end col-sm-6 -->
+
+                  <div class="col-sm-6" style="padding: 0;">
+                    <div class="form-group">
+                      <label>zipcode</label>
+                      <input type="text" name="last_name" ng-model="paymentForm.zipcode" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>card number</label>
+                      <input type="text" name="card_number" ng-model="paymentForm.card_number" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>ccv</label>
+                      <input type="text" name="ccv" ng-model="paymentForm.ccv" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="row" style="margin: 0;">
+                      <div class="agreement-container">
+                        <p class="small-print-agreement">
+                          some important bits from our license agreement, in non-lawyer terms: this
+                          is a single-user license; you may not share it with anyone else.  you may only
+                          view the library using the players we provide, including both our web-based
+                          players and our mobile apps. this is trademarked material, and may not be
+                          copied, modified, or shared in any way. please read the full text of our
+                          terms of use for more detail.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="row" style="margin: 0;">
+                      <div class="bubble-btn switch-btn subscribe-btn back-btn text-center">
+                        Back
+                      </div>
+                      <div class="bubble-btn submit-btn subscribe-btn submit-payment-btn text-center">
+                        submit
+                      </div>
+                    </div>
+                  </div><!-- end col-sm-6 -->
+
+                  <!-- <div class="col-md-6 auth-left-column">
+                    <div class="form-group">
+                      <country-select cs-priorities="US" ng-model="paymentForm.country" required="required"></country-select>
+                    </div>
+                  </div>  -->
+                </div>
+
+              </form><!-- end form credit-form-->
+            </div><!-- end col-sm-12 -->
+          </div><!-- end row -->
+
+        </div><!-- end col-sm-8 col-sm-offset-2 -->
+      </div>
+
+    </div><!-- end payment form -->
 
   </div><!-- end payment-step-container -->
 
 </div> <!-- end row -->
 
+<script>
 
+  $(".back-btn").click(function(){
+    var $currentSlide = $(".active-slide");
+    var $targetSlide = $(".payment-option");
 
-<!-- <form ng-submit="submitPaymentRegistration(paymentForm)" role="form" ng-init="paymentForm = {}">
-  <div class="auth-body">
+    $currentSlide.fadeOut("slow").removeClass("active-slide");
+    $targetSlide.fadeIn("slow").addClass("active-slide");
+  });
 
-    <div class="col-md-6 auth-left-column">
-        <div class="form-group">
-          <label>cardholder first name</label>
-          <input type="text" name="first_name" ng-model="paymentForm.first_name" required="required" class="form-control"/>
-        </div>
-    </div>
-    <div class="col-md-6 auth-left-column">
-        <div class="form-group">
-          <label>cardholder last name</label>
-          <input type="text" name="last_name" ng-model="paymentForm.last_name" required="required" class="form-control"/>
-        </div>
-    </div>
-    <div class="col-md-6 auth-left-column">
-        <div class="form-group">
-          <label>address</label>
-          <input type="text" name="address" ng-model="paymentForm.address" required="required" class="form-control"/>
-        </div>
-    </div>
-    <div class="col-md-6 auth-left-column">
-      <div class="form-group">
-        <label>city</label>
-        <input type="text" name="city" ng-model="paymentForm.city" required="required" class="form-control"/>
-      </div>
-    </div>
+  $(".payment-btn").click(function(){
+    var $currentSlide = $(".active-slide");
+    var $targetSlide = $(".payment-form");
 
-
-    <div class="col-md-6 auth-left-column">
-      <div class="form-group">
-        <country-select cs-priorities="US" ng-model="paymentForm.country" required="required"></country-select>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="auth-footer">
-    <div class="col-md-12 auth-right-column">
-      <button type="submit" class="bubble-btn submit-btn submit-btn-sing-up pull-right">Submit</button>
-    </div>
-  </div>
-</form> -->
+    $currentSlide.fadeOut("slow").removeClass("active-slide");
+    $targetSlide.fadeIn("slow").addClass("active-slide");
+  });
+</script>
