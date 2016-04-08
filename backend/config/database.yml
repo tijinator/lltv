@@ -6,13 +6,10 @@ development:
   # username: user_name
   # password:
 
-production:
- host: localhost
- adapter: postgresql
- database: lltv
- # pool: 5
-  # username: user_name
-  # password:
+# production:
+#  host: localhost
+#  adapter: postgresql
+#  database: lltv
 
  # development:
  #   adapter: postgresql
