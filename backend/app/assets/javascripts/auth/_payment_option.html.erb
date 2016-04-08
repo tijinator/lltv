@@ -7,7 +7,7 @@
       </div>
     </div>
 
-    <div class="col-sm-12 slide payment-option" style="height: 100%; padding: 0;">
+    <div class="col-sm-12 slide payment-option active-slide" style="height: 100%; padding: 0;">
 
       <div class="row" style="margin: 0;">
         <h1 class="payment-option-title">Discover a library of courses, right at your fingertips.</h1>
@@ -52,7 +52,7 @@
               </div>
 
               <div class="row" style="margin: 0;">
-                <div class="bubble-btn submit-btn subscribe-now-btn payment-btn text-center">
+                <div class="bubble-btn submit-btn subscribe-now-btn subscription-btn text-center">
                   subscribe now
                 </div>
               </div>
@@ -75,7 +75,7 @@
               </div>
 
               <div class="row" style="margin: 0;">
-                <div class="bubble-btn switch-btn subscribe-now-btn payment-btn text-center">
+                <div class="bubble-btn switch-btn subscribe-now-btn onetime-btn text-center">
                   purchase video
                 </div>
               </div>
@@ -88,7 +88,7 @@
 
     </div><!-- end payment-option slide -->
 
-    <div class="col-sm-12 slide payment-form active-slide" style="height: 100%; padding: 0;">
+    <div class="col-sm-12 slide payment-form" style="height: 100%; padding: 0;">
 
       <div class="row" style="margin: 0;">
         <h1 class="payment-form-title">subscribe to us</h1>
@@ -148,7 +148,7 @@
               <div id="payment-step-row" class="row" style="margin: 0;">
                 <p class="payment-step">step 2 <span>billing information</span></p>
               </div>
-              <form class="credit-form" ng-submit="submitPaymentRegistration(paymentForm)" role="form" ng-init="paymentForm = {}">
+              <form id="credit-format" class="credit-form" ng-submit="submitPaymentRegistration(paymentForm)" role="form" ng-init="paymentForm = {}">
                 <div class="auth-body">
 
                   <div class="col-sm-6" style="padding: 0;">
@@ -284,20 +284,67 @@
 
 <script>
   //fade in/out animation
+
+  var fadeFunc = function(current, target){
+    current.fadeOut("slow").removeClass("active-slide");
+    target.fadeIn("slow").addClass("active-slide");
+  }
+
+  var addInput = function(name, value){
+
+    var input = document.createElement("input");
+    function setAttributes(el, options) {
+       Object.keys(options).forEach(function(attr) {
+         el.setAttribute(attr, options[attr]);
+       })
+    }
+    setAttributes(input, {"id": "hidden-input", "type": "hidden", "name": name, "value": value});
+
+    var form = document.getElementById('credit-format');
+
+    form.appendChild(input);
+    console.log(input);
+
+  }
+
   $(".back-btn").click(function(){
     var $currentSlide = $(".active-slide");
     var $targetSlide = $(".payment-option");
 
-    $currentSlide.fadeOut("slow").removeClass("active-slide");
-    $targetSlide.fadeIn("slow").addClass("active-slide");
+    //remove input if exists
+    var form = document.getElementById('credit-format');
+    var childInput = document.getElementById("hidden-input");
+
+    if(childInput){ form.removeChild(childInput); }
+
+    fadeFunc($currentSlide, $targetSlide);
+
   });
 
-  $(".payment-btn").click(function(){
+  $(".subscription-btn").click(function(){
     var $currentSlide = $(".active-slide");
     var $targetSlide = $(".payment-form");
 
-    $currentSlide.fadeOut("slow").removeClass("active-slide");
-    $targetSlide.fadeIn("slow").addClass("active-slide");
+    fadeFunc($currentSlide, $targetSlide);
+
+    var name = "subscription-amount";
+    var value = "3999"
+
+    addInput(name, value);
+
+  });
+
+  $(".onetime-btn").click(function(){
+    var $currentSlide = $(".active-slide");
+    var $targetSlide = $(".payment-form");
+
+    fadeFunc($currentSlide, $targetSlide);
+
+    var name = "onetime-amount";
+    var value = "1299"
+
+    addInput(name, value);
+
   });
   // end of fade in/out animation
 
