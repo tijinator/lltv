@@ -4,6 +4,12 @@
     browse our library
   </div>
   <div>
+    <ul>
+      <li ng-repeat='c in categories' style="display: inline-block;"> 
+          <p style='color: black'>{{c.title}}</p>
+      </li>
+    </ul>
+
     <ul class="small-categories">
       <li ng-repeat="category in categories" style="display: inline-block;">
         <a ui-sref="category.show({id: category.id})">
@@ -14,5 +20,6 @@
         </a>
       </li>
     </ul>
+
   </div>
 </div>
