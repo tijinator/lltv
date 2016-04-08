@@ -163,6 +163,13 @@
                     </div>
 
                     <div class="form-group">
+                      <label>country</label>
+                      <div class="row" style="margin: 0;">
+                        <div class="country-dropdown"><country-select class="country-dropdown-menu" cs-priorities="US" ng-model="paymentForm.country" cs-required></country-select></div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
                       <label>address</label>
                       <input type="text" name="address" ng-model="paymentForm.address" required="required" class="form-control" ng-required="true"/>
                     </div>
@@ -218,9 +225,7 @@
                   </div><!-- end col-sm-6 -->
 
                   <!-- <div class="col-md-6 auth-left-column">
-                    <div class="form-group">
-                      <country-select cs-priorities="US" ng-model="paymentForm.country" required="required"></country-select>
-                    </div>
+
                   </div>  -->
                 </div>
 
@@ -263,5 +268,5 @@
   }
   //end of if statement
 
-  
+
 </script>

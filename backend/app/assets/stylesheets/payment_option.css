@@ -55,6 +55,25 @@
   font-size: 18px;
 }
 
+.country-dropdown{
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255, 0.3);
+  height: 40px;
+  width: 85%;
+  border-radius: 25px;
+  opacity: 1;
+  font-size: 13px;
+  font-family: Avenir-Black;
+  color: #fff;
+}
+
+.country-dropdown-menu{
+  background-color: transparent;
+  border: none;
+  width: 96%;
+  height: 40px;
+}
+
 .subscribe-now-btn{
   width: 190px;
   display: inline-block;
