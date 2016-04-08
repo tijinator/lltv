@@ -27,8 +27,6 @@ Rails.application.routes.draw do
     end
 
     
-    # User Table related
-    resources :users, controller: 'admin/user_admin'
 
     # devise_for :users
     devise_for :users, controllers: {
@@ -36,6 +34,8 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'  
     }
 
+    # User Table related
+    resources :users, controller: 'admin/user_admin'
 
     get '/' => 'admin/index_admin#home'
     get '/dashboard' => 'admin/index_admin#dashboard'
