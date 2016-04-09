@@ -97,7 +97,7 @@
       <div class="row" style="margin: 0;">
         <div class="col-sm-8 col-sm-offset-2" style="padding: 0; width: 67%; margin-left: 20%;">
 
-          <div id="signup-row" class="row" style="margin: 0;">
+          <div ng-if="!user.signedIn" id="signup-row" class="row" style="margin: 0;">
             <div class="col-sm-12" style="padding: 0; margin-bottom: 50px;">
 
               <div class="row" style="margin: 0;">
@@ -145,7 +145,7 @@
           <div class="row" style="margin: 0;">
             <div class="col-sm-12" style="padding: 0;">
 
-              <div id="payment-step-row" class="row" style="margin: 0;">
+              <div ng-if="!user.signedIn" id="payment-step-row" class="row" style="margin: 0;">
                 <p class="payment-step">step 2 <span>billing information</span></p>
               </div>
               <form id="credit-format" class="credit-form" ng-submit="submitPaymentRegistration(paymentForm)" role="form" ng-init="paymentForm = {}">
@@ -349,10 +349,10 @@
   // end of fade in/out animation
 
   //remove signup form if user has already registered
-  if(userBoolean){
-    document.getElementById("signup-row").style.display="none";
-    document.getElementById("payment-step-row").style.display="none";
-  }
+  // if(userBoolean){
+  //   document.getElementById("signup-row").style.display="none";
+  //   document.getElementById("payment-step-row").style.display="none";
+  // }
   //end of if statement
 
 
