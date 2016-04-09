@@ -4,5 +4,5 @@ angular.module('lltv')
 'featuredCourse',
 function($scope, featuredCourse) {
   $scope.featuredCourse = featuredCourse.data;
-  console.log(featuredCourse);
+  // console.log(featuredCourse);
 }]);

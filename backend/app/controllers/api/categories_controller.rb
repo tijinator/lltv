@@ -11,7 +11,7 @@ class Api::CategoriesController < Api::ApiController
 
   def index
     # render json: Category.where.not({small_image_url: nil}), root: false
-    render json: Category.all
+    render json: Category.all, root: false
   end
 
   def show
