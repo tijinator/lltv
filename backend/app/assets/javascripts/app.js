@@ -60,11 +60,27 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
     //     $('#lltv-app-content').show();
     //   }
     // })
-    .state('profileUsername',{
+    // .state('profileUsername',{
+    //   url: '/user/:username',
+    //   views: {
+    //     templateUrl: 'profile/profileLayout.html',
+    //     controller: 'profileUsernameCtrl'
+    //   },
+    //   onEnter: function() {
+    //     $('#landing-homepage').hide();
+    //     $('#lltv-app-content').show();
+    //   }
+    // })
+    .state('profileUsername', {
+      templateUrl: 'profile/profileLayout.html',
+    })
+    .state('profileUsername.show',{
       url: '/user/:username',
       views: {
-        templateUrl: 'profile/profile.html',
-        controller: 'profileCtrl'
+        profileNavigation: {
+          templateUrl: 'profile/profileNavigation.html',
+          // controller: 'profileUsernameCtrl'
+        }
       },
       onEnter: function() {
         $('#landing-homepage').hide();
