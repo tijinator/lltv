@@ -6,10 +6,11 @@ angular.module('lltv', [
 'ng-token-auth',
 'lltvFilters',
 'countrySelect',
+// '$scope',
 'ngAnimate'])
-.constant('baseUrl', 'http://beta.learninglibrary.tv')
+// .constant('baseUrl', 'http://beta.learninglibrary.tv')
 // .constant('baseUrl', 'http://localhost:3000')
-// .constant('baseUrl', 'http://lvh.me:3000')
+.constant('baseUrl', 'http://lvh.me:3000')
 .config([
 'baseUrl',
 '$stateProvider',
@@ -59,6 +60,17 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
     //     $('#lltv-app-content').show();
     //   }
     // })
+    .state('profileUsername',{
+      url: '/user/:username',
+      views: {
+        templateUrl: 'profile/profile.html',
+        controller: 'profileCtrl'
+      },
+      onEnter: function() {
+        $('#landing-homepage').hide();
+        $('#lltv-app-content').show();
+      }
+    })
     .state('categories', {
       templateUrl: 'categories/categoriesLayout.html',
     })

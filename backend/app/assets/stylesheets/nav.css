@@ -8,6 +8,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   background-image: url('/images/LLTV_blackgradient2.png');
   min-height: 103px;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* profile nav options */

@@ -1,17 +1,17 @@
-class User < ActiveRecord::Base 
+class User < ActiveRecord::Base
   has_many :orders
-  
+
   # Include default devise modules.
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
          # :confirmable
-     
+
   include DeviseTokenAuth::Concerns::User
   # attr_accessor :stripe_card_token
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  # devise :database_authenticatable, :registerable, 
+  # devise :database_authenticatable, :registerable,
   #         :recoverable, :rememberable, :trackable, :validatable
 
   # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   before_create :set_username
   # before_save :set_username
   before_save { self.email = email.downcase }
-  
+
   def set_username
     username ? self.username = username : self.username = self.email.split('@').first
   end
@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
       return self.last_name if self.last_name
     nil
   end
-  
+
 
   def save_with_mothly_payment
     if valid?

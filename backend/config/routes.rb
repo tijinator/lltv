@@ -10,14 +10,14 @@ Rails.application.routes.draw do
   end
 
   # Subdomains -
-  constraints subdomain: 'admin.beta' do
+  constraints subdomain: 'admin' do
 
     #payment example TEMP
     post 'user' => 'admin/admin#payment_processer', as: :user
-          
+
 
     resources :videos, controller: 'admin/videos_admin'
-    
+
     resources :categories, controller: 'admin/categories_admin' do
       resources :courses, controller: 'admin/courses_admin' do
         resources :chapters, controller: 'admin/chapters_admin' do
@@ -26,12 +26,12 @@ Rails.application.routes.draw do
       end
     end
 
-    
+
 
     # devise_for :users
     devise_for :users, controllers: {
       sessions:      'users/sessions',
-      registrations: 'users/registrations'  
+      registrations: 'users/registrations'
     }
 
     # User Table related

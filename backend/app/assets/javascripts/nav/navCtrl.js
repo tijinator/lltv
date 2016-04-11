@@ -16,8 +16,8 @@ $scope.jsRun = function(userData){
           a.setAttribute('class','dropdown-toggle');
           a.setAttribute('data-toggle','dropdown');
           a.setAttribute('style','background: none');
-  // var userName = document.createTextNode($scope.user.username); 
-  var userName = document.createTextNode(userData.username); 
+  // var userName = document.createTextNode($scope.user.username);
+  var userName = document.createTextNode(userData.username);
       a.appendChild(userName);
 
   var span = document.createElement('span');
@@ -34,10 +34,12 @@ $scope.jsRun = function(userData){
 
   var innerLiOne = document.createElement('li');
       var innerA = document.createElement('a');
-          innerA.setAttribute('href', '/categories');
+          console.log(JSON.stringify(userData.username));
+          // innerA.setAttribute('href', '/categories');
+          innerA.setAttribute('ui-sref', "profileUsername({username:" + JSON.stringify(userData.username) + "})");
           innerA.setAttribute('style', 'color: #787d7f; height: 15px');
-          
-          var profile = document.createTextNode('Profile'); 
+
+          var profile = document.createTextNode('Profile');
           innerA.appendChild(profile);
           innerLiOne.appendChild(innerA);
       ul.appendChild(innerLiOne);
@@ -46,8 +48,8 @@ $scope.jsRun = function(userData){
       var innerO = document.createElement('a');
           innerO.setAttribute('ng-click', 'signOut()');
           innerO.setAttribute('style', 'color: #787d7f; height: 15px');
-          
-          var signOut = document.createTextNode('Sign Out'); 
+
+          var signOut = document.createTextNode('Sign Out');
           innerO.appendChild(signOut);
           innerLiTwo.appendChild(innerO);
       ul.appendChild(innerLiTwo);
@@ -61,7 +63,7 @@ $scope.jsRun = function(userData){
 
   var currentUserMenu = function(userData){
     // return html = `
-    //   <a class="dropdown-toggle" data-toggle="dropdown" style="background: none;"> ${userData.username} 
+    //   <a class="dropdown-toggle" data-toggle="dropdown" style="background: none;"> ${userData.username}
     //     <span class="glyphicon glyphicon-menu-down" style="padding-left: 6px;"></span>
     //   </a>
     //   <ul class="profile-dropdown dropdown-menu dropdown-menu-right" role="menu" id='profile-navbar'>
@@ -71,7 +73,7 @@ $scope.jsRun = function(userData){
     //     <li><a href="/categories" style="color: #787d7f; height: 15px;">contact us</a></li>
     //     <li><a ng-click="signOut()" style="color: #787d7f; height: 15px;">Sign Out</a></li>
     //   </ul>`
-    
+
     // console.log('HELLO CURRENT MENU ');
   };
 
