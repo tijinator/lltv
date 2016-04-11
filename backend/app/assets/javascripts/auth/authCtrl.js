@@ -28,23 +28,20 @@ function($scope, $auth, currentUser, authService) {
       });
   };
 
-  // $scope.submitSignOut = function() {
-    // console.log("HAHA");
-    // $auth.signOut()
-    //   .then(function(resp) {
-    //     currentUser.signOut(resp);
-    //     // handle success response
-    //   })
-    //   .catch(function(resp) {
-    //     // handle error response
-    //   });
-  // };
+  $scope.submitPaymentRegistration = function(){
+     console.log($scope.paymentForm);
+  };
 
-  $scope.switch = function(type) {
-    authService.switchModal(type);
+  // $scope.switch = function(type) {
+  //   authService.switchModal(type);
+  // }
+
+  $scope.switch = function(type, obj) {
+    authService.switchModal(type, obj);
   }
 
   $scope.close = function() {
     authService.closeModal();
   }
+
 }]);

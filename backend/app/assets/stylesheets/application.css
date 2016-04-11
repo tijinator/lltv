@@ -19,15 +19,18 @@
  *= require category_library
  *= require category
  *= require course
+ *= require unlock_video.css
+ *= require payment_option.css
  *= require_self
  */
+ @import "bootstrap-formhelpers";
 
 *{
 	outline: 0px red solid;
 }
 
 .content-container.ng-scope {
-    margin-top: 85px;
+    /*margin-top: 85px;*/
 }
 
 .content-container.ng-scope.homepage-content-container{

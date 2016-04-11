@@ -45,6 +45,8 @@ gem 'numbers_and_words'
 
 gem 'puma'
 
+gem 'bootstrap-form-helpers-rails', :git => 'https://github.com/johnu/bootstrap-form-helpers-rails.git'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

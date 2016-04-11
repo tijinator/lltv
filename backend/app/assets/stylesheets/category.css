@@ -9,6 +9,7 @@
   overflow: hidden;
   background-color: #000000;
   color: #FFFFFF;
+  top: 95px;
 }
 
 .category-info .category-banner {
@@ -53,8 +54,8 @@
   height: -moz-calc(100vh - 40px);
   height: calc(100vh - 40px);
   color: #787D7F;
-
   position: relative;
+  top: 95px;
 }
 
 .category-page-options {
@@ -155,7 +156,7 @@
   right: 0;
   background-color: #000;
   color: #fff;
-  height: 20%;
+  min-height: 20%;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;

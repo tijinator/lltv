@@ -5,6 +5,7 @@ angular.module('lltv', [
 'ipCookie',
 'ng-token-auth',
 'lltvFilters',
+'countrySelect',
 'ngAnimate'])
 .constant('baseUrl', 'http://beta.learninglibrary.tv')
 // .constant('baseUrl', 'http://localhost:3000')

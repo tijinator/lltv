@@ -1,0 +1,145 @@
+/*payment option styling*/
+
+.payment-step-container{
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  background-color: #2E3335;
+}
+
+.payment-option-title{
+  font-family: Avenir-black;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.price-title{
+  font-size: 15px;
+  font-family: avenir-black;
+  text-align: center;
+  margin: 30px 0 35px;
+  color: #B2B2B2;
+}
+
+.monthly-box, .onetime-box{
+  margin: 40px 0 20px;
+  border: 1px #B2B2B2 solid;
+  width: 350px;
+}
+
+.monthly-box{ margin-right: 60px;}
+
+.price-list>ul{
+  margin-bottom: 0;
+  margin-left: 70px;
+  font-size: 12px;
+  color: #B2B2B2;
+  font-family: avenir-medium;
+}
+
+.price-list>ul>li{ margin-bottom: 20px;}
+
+.price-item-container{ margin-bottom: 20px; }
+
+.pricing-dollar{
+  margin-left: 70px;
+  font-size: 50px;
+  font-family: avenir-black;
+}
+
+.change-container{ position: absolute;}
+
+.price-change{
+  top: 13px;
+  font-family: avenir-black;
+  font-size: 18px;
+}
+
+.country-dropdown, .year-select, .month-select{
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255, 0.3);
+  height: 40px;
+  width: 85%;
+  border-radius: 25px;
+  opacity: 1;
+  font-size: 13px;
+  font-family: Avenir-Black;
+  color: #fff;
+}
+
+.select-style{
+  background: transparent;
+  border: none;
+  color: white;
+  height: 40px;
+}
+
+.year-select, .month-select{
+  width: 170px;
+  float: left;
+}
+
+/*.month-select{ margin-right: 20px; }*/
+
+.country-dropdown-menu{
+  background-color: transparent;
+  border: none;
+  width: 96%;
+  height: 40px;
+}
+
+.subscribe-now-btn{
+  width: 190px;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: calc(50% - 210px/2);
+  margin-bottom: 40px;
+}
+/*************************/
+
+/*payment form styling*/
+
+.payment-form-title{
+    text-transform: capitalize;
+    font-family: avenir-black;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.payment-step{
+  font-family: avenir-black;
+  color: #B2B2B2;
+}
+
+.payment-step > span{ padding-left: 25px;}
+
+.credit-form{
+  margin-top: 30px;
+}
+
+.credit-form input{ width: 85%; }/*form field width*/
+
+.agreement-container{ width: 90%; }
+
+.small-print-agreement{
+  font-size: 5px;
+  color: #b2b2b2;
+  letter-spacing: 1px;
+  line-height: 14px;
+}
+
+.back-btn, .submit-payment-btn{
+  width: 150px;
+  margin-top: 20px;
+}
+
+.submit-payment-btn{ margin-left: 30px;}
+/**************************/
+
+/*slide menu*/
+.slide{ display: none;}
+
+.active-slide{ display: block; }
+
+/*************/

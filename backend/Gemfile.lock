@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/johnu/bootstrap-form-helpers-rails.git
+  revision: 05c9de1116b2e10a4adc7795f756935b8e30bc50
+  specs:
+    bootstrap-form-helpers-rails (2.0.0.1)
+      railties (>= 3.1)
+
+GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: 9ae8a49697c888dd2b0eaa3f327174ac4f95a914
   specs:
@@ -326,6 +333,7 @@ DEPENDENCIES
   angular_rails_csrf
   better_errors
   binding_of_caller
+  bootstrap-form-helpers-rails!
   bullet
   byebug
   capistrano

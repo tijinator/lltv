@@ -99,3 +99,14 @@
   <footer class="homepage-footer">
   </footer>
 </div>
+<script>
+
+  $("#category-button div").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".colored-bar").offset().top - 103
+    }, 600, "easeOutCirc", function(){
+      console.log("scroll!");
+    });
+  });
+
+</script>

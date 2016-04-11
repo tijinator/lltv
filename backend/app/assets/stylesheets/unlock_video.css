@@ -1,0 +1,89 @@
+.gray-box{
+  position: absolute;
+  height: 420px;
+  width: 662px;
+  left: calc(50% - 662px/2);
+  top: calc(50% - 420px/2);
+  background-color: #2E3335;
+}
+
+.close-unlock{
+  margin: 25px 25px 20px 0;
+  cursor: pointer;
+}
+
+.lock-container{
+  max-width: 46px; /*lock img original width size*/
+  margin: 0 auto;
+}
+
+.unlock-title, .unlock-description{
+  font-family: Avenir-Black;
+  text-align: center;
+}
+
+.unlock-title{
+  text-transform: capitalize;
+  margin: 50px 0 20px;
+}
+
+.unlock-description{
+  font-size: 13px;
+  color: #B2B2B2;
+  margin: 0 100px 40px 100px;
+  line-height: 25px;
+}
+
+.subscribe-btn, .purchase-btn{
+  width: 190px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.subscribe-btn{
+  float: left;
+}
+
+.purchase-btn{
+  float: right;
+}
+
+
+/*responsive design*/
+@media (max-width: 768px) {
+  .col-responsive{
+    padding: 0 150px;
+  }
+
+  .subscribe-btn, .purchase-btn{
+    float: none;
+  }
+
+  .gray-box{
+    width: 500px;
+    left: calc(50% - 500px/2);
+  }
+
+  .unlock-description{
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+
+  .subscribe-btn{ margin-bottom: 10px;}
+}
+
+@media (max-width: 500px) {
+
+  .close-unlock{
+    margin-right: 75px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 370px) {
+
+  .close-unlock{
+    margin-right: 125px;
+    cursor: pointer;
+  }
+}
