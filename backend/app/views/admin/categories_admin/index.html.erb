@@ -1,6 +1,29 @@
-<h1>CATEGORIES INDEX</h1>
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<div class="row" style="margin: 0;">
+			<div class="" style="float: left;">
+				<p>Category Title</p>
+			</div>
+			<div class="" style="float: right;">
+				<%= link_to new_category_path do %>
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Category
+				<% end %>
+			</div>
+		</div>
+	</div>
 
-
-<% @categories.each do |c| %>
-	<%= link_to c.title, c %> | <%= link_to 'Edit', edit_category_path(c) %> <br>
-<% end %>
+	<div class="panel-body">
+		<% @categories.each do |c| %>
+			<div class="row" style="margin: 0;">
+				<div class="" style="float: left;">
+					<%= link_to c.title, c %>
+				</div>
+				<div class="" style="float: right;">
+					<%= link_to "edit", edit_category_path(c), class: 'btn btn-default' %>
+					<%= link_to "delete", category_path(c), method: :delete, data: {confirm: 'Are you sure you want to delete this video?'}, class: 'btn btn-danger' %>
+				</div>
+			</div>
+			<hr>
+		<% end %>
+	</div>
+</div>
