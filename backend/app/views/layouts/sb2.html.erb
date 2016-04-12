@@ -78,27 +78,27 @@
     </nav>
     <div id="page-wrapper" style="min-height: 761px;">
 
-      <!-- <ul class="nav nav-pills" role="tablist">
-        <li role="presentation" class="active"><a href="#">Home <span class="badge">42</span></a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-        <li role="presentation"><a href="#">Messages <span class="badge">3</span></a></li>
-      </ul> -->
-
       <div class="row" style="margin: 0;">
-        <ul class="nav nav-pills" role="tablist">
-          <li role="presentation" class="active"><a><%= current_user.email %></a></li>
-          <li role="presentation"><%= link_to 'Categories', categories_path %></li>
-          <li role="presentation"><%= link_to 'Videos', videos_path %></li>
-
-        </ul>
+        <div class="well" style="margin-top: 20px;">
+          <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="/dashboard"><%= current_user.email %></a></li>
+            <li role="presentation" class="active"><%= link_to 'Categories', categories_path %></li>
+            <li role="presentation" class="active"><%= link_to 'Videos', videos_path %></li>
+          </ul>
+        </div>
       </div>
 
-      <!-- <div class="row" style="margin: 0;">
-        <span class="label label-default"><%= current_user.email %></span>
-        <span class="label label-default"><%= link_to 'Categories', categories_path %></span>
-        <span class="label label-default"><%= link_to 'Videos', videos_path %></span>
-      </div> -->
-      <hr>
+      <!-- <script>
+      $('.nav-pills li').click(function(e) {
+        $('.nav-pills li.active').removeClass('active');
+        var $this = $(this);
+        if (!$this.hasClass('active')) {
+            $this.addClass('active');
+        }
+        e.preventDefault();
+      });
+      </script> -->
+      <!-- <hr> -->
       <%= yield %>
     </div>
   </div>
