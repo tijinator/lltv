@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
     # User Table related
     resources :users, controller: 'admin/user_admin'
-
+    # get '/userAdmin' => 'admin/user_admin#index'
     get '/' => 'admin/index_admin#home'
     get '/dashboard' => 'admin/index_admin#dashboard'
     # get '/categories' => 'admin/category_admin#index'
@@ -81,6 +81,8 @@ Rails.application.routes.draw do
 
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
+
+  get '/users/:user_id' => 'home#home'
 
   root to: 'home#home'
 end

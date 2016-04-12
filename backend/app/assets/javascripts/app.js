@@ -6,7 +6,6 @@ angular.module('lltv', [
 'ng-token-auth',
 'lltvFilters',
 'countrySelect',
-// '$scope',
 'ngAnimate'])
 // .constant('baseUrl', 'http://beta.learninglibrary.tv')
 // .constant('baseUrl', 'http://localhost:3000')
@@ -75,10 +74,10 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       templateUrl: 'profile/profileLayout.html',
     })
     .state('profileUsername.show',{
-      url: '/user/:username',
+      url: '/users/:username',
       views: {
-        profileNavigation: {
-          templateUrl: 'profile/profileNavigation.html',
+        profileSideBar: {
+          templateUrl: 'profile/profileSideBar.html',
           // controller: 'profileUsernameCtrl'
         }
       },
