@@ -4,6 +4,7 @@ class Admin::CategoriesAdminController < Admin::AdminController
 
 	def index
 		@categories = Category.all
+		render 'admin/categories_admin/index', layout: 'sb2'
 	end
 
 	def new
