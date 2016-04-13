@@ -10,6 +10,36 @@
   text-transform: uppercase;
   font-family: avenir-black;
 }
+.profile-firstname{ margin-bottom: 0;}
+
+.mycourses-link, .certificates-link{
+  color: #FFF;
+  margin-left: 40px;
+}
+
+.editprofile-link:hover, .mycourses-link:hover, .certificates-link:hover{
+  text-decoration: none;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.editprofile-link:hover{ color: #787D7F;}
+
+
+.icon-star{
+  margin-bottom: 40px;
+  margin-right: 20px;
+}
+
+.profile-setting-container{
+  margin-left: 40px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.editprofile-link{
+  color: #787D7F;
+}
 
 .profile-video-history{
   background-color: #2E3335;
