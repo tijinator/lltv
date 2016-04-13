@@ -79,6 +79,9 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         profileSideBar: {
           templateUrl: 'profile/profileSideBar.html',
           // controller: 'profileUsernameCtrl'
+        },
+        profileVideoHistory: {
+          templateUrl: 'profile/profileVideoHistory.html',
         }
       },
       onEnter: function() {
