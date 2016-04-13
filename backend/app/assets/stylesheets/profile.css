@@ -12,12 +12,11 @@
 }
 .profile-firstname{ margin-bottom: 0;}
 
-.mycourses-link, .certificates-link{
-  color: #FFF;
-  margin-left: 40px;
-}
+.anchor-link{ color: #FFF; }
 
-.editprofile-link:hover, .mycourses-link:hover, .certificates-link:hover{
+.mycourses-link, .certificates-link{ margin-left: 40px; }
+
+.anchor-link:hover{
   text-decoration: none;
   color: #FFF;
   cursor: pointer;
