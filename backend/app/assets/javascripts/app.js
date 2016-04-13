@@ -78,11 +78,11 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       views: {
         profileSideBar: {
           templateUrl: 'profile/profileSideBar.html',
-          // controller: 'profileUsernameCtrl'
+          controller: 'profileUsernameCtrl'
         },
-        profileVideoHistory: {
-          templateUrl: 'profile/profileVideoHistory.html',
-        }
+        // profileVideoHistory: {
+        //   templateUrl: 'profile/profileVideoHistory.html',
+        // }
       },
       onEnter: function() {
         $('#landing-homepage').hide();
