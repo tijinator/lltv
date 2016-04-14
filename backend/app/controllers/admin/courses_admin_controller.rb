@@ -12,6 +12,8 @@ class Admin::CoursesAdminController < Admin::AdminController
     # render 'admin/courses', layout: 'sb2'
 
     @courses = @category.courses
+    # render 'admin/courses_admin/index', layout: 'sb2'
+
   end
 
   def show
@@ -38,10 +40,10 @@ class Admin::CoursesAdminController < Admin::AdminController
   end
 
 private
-	
+
 	def set_category
 	  	@category = Category.find(params[:category_id])
-	end  
+	end
 
 	def course_params
 		params.require(:course).permit(:title, :image, :details, :position, :duration, :author_id)

@@ -30,37 +30,4 @@
     </div>
   </div>
 
-  <div class="col-xs-6 col-xs-offset-1">
-    <div>
-      <h2>Courses</h2>
-    </div>
-    <div>
-      <% @children.each do |course| %>
-        <div class="row">
-          <div class="col-xs-4">
-            <%= link_to course.title, course_chapters_path(course) %>
-          </div>
-
-          <div class="col-xs-8">
-          <% if @is_publisher %>
-            <%= form_for chapter, url: update_published_status_course_path(@course) , method: 'PUT' do |f| %>
-              <%= label_tag :published, "Published" %>
-              <%= f.check_box :published %>
-              <div class="col-xs-8 pull-right">
-                <%= f.submit "Update Published Status", class: "form-control" %>
-              </div>
-            <% end %>
-          <% else %>
-            <% if course.published %>
-              Published
-            <% else %>
-              Not Published
-            <% end %>
-          <% end %>
-        </div>
-
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+  <!-- <%= link_to "Add a chapter", {}, class: 'btn btn-default edit-btn' %> -->

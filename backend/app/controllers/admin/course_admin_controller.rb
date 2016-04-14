@@ -1,18 +1,27 @@
 class Admin::CourseAdminController < Admin::AdminController
-  before_filter :require_data_entry
+  # before_filter :require_data_entry
   before_filter :require_publisher, only: [:update_published_status]
+
+  def new
+    @course = Course.new
+  end
 
   def create
     Course.create!(course_params.merge({user_id: current_user.id}))
-    redirect_to courses_url
+    # redirect_to courses_url
+    # format.html { render :new }
+
+    render 'admin/course_admin/index', layout: 'sb2'
   end
 
   def index
     @current_user = current_user
     @is_publisher = current_user.role >= RolesHelper.code('Publisher')
-    @course = Course.new
-    @children = Course.all
-    render 'admin/courses', layout: 'sb2'
+    # @course = Course.new
+    @courses = Course.all
+    # render 'admin/courses', layout: 'sb2'
+    render 'admin/course_admin/index', layout: 'sb2'
+
   end
 
   def show
