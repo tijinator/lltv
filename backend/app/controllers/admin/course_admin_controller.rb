@@ -30,16 +30,23 @@ class Admin::CourseAdminController < Admin::AdminController
     render 'admin/course', layout: 'sb2'
   end
 
+  def edit
+    @course = Course.find(params[:id])
+  end
+
   def update_published_status
-    course = Course.find(params[:id])
-    course.update_attributes!(publish_params)
+    @course = Course.find(params[:id])
+    @course.update_attributes!(publish_params)
     redirect_to :back
+
   end
 
   def update
-    course = Course.find(params[:id])
-    course.update_attributes!(course_params)
-    redirect_to :back
+    @course = Course.find(params[:id])
+    @course.update_attributes!(course_params)
+    # redirect_to :back
+    render 'admin/course_admin/index', layout: 'sb2'
+    
   end
 
   private
