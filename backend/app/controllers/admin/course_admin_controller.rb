@@ -27,7 +27,7 @@ class Admin::CourseAdminController < Admin::AdminController
   def show
     @course = Course.find(params[:id])
     @chapters = @course.chapters
-    render 'admin/course', layout: 'sb2'
+    # render 'admin/course', layout: 'sb2'
   end
 
   def edit
