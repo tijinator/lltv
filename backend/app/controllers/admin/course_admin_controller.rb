@@ -46,8 +46,14 @@ class Admin::CourseAdminController < Admin::AdminController
     @course.update_attributes!(course_params)
     # redirect_to :back
     render 'admin/course_admin/index', layout: 'sb2'
-    
+
   end
+
+  def destroy
+    @course = Course.find(params[:id])
+		@course.destroy
+    redirect_to :back
+	end
 
   private
 
