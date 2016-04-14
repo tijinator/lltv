@@ -1,34 +1,50 @@
-<h1 class='center' style='text-align: center'>Dashboard</h1>
-<hr>
-
-<div class='col-md-3'>
-	<h4>Categories</h4>
-	<% @categories.each do |category| %>
-		<%= category.title %>	<br>
-	<% end %>
+<div class="row" style="margin: 0;">
+  <div class="col-lg-12" style="padding: 0;">
+   <h1 class="page-header text-center">Dashboard</h1>
+  </div>
 </div>
 
-<div class='col-md-3'>
-	<h4>Courses</h4>
-	<% @courses.each do |course| %>
-		<%= course.title %>	<br>
-	<% end %>
-</div>
+<div class="row" style="margin: 0;">
+	<div class="col-sm-12" style="padding: 0;">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+	      <div class="row" style="margin: 0;">
+	        <div class="col-sm-3" style="padding: 0;">Categories</div>
+	        <div class="col-sm-3" style="padding: 0;">Courses</div>
+	        <div class="col-sm-3" style="padding: 0;">Chapters</div>
+					<div class="col-sm-3" style="padding: 0;">Videos</div>
+	      </div>
+	    </div>
 
-<div class='col-md-3'>
-	<h4>Chapters</h4>
-	<% @chapters.each do |chapter| %>
-		<%= chapter.title %>	<br>
-	<% end %>
-</div>
+			<div class="panel-body" style="color: #337ab7;">
+				<div class='col-sm-3' style="padding: 0;">
+					<% @categories.each do |category| %>
+						<p><%= category.title %></p>
+					<% end %>
+				</div>
 
-<div class='col-md-3'>
-	<h4>Videos</h4>
-	<% @videos.each do |video| %>
-		<%= "#{video.title}: " "#{video.video_url}" %>	<br>
-	<% end %>
-</div>
+				<div class='col-sm-3' style="padding: 0;">
+					<% @courses.each do |course| %>
+						<p><%= course.title %></p>
+					<% end %>
+				</div>
 
+				<div class='col-sm-3' style="padding: 0;">
+					<% @chapters.each do |chapter| %>
+						<p><%= chapter.title %></p>
+					<% end %>
+				</div>
+
+				<div class='col-sm-3' style="padding: 0;">
+					<% @videos.each do |video| %>
+						<p><%= "#{video.title}: " "#{video.video_url}" %></p>
+					<% end %>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
 
 
 <div class="col-md-12">
