@@ -37,8 +37,6 @@ class Admin::ChapterAdminController < Admin::AdminController
   end
 
   def update
-    require 'byebug'; byebug
-
     @course = Course.find(params[:course_id])
     @chapter = Chapter.find_by_id(params[:id])
     @chapter.update(chapter_params)

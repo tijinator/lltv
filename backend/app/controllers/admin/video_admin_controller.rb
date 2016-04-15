@@ -1,4 +1,4 @@
-class Admin::VideosAdminController < Admin::AdminController
+class Admin::VideoAdminController < Admin::AdminController
 	before_action :set_video, only: [:show, :edit, :update, :destroy]
 	layout 'sb2'
 
@@ -9,6 +9,8 @@ class Admin::VideosAdminController < Admin::AdminController
 
 	def new
 		@video = Video.new
+    @id = params[:chapter_id]
+
 	end
 
 	def show
@@ -18,16 +20,20 @@ class Admin::VideosAdminController < Admin::AdminController
 	end
 
 	def create
-		@video = Video.new(video_params)
+    @chapter = Chapter.find_by_id(params[:chapter_id])
+		@video = @chapter.videos.create(video_params)
+    # @video.save
+    #
+    # redirect_to
 
-		respond_to do |format|
-			if @video.save
-				format.html { redirect_to @video, notice: 'Video was successfully created.' }
-				format.js {}
-			else
-				format.html { render :new }
-			end
-		end
+		# respond_to do |format|
+		# 	if @video.save
+		# 		format.html { redirect_to @video, notice: 'Video was successfully created.' }
+		# 		format.js {}
+		# 	else
+		# 		format.html { render :new }
+		# 	end
+		# end
 	end
 
 	def update

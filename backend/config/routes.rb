@@ -53,8 +53,14 @@ Rails.application.routes.draw do
         end
       end
 
-      member do
-        put '/update_published_status' => 'admin/course_admin#update_published_status'
+        member do
+          put '/update_published_status' => 'admin/course_admin#update_published_status'
+        end
+    end
+
+    resources :chapters, controller: 'admin/chapter_admin' do
+      resources :videos, controller: 'admin/video_admin'do
+
       end
     end
 
