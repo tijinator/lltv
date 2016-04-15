@@ -1,0 +1,32 @@
+<div class="row">
+  <div>
+    <h2>Create Chapter</h2>
+  </div>
+  <div>
+    <%= form_for :chapter, :url=> {:controller => 'chapter_admin', :action => 'create'}  do |f| %>
+      <div class="form-group">
+        <%= label_tag :title, "Chapter Title" %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :image, "Chapter Image" %>
+        <%= f.file_field :image, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :details, "Chapter Details" %>
+        <%= f.text_area :details, size: "60x12",class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :position, "Chapter Number" %>
+        <%= f.text_field :position, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :duration, "Chapter duration in seconds" %>
+        <%= f.text_field :duration, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Add Chapter", class: "form-control" %>
+      </div>
+    <% end %>
+  </div>
+</div>
