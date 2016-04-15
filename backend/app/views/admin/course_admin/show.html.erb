@@ -36,3 +36,32 @@
     <% end %>
   </div>
 </div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div class="row" style="margin: 0;">
+      <div class="col-md-4" style="padding: 0;">Videos</div>
+      <div class="col-md-4 col-md-offset-4" style="padding: 0;">
+        <%= link_to new_video_path, {style: "float: right;"} do %>
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Chapter
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <% @chapters.each do |chapter| %>
+      <% chapter.videos.each do |video| %>
+        <div class="row" style="margin: 0;">
+          <div class="col-md-4" style="padding: 0;">
+            <%= video.title %>
+          </div>
+          
+        </div>
+        <hr>
+      <% end %>
+    <% end %>
+  </div>
+
+
+</div>
