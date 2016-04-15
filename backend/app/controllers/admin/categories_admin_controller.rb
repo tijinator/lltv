@@ -19,10 +19,9 @@ class Admin::CategoriesAdminController < Admin::AdminController
 
 	def create
 		@category = Category.new(category_params)
-
 		respond_to do |format|
 			if @category.save
-				format.html { redirect_to @category, notice: 'Category was successfully created.' }
+				format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
 				format.js {}
 			else
 				format.html { render :new }
@@ -33,7 +32,7 @@ class Admin::CategoriesAdminController < Admin::AdminController
 	def update
 		respond_to do |format|
 			if @category.update(category_params)
-				format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+				format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
 			else
 				format.html { render :edit }
 			end
@@ -41,6 +40,8 @@ class Admin::CategoriesAdminController < Admin::AdminController
 	end
 
 	def destroy
+		@category.destroy
+		redirect_to :back
 	end
 
 private
