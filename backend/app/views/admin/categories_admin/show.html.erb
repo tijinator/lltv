@@ -7,3 +7,7 @@
 		<li> <%= course.title %> </li>
 	<% end %>
 </ul>
+
+<%= link_to new_category_course_path(@category), {style: "float: right;", class: 'btn btn-default edit-btn'} do %>
+	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Course
+<% end %>
