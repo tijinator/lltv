@@ -1,13 +1,13 @@
 <div class="well">
   <div class="row" style="margin: 0;">
-		<h1><%=@category.title %></h1>
+		<h1 style="text-transform: uppercase;"><%=@category.title %></h1>
   </div>
   <div class="row" style="margin: 0;">
     <%= @category.details %>
   </div>
 </div>
 
-<h2><%=@category.title %> Courses</h2>
+<h2 style="text-transform: uppercase;"><%=@category.title %> Courses</h2>
 <hr>
 
 <div class="panel panel-info">
@@ -22,7 +22,7 @@
 		</div>
 	</div>
 
-	<div class="panel-body">
+	<div class="panel-body" style="text-transform: uppercase;">
     <% @category.courses.each do |course| %>
       <div class="row" style="margin: 0;">
         <div class="col-md-4" style="padding: 0;">
