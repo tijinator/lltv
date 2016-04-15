@@ -58,7 +58,7 @@ class Admin::CourseAdminController < Admin::AdminController
   private
 
   def course_params
-    params.require(:course).permit(:title, :image, :details, :position, :duration, :author_id)
+    params.require(:course).permit(:title, :banner_url, :details, :position, :duration, :author_id)
   end
 
   def publish_params

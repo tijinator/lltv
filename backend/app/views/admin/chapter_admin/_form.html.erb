@@ -3,15 +3,11 @@
     <h2>Create Chapter</h2>
   </div>
   <div>
-    
+
     <%= form_for :chapter, :url=> {:controller => 'chapter_admin', :action => 'create'}  do |f| %>
       <div class="form-group">
         <%= label_tag :title, "Chapter Title" %>
         <%= f.text_field :title, class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= label_tag :image, "Chapter Image" %>
-        <%= f.file_field :image, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= label_tag :details, "Chapter Details" %>

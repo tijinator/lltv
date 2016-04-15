@@ -24,7 +24,7 @@ class Admin::VideoAdminController < Admin::AdminController
 		@video = @chapter.videos.create(video_params)
     @video.save
 
-    redirect_to :videos
+    redirect_to @video
 
 		# respond_to do |format|
 		# 	if @video.save

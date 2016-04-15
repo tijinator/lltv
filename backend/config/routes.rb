@@ -28,6 +28,11 @@ Rails.application.routes.draw do
 
 
 
+    resources :chapters, controller: 'admin/chapter_admin' do
+      resources :videos, controller: 'admin/video_admin'
+    end
+
+
     # devise_for :users
     devise_for :users, controllers: {
       sessions:      'users/sessions',
@@ -56,12 +61,6 @@ Rails.application.routes.draw do
         member do
           put '/update_published_status' => 'admin/course_admin#update_published_status'
         end
-    end
-
-    resources :chapters, controller: 'admin/chapter_admin' do
-      resources :videos, controller: 'admin/video_admin'do
-
-      end
     end
 
   end
