@@ -22,9 +22,9 @@ class Admin::VideoAdminController < Admin::AdminController
 	def create
     @chapter = Chapter.find_by_id(params[:chapter_id])
 		@video = @chapter.videos.create(video_params)
-    # @video.save
-    #
-    # redirect_to
+    @video.save
+
+    redirect_to :videos
 
 		# respond_to do |format|
 		# 	if @video.save
