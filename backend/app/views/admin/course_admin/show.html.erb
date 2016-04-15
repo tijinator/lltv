@@ -1,11 +1,13 @@
 <div class="well">
   <div class="row" style="margin: 0;">
-    <h1>Course <%= @course.title %></h1>
+    <h1>Course "<%= @course.title %>"</h1>
   </div>
   <div class="row" style="margin: 0;">
     <%= @course.details %>
   </div>
 </div>
+
+<h2><%= @course.title %> chapters</h2>
 
 <div class="panel panel-info">
   <div class="panel-heading">

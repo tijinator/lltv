@@ -26,7 +26,8 @@
     <% @category.courses.each do |course| %>
       <div class="row" style="margin: 0;">
         <div class="col-md-4" style="padding: 0;">
-          <%= course.title %>
+          <!-- <%= course.title %> -->
+          <%= link_to course.title, course_path(course) %>
         </div>
         <div class="col-md-4 col-md-offset-4" style="padding: 0;">
           <div class="" style="float: right;">
