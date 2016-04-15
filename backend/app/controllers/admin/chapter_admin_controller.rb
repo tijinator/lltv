@@ -30,6 +30,27 @@ class Admin::ChapterAdminController < Admin::AdminController
     redirect_to @course
   end
 
+  def edit
+    # @chapter = Chapter.find_by_id(params[:id])
+    @chapter = Chapter.find(params[:id])
+
+  end
+
+  def update
+    require 'byebug'; byebug
+
+    @course = Course.find(params[:course_id])
+    @chapter = Chapter.find_by_id(params[:id])
+    @chapter.update(chapter_params)
+    redirect_to @course
+  end
+
+  def destroy
+    @chapter = Chapter.find_by_id(params[:id])
+    @chapter.destroy
+    redirect_to :back
+  end
+
   private
 
   def chapter_params
