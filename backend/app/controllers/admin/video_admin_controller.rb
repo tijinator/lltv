@@ -46,7 +46,7 @@ class Admin::VideoAdminController < Admin::AdminController
 
 	def destroy
 		@video.destroy
-		redirect_to :videos, notice: 'Post was successfully destroyed.'
+		redirect_to @course
 	end
 
 private

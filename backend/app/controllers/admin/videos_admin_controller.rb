@@ -18,8 +18,11 @@ class Admin::VideosAdminController < Admin::AdminController
 	end
 
 	def create
+		vars = request.query_parameters
 		@video = Video.new(video_params)
-
+		# @course = Course.find(params[:course])
+		courseid = vars['id']
+		require 'byebug'; byebug
 		respond_to do |format|
 			if @video.save
 				format.html { redirect_to categories_path, notice: 'Video was successfully created.' }
