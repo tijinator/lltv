@@ -1,5 +1,5 @@
 class Admin::CoursesAdminController < Admin::AdminController
-  before_filter :require_data_entry
+  # before_filter :require_data_entry
   before_filter :require_publisher, only: [:update_published_status]
   layout 'sb2'
   before_action :set_category, only: [:index, :show]
@@ -12,6 +12,12 @@ class Admin::CoursesAdminController < Admin::AdminController
     # render 'admin/courses', layout: 'sb2'
 
     @courses = @category.courses
+    # render 'admin/courses_admin/index', layout: 'sb2'
+
+  end
+
+  def new
+    @course = Course.new
   end
 
   def show
@@ -21,8 +27,12 @@ class Admin::CoursesAdminController < Admin::AdminController
   end
 
   def create
-    Course.create!(course_params.merge({user_id: current_user.id}))
-    redirect_to courses_url
+
+    @category = Category.find_by_id(params[:category_id])
+    @course = @category.courses.create(course_params.merge({user_id: current_user.id}))
+    @course.save
+
+    redirect_to @category
   end
 
   def update_published_status
@@ -38,13 +48,13 @@ class Admin::CoursesAdminController < Admin::AdminController
   end
 
 private
-	
+
 	def set_category
 	  	@category = Category.find(params[:category_id])
-	end  
+	end
 
 	def course_params
-		params.require(:course).permit(:title, :image, :details, :position, :duration, :author_id)
+		params.require(:course).permit(:title, :banner_url, :details, :position, :duration, :author_id)
 	end
 
 	def publish_params

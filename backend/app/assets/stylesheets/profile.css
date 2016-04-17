@@ -1,0 +1,67 @@
+.profile-sidebar{
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: calc(100% - 95px);
+  color: #FFF;
+  text-transform: uppercase;
+  font-family: avenir-black;
+}
+
+.anchor-link{ color: #FFF; }
+
+.mycourses-link, .certificates-link{
+  margin-left: 40px;
+  font-size: 13px;
+}
+
+.anchor-link:hover{
+  text-decoration: none;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.icon-star{
+  margin-bottom: 40px;
+  margin-right: 20px;
+}
+
+.profile-setting-container{
+  margin-left: 40px;
+  margin-top: 53px;
+  margin-bottom: 40px;
+}
+
+.editprofile-link{
+  color: #FFF;
+}
+
+.profile-video-history{
+  background-color: #2E3335;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: calc(100% - 95px);
+  text-transform: uppercase;
+  color: #FFF;
+  font-family: avenir-black;
+}
+
+.profile-welcome{
+  text-transform: capitalize;;
+}
+
+.profile-course-message{
+  color: #787D7F;
+  font-size: 13px;
+}
+
+.profile-video-history .profile-welcome, .profile-course-message, .browse-btn{
+  margin-left: 80px;
+  margin-bottom: 40px;
+}
+
+.profile-video-history h1{
+  margin-top: 50px;
+}

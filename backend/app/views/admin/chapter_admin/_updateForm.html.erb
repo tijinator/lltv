@@ -1,0 +1,28 @@
+<div class="row">
+  <div>
+    <h2>Update Chapter</h2>
+  </div>
+  <div>
+    <%= form_for @chapter, :url=> {:controller => 'chapter_admin', :action => 'update'}  do |f| %>
+      <div class="form-group">
+        <%= label_tag :title, "Chapter Title" %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :details, "Chapter Details" %>
+        <%= f.text_area :details, size: "60x12",class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :position, "Chapter Number" %>
+        <%= f.text_field :position, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :duration, "Chapter duration in seconds" %>
+        <%= f.text_field :duration, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Submit", class: "form-control" %>
+      </div>
+    <% end %>
+  </div>
+</div>

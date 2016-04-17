@@ -14,10 +14,10 @@ Rails.application.routes.draw do
 
     #payment example TEMP
     post 'user' => 'admin/admin#payment_processer', as: :user
-          
+
 
     resources :videos, controller: 'admin/videos_admin'
-    
+
     resources :categories, controller: 'admin/categories_admin' do
       resources :courses, controller: 'admin/courses_admin' do
         resources :chapters, controller: 'admin/chapters_admin' do
@@ -26,17 +26,22 @@ Rails.application.routes.draw do
       end
     end
 
-    
+
+
+    resources :chapters, controller: 'admin/chapter_admin' do
+      resources :videos, controller: 'admin/video_admin'
+    end
+
 
     # devise_for :users
     devise_for :users, controllers: {
       sessions:      'users/sessions',
-      registrations: 'users/registrations'  
+      registrations: 'users/registrations'
     }
 
     # User Table related
     resources :users, controller: 'admin/user_admin'
-
+    # get '/userAdmin' => 'admin/user_admin#index'
     get '/' => 'admin/index_admin#home'
     get '/dashboard' => 'admin/index_admin#dashboard'
     # get '/categories' => 'admin/category_admin#index'
@@ -53,9 +58,9 @@ Rails.application.routes.draw do
         end
       end
 
-      member do
-        put '/update_published_status' => 'admin/course_admin#update_published_status'
-      end
+        member do
+          put '/update_published_status' => 'admin/course_admin#update_published_status'
+        end
     end
 
   end
@@ -81,6 +86,8 @@ Rails.application.routes.draw do
 
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
+
+  get '/users/:user_id' => 'home#home'
 
   root to: 'home#home'
 end

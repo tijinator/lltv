@@ -1,10 +1,32 @@
-<h4> Add New Video</h4>
-<%= link_to 'Add Video', new_video_path %>
-<hr>
-<h1>Videos ALL</h1>
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<div class="row" style="margin: 0;">
+			<div class="" style="float: left;">
+				<p style="margin: 0;">Video Title</p>
+			</div>
+			<div class="" style="float: right;">
+				<%= link_to new_video_path do %>
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Video
+				<% end %>
+			</div>
+		</div>
+	</div>
 
-<% @videos.each_with_index do |video, index| %>
-	<%#= link_to "#{index}: #{video.title}", video %> <%#= link_to 'DELETE', video, method: :delete %>
+	<div class="panel-body">
+		<% @videos.each_with_index do |video, index| %>
+			<%#= link_to "#{index}: #{video.title}", video %> <%#= link_to 'DELETE', video, method: :delete %>
 
-	<%= link_to video.title, video %> | <%= link_to "edit", edit_video_path(video) %><br>
-<% end %>
+			<div class="row" style="margin: 0;">
+				<div class="" style="float: left; margin-top: 6px;">
+					<%= link_to video.title, video %>
+				</div>
+				<div class="" style="float: right;">
+					<%= link_to "edit", edit_video_path(video), class: 'btn btn-default edit-btn' %>
+					<%= link_to "delete", video_path(video), method: :delete, data: {confirm: 'Are you sure you want to delete this video?'}, class: 'btn btn-danger delete-btn' %>
+				</div>
+			</div>
+			<hr>
+			<!-- <%= link_to video.title, video %> | <%= link_to "edit", edit_video_path(video), class: 'btn btn-default' %><br> -->
+		<% end %>
+	</div>
+</div>

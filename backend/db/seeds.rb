@@ -30,7 +30,7 @@ Course.create!([
     released_on: nil,
     banner_url: "/images/LLTV_ai_banner.jpg",
     featured: true },
-  
+
   { user_id: 1,
     author_id: 1,
     level: "Advanced",
@@ -63,4 +63,3 @@ Video.create!([
 
 # Order.create!({user_id: 1, amount: 0, address: '111 Fake st.', address_two: '', city: 'Brooklyn', state: 'NY', zip_code: '11112' })
 # Order.create!({user_id: 1, amount: 100, address: '111 Fake st.', address_two: '', city: 'Brooklyn', state: 'NY', zip_code: '11112' })
-

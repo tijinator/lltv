@@ -1,91 +1,40 @@
-<h1 class='center' style='text-align: center'>Dashboard</h1>
-<hr>
-
-<div class='col-md-3'>
-	<h4>Categories</h4>
-	<% @categories.each do |category| %>
-		<%= category.title %>	<br>
-	<% end %>
+<div class="row" style="margin: 0;">
+  <div class="col-lg-12" style="padding: 0;">
+   <h1 class="page-header text-center">Dashboard</h1>
+  </div>
 </div>
 
-<div class='col-md-3'>
-	<h4>Courses</h4>
-	<% @courses.each do |course| %>
-		<%= course.title %>	<br>
-	<% end %>
-</div>
+<div class="row" style="margin: 0;">
+	<div class="col-sm-12" style="padding: 0;">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+	      <div class="row" style="margin: 0;">
+	        <div class="col-sm-3" style="padding: 0;">Categories</div>
+	        <div class="col-sm-3" style="padding: 0;">Courses</div>
+	        <div class="col-sm-3" style="padding: 0;">Chapters</div>
+					<div class="col-sm-3" style="padding: 0;">Videos</div>
+	      </div>
+	    </div>
 
-<div class='col-md-3'>
-	<h4>Chapters</h4>
-	<% @chapters.each do |chapter| %>
-		<%= chapter.title %>	<br>
-	<% end %>
-</div>
-
-<div class='col-md-3'>
-	<h4>Videos</h4>
-	<% @videos.each do |video| %>
-		<%= "#{video.title}: " "#{video.video_url}" %>	<br>
-	<% end %>
-</div>
-
-<hr>
-
-<% block do %>
-<div class="col-md-12">
-	<div class="col-md-6">
-	<hr>
-	<h1>Payment form TEST</h1>
-	<%= form_for (:user), url: :user, :html => {:id => "payment_form"} do |f| %>
-
-		<div class="form-group">
-			<%= f.label :email %>
-			<%= f.email_field :email %>
-		</div>
-
-		<div class="form-group">
-			<%= f.label :passowrd %>
-			<%= f.password_field :password %>
-		</div>	
-
-		<div class="form-group">
-			<%= f.label :username %>
-			<%= f.text_field :username %>
-		</div>
-
-		<div class="form-group">
-			<%= f.label :subscription %>
-			<%#= f.select :amount, ["Monthly 9.99$": 999, "Monthly 9.99$": 999 ], {name: nil, id: "card_month", class: 'form-control'} %>
-			<%= f.select(:amount, [['Montly 9.99$', 999], ['One Time 5$', 500 ]]) %>
-		</div>		
-
-		<div class="form-group">
-			<%= label_tag :card_number, "Credit Card Number (4111 1111 1111 1111)" %>
-			<%= text_field_tag :card_number, nil, name: nil, class: 'form-control' %>
-		</div>
-
-		<div class="form-group">
-			<%= label_tag :card_code, "Security Code on Card (CVV) (123)" %>
-			<%= text_field_tag :card_code, nil, name: nil, class: 'form-control' %>
-		</div>
-
-		<div class="form-group">
-			<%= label_tag :card_month, "Card Expration (1-Jan/2018)" %>
-			<div class="row">
-				<div class="col-md-4 pull-left">
-					<%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: 'form-control'} %>
+			<div class="panel-body" style="color: #337ab7;">
+				<div class='col-sm-3' style="padding: 0;">
+					<% @categories.each do |category| %>
+						<p><%= category.title %></p>
+					<% end %>
 				</div>
-				<div class="col-md-4 pull-left">
-					<%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 10}, {name: nil, id: "card_year", class: 'form-control'} %>
+
+				<div class='col-sm-3' style="padding: 0;">
+					<% @courses.each do |course| %>
+						<p><%= course.title %></p>
+					<% end %>
+				</div>
+
+				<div class='col-sm-3' style="padding: 0;">
+					<% @chapters.each do |chapter| %>
+						<p><%= chapter.title %></p>
+					<% end %>
 				</div>
 			</div>
 		</div>
-
-		<div class="actions form-group">
-	    	<%= f.submit "Sign up", class: 'btn btn-success', id: 'form-submit-btn' %>
-		</div>
-			
-	<% end %>
 	</div>
 </div>
-<% end %>
