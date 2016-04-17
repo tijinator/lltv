@@ -1,10 +1,10 @@
 class Admin::AdminController < ApplicationController
   include RolesHelper
-  layout 'sb2', except: :home
+  layout 'sb2'
 
   before_action :admin_nav_setup
   before_action :user_signed_in?
-  before_action :authenticate_user!, except: [:home]
+  # before_action :authenticate_user!, except: [:home]
   # before_filter :require_data_entry
 
   def payment_processer

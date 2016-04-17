@@ -14,7 +14,7 @@ class Users::SessionsController < Devise::SessionsController
         super  
       else
         @user = User.new
-        redirect_to :back 
+        redirect_to :back
         # render 'users/sessions/new', layout: 'admin'
       end
   end
