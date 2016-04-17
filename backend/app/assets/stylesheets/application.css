@@ -24,7 +24,7 @@
  *= require profile.css
  *= require_self
  */
- @import "bootstrap-formhelpers";
+
 
 *{
 	outline: 0px red solid;
