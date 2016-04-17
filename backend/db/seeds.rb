@@ -61,6 +61,6 @@ Video.create!([
   {chapter_id: 2, video_url: "/uploads/video/video_url/mov_bbb.mp4", title: 'Second Video', details: 'Video Course awesome', transcript: '', faqs: '', position: 2}
 ])
 
-Order.create!({user_id: 1, amount: 0, address: '111 Fake st.', address_two: '', city: 'Brooklyn', state: 'NY', zip_code: '11112' })
-Order.create!({user_id: 1, amount: 100, address: '111 Fake st.', address_two: '', city: 'Brooklyn', state: 'NY', zip_code: '11112' })
+# Order.create!({user_id: 1, amount: 0, address: '111 Fake st.', address_two: '', city: 'Brooklyn', state: 'NY', zip_code: '11112' })
+# Order.create!({user_id: 1, amount: 100, address: '111 Fake st.', address_two: '', city: 'Brooklyn', state: 'NY', zip_code: '11112' })
 

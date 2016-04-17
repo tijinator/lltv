@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          # :confirmable
      
   include DeviseTokenAuth::Concerns::User
-  # attr_accessor :stripe_card_token
+  attr_accessor :stripe_card_token
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -50,14 +50,37 @@ class User < ActiveRecord::Base
       return self.last_name if self.last_name
     nil
   end
-  
 
-  def save_with_mothly_payment
+
+# STRIPE RELATED
+  def save_customer_id(id)
     if valid?
-      customer = Stripe::Customer.create(description: email, source: stripe_card_token)
-      self.stripe_customer_token = customer.id
+      self.stripe_customer_token = id
       save!
     end
   end
+  
+
+  # def save_with_mothly_payment(plan)
+  #   if valid?
+  #     customer = Stripe::Customer.create(email: email, description: "#{first_name} #{last_name}", source: stripe_card_token, plan: plan)
+  #     self.stripe_customer_token = customer.id
+  #     save!
+  #   end
+  # end
+
+  # def save_with_one_time_payment(amount)
+  #   if valid?
+  #     customer = Stripe::Customer.create(email: email, description: "#{first_name} #{last_name}", source: stripe_card_token)
+  #     charge = Stripe::Charge.create(
+  #       :amount => amount,
+  #       :currency => "usd",
+  #       :description => email,
+  #       :customer => customer.id
+  #     )
+  #     self.stripe_customer_token = customer.id
+  #     save!
+  #   end
+  # end
 
 end

@@ -12,6 +12,7 @@
 //= require angular-bootstrap
 //= require ng-country-select
 //= require_tree .
+//= stub payment
 //= stub metisMenu
 //= stub raphael
 //= stub morrisjs

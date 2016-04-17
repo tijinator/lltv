@@ -1,5 +1,9 @@
 /*payment option styling*/
 
+#form-submit-btn:disabled{
+  background: #dddddd;
+}
+
 .payment-step-container{
   position: absolute;
   min-height: 100%;

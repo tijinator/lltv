@@ -1,9 +1,11 @@
 $(document).ready(function(){
 	Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
 	// Watch for a form submission
+	
 	var form_button = $("#form-submit-btn");
 	form_button.click(function(event){
 		event.preventDefault();
+
 		// $("input[type=submit]").prop('disabled', true);
 		$(this).prop('disabled', true);
 
@@ -12,7 +14,7 @@ $(document).ready(function(){
 			cvcNum = $('#card_code').val(),
 			expMonth = $('#card_month').val(),
 			expYear = $('#card_year').val();
-			
+
 		if (!error) {
 			// Get the Stripe token:
 			Stripe.createToken({
@@ -22,14 +24,19 @@ $(document).ready(function(){
 				exp_year: expYear
 			}, stripeResponseHandler);
 		}
+
+
 		return false;
 	}); //form submission
 
 		function stripeResponseHandler(status, response){
-			// console.log('status: ', status);
+			console.log('status: ', status);
+			console.log('response: ', response);
+
 			// Get a reference to the form:
-			var f = $('#payment_form');
-			status == 200 ? success(response) : error(response)
+			// var f = $('#payment_form');
+			var f = $('#credit-format');
+			// status == 200 ? success(response) : error(response)
 
 			function success(response){
 				// Get the token from the response
