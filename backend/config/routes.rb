@@ -30,13 +30,13 @@ Rails.application.routes.draw do
     end
 
 
-    devise_for :users
-    # devise_for :users, controllers: {
-    #   sessions:      'users/sessions'
-    # }
+    # devise_for :users
+    devise_for :users, controllers: {
+      sessions:      'users/sessions'
+    }
 
     # User Table related
-    # resources :users, controller: 'admin/user_admin'
+    resources :users, controller: 'admin/user_admin'
 
     get '/'          => 'admin/index_admin#home'
     get '/dashboard' => 'admin/index_admin#dashboard'
