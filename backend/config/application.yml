@@ -12,7 +12,7 @@
 #   stripe_api_key: STRIPE_PUBLISHABLE_KEY
 #   stripe_publishable_key: STRIPE_PUBLISHABLE_KEY
 
-
+# development:
 AWS_ACCESS_KEY_ID: AKIAITCZ5ZXEN57HB7FQ
 AWS_SECRET_ACCESS_KEY: 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
 # S3_BUCKET: lltv-demo

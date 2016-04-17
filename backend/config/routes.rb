@@ -10,10 +10,7 @@ Rails.application.routes.draw do
   end
 
   # Subdomains -
-  constraints subdomain: 'admin' do
-
-    #payment example TEMP
-    post 'user' => 'admin/admin#payment_processer', as: :user
+  constraints subdomain: 'admin.beta' do
 
 
     resources :videos, controller: 'admin/videos_admin'
@@ -29,7 +26,7 @@ Rails.application.routes.draw do
 
 
     resources :chapters, controller: 'admin/chapter_admin' do
-      resources :videos, controller: 'admin/video_admin'
+      resources :videos, controller: 'admin/videos_admin'
     end
 
 
