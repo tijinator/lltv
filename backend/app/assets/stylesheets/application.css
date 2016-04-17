@@ -42,10 +42,10 @@
    overflow-x: hidden;
  } this prevent the scroll feature not to work!*/
 
- .subhead{
- 	font-weight: bold;
- 	padding: 5px 0;
- }
+.subhead{
+	font-weight: bold;
+	padding: 5px 0;
+}
 
 html {
    height: 100%;
