@@ -1,7 +1,6 @@
 class Admin::VideosAdminController < Admin::AdminController
 	before_action :set_video, only: [:show, :edit, :update, :destroy]
 	before_action :set_chapter, except: [:index, :destroy]
-	layout 'sb2'
 
 	def index
 		@videos = Video.all
