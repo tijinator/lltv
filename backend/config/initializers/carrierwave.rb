@@ -23,8 +23,8 @@ if Rails.env.production?
     config.aws_credentials = {
       # Configuration for Amazon S3
       access_key_id:         ENV.fetch('AWS_ACCESS_KEY_ID'),
-      secret_access_key:     ENV.fetch('AWS_SECRET_ACCESS_KEY')
-      # region:                ENV.fetch('AWS_REGION')
+      secret_access_key:     ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      region:                'us-east-1'
     }
 
      config.storage = :aws
