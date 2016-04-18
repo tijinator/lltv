@@ -13,8 +13,7 @@
   <div class="form-group">
     <%= f.label :parent_id , class: 'col-sm-2 control-label'%>
     <div class="col-sm-6">
-      <%= f.select(:parent_id, Category.where(parent_id: nil).map{|x| [x.title, x.id]}, {prompt: 'SELF PARENT'}, {class: 'form-control'}) %>
-      <%#= f.number_field :parent_id, class: 'form-control' %>
+      <%= f.select(:parent_id, Category.where(parent_id: nil).map{|x| [x.title, x.id]}, {prompt: 'I am Parent Category'}, {class: 'form-control'}) %>
     </div>
   </div>
 
