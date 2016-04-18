@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-	# mount_uploader :small_image_url, CategoryUploader
+	mount_uploader :small_image_url, CategoryUploader
 	mount_uploader :banner_url, CategoryUploader
 	
 	belongs_to :parent, class_name: 'Category'

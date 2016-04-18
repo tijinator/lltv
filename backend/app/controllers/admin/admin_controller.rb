@@ -3,7 +3,7 @@ class Admin::AdminController < ApplicationController
   layout 'sb2'
 
   before_action :admin_nav_setup
-  # before_action :authenticate_user!, except: [:home]
+  before_action :authenticate_user!, except: [:home]
   # before_filter :require_data_entry
 
   def payment_processer
