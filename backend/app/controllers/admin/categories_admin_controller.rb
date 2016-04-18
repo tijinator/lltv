@@ -3,7 +3,7 @@ class Admin::CategoriesAdminController < Admin::AdminController
 	# layout 'sb2' # render 'admin/category_admin/index'
 
 	def index
-		@categories = Category.all
+		@categories = Category.all.order('id')
 		render 'admin/categories_admin/index', layout: 'sb2'
 	end
 

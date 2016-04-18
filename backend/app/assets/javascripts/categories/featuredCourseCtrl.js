@@ -6,4 +6,6 @@ function($scope, featuredCourse) {
 
   $scope.featuredCourse = featuredCourse.data;
 
+  console.log(featuredCourse.data);
+
 }]);
