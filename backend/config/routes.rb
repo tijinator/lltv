@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :categories, controller: 'admin/categories_admin' do
       resources :courses, controller: 'admin/courses_admin' do
         resources :chapters, controller: 'admin/chapters_admin' do
-          # resources :videos, controller: 'admin/videos_admin'
+          resources :videos, controller: 'admin/videos_admin'
         end
       end
     end
