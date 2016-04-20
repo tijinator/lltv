@@ -1,7 +1,6 @@
 class Admin::ChaptersAdminController < Admin::AdminController
-    before_filter :require_data_entry
-    before_filter :require_publisher, only: [:update_published_status]
-    layout 'sb2'
+    # before_filter :require_data_entry
+    # before_filter :require_publisher, only: [:update_published_status]
     
     def index
         # @current_user = current_user

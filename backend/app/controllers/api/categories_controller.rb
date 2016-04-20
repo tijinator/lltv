@@ -17,7 +17,11 @@ class Api::CategoriesController < Api::ApiController
   def show
     category = Category.find(params[:id])
     subcategory = Category.select('id, parent_id, title').where(parent_id: params[:id])
-    render json: {category: category, subcategory: subcategory}, root: false
+
+    # render json: {category: category, subcategory: subcategory}, root: false
+    # render json: CategorySerializer.new(category: category, subcategory: subcategory)
+    # render json: {category: category, subcategory: subcategory}, each_serializer: CategorySerializer
+    render json: CategorySerializer.new(category)
   end
 
   def courses

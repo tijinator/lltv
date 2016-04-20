@@ -7,6 +7,10 @@ class CourseSerializer < ActiveModel::Serializer
   has_one :author
   # delegate :user_signed_in?, to: :scope
 
+  def banner_url
+    object.banner_url.url
+  end
+
   # def chapters
   #   if user_signed_in?
   #     object.chapters.all

@@ -55,7 +55,6 @@ $scope.jsRun = function(userData){
       ul.appendChild(innerLiTwo);
 
       li.appendChild(ul);
-      console.log("RUNNER :", li);
 
   return li;
 
@@ -85,7 +84,7 @@ $scope.jsRun = function(userData){
       $('.sign_up_in').hide();
       // $('#signedIn').show().html(x);
       $('#signedIn').show().html($compile(x)($scope));
-      console.log(x);
+      // console.log(x);
   };
 
   var signOut = function(){
@@ -113,14 +112,14 @@ $scope.jsRun = function(userData){
 
   $rootScope.$on('auth:registration-email-success', function(ev, userData) {
     // alert("A registration email was sent to " + message.email);
-    console.log('Register Success: ',userData);
+    // console.log('Register Success: ',userData);
     $location.path("categories");
     signedIn(userData);
   });
 
   $rootScope.$on('auth:validation-success', function(ev, userData) {
     // console.log("validation event: ", ev);
-    console.log("validation: ", userData);
+    // console.log("validation: ", userData);
     signedIn(userData);
   });
 
@@ -134,7 +133,7 @@ $scope.jsRun = function(userData){
   });
 
   $rootScope.$on('auth:invalid', function(ev, userData) {
-    alert("SDFDFSDHERE");
+    alert("INVALID USER AUTH");
   });
 
   $rootScope.$on('auth:login-error', function(ev, userData) {
@@ -146,13 +145,13 @@ $scope.jsRun = function(userData){
     // console.log("validation-log1: ", ev);
     // console.log("validation-log2: ", userData);
     // console.log("Login Success event: ", ev);
-    console.log("Login Success: ", userData);
+    // console.log("Login Success: ", userData);
     $location.path("categories");
     signedIn(userData);
   });
 
   $rootScope.$on('auth:logout-success', function(ev) {
-    console.log("LogOut Success");
+    // console.log("LogOut Success");
     // console.log('signOut: ', ev);
     $location.path("/");
     signOut();

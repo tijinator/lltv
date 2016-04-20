@@ -12,3 +12,9 @@
 !/log/.keep
 /tmp
 /node_modules
+
+
+# Ignore application configuration
+/config/application.yml
+/config/dropbox.yml
+/config/secrets.yml

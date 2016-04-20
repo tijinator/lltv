@@ -1,6 +1,5 @@
 class Admin::UserAdminController < Admin::AdminController
-  before_filter :require_superuser
-  layout 'sb2'
+  # before_filter :require_superuser
   
   def index
     @users = User.order(:role).all

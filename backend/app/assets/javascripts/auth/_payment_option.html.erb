@@ -52,8 +52,8 @@
               </div>
 
               <div class="row" style="margin: 0;">
-                <div class="bubble-btn submit-btn subscribe-now-btn subscription-btn text-center">
-                  subscribe now
+                <div id='subscription-btn' class="bubble-btn submit-btn subscribe-now-btn text-center">
+                   subscribe now 
                 </div>
               </div>
             </div>
@@ -75,7 +75,7 @@
               </div>
 
               <div class="row" style="margin: 0;">
-                <div class="bubble-btn switch-btn subscribe-now-btn onetime-btn text-center">
+                <div id='onetime-btn' class="bubble-btn switch-btn subscribe-now-btn text-center">
                   purchase video
                 </div>
               </div>
@@ -97,59 +97,56 @@
       <div class="row" style="margin: 0;">
         <div class="col-sm-8 col-sm-offset-2" style="padding: 0; width: 67%; margin-left: 20%;">
 
-          <div ng-if="!user.signedIn" id="signup-row" class="row" style="margin: 0;">
-            <div class="col-sm-12" style="padding: 0; margin-bottom: 50px;">
+          
 
-              <div class="row" style="margin: 0;">
-                <p class="payment-step">step 1 <span>create account</span></p>
-              </div>
-              <form class="credit-form" ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
-                <div class="auth-body">
+          <div class="row" style="margin: 0;">
+            <div class="col-sm-12" style="padding: 0;">
+
+
+              <form id="credit-format" class="credit-form" ng-submit="submitPaymentRegistration(registerForm, paymentForm)" role="form" ng-init="registerForm = {}; paymentForm = {} ">
+                
+                <div ng-if="!user.signedIn" class="auth-body">
+                  <div class="row" style="margin: 0;">
+                    <p class="payment-step"> step 1 <span>create account</span></p>
+                  </div>
 
                   <div class="col-sm-6" style="padding: 0;">
                     <div class="form-group">
                       <label>email</label>
-                      <input type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control" ng-required="true"/>
+                      <input type="email" name="email" ng-model="registerForm.email" required="required" class="form-control" ng-required="true"/>
                     </div>
                     <div class="form-group">
                       <label>first name</label>
-                      <input type="text" name="first_name" ng-model="registrationForm.first_name" required="required" class="form-control" ng-required="true"/>
+                      <input type="text" name="first_name" ng-model="registerForm.first_name" required="required" class="form-control" ng-required="true"/>
                     </div>
                     <div class="form-group">
                       <label>last name</label>
-                      <input type="text" name="last_name" ng-model="registrationForm.last_name" required="required" class="form-control" ng-required="true"/>
+                      <input type="text" name="last_name" ng-model="registerForm.last_name" required="required" class="form-control" ng-required="true"/>
                     </div>
                   </div>
 
                   <div class="col-sm-6" style="padding: 0;">
                     <div class="form-group">
                       <label>username</label>
-                      <input type="text" name="username" ng-model="registrationForm.username" required="required" class="form-control" ng-required="true"/>
+                      <input type="text" name="username" ng-model="registerForm.username" required="required" class="form-control" ng-required="true"/>
                     </div>
                     <div class="form-group">
                       <label>password</label>
-                      <input type="password" name="password" ng-model="registrationForm.password" required="required" class="form-control" ng-required="true"/>
+                      <input type="password" name="password" ng-model="registerForm.password" required="required" class="form-control" ng-required="true"/>
                     </div>
                     <div class="form-group">
                       <label>confirm password</label>
-                      <input type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control" ng-required="true"/>
+                      <input type="password" name="password_confirmation" ng-model="registerForm.password_confirmation" required="required" class="form-control" ng-required="true"/>
                     </div>
                   </div>
-
                 </div>
 
-              </form>
-            </div><!-- end col-sm-12 -->
-          </div><!-- end row signup-row -->
 
-          <div class="row" style="margin: 0;">
-            <div class="col-sm-12" style="padding: 0;">
 
-              <div ng-if="!user.signedIn" id="payment-step-row" class="row" style="margin: 0;">
-                <p class="payment-step">step 2 <span>billing information</span></p>
-              </div>
-              <form id="credit-format" class="credit-form" ng-submit="submitPaymentRegistration(paymentForm)" role="form" ng-init="paymentForm = {}">
                 <div class="auth-body">
+                  <div ng-if="!user.signedIn" class="col-sm-12" style="padding: 0; margin-bottom: 50px;">
+                      <p class="payment-step">step 2 <span>billing information</span></p>
+                  </div><!-- end col-sm-12 -->
 
                   <div class="col-sm-6" style="padding: 0;">
                     <div class="form-group">
@@ -188,17 +185,17 @@
                   <div class="col-sm-6" style="padding: 0;">
                     <div class="form-group">
                       <label>zipcode</label>
-                      <input type="text" name="last_name" ng-model="paymentForm.zipcode" required="required" class="form-control" ng-required="true"/>
+                      <input type="text" name="zipcode" ng-model="paymentForm.zipcode" required="required" class="form-control" ng-required="true"/>
                     </div>
 
                     <div class="form-group">
                       <label>card number</label>
-                      <input type="text" name="card_number" ng-model="paymentForm.card_number" required="required" class="form-control" ng-required="true"/>
+                      <input type="text" id="card_number" required="required" class="form-control" ng-required="true"/>
                     </div>
 
                     <div class="form-group">
                       <label>ccv</label>
-                      <input type="text" name="ccv" ng-model="paymentForm.ccv" required="required" class="form-control" ng-required="true"/>
+                      <input type="text" id="card_code" required="required" class="form-control" ng-required="true"/>
                     </div>
 
                     <div class="form-group">
@@ -207,7 +204,7 @@
                       <div class="row" style="margin: 0;">
 
                         <div class="form-group month-select" style="margin: 0; margin-right: 20px;">
-                          <select class="form-control select-style" name="cc_exp_mo" style="width: 150px;">
+                          <select class="form-control select-style" id="card_month" style="width: 150px;">
                               <option value="01">January</option>
                               <option value="02">February</option>
                               <option value="03">March</option>
@@ -224,7 +221,7 @@
                         </div>
 
                         <div class="form-group year-select" style="margin: 0;">
-                          <select class="form-control select-style" name="cc_exp_yr" style="width: 150px;">
+                          <select class="form-control select-style" id="card_year" style="width: 150px;">
                             <option>2016</option>
                             <option>2017</option>
                             <option>2018</option>
@@ -255,11 +252,13 @@
                     </div>
 
                     <div class="row" style="margin: 0;">
-                      <div class="bubble-btn switch-btn subscribe-btn back-btn text-center">
+                      <div id='back-btn' class="bubble-btn switch-btn subscribe-btn text-center">
                         Back
                       </div>
-                      <div class="bubble-btn submit-btn subscribe-btn submit-payment-btn text-center">
-                        submit
+
+                      <!-- <div class="bubble-btn submit-btn subscribe-btn submit-payment-btn text-center"> -->
+                      <div>
+                          <button type='submit' id='form-submit-btn' class="bubble-btn submit-btn subscribe-btn submit-payment-btn text-center">submit</button>
                       </div>
                     </div>
                   </div><!-- end col-sm-6 -->
@@ -282,6 +281,7 @@
 
 </div> <!-- end row -->
 
+
 <script>
   //fade in/out animation
 
@@ -292,36 +292,32 @@
 
   var addInput = function(name, value){
 
-    var input = document.createElement("input");
-    function setAttributes(el, options) {
-       Object.keys(options).forEach(function(attr) {
-         el.setAttribute(attr, options[attr]);
-       })
-    }
-    setAttributes(input, {"id": "hidden-input", "type": "hidden", "name": name, "value": value});
+    // var input = document.createElement("input");
+    // function setAttributes(el, options) {
+    //    Object.keys(options).forEach(function(attr) {
+    //      el.setAttribute(attr, options[attr]);
+    //    })
+    // }
 
-    var form = document.getElementById('credit-format');
+// <input id='hidden-input' type='hidden' name='randomm' ng-init='paymentForm.charge = 1299'>
+// setAttributes(input, {"id": "hidden-input", "type": "hidden", "name": name, "ng-init": "paymentForm.charge = 12345" });
 
-    form.appendChild(input);
-    console.log(input);
 
+    // var form = document.getElementById('credit-format');
+    // form.appendChild(input);
+    // console.log(input);
+    // $('.form-group')[12].appendChild(input);
   }
 
-  $(".back-btn").click(function(){
+  $("#back-btn").click(function(){
     var $currentSlide = $(".active-slide");
     var $targetSlide = $(".payment-option");
-
-    //remove input if exists
-    var form = document.getElementById('credit-format');
-    var childInput = document.getElementById("hidden-input");
-
-    if(childInput){ form.removeChild(childInput); }
-
+    
     fadeFunc($currentSlide, $targetSlide);
-
   });
 
-  $(".subscription-btn").click(function(){
+  $("#subscription-btn").click(function(){
+
     var $currentSlide = $(".active-slide");
     var $targetSlide = $(".payment-form");
 
@@ -329,12 +325,16 @@
 
     var name = "subscription-amount";
     var value = "3999"
+    // addInput(name, value);
 
-    addInput(name, value);
 
+    $('#subscription-btn').scope().mothlySubscription(value);
+    // $('#subscription-btn').scope().$apply();
   });
 
-  $(".onetime-btn").click(function(){
+  $("#onetime-btn").click(function(){
+
+
     var $currentSlide = $(".active-slide");
     var $targetSlide = $(".payment-form");
 
@@ -342,9 +342,10 @@
 
     var name = "onetime-amount";
     var value = "1299"
+    // addInput(name, value);
 
-    addInput(name, value);
-
+    $('#onetime-btn').scope().oneTimePurchase(value);
+    // $('#onetime-btn').scope().$apply();
   });
   // end of fade in/out animation
 
@@ -354,6 +355,5 @@
   //   document.getElementById("payment-step-row").style.display="none";
   // }
   //end of if statement
-
 
 </script>

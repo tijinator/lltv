@@ -1,11 +1,5 @@
-<%= form_for (@video) do |f| %>
+<%= form_for (@video), url: :chapter_videos do |f| %>
 	<div class="form-horizontal">
-		<div class="form-group">
-			<%= f.label :chapter_id , class: "col-sm-2 control-label"%>
-			<div class="col-sm-6">
-				<%= f.number_field :chapter_id, class: 'form-control' %>
-			</div>
-		</div>
 
 		<div class="form-group">
 			<%= f.label :title, class: "col-sm-2 control-label"%>
@@ -18,6 +12,9 @@
 			<%= f.label :video, class: "col-sm-2 control-label"%>
 			<div class="col-sm-6">
 				<%= f.file_field :video_url, class: "form-control"%>
+				<br>
+			    <%= video_tag(@video.video_url_url, controls: true, autobuffer: false) if @video.video_url? %>
+			    <%= f.hidden_field :video_url_cache %>
 			</div>
 		</div>
 		<br>

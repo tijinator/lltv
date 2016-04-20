@@ -1,5 +1,5 @@
 class CategoryUploader < ApplicationUploader
-
+	
 	process convert: 'png'
 	# process resize_to_fill: [1020, 286]
 	# process resize_to_fit: [1020, 286]

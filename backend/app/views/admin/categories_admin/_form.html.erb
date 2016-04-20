@@ -70,6 +70,9 @@
     <%= f.label :small_image_url, class: 'col-sm-2 control-label'%>
     <div class="col-sm-6">
       <%= f.file_field :small_image_url, class: 'form-control' %>
+      
+      <%= image_tag(@category.small_image_url_url) if @category.small_image_url? %>
+      <%= f.hidden_field :small_image_url_cache %>
     </div>
   </div>
 
@@ -78,6 +81,9 @@
     <%= f.label :banner_url , class: 'col-sm-2 control-label'%>
     <div class="col-sm-6">
       <%= f.file_field :banner_url, class: 'form-control' %>
+
+      <%= image_tag(@category.banner_url_url) if @category.banner_url? %>
+      <%= f.hidden_field :banner_url_cache %>
     </div>
   </div>
 

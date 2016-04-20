@@ -1,9 +1,11 @@
 class Admin::CategoriesAdminController < Admin::AdminController
 	before_action :set_category, only: [:show, :edit, :update, :destroy]
-	layout 'sb2' # render 'admin/category_admin/index'
+	# layout 'sb2' # render 'admin/category_admin/index'
 
 	def index
-		@categories = Category.all
+		# @categories = Category.all
+		@categories = Category.where(parent_id: nil).order('id ASC')
+		@subcategories = Category.where.not(parent_id: nil).order('id ASC')
 		render 'admin/categories_admin/index', layout: 'sb2'
 	end
 

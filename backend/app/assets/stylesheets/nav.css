@@ -61,6 +61,11 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   background-image:url('/images/LLTV_responsive_mobile_downarrow.png');
 }*/
 
+.logo-img{
+  height: 51px;
+  width: 266px;
+}
+
 /* end profile nav options */
 
 /*@media (max-width: 797px) {

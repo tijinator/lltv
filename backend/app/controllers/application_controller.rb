@@ -28,7 +28,8 @@ protected
   def after_sign_in_path_for(user)
     if user.role > 0
       # redirect_to users_path
-      '/users'
+      # '/users'
+      '/dashboard'
     else
       # redirect_to :root
       '/'

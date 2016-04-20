@@ -10,10 +10,8 @@ Rails.application.routes.draw do
   end
 
   # Subdomains -
+  # constraints subdomain: 'admin.beta' do
   constraints subdomain: 'admin' do
-
-    #payment example TEMP
-    post 'user' => 'admin/admin#payment_processer', as: :user
 
 
     resources :videos, controller: 'admin/videos_admin'
@@ -29,20 +27,19 @@ Rails.application.routes.draw do
 
 
     resources :chapters, controller: 'admin/chapter_admin' do
-      resources :videos, controller: 'admin/video_admin'
+      resources :videos, controller: 'admin/videos_admin'
     end
 
 
     # devise_for :users
     devise_for :users, controllers: {
-      sessions:      'users/sessions',
-      registrations: 'users/registrations'
+      sessions:      'users/sessions'
     }
 
     # User Table related
     resources :users, controller: 'admin/user_admin'
-    # get '/userAdmin' => 'admin/user_admin#index'
-    get '/' => 'admin/index_admin#home'
+
+    get '/'          => 'admin/index_admin#home'
     get '/dashboard' => 'admin/index_admin#dashboard'
     # get '/categories' => 'admin/category_admin#index'
 
@@ -87,7 +84,7 @@ Rails.application.routes.draw do
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
 
-  get '/users/:user_id' => 'home#home'
+  # get '/users/:user_id' => 'home#home'
 
   root to: 'home#home'
 end

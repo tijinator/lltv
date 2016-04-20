@@ -1,3 +1,4 @@
 class CourseUploader < ApplicationUploader
-  process convert: 'png'
+	process convert: 'png'
+	
 end

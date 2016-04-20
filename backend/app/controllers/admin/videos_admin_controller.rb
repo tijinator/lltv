@@ -1,6 +1,6 @@
 class Admin::VideosAdminController < Admin::AdminController
 	before_action :set_video, only: [:show, :edit, :update, :destroy]
-	layout 'sb2'
+	before_action :set_chapter, except: [:index, :destroy]
 
 	def index
 		@videos = Video.all
@@ -18,14 +18,11 @@ class Admin::VideosAdminController < Admin::AdminController
 	end
 
 	def create
-		vars = request.query_parameters
-		@video = Video.new(video_params)
-		# @course = Course.find(params[:course])
-		courseid = vars['id']
-		require 'byebug'; byebug
+		@video = @chapter.videos.new(video_params)
+		
 		respond_to do |format|
 			if @video.save
-				format.html { redirect_to categories_path, notice: 'Video was successfully created.' }
+				format.html { redirect_to course_path(@chapter.course.id) , notice: 'Video was successfully created.' }
 				format.js {}
 			else
 				format.html { render :new }
@@ -43,13 +40,17 @@ class Admin::VideosAdminController < Admin::AdminController
 
 	def destroy
 		@video.destroy
-		redirect_to :videos, notice: 'Post was successfully destroyed.'
+		redirect_to :back , notice: 'Post was successfully destroyed.'
 	end
 
 private
 
 	def video_params
 		params.require(:video).permit(:chapter_id, :video_url, :title, :details, :transcript, :faqs, :position)
+	end
+
+	def set_chapter
+		@chapter = Chapter.find(params[:chapter_id])
 	end
 
 	def set_video

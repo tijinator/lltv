@@ -13,7 +13,9 @@ body{
   font-size: 12px;
 }
 
-.edit-btn, .delete-btn{ font-size: 12px;}
+.edit-btn, .delete-btn{ 
+  font-size: 12px;
+}
 
 .delete-btn{
   background-color: #545859;

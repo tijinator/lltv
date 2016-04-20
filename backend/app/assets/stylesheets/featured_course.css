@@ -78,7 +78,7 @@
 /*responsive design*/
 @media (max-width: 992px){
   .featured-course-title h1{
-    font-size:  30px;
+    font-size: 30px;
   }
   .featured-course-details {
     /*display: none;*/
