@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   # Subdomains -
+  # constraints subdomain: 'admin.beta' do
   constraints subdomain: 'admin' do
 
     resources :videos, controller: 'admin/videos_admin'
@@ -80,7 +81,7 @@ Rails.application.routes.draw do
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
 
-  get '/users/:user_id' => 'home#home'
+  # get '/users/:user_id' => 'home#home'
 
   root to: 'home#home'
 end

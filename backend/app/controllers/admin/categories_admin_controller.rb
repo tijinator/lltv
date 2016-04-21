@@ -3,7 +3,13 @@ class Admin::CategoriesAdminController < Admin::AdminController
 	# layout 'sb2' # render 'admin/category_admin/index'
 
 	def index
-		@categories = Category.all.order('id')
+# <<<<<<< HEAD
+# 		@categories = Category.all.order('id')
+# =======
+		# @categories = Category.all
+		@categories = Category.where(parent_id: nil).order('id ASC')
+		@subcategories = @categories.where.not(parent_id: nil).order('id ASC')
+
 		render 'admin/categories_admin/index', layout: 'sb2'
 	end
 
