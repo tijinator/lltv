@@ -12,6 +12,7 @@ class Admin::CategoriesAdminController < Admin::AdminController
 	end
 
 	def show
+		@courses = @category.courses.order('id')
 	end
 
 	def edit
