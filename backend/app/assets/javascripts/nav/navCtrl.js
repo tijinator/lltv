@@ -34,7 +34,7 @@ $scope.jsRun = function(userData){
 
   var innerLiOne = document.createElement('li');
       var innerA = document.createElement('a');
-          // console.log(JSON.stringify(userData.username));
+          // console.log(JSON.stringify(userData));
           // innerA.setAttribute('href', '/categories');
           innerA.setAttribute('ui-sref', "profileUsername.show({username:" + JSON.stringify(userData.username) + "})");
           innerA.setAttribute('style', 'color: #787d7f; height: 15px');
