@@ -276,7 +276,7 @@
 }
 
 .tab-inner-panel{
-	font-family: Avenir-Black;
+	font-family: Avenir-Book;
 	font-size: 13px;
 	color: #FFF;
 }
@@ -310,7 +310,12 @@
 }
 
 #chapter_position{
-	margin-right: 66%;
+	margin-right: 62%;
+}
+
+#chapter_duration{
+	margin-right: 20px;
+	color: #787D7F;
 }
 
 @media screen and (max-width: 1230px) {
