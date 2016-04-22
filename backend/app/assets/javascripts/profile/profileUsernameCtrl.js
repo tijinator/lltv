@@ -3,8 +3,8 @@ angular.module('lltv')
 '$rootScope',
 '$scope',
 function($rootScope, $scope) {
-
-  $scope.profileFirstName = $scope.user.username
-
+  // $scope.current_user = $scope.user.first_name;
+  // $scope.current_user = $rootScope.user_name;
+  $scope.current_user = localStorage.getItem("username");
 
 }]);

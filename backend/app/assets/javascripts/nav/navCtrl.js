@@ -21,9 +21,9 @@ $scope.jsRun = function(userData){
       a.appendChild(userName);
 
   var span = document.createElement('span');
-          span.setAttribute('class','glyphicon glyphicon-menu-down');
+          span.setAttribute('class','glyphicon glyphicon-chevron-down');
           span.setAttribute('style','padding-left: 6px');
-          span.setAttribute('class','glyphicon glyphicon-menu-down');
+          span.setAttribute('class','glyphicon glyphicon-chevron-down');
           a.appendChild(span);
       li.appendChild(a);
 
@@ -34,7 +34,7 @@ $scope.jsRun = function(userData){
 
   var innerLiOne = document.createElement('li');
       var innerA = document.createElement('a');
-          // console.log(JSON.stringify(userData.username));
+          // console.log(JSON.stringify(userData));
           // innerA.setAttribute('href', '/categories');
           innerA.setAttribute('ui-sref', "profileUsername.show({username:" + JSON.stringify(userData.username) + "})");
           innerA.setAttribute('style', 'color: #787d7f; height: 15px');
