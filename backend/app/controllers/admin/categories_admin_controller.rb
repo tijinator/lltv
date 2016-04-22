@@ -5,7 +5,7 @@ class Admin::CategoriesAdminController < Admin::AdminController
 	def index
 		# @categories = Category.all
 		@categories = Category.where(parent_id: nil).order('id ASC')
-		@subcategories = @categories.where.not(parent_id: nil).order('id ASC')
+		@subcategories = Category.where.not(parent_id: nil).order('id ASC')
 
 		render 'admin/categories_admin/index', layout: 'sb2'
 	end
