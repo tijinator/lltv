@@ -124,7 +124,7 @@ $scope.jsRun = function(userData){
   });
 
   $rootScope.$on('auth:validation-error', function(ev, userData) {
-    console.log('Err auth-valid: ', userData);
+    // console.log('Err auth-valid: ', userData);
     // alert("THERE");
   });
 
@@ -138,7 +138,7 @@ $scope.jsRun = function(userData){
 
   $rootScope.$on('auth:login-error', function(ev, userData) {
     // console.log("ERRRORRR - auth:login-error");
-    console.log("that err: ", userData.errors[0]);
+    // console.log("that err: ", userData.errors[0]);
   });
 
   $rootScope.$on('auth:login-success', function(ev, userData) {

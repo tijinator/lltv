@@ -42,8 +42,7 @@ class Admin::CoursesAdminController < Admin::AdminController
   end
 
   def update
-    # render plain: params[:course][:remove_banner_url]
-
+    # render plain: params
     respond_to do |format|
       if @course.update(course_params)
         if params[:course][:remove_banner_url]
@@ -84,7 +83,7 @@ private
   end
 
 	def course_params
-		params.require(:course).permit(:title, :banner_url, :details, :position)
+		params.require(:course).permit(:level, :title, :banner_url, :details, :position, :featured, :published, :duration)
 	end
 
 	def publish_params

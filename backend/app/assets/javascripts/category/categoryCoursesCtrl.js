@@ -7,7 +7,7 @@ function($scope, category, CategoryService) {
   	$scope.category_details = category.data;
 
 	$scope.getSubs = function(id){
-		category.data.subcategory.forEach(function(sub) {
+		$scope.category_details.subcategory.forEach(function(sub) {
 			if (sub.id === id){ $scope.subcategory = sub.title }
 		});
 
@@ -20,7 +20,8 @@ function($scope, category, CategoryService) {
 		// category.data.subcategory.forEach(function(sub) {
 		// 	if (sub.id === id){ $scope.subcategory = sub.title }
 		// });
-		$scope.subcategory = 'All';
+
+		$scope.subcategory = 'trending';
 
 		CategoryService.getCategoryCourses(id).then(function(courses) {
 			$scope.$broadcast( 'subcategory', courses);
