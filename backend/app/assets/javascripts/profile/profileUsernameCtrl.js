@@ -13,9 +13,9 @@ function($rootScope, $scope, currentUser) {
     // angular.extend(userObject, userData)
     // $scope.userdude = userData;
     console.log(userData);
-    // User.get().$promise.then(function(user){
-    //   $scope.userdude = user;
-    // });
+    User.get().$promise.then(function(user){
+      $scope.userdude = user;
+    });
 
   }
 

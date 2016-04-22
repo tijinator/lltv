@@ -4,6 +4,7 @@ angular.module('lltv', [
 'templates',
 'ipCookie',
 'ng-token-auth',
+'ngCookies',
 'lltvFilters',
 'countrySelect',
 'ngAnimate'])
