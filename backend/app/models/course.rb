@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
   mount_uploader :banner_url, CourseUploader
+  belongs_to :user
   belongs_to :author
 
   has_many :chapters

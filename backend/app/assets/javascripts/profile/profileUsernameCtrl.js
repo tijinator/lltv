@@ -9,7 +9,6 @@ function($rootScope, $scope, currentUser) {
   // console.log(currentUser);
   $scope.current_user = localStorage.getItem("username");
 
-
   var set = function(userData){
     // angular.extend(userObject, userData)
     $scope.userdude = userData;

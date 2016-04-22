@@ -22,7 +22,7 @@ class Admin::VideosAdminController < Admin::AdminController
 		
 		respond_to do |format|
 			if @video.save
-				format.html { redirect_to course_path(@chapter.course.id) , notice: 'Video was successfully created.' }
+				format.html { redirect_to course_path(@chapter.course.id), notice: 'Video was successfully created.' }
 				format.js {}
 			else
 				format.html { render :new }
@@ -32,7 +32,8 @@ class Admin::VideosAdminController < Admin::AdminController
 
 	def update
 		if @video.update(video_params)
-		  redirect_to @video, notice: 'Video was successfully updated.'
+		  # redirect_to @video, notice: 'Video was successfully updated.'
+		  redirect_to course_path(@chapter.course.id), notice: 'Video was successfully updated.'
 		else
 		  render :edit
 		end

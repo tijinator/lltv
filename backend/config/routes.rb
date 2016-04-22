@@ -11,21 +11,18 @@ Rails.application.routes.draw do
 
   # Subdomains -
   # constraints subdomain: 'admin.beta' do
-  constraints subdomain: 'admin' do
-
+  constraints subdomain: 'admin.beta' do
 
     resources :videos, controller: 'admin/videos_admin'
 
     resources :categories, controller: 'admin/categories_admin' do
       resources :courses, controller: 'admin/courses_admin' do
-        resources :chapters, controller: 'admin/chapters_admin' do
-          # resources :videos, controller: 'admin/videos_admin'
-        end
+        # resources :chapters, controller: 'admin/chapters_admin' do
+        #   resources :videos, controller: 'admin/videos_admin'
+        # end
       end
     end
-
-
-
+    
     resources :chapters, controller: 'admin/chapter_admin' do
       resources :videos, controller: 'admin/videos_admin'
     end
@@ -48,7 +45,7 @@ Rails.application.routes.draw do
     # get '/courses' => 'admin#courses'
     # get '/courses/:id' => 'admin#show_course'
 
-    resources :courses, controller: 'admin/course_admin' do
+    resources :courses, controller: 'admin/courses_admin' do
       resources :chapters, controller: 'admin/chapter_admin' do
         member do
           put '/update_published_status' => 'admin/chapter_admin#update_published_status'

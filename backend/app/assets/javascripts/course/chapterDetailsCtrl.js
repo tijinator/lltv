@@ -1,7 +1,25 @@
+// angular.module('lltv').config(function($sceDelegateProvider){
+
+//   	$sceDelegateProvider.resourceUrlWhitelist([
+// 	    // Allow same origin resource loads.
+// 	    'self',
+// 	    // Allow loading from our assets domain.  Notice the difference between * and **.
+// 	    'https://s3.amazonaws.com/uat.lltv.com/**'
+
+
+//   	// The blacklist overrides the whitelist so the open redirect here is blocked.
+//   	// $sceDelegateProvider.resourceUrlBlacklist([
+// 	  //   'http://myapp.example.com/clickThru**'
+//   	// ]);
+
+//   	]);
+// })
+
 angular.module('lltv').controller('ChapterDetailsCtrl', 
 ['$scope',
  'course',
  	function($scope, course) {
+
 		$scope.chapters = course.data.chapters;
 		// $scope.chapter = $scope.chapters[0];
 		// console.log("chapter LOADED", $scope.chapters);
@@ -14,5 +32,9 @@ angular.module('lltv').controller('ChapterDetailsCtrl',
 			$scope.video   = $scope.chapter.videos[0].video_url
 		});
 	}
-]);
+]).filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}]);
 

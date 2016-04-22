@@ -3,8 +3,7 @@ angular.module('lltv')
 '$scope',
 'category',
 function($scope, category) {
-  $scope.category = category.data.category;
-
+  $scope.category = category.data;
 
 	// $scope.$on('1', function(e, id) {
 	// 	console.log('from 1: ', id);

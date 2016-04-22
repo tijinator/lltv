@@ -21,9 +21,9 @@ $scope.jsRun = function(userData){
       a.appendChild(userName);
 
   var span = document.createElement('span');
-          span.setAttribute('class','glyphicon glyphicon-menu-down');
+          span.setAttribute('class','glyphicon glyphicon-chevron-down');
           span.setAttribute('style','padding-left: 6px');
-          span.setAttribute('class','glyphicon glyphicon-menu-down');
+          span.setAttribute('class','glyphicon glyphicon-chevron-down');
           a.appendChild(span);
       li.appendChild(a);
 

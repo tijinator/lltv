@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :orders
+  has_many :courses
 
   # Include default devise modules.
   devise :database_authenticatable, :registerable,
