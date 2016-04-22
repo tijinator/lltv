@@ -25,11 +25,11 @@ angular.module('lltv').controller('ChapterDetailsCtrl',
 		// console.log("chapter LOADED", $scope.chapters);
 
 		$scope.chapter = $scope.chapters[0];
-		$scope.video   = $scope.chapter.videos[0].video_url
+		$scope.video   = $scope.chapter.video.video_url
 
 		$scope.$on('chapters', function(e, position) {
 			$scope.chapter = $scope.chapters[position-1];
-			$scope.video   = $scope.chapter.videos[0].video_url
+			$scope.video   = $scope.chapter.video.video_url
 		});
 	}
 ]).filter('trusted', ['$sce', function ($sce) {

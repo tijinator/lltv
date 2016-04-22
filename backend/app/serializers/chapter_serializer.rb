@@ -1,9 +1,9 @@
 class ChapterSerializer < ActiveModel::Serializer
   self.root = false
-  attributes :id, :title, :details, :duration, :position, :videos
-  has_many :videos
+  attributes :id, :title, :details, :duration, :position, :video
+  has_one :video
 
-  delegate :user_signed_in?, to: :scope
+  # delegate :user_signed_in?, to: :scope
 
   # def videos
   #   if user_signed_in?
