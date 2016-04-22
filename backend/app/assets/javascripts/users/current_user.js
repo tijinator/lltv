@@ -3,53 +3,27 @@ angular.module('lltv')
 '$rootScope',
 '$auth',
 '$http',
-function($rootScope, $auth, $http) {
+'$cookieStore',
+function($rootScope, $auth, $http, $cookieStore) {
   var userObject = {};
-  // var set = function(userData) {
-  //   // userObject = userData;
-  //   // // console.log("Current User Set: ", userData);
-  //   angular.extend(userObject, userData);
-  // };
 
-  var set = function(userData){
-    // angular.extend(userObject, userData)
-    userObject = userData;
-    console.log("current user: ", userObject);
+  userObject.getUserObj = function(){
+    var userObj = $cookieStore.get('userObj');
 
-  }
-
-  $rootScope.$on('auth:login-success', function(ev, userData) {
-
-    set(userData);
-  });
-
-  console.log($rootScope.userObject);
-
-
-  // $rootScope.$on('auth:login-success', function(ev, userData) {
-  //   console.log(userData);
-  //   angular.extend(userObject, userData);
-  //   console.log(userObject);
-  // });
-
-
-  $rootScope.$watch( 'user.username', function (username) {
-    if (angular.isDefined(username)){
-      // use the ID, as it seems to be defined now
-      localStorage.setItem("username", username);
-
-      // remove the watch, because there's no more use for it
-      // unwatch();
+    if(userObj){
+      return userObj;
+    }else{
+      console.log('you are not logged in!');
     }
-  });
+  }
 
 
   var signOut = function() {
     $auth.signOut()
       .then(function(resp) {
         userObject = null;
-        // console.log('Sign OUT - current_user', resp);
-        localStorage.removeItem("username");
+        console.log('Sign OUT - current_user', resp);
+        // localStorage.removeItem("username");
       })
       .catch(function(resp) {
         // alert("signOut error");
@@ -57,7 +31,6 @@ function($rootScope, $auth, $http) {
       });
   }
 
-  userObject.set  = set;
   userObject.signOut = signOut;
   return userObject;
 

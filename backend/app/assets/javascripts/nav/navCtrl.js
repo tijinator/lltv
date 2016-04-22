@@ -6,7 +6,8 @@ angular.module('lltv')
 '$auth',
 'currentUser',
 '$compile',
-function($rootScope, $scope, $location, $auth, currentUser, $compile) {
+'$cookieStore',
+function($rootScope, $scope, $location, $auth, currentUser, $compile, $cookieStore) {
 
 $scope.jsRun = function(userData){
   var li = document.createElement('li');
@@ -146,6 +147,7 @@ $scope.jsRun = function(userData){
     // console.log("validation-log2: ", userData);
     // console.log("Login Success event: ", ev);
     // console.log("Login Success: ", userData);
+    $cookieStore.put('userObj', userData);
     $location.path("categories");
     signedIn(userData);
   });
