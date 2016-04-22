@@ -4,7 +4,7 @@ class Course < ActiveRecord::Base
   belongs_to :author
 
 
-  has_many :course_permission
+  has_many :course_permissions
   has_many :chapters
 
   has_many :item_tags, as: :taggable
