@@ -18,8 +18,9 @@ class Admin::VideosAdminController < Admin::AdminController
 	end
 
 	def create
-		@video = @chapter.videos.new(video_params)
+		# @video = @chapter.videos.new(video_params)
 		
+		@video = @chapter.build_video(video_params)
 		respond_to do |format|
 			if @video.save
 				format.html { redirect_to course_path(@chapter.course.id), notice: 'Video was successfully created.' }

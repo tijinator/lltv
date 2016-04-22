@@ -15,15 +15,19 @@ Rails.application.routes.draw do
 
     resources :videos, controller: 'admin/videos_admin'
 
+    # Category -> Course
     resources :categories, controller: 'admin/categories_admin' do
-      resources :courses, controller: 'admin/courses_admin' do
-        # resources :chapters, controller: 'admin/chapters_admin' do
-        #   resources :videos, controller: 'admin/videos_admin'
-        # end
-      end
+      resources :courses, controller: 'admin/courses_admin'
+    end
+
+    # Course -> Chapter
+    resources :courses, controller: 'admin/courses_admin' do
+      resources :chapters, controller: 'admin/chapters_admin', except: :index
     end
     
-    resources :chapters, controller: 'admin/chapter_admin' do
+
+    # Chapter -> Video
+    resources :chapters, controller: 'admin/chapters_admin', except: :index do
       resources :videos, controller: 'admin/videos_admin'
     end
 
@@ -45,17 +49,20 @@ Rails.application.routes.draw do
     # get '/courses' => 'admin#courses'
     # get '/courses/:id' => 'admin#show_course'
 
-    resources :courses, controller: 'admin/courses_admin' do
-      resources :chapters, controller: 'admin/chapter_admin' do
-        member do
-          put '/update_published_status' => 'admin/chapter_admin#update_published_status'
-        end
-      end
+    resources :courses, controller: 'admin/courses_admin'
 
-        member do
-          put '/update_published_status' => 'admin/course_admin#update_published_status'
-        end
-    end
+    # Trash routes dnt delete it yet...
+    # resources :courses, controller: 'admin/courses_admin' do
+    #   resources :chapters, controller: 'admin/chapters_admin' do
+    #   #   member do
+    #   #     put '/update_published_status' => 'admin/chapters_admin#update_published_status'
+    #   #   end
+    #   end
+
+    #   #   member do
+    #   #     put '/update_published_status' => 'admin/course_admin#update_published_status'
+    #   #   end
+    # end
 
   end
 

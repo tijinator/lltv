@@ -15,9 +15,6 @@ function($rootScope, $auth, $http) {
 
   }
 
-  console.log($auth);
-  console.log($rootScope);
-
   $rootScope.$watch( 'user.username', function (username) {
     if (angular.isDefined(username)){
       // use the ID, as it seems to be defined now
