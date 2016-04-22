@@ -11,8 +11,11 @@ function($rootScope, $scope, currentUser) {
 
   var set = function(userData){
     // angular.extend(userObject, userData)
-    $scope.userdude = userData;
-    console.log($scope.userdude);
+    // $scope.userdude = userData;
+    console.log(userData);
+    // User.get().$promise.then(function(user){
+    //   $scope.userdude = user;
+    // });
 
   }
 
@@ -20,5 +23,14 @@ function($rootScope, $scope, currentUser) {
 
     set(userData);
   });
+
+  // console.log($scope.userdude);
+
+  // var post_query = function(){
+  //       Post.query().then(function(posts){
+  //         $scope.posts = posts;
+  //       });
+  //     }
+
 
 }]);
