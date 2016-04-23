@@ -22,7 +22,7 @@ Rails.application.routes.draw do
         # end
       end
     end
-    
+
     resources :chapters, controller: 'admin/chapter_admin' do
       resources :videos, controller: 'admin/videos_admin'
     end
@@ -81,7 +81,9 @@ Rails.application.routes.draw do
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
 
-  get '/users/:user_id' => 'home#home'
+  get '/users/:user_id' => 'home#home' #profile route
+
+  get '/account' => 'home#home'
 
   root to: 'home#home'
 end

@@ -33,6 +33,17 @@ $scope.jsRun = function(userData){
           ul.setAttribute('role','menu');
           ul.setAttribute('id','profile-navbar');
 
+  var innerLiAccount = document.createElement('li');
+      var innerA = document.createElement('a');
+          // console.log(JSON.stringify(userData));
+          innerA.setAttribute('href', '/account');
+          innerA.setAttribute('style', 'color: #787d7f; height: 15px');
+
+          var profile = document.createTextNode('account settings');
+          innerA.appendChild(profile);
+          innerLiAccount.appendChild(innerA);
+      ul.appendChild(innerLiAccount);
+
   var innerLiOne = document.createElement('li');
       var innerA = document.createElement('a');
           // console.log(JSON.stringify(userData));

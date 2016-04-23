@@ -71,6 +71,22 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
     //     $('#lltv-app-content').show();
     //   }
     // })
+    .state('profileAccount', {
+      templateUrl: 'account/accountLayout.html',
+    })
+    .state('profileAccount.show',{
+      url: '/account',
+      views: {
+        profileAccount: {
+          templateUrl: 'account/profileAccount.html',
+          // controller: 'profileAccountCtrl'
+        },
+      },
+      onEnter: function() {
+        $('#landing-homepage').hide();
+        $('#lltv-app-content').show();
+      }
+    })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
     })
