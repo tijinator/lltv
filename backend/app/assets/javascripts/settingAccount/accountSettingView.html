@@ -24,7 +24,46 @@
 
     <div class="col-sm-9 account-option-view" style="padding: 0;">
 
-      {{helloworld}}
+      <div class="row" style="margin: 0;">
+        <div class="col-sm-10 col-sm-offset-1" style="padding: 0;">
+          <div class="row", style="margin: 0;">
+            <h2>email address</h2>
+          </div>
+          <div class="row", style="margin: 0;">
+            <p>
+              changing your email address is an easy, two-step process. Specify the new email
+              address you want to use, and we will send an email to that address allowing you
+              to complete the update.
+            </p>
+          </div>
+
+          <div class="row", style="margin: 0;">
+            <form ng-submit="updateAccount(updateAccountForm)" role="form" ng-init="updateAccountForm = {email: userEmail}">
+              <div class="col-md-6 auth-login-center">
+                <div class="auth-body">
+                  <div class="form-group">
+                    <label>email address</label>
+                    <input type="email" name="email" ng-model="updateAccountForm.email"
+                    required="required" class="form-control">
+                  </div>
+
+                  <!-- <div class="form-group">
+                    <label>password</label>
+                    <input type="password" name="password" ng-model="loginForm.password" required="required" class="form-control"/>
+                    <p class='pull-right'> <a href="#">forgot password?</a></p>
+                  </div> -->
+                </div>
+                <div class="auth-footer">
+                  <!-- <div class="bubble-btn switch-btn switch-btn-sign-in pull-left" ng-click="switch('register')">create account</div> -->
+                  <button type="submit" class="bubble-btn submit-btn pull-right">update</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 

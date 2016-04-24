@@ -1,6 +1,11 @@
 angular.module('lltv')
 .controller('accountSettingCtrl', [
 '$scope',
-function($scope){
-  $scope.helloworld = 'hi';
+'currentUser',
+'$auth',
+function($scope, currentUser, $auth){
+  var userObj = currentUser.getUserObj();
+
+  $scope.userEmail = userObj.email;
+  console.log($scope.userEmail);
 }]);
