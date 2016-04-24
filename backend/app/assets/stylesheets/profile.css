@@ -9,8 +9,8 @@
   font-family: avenir-black;
 }
 
-.anchor-link{ 
-  color: #FFF; 
+.anchor-link{
+  color: #FFF;
 }
 
 .mycourses-link, .certificates-link{
@@ -67,3 +67,14 @@
 .profile-video-history h1{
   margin-top: 50px;
 }
+
+/*account css*/
+.account-option-box{
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.account-option-box:hover { background-color: #2E3335; }
+
+.account-active { background-color: #2E3335;}
