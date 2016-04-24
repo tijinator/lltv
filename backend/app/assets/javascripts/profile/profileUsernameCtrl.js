@@ -7,7 +7,7 @@ angular.module('lltv')
 function($rootScope, $scope, currentUser, $cookieStore) {
 
   var userObj = currentUser.getUserObj();
-  console.log(userObj);
+  // console.log(userObj);
 
   $scope.current_user = userObj.username;
 

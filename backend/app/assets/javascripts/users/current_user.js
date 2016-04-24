@@ -17,7 +17,6 @@ function($rootScope, $auth, $http, $cookieStore) {
     }
   }
 
-
   var signOut = function() {
     $auth.signOut()
       .then(function(resp) {
