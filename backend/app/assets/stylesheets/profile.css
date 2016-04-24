@@ -1,9 +1,6 @@
 .profile-sidebar{
   background-color: #000;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: calc(100% - 95px);
+  height: calc(100vh - 95px);
   color: #FFF;
   text-transform: uppercase;
   font-family: avenir-black;
@@ -41,10 +38,7 @@
 
 .profile-video-history{
   background-color: #2E3335;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: calc(100% - 95px);
+  height: calc(100vh - 95px);
   text-transform: uppercase;
   color: #FFF;
   font-family: avenir-black;
@@ -68,7 +62,28 @@
   margin-top: 50px;
 }
 
+@media (max-width: 768px) {
+
+  .profile-sidebar{ height: inherit;}
+}
+
 /*account css*/
+.account-sidebar{
+  background-color: #000;
+  height: calc(100vh - 95px);
+  color: #FFF;
+  text-transform: uppercase;
+  font-family: avenir-black;
+}
+
+.account-option-view{
+  background-color: #2E3335;
+  height: calc(100vh - 95px);
+  text-transform: uppercase;
+  color: #FFF;
+  font-family: avenir-black;
+}
+
 .account-option-box{
   height: 60px;
   text-align: center;
@@ -78,3 +93,8 @@
 .account-option-box:hover { background-color: #2E3335; }
 
 .account-active { background-color: #2E3335;}
+
+@media (max-width: 768px) {
+
+  .account-sidebar{ height: inherit;}
+}
