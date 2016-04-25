@@ -32,8 +32,37 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
 
       $cookieStore.remove('userObj'); //remove current userObj cookie
       $cookieStore.put('userObj', userData.data); //update userObj cookie
-      $window.location.reload(); //refresh page
+      // $window.location.reload(); //refresh page
+      // console.log('your email has been changed!');
+      createMsgDiv();
    });
+
+   var createMsgDiv = function(){
+     var div = document.createElement('div');
+     div.setAttribute('class', 'alert alert-success');
+
+     var a = document.createElement('a');
+     a.setAttribute('class', 'close');
+     a.setAttribute('data-dismiss', 'alert');
+     a.setAttribute('aria-label', 'close');
+
+     var exitBtn = document.createTextNode('&times;')
+     a.appendChild(exitBtn);
+
+     var strong = document.createElement('strong');
+     var strongText = document.createTextNode('Success! Email updated');
+     strong.appendChild(strongText);
+
+     div.appendChild(a);
+     div.appendChild(strong);
+
+     document.getElementById("updateMsg").appendChild(div);
+   };
+
    //end update account email
+
+   //udpate password
+
+   //end update password
 
 }]);
