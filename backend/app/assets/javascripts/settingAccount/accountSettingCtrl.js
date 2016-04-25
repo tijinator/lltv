@@ -8,10 +8,16 @@ angular.module('lltv')
 '$location',
 '$window',
 function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $window){
+
+  //set activeSetting to 1 to display account setting view on page load
+  $scope.activeSetting = 1;
+
+  //get current email on page load
   var userObj = currentUser.getUserObj(); //get currentUser object
 
   $scope.userEmail = userObj.email; //send current email to update form
 
+  // update account email
   $scope.updateAccount = function() {
      $auth.updateAccount($scope.updateAccountForm)
        .then(function(resp) {
@@ -28,4 +34,6 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
       $cookieStore.put('userObj', userData.data); //update userObj cookie
       $window.location.reload(); //refresh page
    });
+   //end update account email
+
 }]);
