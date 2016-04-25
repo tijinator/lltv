@@ -62,6 +62,19 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
    //end update account email
 
    //udpate password
+   $scope.updatePassword = function() {
+      $auth.updatePassword($scope.changePasswordForm)
+        .then(function(resp) {
+          // handle success response
+        })
+        .catch(function(resp) {
+          // handle error response
+        });
+    };
+
+    $scope.$on('auth:password-change-success', function(ev) {
+      alert("Your password has been successfully updated!");
+    });
 
    //end update password
 
