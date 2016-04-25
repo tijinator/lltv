@@ -14,7 +14,7 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
 
   //get current email on page load
   var userObj = currentUser.getUserObj(); //get currentUser object
-
+  console.log(userObj);
   $scope.userEmail = userObj.email; //send current email to update form
 
   // update account email
