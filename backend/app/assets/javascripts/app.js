@@ -26,6 +26,9 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       // currentUserProvider.set(resp);
       return resp.data;
     },
+    handleAccountUpdateResponse: function(resp) {
+        return resp.data;
+    },
     handleTokenValidationResponse: function(resp) {
       // console.log(resp);
       return resp.data;
