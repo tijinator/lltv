@@ -87,8 +87,8 @@
 }
 
 .account-option-box{
-  height: 60px;
-  text-align: center;
+  min-height: 60px;
+  padding: 0 0 0 45px;
   line-height: 60px;
   cursor: pointer;
 }
@@ -123,5 +123,10 @@
 
   /*.account-sidebar{ height: inherit;}*/
   .account-sidebar, .account-option-slide{ height: initial;}
+
+  .account-option-box{
+    padding: 0;
+    text-align: center;
+  }
 
 }
