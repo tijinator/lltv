@@ -27,6 +27,9 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
      $auth.updateAccount($scope.updatePersonalForm)
        .then(function(resp) {
          // handle success response
+         var successMsg = 'Success! Info updated';
+         var elementID = 'updateInfoMsg';
+         createMsgDiv(successMsg, elementID);
        })
        .catch(function(resp) {
          // handle error response
@@ -40,6 +43,9 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
      $auth.updateAccount($scope.updateAccountForm)
        .then(function(resp) {
          // handle success response
+         var successMsg = 'Success! Email updated';
+         var elementID = 'updateEmailMsg';
+         createMsgDiv(successMsg, elementID);
        })
        .catch(function(resp) {
          // handle error response
@@ -52,10 +58,10 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
       $cookieStore.put('userObj', userData.data); //update userObj cookie
       // $window.location.reload(); //refresh page
       // console.log('your email has been changed!');
-      createMsgDiv();
+
    });
 
-   var createMsgDiv = function(){
+   var createMsgDiv = function(successMsg, elementID){
      var div = document.createElement('div');
      div.setAttribute('class', 'alert alert-success');
 
@@ -64,17 +70,23 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
      a.setAttribute('data-dismiss', 'alert');
      a.setAttribute('aria-label', 'close');
 
-     var exitBtn = document.createTextNode('&times;')
+     var exitBtn = document.createTextNode("X")
      a.appendChild(exitBtn);
 
      var strong = document.createElement('strong');
-     var strongText = document.createTextNode('Success! Email updated');
+     var strongText = document.createTextNode(successMsg);
      strong.appendChild(strongText);
 
      div.appendChild(a);
      div.appendChild(strong);
 
-     document.getElementById("updateMsg").appendChild(div);
+     var childBool = document.getElementById(elementID).hasChildNodes();
+
+     if(childBool){
+       document.getElementById(elementID).innerHTML = '';
+     }
+     document.getElementById(elementID).appendChild(div);
+
    };
 
    //end update account email
@@ -84,6 +96,9 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
       $auth.updatePassword($scope.changePasswordForm)
         .then(function(resp) {
           // handle success response
+          var successMsg = 'Success! Password updated';
+          var elementID = 'updateEmailMsg';
+          createMsgDiv(successMsg, elementID);
         })
         .catch(function(resp) {
           // handle error response
@@ -91,7 +106,8 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
     };
 
     $scope.$on('auth:password-change-success', function(ev) {
-      alert("Your password has been successfully updated!");
+      // alert("Your password has been successfully updated!");
+
     });
 
    //end update password

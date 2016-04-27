@@ -132,6 +132,8 @@
   text-transform: capitalize;
 }
 
+.personal-form-group{ margin-right: 20px; }
+
 .account-date-select{
   width: 170px;
   float: left;
@@ -143,6 +145,7 @@
   font-size: 13px;
   font-family: Avenir-Black;
   color: #fff;
+  padding-left: 15px;
 }
 
 .account-month-select{ margin-right: 20px;}
@@ -165,6 +168,8 @@
     width: 300px;
     margin: 0 auto 30px;
   }
+
+  .personal-form-group{ margin-right: 0; }
 
   .account-date-select{
     float: none;
