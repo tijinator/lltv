@@ -13,7 +13,7 @@ class Api::CoursesController < Api::ApiController
   end
 
   def show
-    if c = Course.find_by(id: params[:id])
+    if c = Course.find(params[:id])
       render json: CourseSerializer.new(c), root: false
     else
       render json: error_message('db'), root: false

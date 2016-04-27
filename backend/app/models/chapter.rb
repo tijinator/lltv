@@ -9,7 +9,7 @@ class Chapter < ActiveRecord::Base
 
   has_many :tags, through: :item_tags, source: :taggable, source_type: 'Tag'
   has_many :categories, through: :item_categories, source: :categorizable, source_type: 'Category'
-  has_many :videos
+  has_one :video
   belongs_to :course
 
   # has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
