@@ -129,7 +129,23 @@
 
 .account-password-title{
   margin: 60px 0 40px;
+  text-transform: capitalize;
 }
+
+.account-date-select{
+  width: 170px;
+  float: left;
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255, 0.3);
+  height: 40px;
+  border-radius: 25px;
+  opacity: 1;
+  font-size: 13px;
+  font-family: Avenir-Black;
+  color: #fff;
+}
+
+.account-month-select{ margin-right: 20px;}
 
 @media (max-width: 768px) {
 
@@ -141,8 +157,18 @@
     text-align: center;
   }
 
-  .offset-responsive-container{ padding-left: 40px;}
+  .offset-responsive-container{ text-align: center;}
 
-  .account-input-container{ width: 300px;}
+  .account-email-text{ padding: 0 50px 30px;}
+
+  .account-input-container{
+    width: 300px;
+    margin: 0 auto 30px;
+  }
+
+  .account-date-select{
+    float: none;
+    margin: 20px auto 0;
+  }
 
 }
