@@ -59,6 +59,11 @@
   font-size: 18px;
 }
 
+.payment-step-ifuser{
+  padding: 0;
+  margin: 20px 0 10px;
+}
+
 .country-dropdown, .year-select, .month-select{
   background-color: transparent;
   border: 1px solid rgba(255,255,255, 0.3);
@@ -147,3 +152,7 @@
 .active-slide{ display: block; }
 
 /*************/
+
+@media (max-width: 768px){
+  .payment-step-ifuser{ margin-bottom: 20px;}
+}
