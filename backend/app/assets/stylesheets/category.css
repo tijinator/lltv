@@ -47,6 +47,11 @@
 .category-banner-section{
   height: 100%;
   width: 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 }
 
 .category-page-details {
