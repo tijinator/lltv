@@ -138,12 +138,12 @@
   line-height: 14px;
 }
 
-.back-btn, .submit-payment-btn{
-  width: 150px;
-  margin-top: 20px;
+#back-btn, .submit-payment-btn{
+  width: 130px;
+  /*margin-top: 20px;*/
 }
 
-.submit-payment-btn{ margin-left: 30px;}
+.payment-option-btns{ padding: 0;}
 /**************************/
 
 /*slide menu*/
@@ -155,4 +155,9 @@
 
 @media (max-width: 768px){
   .payment-step-ifuser{ margin-bottom: 20px;}
+
+  .payment-option-btns{ float: left;}
+
+  .submit-payment-btn{ margin-left: 30px;}
+  
 }
