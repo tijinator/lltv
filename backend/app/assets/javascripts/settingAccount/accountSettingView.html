@@ -112,7 +112,9 @@
 
             <div class="row", style="margin: 0;">
               <form role="form" ng-submit="updatePersonal(updatePersonalForm)"
-              ng-init="updatePersonalForm = {first_name: userFirstName, last_name: userLastName}">
+              ng-init="updatePersonalForm = {first_name: userFirstName,
+                last_name: userLastName, job_title: userJobTitle, company_name: userCompanyName,
+                location: userLocation, website: userWebsite}">
 
                 <div class="auth-body">
                   <div class="row" style="margin: 0;">
@@ -136,14 +138,14 @@
                     <div class="col-sm-6 account-input-container" style="padding: 0;">
                       <div class="form-group personal-form-group">
                         <label>job title</label>
-                        <input type="text" name="job_title"
+                        <input type="text" name="job_title" ng-model="updatePersonalForm.job_title"
                          class="form-control">
                       </div>
                     </div>
                     <div class="col-sm-6 account-input-container" style="padding: 0;">
                       <div class="form-group personal-form-group">
                         <label>location</label>
-                        <input type="text" name="location"
+                        <input type="text" name="location" ng-model="updatePersonalForm.location"
                          class="form-control">
                       </div>
                     </div>
@@ -153,14 +155,14 @@
                     <div class="col-sm-6 account-input-container" style="padding: 0;">
                       <div class="form-group personal-form-group">
                         <label>company name</label>
-                        <input type="text" name="company_name"
+                        <input type="text" name="company_name" ng-model="updatePersonalForm.company_name"
                          class="form-control">
                       </div>
                     </div>
                     <div class="col-sm-6 account-input-container" style="padding: 0;">
                       <div class="form-group personal-form-group">
                         <label>personal website</label>
-                        <input type="text" name="personal_website"
+                        <input type="text" name="personal_website" ng-model="updatePersonalForm.website"
                          class="form-control">
                       </div>
                     </div>

@@ -19,8 +19,13 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
 
   $scope.userEmail = userObj.email; //send current email to update form
 
+  //send personal info parameters
   $scope.userFirstName = userObj.first_name;
   $scope.userLastName = userObj.last_name;
+  $scope.userJobTitle = userObj.job_title;
+  $scope.userCompanyName = userObj.company_name;
+  $scope.userWebsite = userObj.website;
+  $scope.userLocation = userObj.location;
 
   //update personal info
   $scope.updatePersonal = function() {
