@@ -252,6 +252,8 @@
 
 @media (max-width: 600px){
 
+  #lltv .container{ padding-right: 15px;}
+
   .category-details-container{
     width: 90%;
     float: left;
