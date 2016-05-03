@@ -32,11 +32,13 @@
 }
 
 .quote-container{
-  /*margin-top: 300px;*/
   position: absolute;
-  max-width: 500px;
+  max-width: 600px; /* it was 500px */
   top: 48%;
-  left: calc(50% - 497px/2);
+  left: calc(50% - 575px/2);
+  font-size: 36px;
+  color: #fff;
+  font-family: avenir-black;
 }
 
 #lltv .homepage-nav-links {
@@ -228,7 +230,13 @@
     margin: 0 calc(100%/4);
   }
 
-  .quote-container{ left: calc(50% - 348px/2); }
+  .quote-container{
+    width: 300px;
+    left: calc(50% - 300px/2); /* it was 348px */
+    font-size: 24px;
+  }
+
+  .quote-container > br:first-child{ display: none;}
 
   .quote-container img{ width: 70%; }
 
