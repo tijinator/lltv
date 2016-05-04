@@ -38,6 +38,12 @@
   min-width: 150px;
   float: left;
   margin-right: 20px;
+  text-decoration: none;
+}
+
+.getStarted-btn > a, .browseLib-btn > a{
+  text-decoration: none;
+  color: inherit;
 }
 
 .browseLib-btn{ border-color: #808080;}
