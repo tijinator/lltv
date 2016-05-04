@@ -1,0 +1,25 @@
+.about-container{
+  padding: 0;
+  text-align: center;
+  font-family: avenir-black;
+  color: #fff;
+  /*height: 100%;*/
+  background-size: cover;
+  background-position: center;
+  background-image: url('../images/LLTV_about_banner-01.jpg');
+}
+
+.about-first-text{
+  margin: 58px 0 48px;
+
+}
+
+.about-second-text-container{
+  padding: 0;
+  font-size: 22px;
+  font-family: avenir-book;
+  line-height: 52px;
+  margin-bottom: 48px;
+}
+
+.about-third-text{ margin: 0 0 58px; }
