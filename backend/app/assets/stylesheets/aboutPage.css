@@ -23,3 +23,21 @@
 }
 
 .about-third-text{ margin: 0 0 58px; }
+
+.about-buttons-row{ margin: 0 0 48px;}
+
+.about-buttons-container{
+  display: flex;
+  justify-content: center;
+}
+
+.getStarted-btn{ float: left;}
+
+.getStarted-btn, .browseLib-btn{
+  border: 1px solid #29AAE1;
+  min-width: 150px;
+  float: left;
+  margin-right: 20px;
+}
+
+.browseLib-btn{ border-color: #808080;}
