@@ -34,7 +34,7 @@
 .getStarted-btn{ float: left;}
 
 .getStarted-btn, .browseLib-btn{
-  border: 1px solid #29AAE1;
+  border: 3px solid #29AAE1;
   min-width: 150px;
   float: left;
   margin-right: 20px;
