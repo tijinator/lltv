@@ -89,7 +89,9 @@ Rails.application.routes.draw do
 
   get '/users/:user_id' => 'home#home' #profile route
 
-  get '/account' => 'home#home'
+  get '/account' => 'home#home' #account routes
+
+  get '/about' => 'home#home' #about page
 
   root to: 'home#home'
 end

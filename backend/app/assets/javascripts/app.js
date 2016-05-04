@@ -45,6 +45,10 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         $('#landing-homepage').show();
       }
     })
+    .state('aboutPage',{
+      url: '/about',
+      templateUrl: 'about/aboutPage.html'
+    })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
     })
