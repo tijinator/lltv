@@ -10,6 +10,7 @@
         </p>
     </video>
   </div>
+  <p style="display: none;">{{chapter.position}}</p>
 </div>
 
 <script>
@@ -24,7 +25,18 @@ var video = document.getElementById('my-video');
 </script>
 
 <script>
-  document.getElementById('my-video').addEventListener('ended',myHandler,false);
+  //disable from saving videos
+  $('#my-video').bind('contextmenu',function() { return false; });
+
+  if(userBoolean){
+
+  }else{
+    document.getElementById('my-video').addEventListener('ended',myHandler,false);
+    // console.log(chapter)
+  }
+
+  // document.getElementById('my-video').addEventListener('click',myHandler,false);
+
   function myHandler(e) {
 
     openModule('unlockVideo');

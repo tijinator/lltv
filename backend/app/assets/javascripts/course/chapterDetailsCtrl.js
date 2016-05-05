@@ -15,7 +15,7 @@
 //   	]);
 // })
 
-angular.module('lltv').controller('ChapterDetailsCtrl', 
+angular.module('lltv').controller('ChapterDetailsCtrl',
 ['$scope',
  'course',
  	function($scope, course) {
@@ -29,12 +29,17 @@ angular.module('lltv').controller('ChapterDetailsCtrl',
 
 		$scope.$on('chapters', function(e, position) {
 			$scope.chapter = $scope.chapters[position-1];
-			$scope.video   = $scope.chapter.video.video_url
+			$scope.video   = $scope.chapter.video.video_url;
+
 		});
+
+    var testdummy = $scope.chapter;
+    window.getChapterPosition = testdummy;
+
+
 	}
 ]).filter('trusted', ['$sce', function ($sce) {
     return function(url) {
         return $sce.trustAsResourceUrl(url);
     };
 }]);
-
