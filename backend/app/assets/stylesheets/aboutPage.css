@@ -24,7 +24,10 @@
 
 .about-third-text{ margin: 0 0 58px; }
 
-.about-buttons-row{ margin: 0 0 48px;}
+.about-buttons-row{
+  margin: 0;
+  padding: 0 0 48px;
+}
 
 .about-buttons-container{
   display: flex;
