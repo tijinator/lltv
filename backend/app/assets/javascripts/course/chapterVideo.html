@@ -10,10 +10,10 @@
         </p>
     </video>
   </div>
-  <p id="chapter-position-num" style="display: none;">{{testPositon}}</p>
 </div>
 
 <script>
+$('#my-video').bind('contextmenu',function() { return false; });
 var video = document.getElementById('my-video');
     video.addEventListener('click',function(){
         if (video.paused) {
@@ -22,43 +22,5 @@ var video = document.getElementById('my-video');
             video.pause();
         }
     },false);
-</script>
-
-<!-- FROM MARTIN -->
-<script>
-  //disable from saving videos
-  $('#my-video').bind('contextmenu',function() { return false; });
-
-  var div1 = $('#chapter-position-num');
-  var dataItem = angular.element(div1).scope().testPositon;
-  console.dir(dataItem);
-
-  // var num = document.getElementById('chapter-position-num').innerText;
-
-  // console.log(document.getElementById('chapter-position-num').innerText);
-
-  // console.dir(angular.element(div1).scope());
-  // console.log(dataItem);
-  //
-  // // var num = window.positionTest;
-  //
-  // if(dataItem > 0){
-  //   console.log("i'm bigger than one");
-  // }
-  //
-  // if(userBoolean){
-  //
-  // }else{
-  //   document.getElementById('my-video').addEventListener('ended',myHandler,false);
-  //   // console.log(chapter)
-  // }
-  //
-  // document.getElementById('my-video').addEventListener('ended',myHandler,false);
-  //
-  // function myHandler(e) {
-  //
-  //   openModule('unlockVideo');
-  //
-  // }
 </script>
 
