@@ -1,11 +1,26 @@
 class VideoSerializer < ActiveModel::Serializer
-  # attributes :id, chapter_id:, :video_url, :title, :details, :transcript, :faqs, :position
-  attributes :id, :video_url, :title, :details, :transcript, :faqs, :position
+  self.root = false
+  attributes :video_url, :title, :details, :transcript, :faqs, :position
 
 # delegate :russel, to: :scope
 
   def video_url
-	object.video_url.url
+      object.video_url.url
+    # if !scope
+    #   #check permission
+    #   if true
+    #     if object.position == 1
+    #       object.video_url.url
+    #     else
+    #       nil
+    #     end
+    #   else
+    #     object.video_url.url
+    #   end
+    # else
+    #   object.video_url.url
+    # end
+
   end
  
 
@@ -22,10 +37,11 @@ class VideoSerializer < ActiveModel::Serializer
   #   # p user_signed_in?
   #   # puts "*"*100
 
-  # 	if owner?
+  # 	if scope
   # 		data
   # 	else
-  # 		data
+  #     puts "*"*100
+  #     data
   # 	end
   # end
 

@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   end
 
   # Subdomains -
-  # constraints subdomain: 'admin.beta' do
-  constraints subdomain: 'admin' do
+  constraints subdomain: 'admin.beta' do
 
     resources :videos, controller: 'admin/videos_admin'
 

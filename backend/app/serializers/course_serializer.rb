@@ -1,6 +1,6 @@
 class CourseSerializer < ActiveModel::Serializer
   self.root = false
-  attributes :id, :level, :title, :details, :duration, :position, :banner_url, :chapters, :video
+  attributes :id, :level, :title, :details, :duration, :position, :banner_url, :chapters
   # attributes :id, :level, :title, :details, :banner_url, :duration, :released_on, :author, :chapter, :video
 
   has_many :chapters
@@ -23,9 +23,9 @@ class CourseSerializer < ActiveModel::Serializer
     object.chapters.order(:position)
   end
 
-  def video
-    object
-  end
+  # def video
+  #   object
+  # end
 
   # def chapter
   # 	object.chapters.first
