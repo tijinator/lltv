@@ -19,7 +19,8 @@ angular.module('lltv').controller('ChapterDetailsCtrl',
 ['$scope',
  'course',
  'currentUser',
- 	function($scope, course, currentUser) {
+ 'AuthService',
+ 	function($scope, course, currentUser, AuthService) {
 
 		$scope.chapters = course.data.chapters;
 		// $scope.chapter = $scope.chapters[0];
@@ -29,13 +30,9 @@ angular.module('lltv').controller('ChapterDetailsCtrl',
 		$scope.chapter = $scope.chapters[0];
 		$scope.video   = $scope.chapter.video.video_url
     $scope.booleanTest = function(){ return true;}
-    $scope.current_user = currentUser.getUserObj();
 
     //when user click on different chapters
 		$scope.$on('chapters', function(e, position) {
-			$scope.chapter = $scope.chapters[position-1];
-			$scope.video   = $scope.chapter.video.video_url;
-
 
       // $scope.booleanTest = function(){
       //   if(!$scope.current_user){
@@ -53,7 +50,28 @@ angular.module('lltv').controller('ChapterDetailsCtrl',
       //
       // }
 
+			$scope.chapter = $scope.chapters[position-1];
+			$scope.video   = $scope.chapter.video.video_url;
+      $scope.current_user = currentUser.getUserObj();
+
+
+      var userObject = $scope.current_user;
+      var chapterPosition = $scope.chapter.position;
+
+      if(chapterPosition > 1){
+        $scope.positionBool = true;
+      }
+
+
+
+      function myHandler(e) { AuthService.openModal('unlockVideo'); }
+
+      // if(!$scope.booleanTest()){ AuthService.openModal('unlockVideo'); }
+
+
 		});
+
+
 
 	}
 ]).filter('trusted', ['$sce', function ($sce) {
