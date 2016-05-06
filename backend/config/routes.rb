@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   end
 
   # Subdomains -
-  # constraints subdomain: 'admin.beta' do
   constraints subdomain: 'admin.beta' do
 
     resources :videos, controller: 'admin/videos_admin'
@@ -24,7 +23,6 @@ Rails.application.routes.draw do
     resources :courses, controller: 'admin/courses_admin' do
       resources :chapters, controller: 'admin/chapters_admin', except: :index
     end
-    
 
     # Chapter -> Video
     resources :chapters, controller: 'admin/chapters_admin', except: :index do
@@ -88,7 +86,11 @@ Rails.application.routes.draw do
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
 
-  get '/users/:user_id' => 'home#home'
+  get '/users/:user_id' => 'home#home' #profile route
+
+  get '/account' => 'home#home' #account routes
+
+  get '/about' => 'home#home' #about page
 
   root to: 'home#home'
 end

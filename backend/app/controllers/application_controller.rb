@@ -1,15 +1,16 @@
 class ApplicationController < ActionController::Base
   include DeviseTokenAuth::Concerns::SetUserByToken
-  
+
   protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
+
   respond_to :html, :json
   layout :layout_by_resource
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  serialization_scope :view_context
   helper_method :user_signed_in?
   helper_method :current_user
+
 
   def error_message(type=nil)
     if type == nil
@@ -50,6 +51,7 @@ protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << [:username, :first_name, :last_name, :stripe_card_token]
+    devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :location, :job_title, :website, :company_name]
   end
 
   # def verified_request?

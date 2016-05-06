@@ -23,6 +23,10 @@ class CourseSerializer < ActiveModel::Serializer
     object.chapters.order(:position)
   end
 
+  # def video
+  #   object
+  # end
+
   # def chapter
   # 	object.chapters.first
   # end

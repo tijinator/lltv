@@ -144,7 +144,7 @@
 
 
                 <div class="auth-body">
-                  <div ng-if="!user.signedIn" class="col-sm-12" style="padding: 0; margin-bottom: 50px;">
+                  <div ng-if="!user.signedIn" class="col-sm-12 payment-step-ifuser">
                       <p class="payment-step">step 2 <span>billing information</span></p>
                   </div><!-- end col-sm-12 -->
 
@@ -168,7 +168,12 @@
 
                     <div class="form-group">
                       <label>address</label>
-                      <input type="text" name="address" ng-model="paymentForm.address" required="required" class="form-control" ng-required="true"/>
+                      <input type="text" name="address_line_1" ng-model="paymentForm.address_line_1" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>address 2</label>
+                      <input type="text" name="address_line_1" ng-model="paymentForm.address_line_2" required="required" class="form-control"/>
                     </div>
 
                     <div class="form-group">
@@ -198,13 +203,13 @@
                       <input type="text" id="card_code" required="required" class="form-control" ng-required="true"/>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 20px;">
                       <label>expiration date</label>
                       <!-- <input type="text" name="ccv" ng-model="paymentForm.ccv" required="required" class="form-control" ng-required="true"/> -->
                       <div class="row" style="margin: 0;">
 
-                        <div class="form-group month-select" style="margin: 0; margin-right: 20px;">
-                          <select class="form-control select-style" id="card_month" style="width: 150px;">
+                        <div class="form-group month-select" style="margin: 0; margin-right: 20px; margin-bottom: 10px; padding-left: 15px;">
+                          <select class="form-control select-style" id="card_month" style="width: 135px;">
                               <option value="01">January</option>
                               <option value="02">February</option>
                               <option value="03">March</option>
@@ -220,8 +225,8 @@
                           </select>
                         </div>
 
-                        <div class="form-group year-select" style="margin: 0;">
-                          <select class="form-control select-style" id="card_year" style="width: 150px;">
+                        <div class="form-group year-select" style="margin: 0; padding-left: 15px;">
+                          <select class="form-control select-style" id="card_year" style="width: 135px;">
                             <option>2016</option>
                             <option>2017</option>
                             <option>2018</option>
@@ -252,20 +257,20 @@
                     </div>
 
                     <div class="row" style="margin: 0;">
-                      <div id='back-btn' class="bubble-btn switch-btn subscribe-btn text-center">
-                        Back
+                      <div class="col-sm-6 payment-option-btns">
+                        <div id='back-btn' class="bubble-btn switch-btn subscribe-btn text-center">
+                          Back
+                        </div>
                       </div>
 
-                      <!-- <div class="bubble-btn submit-btn subscribe-btn submit-payment-btn text-center"> -->
-                      <div>
-                          <button type='submit' id='form-submit-btn' class="bubble-btn submit-btn subscribe-btn submit-payment-btn text-center">submit</button>
+                      <div class="col-sm-6 payment-option-btns">
+                        <div>
+                            <button type='submit' id='form-submit-btn' class="bubble-btn submit-btn subscribe-btn submit-payment-btn text-center">submit</button>
+                        </div>
                       </div>
                     </div>
                   </div><!-- end col-sm-6 -->
 
-                  <!-- <div class="col-md-6 auth-left-column">
-
-                  </div>  -->
                 </div>
 
               </form><!-- end form credit-form-->

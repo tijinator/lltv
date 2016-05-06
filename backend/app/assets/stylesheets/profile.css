@@ -1,20 +1,16 @@
 .profile-sidebar{
   background-color: #000;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: calc(100% - 95px);
+  height: calc(100vh - 95px);
   color: #FFF;
   text-transform: uppercase;
   font-family: avenir-black;
 }
 
-.anchor-link{ 
-  color: #FFF; 
+.anchor-link{
+  color: #FFF;
 }
 
 .mycourses-link, .certificates-link{
-  margin-left: 40px;
   font-size: 13px;
 }
 
@@ -30,7 +26,7 @@
 }
 
 .profile-setting-container{
-  margin-left: 40px;
+  margin-left: 46px;
   margin-top: 53px;
   margin-bottom: 40px;
 }
@@ -41,10 +37,7 @@
 
 .profile-video-history{
   background-color: #2E3335;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: calc(100% - 95px);
+  height: calc(100vh - 95px);
   text-transform: uppercase;
   color: #FFF;
   font-family: avenir-black;
@@ -66,4 +59,126 @@
 
 .profile-video-history h1{
   margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+
+  .profile-sidebar{ height: inherit;}
+}
+
+/*account css*/
+.account-setting-container{
+  padding: 0;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  background-color: #000;
+}
+
+.account-sidebar{
+  background-color: #000;
+  height: 100%;
+  color: #FFF;
+  text-transform: uppercase;
+  font-family: avenir-black;
+}
+
+.account-option-slide{
+  background-color: #2E3335;
+  min-height: 100vh;
+  text-transform: uppercase;
+  color: #FFF;
+  font-family: avenir-black;
+}
+
+.account-option-box{
+  min-height: 60px;
+  padding: 0 0 0 45px;
+  line-height: 60px;
+  cursor: pointer;
+}
+
+.account-active { background-color: #2E3335;}
+
+.offset-responsive-container, .account-input-container{ padding: 0;}
+
+.account-email-title{
+  text-transform: capitalize;
+  margin: 40px 0 24px;
+}
+
+.account-email-text{
+  font-size: 13px;
+  color: #787D7F;
+  margin-bottom: 24px;
+  padding-right: 180px;
+  line-height: 26px;
+}
+
+.account-option-slide input:not([type=submit]):not([type=file]) {
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255, 0.3);
+  height: 40px;
+  border-radius: 25px;
+  opacity: 1;
+  font-size: 13px;
+  font-family: Avenir-Black;
+  color: #fff;
+}
+
+.account-password-title{
+  margin: 60px 0 40px;
+  text-transform: capitalize;
+}
+
+.personal-form-group{ margin-right: 20px; }
+
+.account-date-select{
+  width: 170px;
+  float: left;
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255, 0.3);
+  height: 40px;
+  border-radius: 25px;
+  opacity: 1;
+  font-size: 13px;
+  font-family: Avenir-Black;
+  color: #fff;
+  padding-left: 15px;
+}
+
+.account-month-select{ margin-right: 20px;}
+
+.radio-month-option{ padding-right: 20px;}
+
+@media (max-width: 930px) {
+  .radio-single-option{ margin-left: 0 !important;}
+}
+
+@media (max-width: 768px) {
+
+  /*.account-sidebar{ height: inherit;}*/
+  .account-sidebar, .account-option-slide{ height: initial;}
+
+  .account-option-box{
+    padding: 0;
+    text-align: center;
+  }
+
+  .offset-responsive-container{ text-align: center;}
+
+  .account-email-text{ padding: 0 50px 30px;}
+
+  .account-input-container{
+    width: 300px;
+    margin: 0 auto 30px;
+  }
+
+  .personal-form-group{ margin-right: 0; }
+
+  .account-date-select{
+    float: none;
+    margin: 20px auto 0;
+  }
+
 }

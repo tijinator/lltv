@@ -120,10 +120,7 @@
 	border-bottom: 1px solid #353A3D;
 }
 
-.course-chapter-search > p {
-	margin-top: 24px;
-	margin-left: 20px;
-}
+.course-chapter-search > p { margin-top: 24px; }
 
 .course-chapter-search > p > a{
 	text-decoration: none;
@@ -277,9 +274,13 @@
 
 .tab-inner-panel{
 	font-family: Avenir-Book;
-	font-size: 13px;
+	font-size: 15px;
+	line-height: 30px;
 	color: #FFF;
+	max-width: 688px;
 }
+
+.tab-inner-panel h5{ font-size: 15px;}
 
 /*.exp-all{
 	font-family: Avenir-Black;

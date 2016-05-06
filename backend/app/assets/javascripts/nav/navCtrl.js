@@ -6,19 +6,21 @@ angular.module('lltv')
 '$auth',
 'currentUser',
 '$compile',
-function($rootScope, $scope, $location, $auth, currentUser, $compile) {
+'$cookieStore',
+function($rootScope, $scope, $location, $auth, currentUser, $compile, $cookieStore) {
 
-$scope.jsRun = function(userData){
+$scope.jsRun = function(userFirstName){
   var li = document.createElement('li');
       li.setAttribute('id', 'signedIn');
 
   var a = document.createElement('a');
           a.setAttribute('class','dropdown-toggle');
+          a.setAttribute('id','userFirstName');
           a.setAttribute('data-toggle','dropdown');
           a.setAttribute('style','background: none');
   // var userName = document.createTextNode($scope.user.username);
-  var userName = document.createTextNode(userData.first_name);
-      a.appendChild(userName);
+  var firstName = document.createTextNode(userFirstName);
+      a.appendChild(firstName);
 
   var span = document.createElement('span');
           span.setAttribute('class','glyphicon glyphicon-chevron-down');
@@ -32,11 +34,24 @@ $scope.jsRun = function(userData){
           ul.setAttribute('role','menu');
           ul.setAttribute('id','profile-navbar');
 
+  var innerLiAccount = document.createElement('li');
+      var innerAcc = document.createElement('a');
+          // console.log(JSON.stringify(userData));
+          innerAcc.setAttribute('ui-sref', 'accountSetting.show');
+          // innerAcc.setAttribute('ui-sref', 'account.show');
+          innerAcc.setAttribute('style', 'color: #787d7f; height: 15px');
+
+          var accountSetting = document.createTextNode('account settings');
+          innerAcc.appendChild(accountSetting);
+          innerLiAccount.appendChild(innerAcc);
+      ul.appendChild(innerLiAccount);
+
   var innerLiOne = document.createElement('li');
       var innerA = document.createElement('a');
           // console.log(JSON.stringify(userData));
-          // innerA.setAttribute('href', '/categories');
-          innerA.setAttribute('ui-sref', "profileUsername.show({username:" + JSON.stringify(userData.username) + "})");
+
+          innerA.setAttribute('ui-sref', "profileUsername.show({username:" + userFirstName + "})");
+          // innerA.setAttribute('ui-sref', "profileUsername.show({username:" + JSON.stringify(userData.username) + "})");
           innerA.setAttribute('style', 'color: #787d7f; height: 15px');
 
           var profile = document.createTextNode('Profile');
@@ -76,11 +91,10 @@ $scope.jsRun = function(userData){
     // console.log('HELLO CURRENT MENU ');
   };
 
-  var signedIn = function(userData) {
-        // currentUser.set(userData);
-      // var x = currentUserMenu(userData);
+  var signedIn = function() {
+      var userFirstName = currentUser.getUserObj().first_name;
 
-      var x = $scope.jsRun(userData);
+      var x = $scope.jsRun(userFirstName);
       $('.sign_up_in').hide();
       // $('#signedIn').show().html(x);
       $('#signedIn').show().html($compile(x)($scope));
@@ -113,14 +127,17 @@ $scope.jsRun = function(userData){
   $rootScope.$on('auth:registration-email-success', function(ev, userData) {
     // alert("A registration email was sent to " + message.email);
     // console.log('Register Success: ',userData);
+    $cookieStore.remove('userObj'); //remove current userObj cookie
+    $cookieStore.put('userObj', userData); //update userObj cookie
+    // console.log(userData);
     $location.path("categories");
-    signedIn(userData);
+    signedIn();
   });
 
   $rootScope.$on('auth:validation-success', function(ev, userData) {
     // console.log("validation event: ", ev);
     // console.log("validation: ", userData);
-    signedIn(userData);
+    signedIn();
   });
 
   $rootScope.$on('auth:validation-error', function(ev, userData) {
@@ -146,13 +163,15 @@ $scope.jsRun = function(userData){
     // console.log("validation-log2: ", userData);
     // console.log("Login Success event: ", ev);
     // console.log("Login Success: ", userData);
+    $cookieStore.put('userObj', userData);
     $location.path("categories");
-    signedIn(userData);
+    signedIn();
   });
 
   $rootScope.$on('auth:logout-success', function(ev) {
     // console.log("LogOut Success");
     // console.log('signOut: ', ev);
+    $cookieStore.remove('userObj'); //remove current userObj cookie
     $location.path("/");
     signOut();
   });
