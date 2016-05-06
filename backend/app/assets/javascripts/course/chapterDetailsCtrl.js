@@ -58,10 +58,24 @@ angular.module('lltv').controller('ChapterDetailsCtrl',
       var userObject = $scope.current_user;
       var chapterPosition = $scope.chapter.position;
 
-      if(chapterPosition > 1){
-        $scope.positionBool = true;
-      }
+      // if(chapterPosition > 1){
+      //   $scope.positionBool = true;
+      // }
 
+      if(!userObject){
+        if(chapterPosition > 1){
+          // console.log("can't watch video unless you registered");
+          $scope.booleanTest = function(){ return false }
+          AuthService.openModal('unlockVideo');
+        }else{
+          // console.log('you may only watch the intro');
+          $scope.booleanTest = function(){ return true }
+          document.getElementById('my-video').addEventListener('ended',myHandler,false);
+        }
+      }else{
+        //this is for the registered users
+        console.log('test');
+      }
 
 
       function myHandler(e) { AuthService.openModal('unlockVideo'); }
