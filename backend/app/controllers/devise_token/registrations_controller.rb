@@ -2,73 +2,52 @@ module DeviseToken
 	class RegistrationsController < DeviseTokenAuth::RegistrationsController
 
 		def	create
-			email	     = params[:email]
-			token        = params[:stripe_card_token] if params[:stripe_card_token]
-			full_name    = "#{params[:first_name]} #{params[:last_name]}"
-			
-
 			if options = params[:options] 
+				email	     = params[:email]
+				token        = params[:stripe_card_token] if params[:stripe_card_token]
+				full_name    = "#{params[:first_name]} #{params[:last_name]}"
 				order_object = options[1][:orderInfo]
 				params.delete(:options)
 				params.delete(:stripe_card_token)
+
+				if options[0][:planObject][:amount]
+					amount       = options[0][:planObject][:amount]
+					course_id    = options[0][:planObject][:course_id]
+				end
+
 				
-				if amount = options[0][:planObject][:amount]
-					super do |res|
-						customer_id = one_time_payment(token, email, full_name, amount)
-						res.save_customer_id(customer_id)
+				# Stripe Customer Create
+				customer = Stripe::Customer.new
+				customer.email       = email
+				customer.description = full_name
+				customer.source      = token
+
+				if plan = options[0][:planObject][:plan]
+					customer.plan = plan
+				end
+					
+				super do |res|
+					customer.save
+
+					# Order Save
+					order = Order.create({user_id: res.id, order_total_amount: amount }.merge(order_object))
+
+					if amount
+						# Stripe Charge for One time Course
+						Charge.charge_course(customer.id, customer.email, amount) 
+						CoursePermission.one_course_permission(res.id, course_id, order.id, order.created_at)
+					else
+						CoursePermission.all_montly_course_permission(res.id, order.id, order.created_at)
 					end
-				elsif plan = options[0][:planObject][:plan]
-					super do |res|
-						customer_id = monthly_payment(token, email, full_name, plan)
-						res.save_customer_id(customer_id)
-					end
+					
+
+					res.save_customer_id(customer.id)
 				end
 			else
 				super
 			end
 
 		end
-
-		def one_time_payment(stripe_card_token, email, full_name, amount)
-
-			customer = Stripe::Customer.create(
-				description: full_name, 
-				email: email, 
-				source: stripe_card_token
-			)
-
-			# begin 
-				charge = Stripe::Charge.create(
-					:amount => amount,
-					:currency => "usd",
-					:description => customer.email,
-					:customer => customer.id
-				)
-			# rescue => e
-			# 	body = e.json_body
-			# 	err  = body[:error]
-
-			# 	puts "Status is: #{e.http_status}"
-			# 	puts "Type is: #{err[:type]}"
-			# 	puts "Code is: #{err[:code]}"
-			# 	# param is '' in this case
-			# 	puts "Param is: #{err[:param]}"
-			# 	puts "Message is: #{err[:message]}"
-			# end
-
-		    return customer.id
-  		end
-
-  		def monthly_payment(stripe_card_token, email, full_name, plan)
-			customer = Stripe::Customer.create(
-				description: full_name, 
-				email: email, 
-				source: stripe_card_token,
-				plan: plan
-			)
-			return customer.id
-  		end
-
 		
 	end #end of class
-end #end of modue
+end #end of module

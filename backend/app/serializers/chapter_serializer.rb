@@ -3,6 +3,8 @@ class ChapterSerializer < ActiveModel::Serializer
   attributes :id, :title, :details, :duration, :position, :video
   has_one :video
 
+
+
   # delegate :user_signed_in?, to: :scope
 
   # def videos
@@ -15,15 +17,15 @@ class ChapterSerializer < ActiveModel::Serializer
 
   # def attributes
   # 	data = super
-    # puts data.videos
-    # puts "*"*100
-    # p data
-    # puts "*"*100
-  	# if user_signed_in?
-  	# 	return data
-  	# else
-  	# 	return data
-  	# end
+  #   puts data
+  #   puts "*"*100
+  #   p data
+  #   puts "*"*100
+  # 	if user_signed_in?
+  # 		return data
+  # 	else
+  # 		return data
+  # 	end
   # end
   
 end

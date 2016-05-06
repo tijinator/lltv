@@ -14,7 +14,7 @@ class Api::CoursesController < Api::ApiController
 
   def show
     if c = Course.find(params[:id])
-      render json: CourseSerializer.new(c), root: false
+      render json: CourseSerializer.new(c, :scope => user_signed_in? ), root: false
     else
       render json: error_message('db'), root: false
     end

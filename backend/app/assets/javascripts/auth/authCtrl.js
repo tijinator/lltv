@@ -12,10 +12,18 @@ function($scope, $auth, currentUser, authService) {
     $auth.submitRegistration($scope.registrationForm)
       .then(function(res) {
         $scope.close();
+        localStorage.removeItem('course_id');
       })
       .catch(function(res) {
-        // $scope.errors = res.data.errors.full_messages.join(', ');
-        console.log('error in sign up');
+        $("#form-submit-btn").removeProp('disabled');
+        if (res.data.errors) {
+          $scope.errors = res.data.errors.full_messages.join(', ');
+          // console.log('if', res.data.errors.full_messages.join(', '));
+        }else if(res.data && res.data.includes('declined')){
+          $scope.errors = 'Card Declined';
+        }else{
+          console.log('else: ', res.data);
+        }
       })
   };
 
@@ -46,11 +54,15 @@ function($scope, $auth, currentUser, authService) {
 var planObject = {};
 
   $scope.submitPaymentRegistration = function(){
-    // $("#form-submit-btn").prop('disabled', true);
+    $("#form-submit-btn").prop('disabled', true);
     
     stripeToken(function(err, token){
-      if (err) throw err;
-      console.log("token: ", token);
+      if (err){
+        arrError = err.toString().split(' ');
+        arrError.shift();
+        $scope.errors = arrError.join(' ');
+        throw err
+      };
 
       // $scope.registerForm.stripe_card_token = token;
       // $scope.registerForm.product = 'monthly_versiom';
@@ -72,8 +84,7 @@ var planObject = {};
   }
 
   $scope.oneTimePurchase = function(){
-    planObject = {amount: 2000};
-    console.log(planObject);
+    planObject = {amount: 2000, course_id: localStorage.getItem('course_id')};
   }  
 
 

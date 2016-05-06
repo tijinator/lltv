@@ -19,22 +19,14 @@ angular.module('lltv').controller('ChapterDetailsCtrl',
 ['$scope',
  'course',
  	function($scope, course) {
-
-		$scope.chapters = course.data.chapters;
-		// $scope.chapter = $scope.chapters[0];
-		// console.log("chapter LOADED", $scope.chapters);
-
-		$scope.chapter = $scope.chapters[0];
-		$scope.video   = $scope.chapter.video.video_url
+		var chapters = course.data.chapters,
+		    chapter  = chapters[0];
+		$scope.chapter_video = chapter.video;
 
 		$scope.$on('chapters', function(e, position) {
-			$scope.chapter = $scope.chapters[position-1];
-			$scope.video   = $scope.chapter.video.video_url
+			chapter = chapters[position-1];
+			$scope.chapter_video = chapter.video;
 		});
 	}
-]).filter('trusted', ['$sce', function ($sce) {
-    return function(url) {
-        return $sce.trustAsResourceUrl(url);
-    };
-}]);
+]);
 
