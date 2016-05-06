@@ -34,21 +34,6 @@ angular.module('lltv').controller('ChapterDetailsCtrl',
     //when user click on different chapters
 		$scope.$on('chapters', function(e, position) {
 
-      // $scope.booleanTest = function(){
-      //   if(!$scope.current_user){
-      //     if($scope.chapter.position > 1){
-      //       console.log("can't watch video unless you registered");
-      //       return false;
-      //     }else{
-      //       console.log('you may only watch the intro');
-      //       return true;
-      //     }
-      //   }else{
-      //     //this is for the registered users
-      //     console.log('test');
-      //   }
-      //
-      // }
 
 			$scope.chapter = $scope.chapters[position-1];
 			$scope.video   = $scope.chapter.video.video_url;
