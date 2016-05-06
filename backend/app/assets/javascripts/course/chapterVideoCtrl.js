@@ -7,7 +7,7 @@ angular.module('lltv').controller('ChapterVideoCtrl',
 		var chapters = course.data.chapters;
 		var chapter  = chapters[0];
 		$scope.video = chapter.video.video_url;
-		$scope.booleanTest = return true;
+		$scope.booleanTest = true;
 
 		$scope.$on('chapters', function(e, position) {
 			chapter        = chapters[position-1];
@@ -29,14 +29,14 @@ angular.module('lltv').controller('ChapterVideoCtrl',
 		          myHandler();
 		        }else{
 		          // console.log('you may only watch the intro');
-		          $scope.booleanTest = return true;
+		          $scope.booleanTest = true;
 		          myHandler();
 		        }
 		      }else{
 		        //this is for the registered users
 		        console.log('test');
 		      }
-		      
+
 		}); // end of Chapters scope.on
 
 		document.getElementById('my-video').addEventListener('ended', myHandler, false);
