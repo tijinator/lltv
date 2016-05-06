@@ -192,7 +192,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         },
         'chapterVideo@courses.show': {
           templateUrl: 'course/chapterVideo.html',
-          controller: 'ChapterDetailsCtrl'
+          controller: 'ChapterVideoCtrl'
         }
       },
       onEnter: function() {

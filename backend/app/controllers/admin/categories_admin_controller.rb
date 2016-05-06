@@ -12,6 +12,7 @@ class Admin::CategoriesAdminController < Admin::AdminController
 
 	def new
 		@category = Category.new
+		
 	end
 
 	def show

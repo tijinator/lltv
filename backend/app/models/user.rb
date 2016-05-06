@@ -55,34 +55,19 @@ class User < ActiveRecord::Base
 
 
 # STRIPE RELATED
+   # def save_with_payment
+   #    if valid?
+   #      customer = Stripe::Customer.create(description: email, plan: plan_id, source: stripe_card_token)
+   #      self.stripe_customer_token = customer.id
+   #      save!
+   #    end
+   # end
+
   def save_customer_id(id)
     if valid?
       self.stripe_customer_token = id
       save!
     end
   end
-  
-
-  # def save_with_mothly_payment(plan)
-  #   if valid?
-  #     customer = Stripe::Customer.create(email: email, description: "#{first_name} #{last_name}", source: stripe_card_token, plan: plan)
-  #     self.stripe_customer_token = customer.id
-  #     save!
-  #   end
-  # end
-
-  # def save_with_one_time_payment(amount)
-  #   if valid?
-  #     customer = Stripe::Customer.create(email: email, description: "#{first_name} #{last_name}", source: stripe_card_token)
-  #     charge = Stripe::Charge.create(
-  #       :amount => amount,
-  #       :currency => "usd",
-  #       :description => email,
-  #       :customer => customer.id
-  #     )
-  #     self.stripe_customer_token = customer.id
-  #     save!
-  #   end
-  # end
 
 end
