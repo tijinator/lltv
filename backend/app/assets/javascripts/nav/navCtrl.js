@@ -15,6 +15,7 @@ $scope.jsRun = function(userFirstName){
 
   var a = document.createElement('a');
           a.setAttribute('class','dropdown-toggle');
+          a.setAttribute('id','userFirstName');
           a.setAttribute('data-toggle','dropdown');
           a.setAttribute('style','background: none');
   // var userName = document.createTextNode($scope.user.username);
@@ -92,7 +93,6 @@ $scope.jsRun = function(userFirstName){
 
   var signedIn = function() {
       var userFirstName = currentUser.getUserObj().first_name;
-      console.log(userFirstName);
 
       var x = $scope.jsRun(userFirstName);
       $('.sign_up_in').hide();
@@ -127,8 +127,11 @@ $scope.jsRun = function(userFirstName){
   $rootScope.$on('auth:registration-email-success', function(ev, userData) {
     // alert("A registration email was sent to " + message.email);
     // console.log('Register Success: ',userData);
+    $cookieStore.remove('userObj'); //remove current userObj cookie
+    $cookieStore.put('userObj', userData); //update userObj cookie
+    // console.log(userData);
     $location.path("categories");
-    signedIn(userData);
+    signedIn();
   });
 
   $rootScope.$on('auth:validation-success', function(ev, userData) {
@@ -168,6 +171,7 @@ $scope.jsRun = function(userFirstName){
   $rootScope.$on('auth:logout-success', function(ev) {
     // console.log("LogOut Success");
     // console.log('signOut: ', ev);
+    $cookieStore.remove('userObj'); //remove current userObj cookie
     $location.path("/");
     signOut();
   });
