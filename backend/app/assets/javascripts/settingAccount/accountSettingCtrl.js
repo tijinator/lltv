@@ -15,7 +15,7 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
   //get current email on page load
   var userObj = currentUser.getUserObj(); //get currentUser object
 
-  console.log(userObj);
+  // console.log(userObj);
 
   $scope.userEmail = userObj.email; //send current email to update form
 
@@ -34,6 +34,8 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
          // handle success response
          var successMsg = 'Success! Info updated';
          var elementID = 'updateInfoMsg';
+         var name = resp.data.data.first_name;
+         document.getElementById('userFirstName').innerHTML = name; //update first name on spot!
          createMsgDiv(successMsg, elementID);
        })
        .catch(function(resp) {

@@ -1,4 +1,4 @@
-angular.module('lltv').controller('ChapterDetailsCtrl', 
+angular.module('lltv').controller('ChapterDetailsCtrl',
 ['$scope',
  'course',
   function($scope, course) {

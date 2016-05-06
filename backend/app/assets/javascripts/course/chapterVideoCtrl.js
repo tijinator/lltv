@@ -1,4 +1,4 @@
-angular.module('lltv').controller('ChapterVideoCtrl', 
+angular.module('lltv').controller('ChapterVideoCtrl',
 ['$scope',
  'course',
  'currentUser',
@@ -49,7 +49,7 @@ angular.module('lltv').controller('ChapterVideoCtrl',
 			AuthService.openModal('unlockVideo');
 		}
 
-} //end of function	
+} //end of function
 ]).filter('trusted', ['$sce', function ($sce) {
     return function(url) {
         return $sce.trustAsResourceUrl(url);
