@@ -1,13 +1,19 @@
 class User < ActiveRecord::Base
+  has_many :orders
+  has_many :courses
+  has_many :course_permissions
+
   # Include default devise modules.
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
          # :confirmable
-          
+
   include DeviseTokenAuth::Concerns::User
+  attr_accessor :stripe_card_token
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  # devise :database_authenticatable, :registerable, 
+  # devise :database_authenticatable, :registerable,
   #         :recoverable, :rememberable, :trackable, :validatable
 
   # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
@@ -16,7 +22,7 @@ class User < ActiveRecord::Base
   before_create :set_username
   # before_save :set_username
   before_save { self.email = email.downcase }
-  
+
   def set_username
     username ? self.username = username : self.username = self.email.split('@').first
   end
@@ -42,8 +48,41 @@ class User < ActiveRecord::Base
     if self.first_name && self.last_name
       return self.first_name + " " + self.last_name
     end
-    return self.first_name if self.first_name
-    return self.last_name if self.last_name
+      return self.first_name if self.first_name
+      return self.last_name if self.last_name
     nil
   end
+
+
+# STRIPE RELATED
+  def save_customer_id(id)
+    if valid?
+      self.stripe_customer_token = id
+      save!
+    end
+  end
+  
+
+  # def save_with_mothly_payment(plan)
+  #   if valid?
+  #     customer = Stripe::Customer.create(email: email, description: "#{first_name} #{last_name}", source: stripe_card_token, plan: plan)
+  #     self.stripe_customer_token = customer.id
+  #     save!
+  #   end
+  # end
+
+  # def save_with_one_time_payment(amount)
+  #   if valid?
+  #     customer = Stripe::Customer.create(email: email, description: "#{first_name} #{last_name}", source: stripe_card_token)
+  #     charge = Stripe::Charge.create(
+  #       :amount => amount,
+  #       :currency => "usd",
+  #       :description => email,
+  #       :customer => customer.id
+  #     )
+  #     self.stripe_customer_token = customer.id
+  #     save!
+  #   end
+  # end
+
 end

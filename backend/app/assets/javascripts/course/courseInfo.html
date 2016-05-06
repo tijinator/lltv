@@ -1,3 +1,4 @@
+<div style="width: 100%; height: 95px;"></div><!-- add height behind navbar-->
 <div class="col-md-12">
   <div class="row course-info-content">
     <div class="col-md-4">
@@ -21,7 +22,7 @@
             </div>
             <div class='course-info-dynamic-ldr'>
               <ul>
-                <li>{{ course.level | capitalize }}</li>
+                <li>{{ course.level }}</li>
                 <li>{{ course.duration }}</li>
                 <!-- <li>{{ course.released_on }}</li> -->
                 <li> 25/15/2015 </li>
@@ -29,11 +30,9 @@
             </div>
             <br>
           </div>
-          <div class='course-profile'>
+          <!-- <div class='course-profile'>
             <div class='course-profile-img'>
-                <!-- <img src="/assets/{{course.author.avatar_file_name }}"> -->
                 <img src="/assets/{{course.author.avatar_file_name }}">
-                <!-- <img src="/assets/default_avatar.png"> -->
             </div>
             <div class="course-profile-info">
               <i class="fa fa-facebook-official"></i>
@@ -45,7 +44,7 @@
             <i class="fa fa-twitter"></i>
             <i class="fa fa-linkedin"></i>
             <i class="fa fa-google-plus-square"></i>
-          </div>
+          </div> -->
         </div> <!-- end of row course-info-row-->
       </div> <!-- end of col-md-12 -->
     </div> <!-- end of col-md-4 -->
@@ -61,12 +60,12 @@
         <div class="row course-chapter-search">
           <p>
             <a class="search-field" ng-click="search_title = !search_title" href="">
-              <i class="fa fa-search"></i>
+              <i class="fa fa-search" style="font-size: 18px;"></i>
               <span ng-show="!search_title"> search this course </span>
             </a>
 
             <span ng-show="search_title" class='blinking-cursor'>
-              <input name='search' type="text"  placeholder='search...'/>
+              <input name='search' type="text"/>
             </span>
           </p>
         </div>
@@ -75,9 +74,9 @@
             <span class="exp-coll-all">
               <a href="#" id="exp-all" ng-click="expAll()">expand all</a>
             </span>
-            <span class="exp-coll-all">
+            <!-- <span class="exp-coll-all">
               <a href="#" id="coll-all" ng-click="collAll()">collapse all</a>
-            </span>
+            </span> -->
           </h6>
         </div>
 
@@ -87,9 +86,9 @@
             <div class="chapter-index-row" ng-repeat='chapter in course.chapters'>
               <div class="chapter-index-element" ng-click="chapter_title = !chapter_title">
                   <span id='chapter_position'> ch {{chapter.position}} </span>
-                  <span>{{chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</span>
-                  <span class="glyphicon glyphicon-menu-up" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="chapter_title"></span>
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="!chapter_title"></span>
+                  <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</span>
+                  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="chapter_title"></span>
+                  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="!chapter_title"></span>
               </div>
           </a>
 

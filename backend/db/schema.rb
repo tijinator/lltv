@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216163404) do
+ActiveRecord::Schema.define(version: 20160422142106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,10 +21,6 @@ ActiveRecord::Schema.define(version: 20160216163404) do
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -35,10 +31,6 @@ ActiveRecord::Schema.define(version: 20160216163404) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.string   "html_tab_id"
     t.string   "html_tab_color"
     t.string   "html_color"
@@ -55,39 +47,44 @@ ActiveRecord::Schema.define(version: 20160216163404) do
   create_table "chapters", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
-    t.string   "title",              null: false
-    t.text     "details",            null: false
+    t.string   "title",      null: false
+    t.text     "details",    null: false
     t.integer  "duration"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_index "chapters", ["details"], name: "index_chapters_on_details", using: :btree
   add_index "chapters", ["title"], name: "index_chapters_on_title", using: :btree
 
+  create_table "course_permissions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean  "active"
+    t.integer  "order_id"
+    t.datetime "order_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "courses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "author_id"
     t.string   "level"
-    t.string   "title",                              null: false
-    t.text     "details",                            null: false
+    t.string   "title",                       null: false
+    t.text     "details",                     null: false
     t.integer  "duration"
     t.integer  "position"
-    t.boolean  "published",          default: false, null: false
+    t.boolean  "published",   default: false, null: false
     t.datetime "released_on"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.string   "banner_url"
-    t.boolean  "featured",           default: false, null: false
+    t.boolean  "featured",    default: false, null: false
+    t.datetime "released"
   end
 
   add_index "courses", ["details"], name: "index_courses_on_details", using: :btree
@@ -115,6 +112,23 @@ ActiveRecord::Schema.define(version: 20160216163404) do
   add_index "item_tags", ["taggable_id", "taggable_type", "tag_id"], name: "item_tags_index", unique: true, using: :btree
   add_index "item_tags", ["taggable_type", "tag_id"], name: "item_type_tags_index", using: :btree
 
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zipcode"
+    t.integer  "status"
+    t.integer  "order_total_amount"
+    t.integer  "tax_amount"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
@@ -123,10 +137,6 @@ ActiveRecord::Schema.define(version: 20160216163404) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_index "tags", ["tagable_type", "tagable_id"], name: "index_tags_on_tagable_type_and_tagable_id", using: :btree
@@ -156,10 +166,7 @@ ActiveRecord::Schema.define(version: 20160216163404) do
     t.json     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.string   "stripe_customer_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

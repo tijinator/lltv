@@ -1,5 +1,4 @@
 class Admin::IndexAdminController < Admin::AdminController
-  include RolesHelper
 
   before_action :admin_nav_setup
   before_action :user_signed_in?
@@ -8,11 +7,12 @@ class Admin::IndexAdminController < Admin::AdminController
 
   def home
     if current_user
-      if current_user.role >= RolesHelper.code('Superuser')
-        users
-      else
-        courses
-      end
+      dashboard
+      # if current_user.role >= RolesHelper.code('Superuser')
+      #   users
+      # else
+      #   courses
+      # end
     else
       @user = User.new
       render 'users/sessions/new', layout: 'admin'

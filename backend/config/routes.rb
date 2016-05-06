@@ -1,34 +1,46 @@
 Rails.application.routes.draw do
-  
 
   # token auth routes available at /api/v1/auth
   namespace :api do
     scope :v1 do
-      mount_devise_token_auth_for 'User', at: 'auth'
+      mount_devise_token_auth_for 'User', at: 'auth', controllers: {
+        registrations: 'devise_token/registrations'
+      }
     end
   end
 
-
   # Subdomains -
-  constraints subdomain: 'admin' do
+  # constraints subdomain: 'admin.beta' do
+  constraints subdomain: 'admin.beta' do
 
-    resources :chapters, controller: 'admin/chapters_admin'
-    
+    resources :videos, controller: 'admin/videos_admin'
+
+    # Category -> Course
     resources :categories, controller: 'admin/categories_admin' do
-      resources :courses, controller: 'admin/courses_admin' do
-      end
+      resources :courses, controller: 'admin/courses_admin'
     end
+
+    # Course -> Chapter
+    resources :courses, controller: 'admin/courses_admin' do
+      resources :chapters, controller: 'admin/chapters_admin', except: :index
+    end
+    
+
+    # Chapter -> Video
+    resources :chapters, controller: 'admin/chapters_admin', except: :index do
+      resources :videos, controller: 'admin/videos_admin'
+    end
+
 
     # devise_for :users
     devise_for :users, controllers: {
-      sessions:      'users/sessions',
-      registrations: 'users/registrations'  
+      sessions:      'users/sessions'
     }
 
     # User Table related
     resources :users, controller: 'admin/user_admin'
 
-    get '/' => 'admin/index_admin#home'
+    get '/'          => 'admin/index_admin#home'
     get '/dashboard' => 'admin/index_admin#dashboard'
     # get '/categories' => 'admin/category_admin#index'
 
@@ -37,16 +49,19 @@ Rails.application.routes.draw do
     # get '/courses' => 'admin#courses'
     # get '/courses/:id' => 'admin#show_course'
 
-    # resources :courses, controller: 'admin/course_admin' do
-    #   resources :chapters, controller: 'admin/chapter_admin' do
-    #     member do
-    #       put '/update_published_status' => 'admin/chapter_admin#update_published_status'
-    #     end
+    resources :courses, controller: 'admin/courses_admin'
+
+    # Trash routes dnt delete it yet...
+    # resources :courses, controller: 'admin/courses_admin' do
+    #   resources :chapters, controller: 'admin/chapters_admin' do
+    #   #   member do
+    #   #     put '/update_published_status' => 'admin/chapters_admin#update_published_status'
+    #   #   end
     #   end
 
-    #   member do
-    #     put '/update_published_status' => 'admin/course_admin#update_published_status'
-    #   end
+    #   #   member do
+    #   #     put '/update_published_status' => 'admin/course_admin#update_published_status'
+    #   #   end
     # end
 
   end
@@ -63,7 +78,8 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :courses, only: :show
+    resources :courses, controller: 'courses', only: [:index, :show]
+    # get 'courses' => 'api/courses#index'
   end
 
   get '/courses' => 'home#home'
@@ -71,6 +87,8 @@ Rails.application.routes.draw do
 
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
+
+  get '/users/:user_id' => 'home#home'
 
   root to: 'home#home'
 end

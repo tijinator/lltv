@@ -10,11 +10,14 @@
 //= require angular-rails-templates
 //= require angular-ui-router
 //= require angular-bootstrap
+//= require ng-country-select
 //= require_tree .
+//= stub payment
 //= stub metisMenu
 //= stub raphael
 //= stub morrisjs
 //= stub datatables
 //= stub startbootstrap-sb-admin-2
 //= stub video.js/dist/video
-//= require homepage_colored_bar_scroll.js
+//= require lang/en_US/bootstrap-formhelpers-countries.en_US
+//= require bootstrap-formhelpers-countries

@@ -1,0 +1,359 @@
+<div class="row" style="height: 100%; margin: 0;">
+
+  <div class="payment-step-container">
+    <div class="row" style="margin: 0;">
+      <div>
+        <img src="/images/LLTV_x.png" class="close-unlock pull-right" ng-click="close()">
+      </div>
+    </div>
+
+    <div class="col-sm-12 slide payment-option active-slide" style="height: 100%; padding: 0;">
+
+      <div class="row" style="margin: 0;">
+        <h1 class="payment-option-title">Discover a library of courses, right at your fingertips.</h1>
+      </div>
+
+      <div class="row" style="margin: 0;">
+        <div class="col-sm-8 col-sm-offset-2" style="padding: 0; width: 67%; margin-left: 20%; width: 850px;">
+          <div class="row" style="margin: 0;">
+
+            <div class="col-sm-5 monthly-box" style="padding: 0;">
+              <div class="row" style="margin: 0;">
+                <p class="price-title">monthly</p>
+              </div>
+
+              <div class="row" style="margin: 0;">
+                <div class="price-item-container">
+                  <!-- <span>$39<sup>.99/month</sup></span> -->
+
+                  <span class="pricing-dollar">$39</span>
+                  <span class="change-container">
+                      <sup class="price-change"><span>.99</span> / month</sup>
+                  </span>
+                </div>
+              </div>
+
+              <div class="row" style="margin: 0;">
+                <div class="price-list">
+                  <ul>
+                    <li>4,500+ courses</li>
+                    <li>new courses added daily</li>
+                    <li>unlimited viewing</li>
+                    <li>learning paths</li>
+                    <li>courser discussion forums</li>
+                    <li>mobile and offline viewing</li>
+                    <li>downloadable exercise files</li>
+                    <li>course learning checks</li>
+                    <li>course completion certificates</li>
+                  </ul>
+
+                </div>
+
+              </div>
+
+              <div class="row" style="margin: 0;">
+                <div id='subscription-btn' class="bubble-btn submit-btn subscribe-now-btn text-center">
+                   subscribe now
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-5 onetime-box" style="padding: 0;">
+              <div class="row" style="margin: 0;">
+                <p class="price-title">single purchase</p>
+              </div>
+
+              <div class="row" style="margin: 0;">
+                <div class="price-item-container">
+                  <!-- <span>$39<sup>.99/month</sup></span> -->
+
+                  <span class="pricing-dollar">$12</span>
+                  <span class="change-container">
+                      <sup class="price-change"><span>.99</span> / video</sup>
+                  </span>
+                </div>
+              </div>
+
+              <div class="row" style="margin: 0;">
+                <div id='onetime-btn' class="bubble-btn switch-btn subscribe-now-btn text-center">
+                  purchase video
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- end payment-option slide -->
+
+    <div class="col-sm-12 slide payment-form" style="height: 100%; padding: 0;">
+
+      <div class="row" style="margin: 0;">
+        <h1 class="payment-form-title">subscribe to us</h1>
+      </div><!-- end of row -->
+
+      <div class="row" style="margin: 0;">
+        <div class="col-sm-8 col-sm-offset-2" style="padding: 0; width: 67%; margin-left: 20%;">
+
+
+
+          <div class="row" style="margin: 0;">
+            <div class="col-sm-12" style="padding: 0;">
+
+
+              <form id="credit-format" class="credit-form" ng-submit="submitPaymentRegistration(registerForm, paymentForm)" role="form" ng-init="registerForm = {}; paymentForm = {} ">
+
+                <div ng-if="!user.signedIn" class="auth-body">
+                  <div class="row" style="margin: 0;">
+                    <p class="payment-step"> step 1 <span>create account</span></p>
+                  </div>
+
+                  <div class="col-sm-6" style="padding: 0;">
+                    <div class="form-group">
+                      <label>email</label>
+                      <input type="email" name="email" ng-model="registerForm.email" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                    <div class="form-group">
+                      <label>first name</label>
+                      <input type="text" name="first_name" ng-model="registerForm.first_name" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                    <div class="form-group">
+                      <label>last name</label>
+                      <input type="text" name="last_name" ng-model="registerForm.last_name" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6" style="padding: 0;">
+                    <div class="form-group">
+                      <label>username</label>
+                      <input type="text" name="username" ng-model="registerForm.username" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                    <div class="form-group">
+                      <label>password</label>
+                      <input type="password" name="password" ng-model="registerForm.password" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                    <div class="form-group">
+                      <label>confirm password</label>
+                      <input type="password" name="password_confirmation" ng-model="registerForm.password_confirmation" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="auth-body">
+                  <div ng-if="!user.signedIn" class="col-sm-12" style="padding: 0; margin-bottom: 50px;">
+                      <p class="payment-step">step 2 <span>billing information</span></p>
+                  </div><!-- end col-sm-12 -->
+
+                  <div class="col-sm-6" style="padding: 0;">
+                    <div class="form-group">
+                      <label>cardholder first name</label>
+                      <input type="text" name="first_name" ng-model="paymentForm.first_name" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>cardholder last name</label>
+                      <input type="text" name="last_name" ng-model="paymentForm.last_name" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>country</label>
+                      <div class="row" style="margin: 0;">
+                        <div class="country-dropdown"><country-select class="country-dropdown-menu" cs-priorities="US" ng-model="paymentForm.country" cs-required></country-select></div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label>address</label>
+                      <input type="text" name="address" ng-model="paymentForm.address" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>city</label>
+                      <input type="text" name="city" ng-model="paymentForm.city" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>state</label>
+                      <input type="text" name="state" ng-model="paymentForm.state" required="required" class="form-control" ng-required="true"/>
+                    </div>
+                  </div><!-- end col-sm-6 -->
+
+                  <div class="col-sm-6" style="padding: 0;">
+                    <div class="form-group">
+                      <label>zipcode</label>
+                      <input type="text" name="zipcode" ng-model="paymentForm.zipcode" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>card number</label>
+                      <input type="text" id="card_number" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>ccv</label>
+                      <input type="text" id="card_code" required="required" class="form-control" ng-required="true"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label>expiration date</label>
+                      <!-- <input type="text" name="ccv" ng-model="paymentForm.ccv" required="required" class="form-control" ng-required="true"/> -->
+                      <div class="row" style="margin: 0;">
+
+                        <div class="form-group month-select" style="margin: 0; margin-right: 20px;">
+                          <select class="form-control select-style" id="card_month" style="width: 150px;">
+                              <option value="01">January</option>
+                              <option value="02">February</option>
+                              <option value="03">March</option>
+                              <option value="04">April</option>
+                              <option value="05">May</option>
+                              <option value="06">June</option>
+                              <option value="07">July</option>
+                              <option value="08">August</option>
+                              <option value="09">September</option>
+                              <option value="10">October</option>
+                              <option value="11">November</option>
+                              <option value="12">December</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group year-select" style="margin: 0;">
+                          <select class="form-control select-style" id="card_year" style="width: 150px;">
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                          </select>
+                        </div>
+
+
+                      </div>
+                    </div>
+
+                    <div class="row" style="margin: 0;">
+                      <div class="agreement-container">
+                        <p class="small-print-agreement">
+                          some important bits from our license agreement, in non-lawyer terms: this
+                          is a single-user license; you may not share it with anyone else.  you may only
+                          view the library using the players we provide, including both our web-based
+                          players and our mobile apps. this is trademarked material, and may not be
+                          copied, modified, or shared in any way. please read the full text of our
+                          terms of use for more detail.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="row" style="margin: 0;">
+                      <div id='back-btn' class="bubble-btn switch-btn subscribe-btn text-center">
+                        Back
+                      </div>
+
+                      <!-- <div class="bubble-btn submit-btn subscribe-btn submit-payment-btn text-center"> -->
+                      <div>
+                          <button type='submit' id='form-submit-btn' class="bubble-btn submit-btn subscribe-btn submit-payment-btn text-center">submit</button>
+                      </div>
+                    </div>
+                  </div><!-- end col-sm-6 -->
+
+                  <!-- <div class="col-md-6 auth-left-column">
+
+                  </div>  -->
+                </div>
+
+              </form><!-- end form credit-form-->
+            </div><!-- end col-sm-12 -->
+          </div><!-- end row -->
+
+        </div><!-- end col-sm-8 col-sm-offset-2 -->
+      </div>
+
+    </div><!-- end payment form -->
+
+  </div><!-- end payment-step-container -->
+
+</div> <!-- end row -->
+
+
+<script>
+  //fade in/out animation
+
+  var fadeFunc = function(current, target){
+    current.fadeOut("slow").removeClass("active-slide");
+    target.fadeIn("slow").addClass("active-slide");
+  }
+
+  var addInput = function(name, value){
+
+    // var input = document.createElement("input");
+    // function setAttributes(el, options) {
+    //    Object.keys(options).forEach(function(attr) {
+    //      el.setAttribute(attr, options[attr]);
+    //    })
+    // }
+
+// <input id='hidden-input' type='hidden' name='randomm' ng-init='paymentForm.charge = 1299'>
+// setAttributes(input, {"id": "hidden-input", "type": "hidden", "name": name, "ng-init": "paymentForm.charge = 12345" });
+
+
+    // var form = document.getElementById('credit-format');
+    // form.appendChild(input);
+    // console.log(input);
+    // $('.form-group')[12].appendChild(input);
+  }
+
+  $("#back-btn").click(function(){
+    var $currentSlide = $(".active-slide");
+    var $targetSlide = $(".payment-option");
+
+    fadeFunc($currentSlide, $targetSlide);
+  });
+
+  $("#subscription-btn").click(function(){
+
+    var $currentSlide = $(".active-slide");
+    var $targetSlide = $(".payment-form");
+
+    fadeFunc($currentSlide, $targetSlide);
+
+    var name = "subscription-amount";
+    var value = "3999"
+    // addInput(name, value);
+
+
+    $('#subscription-btn').scope().mothlySubscription(value);
+    // $('#subscription-btn').scope().$apply();
+  });
+
+  $("#onetime-btn").click(function(){
+
+
+    var $currentSlide = $(".active-slide");
+    var $targetSlide = $(".payment-form");
+
+    fadeFunc($currentSlide, $targetSlide);
+
+    var name = "onetime-amount";
+    var value = "1299"
+    // addInput(name, value);
+
+    $('#onetime-btn').scope().oneTimePurchase(value);
+    // $('#onetime-btn').scope().$apply();
+  });
+  // end of fade in/out animation
+
+  //remove signup form if user has already registered
+  // if(userBoolean){
+  //   document.getElementById("signup-row").style.display="none";
+  //   document.getElementById("payment-step-row").style.display="none";
+  // }
+  //end of if statement
+
+</script>

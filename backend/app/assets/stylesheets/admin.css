@@ -3,11 +3,26 @@
   *= require metisMenu/dist/metisMenu.css
   *= require startbootstrap-sb-admin-2/dist/css/sb-admin-2.css
   *= require font-awesome/css/font-awesome.min.css
+  *= require font-awesome/css/font-awesome
   *= require datatables
   *= require video.js/dist/video-js
 */
 
-.table { display: table; } 
+body{
+  font-family: avenir-black;
+  font-size: 12px;
+}
+
+.edit-btn, .delete-btn{ 
+  font-size: 12px;
+}
+
+.delete-btn{
+  background-color: #545859;
+  border-color: #545859;
+}
+
+.table { display: table; }
 .table>* { display: table-row; }
 .table>*>* { display: table-cell; }
 

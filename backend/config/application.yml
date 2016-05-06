@@ -1,0 +1,30 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+
+# development:
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: STRIPE_PUBLISHABLE_KEY
+#   stripe_publishable_key: STRIPE_PUBLISHABLE_KEY
+
+# development:
+AWS_ACCESS_KEY_ID: 
+AWS_SECRET_ACCESS_KEY: 
+S3_BUCKET: lltv-demo
+AWS_REGION: us-east-1
+
+
+STRIPE_API_KEY: sk_test_oC9c9iPeUASff9QRSfg3iS3o
+STRIPE_PUBLISHABLE_KEY: pk_test_Rdz3fhwNvfxJcfv4Y9f0DezY
+
+
+#Devise
+DEVISE_SECRET_KEY: 8c645e884da67c5d7701e1ea56801eada80b4b0ce278fbf8bc52181521de936bee21b07db2d53cf92d85b39486b043166b66c826bfcaee86d4dd8768ced29432
+
+#Production
+SECRET_KEY_BASE: Home_test123

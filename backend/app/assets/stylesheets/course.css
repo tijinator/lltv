@@ -265,7 +265,7 @@
 	font-family: Avenir-Book;
 	font-size: 15px;
 	line-height: 30px;
-	color: #FFF
+	color: #FFF;
 }
 
 .tab-content{
@@ -276,7 +276,7 @@
 }
 
 .tab-inner-panel{
-	font-family: Avenir-Black;
+	font-family: Avenir-Book;
 	font-size: 13px;
 	color: #FFF;
 }
@@ -310,7 +310,12 @@
 }
 
 #chapter_position{
-	margin-right: 66%;
+	margin-right: 62%;
+}
+
+#chapter_duration{
+	margin-right: 20px;
+	color: #787D7F;
 }
 
 @media screen and (max-width: 1230px) {
@@ -339,13 +344,13 @@
 
 .chapter-index-element.index-title-row {
 	background: black;
-    padding: 10px 20px;
-    margin: 14px 0 0px 0;
-    color: #787D7F;
-    border-top: 1px solid #353A3D;
-    border-bottom: 1px solid #353A3D;
-    width: 100%;
-    height: 50px;
+  padding: 10px 20px;
+  margin: 14px 0 0px 0;
+  color: #787D7F;
+  border-top: 1px solid #353A3D;
+  border-bottom: 1px solid #353A3D;
+  width: 100%;
+  min-height: 50px;
 }
 
 .chapter-index-element.index-title-row a{

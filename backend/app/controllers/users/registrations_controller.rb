@@ -9,7 +9,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
-  #   super
+  #   super do |res|
+  #   puts "*"*100
+  #   puts "ROVSHEN"
+  #   puts "*"*100 
+  #   res
+  #   end
   # end
 
   # GET /resource/edit
@@ -57,4 +62,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
 end

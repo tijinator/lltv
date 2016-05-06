@@ -1,7 +1,11 @@
+/*main category css*/
+
 .featured-course {
   position: relative;
   background-color: #000000;
   color: #FFFFFF;
+  padding: 0;
+  height: 286px; /*it was 350px*/
 }
 
 .featured-course .course-banner {
@@ -14,31 +18,111 @@
 }
 
 .featured-course-content {
-  clear: both;
-  margin-top: 50px;
+  padding: 0;
+  width: 30%;
+  height: 100%;
+}
+
+.featured-course-banner-container{
+  width: 70%;
+  padding: 0;
+  height: 100%;
 }
 
 .featured-course-tag {
-  padding: 10px;
   text-transform: uppercase;
-  vertical-align: middle;
   font-size: 15px;
-  margin-left: 20px;
+  margin-top: 10px;
+  margin-right: 50px;
+  font-family: Avenir-black;
+  background-color: rgba(26, 157, 7, 0.78);
 }
 
 .featured-course-data {
-  padding: 20px 20px 30px 20px;
+  /*padding: 20px 20px 30px 20px;*/
+  padding: 0;
 }
 
 .featured-course-title {
-  word-spacing: 9999999999999999px;
+  /*word-spacing: 9999999999999999px;*/
   text-transform: capitalize;
   font-size: 30px;
   font-weight: bold;
+  font-family: avenir-black;
+  margin: 15px 50px 15px 50px;
+}
+
+.featured-course-title h1{
+  margin: 0;
 }
 
 .featured-course-details {
-  line-height: 20px;
-  margin: 20px 0px;
+  line-height: 30px;
+  margin: 0 50px;
   font-size: 15px;
+  font-family: avenir-book;
+}
+
+.featured-course-details p{
+  margin: 0;
+}
+
+.featured-course-img{
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+
+/*responsive design*/
+@media (max-width: 992px){
+  .featured-course-title h1{
+    font-size: 30px;
+  }
+  .featured-course-details {
+    /*display: none;*/
+    /*font-size: 10px;*/
+  }
+
+  .featured-course-content { float: left;}
+
+  .featured-course-banner-container{ float: left;}
+}
+
+@media (max-width: 1200px){
+  .featured-course-details {
+    font-size: 13px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 1068px){
+  .featured-course-title h1{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 894px){
+  .featured-course-details {
+    line-height: 19px;
+  }
+}
+
+@media (max-width: 811px){
+  .featured-course-details {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 737px){
+  .featured-course-title {
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 737px){
+  .featured-course-title h1{
+    font-size: 22px;
+  }
 }

@@ -1,3 +1,4 @@
 class Video < ActiveRecord::Base
-	belongs_to :chapters
+	mount_uploader :video_url, VideoUploader
+	belongs_to :chapter
 end

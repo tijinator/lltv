@@ -12,4 +12,13 @@
 !/log/.keep
 /tmp
 /node_modules
+
+# Uploads
 /public/uploads
+/public/videos
+
+
+# Ignore application configuration
+/config/application.yml
+/config/dropbox.yml
+/config/secrets.yml

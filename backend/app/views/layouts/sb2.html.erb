@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>LLTV Admin</title>
- <meta name="robots" content="noindex, nofollow">
- <%= stylesheet_link_tag  'admin' %>
- <%= javascript_include_tag 'admin' %>
- <%= csrf_meta_tags %>
+  <title>LLTV Admin</title>
+  <meta name="robots" content="noindex, nofollow">
+  <%= stylesheet_link_tag  'admin' %>
+  <%= javascript_include_tag 'admin' %>
+  <%= javascript_include_tag 'https://js.stripe.com/v2/', type: 'text/javascript' %>
+  <%= tag :meta, name: "stripe-key", content: ENV['STRIPE_PUBLISHABLE_KEY'] %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
     <div id="wrapper">
@@ -45,7 +47,10 @@
               </div>
             </li> -->
             <li>
-              <a href="/dashboard"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+              <a href="/categories"><i class="fa fa-play fa-fw" style="margin-right: 20px;"></i>Categories</a>
+            </li>
+            <li>
+              <a href="/dashboard"><i class="fa fa-dashboard fa-fw" style="margin-right: 20px;"></i>Dashboard</a>
             </li>
 <!--             <li>
               <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -57,13 +62,13 @@
                   <a href="morris.html">Morris.js Charts</a>
                 </li>
               </ul>
-            </li>
- -->            <li>
-              <a id="users" href="/users"><i class="fa fa-table fa-fw"></i>Users</a>
+            </li>-->
+            <li>
+              <a href="/users"><i class="fa fa-table fa-fw" style="margin-right: 20px;"></i>Users</a>
             </li>
             <li>
-              <a href="/courses"><i class="fa fa-sitemap fa-fw"></i>Courses<span class="fa arrow"></span></a>
-              <%#= render( partial: 'admin/shared/chapter_dropdown', locals: { courses: @courses, level: @level }) %>
+              <a href="/courses"><i class="fa fa-sitemap fa-fw" style="margin-right: 20px;"></i>Courses<span class="fa arrow"></span></a>
+              <%= render( partial: 'admin/shared/chapter_dropdown', locals: { courses: @courses, level: @level }) %>
             </li>
           </ul>
         </div>
@@ -73,11 +78,26 @@
     </nav>
     <div id="page-wrapper" style="min-height: 761px;">
 
-      <ul>
-        <li> <%= link_to 'Categories', categories_path %> </li>
-        <li> <%= link_to 'Chapters', chapters_path %> </li>
-      </ul>
+      <!-- <div class="row" style="margin: 0;">
+        <div class="well" style="margin-top: 20px;">
+          <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="/dashboard"><%= current_user.email %></a></li>
+            <li role="presentation" class="active"><%= link_to 'Categories', categories_path %></li>
+          </ul>
+        </div>
+      </div> -->
 
+      <!-- <script>
+      $('.nav-pills li').click(function(e) {
+        $('.nav-pills li.active').removeClass('active');
+        var $this = $(this);
+        if (!$this.hasClass('active')) {
+            $this.addClass('active');
+        }
+        e.preventDefault();
+      });
+      </script> -->
+      <!-- <hr> -->
       <%= yield %>
     </div>
   </div>

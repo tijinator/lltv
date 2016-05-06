@@ -1,7 +1,7 @@
 <nav ng-class="{'homepage-nav': isActive('/')}" class="navbar navbar-fixed-top" role="navigation">
  	<div class="container" style="position: relative; top: 0; left: 0">
 
- 		<a class="navbar-brand" ng-href="/"><img ng-src="{{'images/LLTV_logo.png'}}" style="position: absolute; top: 25px; left: 48px"/></a>
+ 		<a class="navbar-brand" ng-href="/"><img  class="logo-img" ng-src="{{'images/LLTV_logo_platform@2x_white.png'}}" style="position: absolute; top: 25px; left: 48px"/></a>
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
 	        <span class="sr-only">Toggle navigation</span>
@@ -14,27 +14,22 @@
 	    <div class="collapse navbar-collapse pull-right homepage-nav-links" id="navbarCollapse">
 	      <ul class="nav navbar-nav">
 	        <li ui-sref-active="">
-	            <a ui-sref="categories.show"><img ng-src="{{'images/LLTV_searchicon.png'}}"></a>
-	            <a class="nav-search-text" ui-sref="categories.show">Search</a>
-      		</li>
+            <a ui-sref="categories.show"><img ng-src="{{'images/LLTV_searchicon@2x.png'}}" style="height: 17px; width: 17px;"></a>
+            <a class="nav-search-text" ui-sref="categories.show">Search</a>
+          </li>
 	        <!-- <li><a ui-sref="category.show({id: 3})">Browse</a></li> -->
-	        <li><a href="/categories">Browse</a></li>
+	        <li><a ui-sref="categories.show">Browse</a></li>
           	<!-- <li class="dropdown-toggle" ng-click='signedIn()'> Call me </li> -->
           	<li id='signedIn'></li>
 
-          	<!-- <li id='signedIn'>
-          		<div ng-click='jsRun()'> jsRun</div>
-          	</li> -->
-          	
     			<li ng-controller="AuthModalCtrl" class='sign_up_in'>
     				<div ng-click="openModal(signin)">Sign In</div>
     			</li>
     			<li id="sign-up-bubble" ng-controller="AuthModalCtrl" class='sign_up_in'>
     				<div class="" ng-click="openModal('register')">Sign Up</div>
     			</li>
-			
-			<!-- <li ng-show='true'><div ng-click="signOut()">Sign Out</div></li> -->
 	      </ul>
+			<!-- <li ng-show='true'><div ng-click="signOut()">Sign Out</div></li> -->
 	    </div>
 
       <!-- <div class="icon-menu">

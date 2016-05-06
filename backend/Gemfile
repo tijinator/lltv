@@ -31,17 +31,18 @@ gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-facebook'
 # gem 'pundit'  Model Level Policies, don't think necessary now
 
-
-gem 'carrierwave'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'mini_magick'
+gem 'carrierwave'
+gem 'carrierwave-aws'
 
 # Figaro to hide secret keys
 gem 'figaro', '~> 1.1'
 
 
-# gem 'paperclip'
 # gem 'aws-sdk-v1'
-gem 'aws-sdk', '~> 2'
+# gem 'aws-sdk', '~> 2'
+
 gem 'elastic_transcoder'
 gem 'active_model_serializers'
 
@@ -49,6 +50,8 @@ gem 'ancestry'
 gem 'numbers_and_words'
 
 gem 'puma'
+
+gem 'bootstrap-form-helpers-rails', :git => 'https://github.com/johnu/bootstrap-form-helpers-rails.git'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

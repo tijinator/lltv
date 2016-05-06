@@ -6,6 +6,11 @@ development:
   # username: user_name
   # password:
 
+# production:
+#  host: localhost
+#  adapter: postgresql
+#  database: lltv
+
  # development:
  #   adapter: postgresql
  #   host: 192.168.3.3

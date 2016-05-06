@@ -5,9 +5,11 @@ angular.module('lltv', [
 'ipCookie',
 'ng-token-auth',
 'lltvFilters',
+'countrySelect',
 'ngAnimate'])
-.constant('baseUrl', 'http://beta.learninglibrary.tv')
-//.constant('baseUrl', 'http://localhost:3000')
+// .constant('baseUrl', 'http://beta.learninglibrary.tv')
+// .constant('baseUrl', 'http://localhost:3000')
+.constant('baseUrl', 'http://lvh.me:3000')
 .config([
 'baseUrl',
 '$stateProvider',
@@ -57,6 +59,36 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
     //     $('#lltv-app-content').show();
     //   }
     // })
+    // .state('profileUsername',{
+    //   url: '/user/:username',
+    //   views: {
+    //     templateUrl: 'profile/profileLayout.html',
+    //     controller: 'profileUsernameCtrl'
+    //   },
+    //   onEnter: function() {
+    //     $('#landing-homepage').hide();
+    //     $('#lltv-app-content').show();
+    //   }
+    // })
+    .state('profileUsername', {
+      templateUrl: 'profile/profileLayout.html',
+    })
+    .state('profileUsername.show',{
+      url: '/users/:username',
+      views: {
+        profileSideBar: {
+          templateUrl: 'profile/profileSideBar.html',
+          controller: 'profileUsernameCtrl'
+        },
+        // profileVideoHistory: {
+        //   templateUrl: 'profile/profileVideoHistory.html',
+        // }
+      },
+      onEnter: function() {
+        $('#landing-homepage').hide();
+        $('#lltv-app-content').show();
+      }
+    })
     .state('categories', {
       templateUrl: 'categories/categoriesLayout.html',
     })

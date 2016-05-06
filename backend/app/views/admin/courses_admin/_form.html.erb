@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-1">
+    <div class="row">
+      <div>
+        <%= form_for (@course), url: url do |f| %>
+
+          <div class="form-group">
+            <%= label_tag :level, "Course Level" %>
+            <%= f.select(:level, ['Beginner', 'Intermediate', 'Advanced'], {}, {class: 'btn btn-default'}) %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :title, "Course Title" %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :banner_url, "Course Banner Image" %>
+            <%= f.file_field :banner_url, class: "form-control" %>
+
+            <%= image_tag(@course.banner_url_url) if @course.banner_url? %>
+            <%= f.hidden_field :banner_url_cache %>
+              <p>
+                <%= f.check_box :remove_banner_url, {}, 'true', 'false' %>
+                Remove Image
+              </p>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :details, "Course Details" %>
+            <%= f.text_area :details, size: "60x12",class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :duration, "Course Duration" %>
+            <%= f.number_field :duration, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :position, "Course Position" %>
+            <%= f.text_field :position, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :featured, "Course Featured ?" %>
+            <%= f.check_box(:featured, {}, 'true', 'false' )%>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :published, "Publish the course ?" %>
+            <%= f.check_box(:published, {}, 'true', 'false' )%>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Submit", class: "form-control" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<% block do %>    
+  <div class="form-group">
+    <%= label_tag :released_on, "Course Relase Date: " %>
+    <%= f.date_select(:released_on, :order => [:month, :day, :year], class: "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :released, "Course released data: " %>
+  </div>
+<% end %>

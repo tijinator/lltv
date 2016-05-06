@@ -3,7 +3,11 @@ class Admin::CategoriesAdminController < Admin::AdminController
 	# layout 'sb2' # render 'admin/category_admin/index'
 
 	def index
-		@categories = Category.all
+		# @categories = Category.all
+		@categories = Category.where(parent_id: nil).order('id ASC')
+		@subcategories = Category.where.not(parent_id: nil).order('id ASC')
+
+		render 'admin/categories_admin/index', layout: 'sb2'
 	end
 
 	def new
@@ -11,6 +15,7 @@ class Admin::CategoriesAdminController < Admin::AdminController
 	end
 
 	def show
+		@courses = @category.courses.order('id')
 	end
 
 	def edit
@@ -18,10 +23,9 @@ class Admin::CategoriesAdminController < Admin::AdminController
 
 	def create
 		@category = Category.new(category_params)
-
 		respond_to do |format|
 			if @category.save
-				format.html { redirect_to @category, notice: 'Category was successfully created.' }
+				format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
 				format.js {}
 			else
 				format.html { render :new }
@@ -32,7 +36,7 @@ class Admin::CategoriesAdminController < Admin::AdminController
 	def update
 		respond_to do |format|
 			if @category.update(category_params)
-				format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+				format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
 			else
 				format.html { render :edit }
 			end
@@ -40,6 +44,8 @@ class Admin::CategoriesAdminController < Admin::AdminController
 	end
 
 	def destroy
+		@category.destroy
+		redirect_to :back
 	end
 
 private

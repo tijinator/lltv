@@ -1,7 +1,7 @@
 {
   "name": "lltv",
   "authors": [
-   	"Tij Bedi <tij@learninglibrarytv.com>"
+    "Tij Bedi <tij@learninglibrarytv.com>"
   ],
   "description": "",
   "main": "",
@@ -26,7 +26,8 @@
     "metisMenu": "~2.2.0",
     "video.js": "~5.4.6",
     "angular-bootstrap": "~0.14.3",
-    "startbootstrap-sb-admin-2": "~1.0.8"
+    "startbootstrap-sb-admin-2": "~1.0.8",
+    "ng-country-select": "^0.1.4"
   },
   "resolutions": {
     "metisMenu": "~2.2.0"

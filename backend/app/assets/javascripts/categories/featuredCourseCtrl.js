@@ -3,6 +3,8 @@ angular.module('lltv')
 '$scope',
 'featuredCourse',
 function($scope, featuredCourse) {
+
   $scope.featuredCourse = featuredCourse.data;
-  console.log(featuredCourse);
+
+
 }]);

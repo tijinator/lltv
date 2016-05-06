@@ -3,16 +3,19 @@
     <% chapters = course.chapters.order(:position) %>
     <li>
       <a href="<%= course_path(course) %>" ><%= course.title %><% if !chapters.empty? %><span class="fa arrow"></span><% end %></a>
+
+      <% if !chapters.empty? %>
+        <ul class="nav nav-<%= (level + 1).to_words ordinal: true %>-level collapse">
+          <% chapters.each do |chapter| %>
+            <li>
+              <a href="#"><%= chapter.title %></a>
+              <%#= link_to chapter.title, course_chapters_path(chapter) %>
+            <li>
+          <% end %>
+        </ul>
+      <% end %>
+
     </li>
-    <% if !chapters.empty? %>
-      <ul class="nav nav-<%= (level + 1).to_words ordinal: true %>-level collapse">
-        <% chapters.each do |chapter| %>
-          <li>
-            <a href="#"><%= chapter.title %></a>
-            <%= link_to chapter.title, course_chapters_path(chapter) %>
-          <li>
-        <% end %>
-      </ul>
-    <% end %>
+
   <% end %>
 </ul>
