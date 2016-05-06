@@ -1,0 +1,52 @@
+.about-container{
+  padding: 0;
+  text-align: center;
+  font-family: avenir-black;
+  color: #fff;
+  /*height: 100%;*/
+  background-size: cover;
+  background-position: center;
+  background-image: url('../images/LLTV_about_banner-01.jpg');
+}
+
+.about-first-text{
+  margin: 58px 0 48px;
+
+}
+
+.about-second-text-container{
+  padding: 0;
+  font-size: 22px;
+  font-family: avenir-book;
+  line-height: 52px;
+  margin-bottom: 48px;
+}
+
+.about-third-text{ margin: 0 0 58px; }
+
+.about-buttons-row{
+  margin: 0;
+  padding: 0 0 48px;
+}
+
+.about-buttons-container{
+  display: flex;
+  justify-content: center;
+}
+
+.getStarted-btn{ float: left;}
+
+.getStarted-btn, .browseLib-btn{
+  border: 3px solid #29AAE1;
+  min-width: 150px;
+  float: left;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.getStarted-btn > a, .browseLib-btn > a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.browseLib-btn{ border-color: #808080;}

@@ -4,8 +4,8 @@
 }*/
 
 .category-info {
-  position: relative;
-  height: 286px;
+  /*position: relative;
+  height: 286px;*/
   overflow: hidden;
   background-color: #000000;
   color: #FFFFFF;
@@ -17,7 +17,7 @@
 }
 
 .category-info-content {
-  clear: both;
+  /*clear: both;*/
   height: 100%;
   width: 30%;
 }
@@ -47,15 +47,21 @@
 .category-banner-section{
   height: 100%;
   width: 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 }
 
 .category-page-details {
-  height: -webkit-calc(100vh - 40px);
+  /*height: -webkit-calc(100vh - 40px);
   height: -moz-calc(100vh - 40px);
-  height: calc(100vh - 40px);
+  height: calc(100vh - 40px);*/
+  height: 100%;
   color: #787D7F;
   position: relative;
-  top: 95px;
+  /*top: 95px;*/
 }
 
 .category-page-options {
@@ -137,17 +143,21 @@
 
 .category-trending-courses{
   margin-left: 0px;
-  /*margin-left: 25px;*/
-
 }
 
 .category-video-thumbnail{
   margin-right: 22px;
   margin-bottom: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 129px;
+  max-width: 229px;
 }
 
 .category-thumbnail-overlay{
   position: relative;
+  height: 100%;
 }
 
 .cat-course-title-overlay{
@@ -172,11 +182,77 @@
   transform: translate(-50%, -50%);
 }
 
-/*.trending-scroll{
-  overflow-x: scroll;
-  white-space: nowrap;
-}*/
+.thumbnail-description-container{ padding: 0;}
 
-.trending-scroll{
+.category-course-video-details{
+  height: 129px;
+  max-width: 520px;
+}
 
+.course-video-title{
+  font-size: 21px;
+  font-family: avenir-black;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.course-video-details{
+  font-size: 15px;
+  font-family: avenir-book;
+}
+
+.course-video-author, .course-video-duration{
+  font-size: 11px;
+  font-family: avenir-black;
+  color: #000;
+  text-transform: uppercase;;
+}
+
+.course-video-author{
+  float: left;
+  margin-right: 40px;
+}
+
+@media (max-width: 768px) {
+  .category-page-options, .category-page-courses{ float:left;}
+
+  .category-page-options{
+    height: initial;
+    width: 100%;
+    text-align: center;
+  }
+
+  .category-page-courses{ width: 100%;}
+
+  .category-banner-section{ display: none;}
+
+  .category-info-content{ width: initial;}
+
+  .category-course-video-details{
+    width: initial;
+    max-width: 520px;
+    margin: 0 auto;
+    height: inherit;
+  }
+
+  .thumbnail-description-container{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .category-trending-courses{ text-align: center; }
+
+  .category-courses-title{
+    float: none;
+    margin: 0;
+  }
+
+  .category-video-thumbnail{ margin: 0 auto 40px;}
+
+  .course-video-author{
+    float: none;
+    margin-right: 0px;
+  }
+
+  .category-page-option-title, .category-sub-section{ margin: 0;}
 }

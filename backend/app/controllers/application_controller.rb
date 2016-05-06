@@ -51,6 +51,7 @@ protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << [:username, :first_name, :last_name, :stripe_card_token]
+    devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :location, :job_title, :website, :company_name]
   end
 
   # def verified_request?

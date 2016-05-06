@@ -4,6 +4,7 @@ angular.module('lltv', [
 'templates',
 'ipCookie',
 'ng-token-auth',
+'ngCookies',
 'lltvFilters',
 'countrySelect',
 'ngAnimate'])
@@ -25,6 +26,9 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       // currentUserProvider.set(resp);
       return resp.data;
     },
+    handleAccountUpdateResponse: function(resp) {
+        return resp.data;
+    },
     handleTokenValidationResponse: function(resp) {
       // console.log(resp);
       return resp.data;
@@ -41,35 +45,10 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         $('#landing-homepage').show();
       }
     })
-    // .state('signin', {
-    //   url: '/sign_in',
-    //   templateUrl: 'auth/_sign_in.html',
-    //   controller: 'AuthCtrl',
-    //   onEnter: function() {
-    //     $('#landing-homepage').hide();
-    //     $('#lltv-app-content').show();
-    //   }
-    // })
-    // .state('register', {
-    //   url: '/register',
-    //   templateUrl: 'auth/_register.html',
-    //   controller: 'AuthCtrl',
-    //   onEnter: function() {
-    //     $('#landing-homepage').hide();
-    //     $('#lltv-app-content').show();
-    //   }
-    // })
-    // .state('profileUsername',{
-    //   url: '/user/:username',
-    //   views: {
-    //     templateUrl: 'profile/profileLayout.html',
-    //     controller: 'profileUsernameCtrl'
-    //   },
-    //   onEnter: function() {
-    //     $('#landing-homepage').hide();
-    //     $('#lltv-app-content').show();
-    //   }
-    // })
+    .state('aboutPage',{
+      url: '/about',
+      templateUrl: 'about/aboutPage.html'
+    })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
     })
@@ -83,6 +62,22 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         // profileVideoHistory: {
         //   templateUrl: 'profile/profileVideoHistory.html',
         // }
+      },
+      onEnter: function() {
+        $('#landing-homepage').hide();
+        $('#lltv-app-content').show();
+      }
+    })
+    .state('accountSetting', {
+      templateUrl: 'settingAccount/accountSettingLayout.html',
+    })
+    .state('accountSetting.show', {
+      url: '/account',
+      views: {
+        accountSettingView: {
+          templateUrl: 'settingAccount/accountSettingView.html',
+          controller: 'accountSettingCtrl'
+        }
       },
       onEnter: function() {
         $('#landing-homepage').hide();

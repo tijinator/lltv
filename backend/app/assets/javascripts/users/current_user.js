@@ -3,51 +3,27 @@ angular.module('lltv')
 '$rootScope',
 '$auth',
 '$http',
-function($rootScope, $auth, $http) {
-  var obj = {};
-  // var set = function(userData) {
-  //   // obj = userData;
-  //   // // console.log("Current User Set: ", userData);
-  //   angular.extend(obj, userData);
-  // };
+'$cookieStore',
+function($rootScope, $auth, $http, $cookieStore) {
+  var userObject = {};
 
-  var set = function(){
+  userObject.getUserObj = function(){
+    var userObj = $cookieStore.get('userObj');
 
-  }
-
-  $rootScope.$watch( 'user.username', function (username) {
-    if (angular.isDefined(username)){
-      // use the ID, as it seems to be defined now
-      localStorage.setItem("username", username);
-
-      // remove the watch, because there's no more use for it
-      // unwatch();
+    if(userObj){
+      return userObj;
+    }else{
+      console.log('you are not logged in!');
+      return false;
     }
-  });
-
-  // $rootScope.user_name = localStorage.getItem("username");
-  // console.log($rootScope.user_name);
-
-
-  // var unwatch = $rootScope.$watch( 'user.username', function (username) {
-  //   if (angular.isDefined(username)){
-  //     // use the ID, as it seems to be defined now
-  //     console.log( username );
-  //     angular.extend(obj, username);
-  //     console.log(obj);
-  //
-  //     // remove the watch, because there's no more use for it
-  //     unwatch();
-  //   }
-  // });
-
+  }
 
   var signOut = function() {
     $auth.signOut()
       .then(function(resp) {
-        obj = null;
+        userObject = null;
         console.log('Sign OUT - current_user', resp);
-        localStorage.removeItem("username");
+        // localStorage.removeItem("username");
       })
       .catch(function(resp) {
         // alert("signOut error");
@@ -55,25 +31,7 @@ function($rootScope, $auth, $http) {
       });
   }
 
-
-//   function GetByUsername(username) {
-//             return $http.get('/users/' + username).then(handleSuccess, handleError('Error getting user by username'));
-//         }
-//
-//   function handleSuccess(res) {
-//             return res.data;
-//         }
-//
-//   function handleError(error) {
-//       return function () {
-//           return { success: false, message: error };
-//       };
-//   }
-//
-//   obj.GetByUsername = GetByUsername;
-
-  obj.set  = set;
-  obj.signOut = signOut;
-  return obj;
+  userObject.signOut = signOut;
+  return userObject;
 
 }]);

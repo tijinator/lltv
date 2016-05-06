@@ -1,25 +1,62 @@
 <!-- <div class="row"> -->
 
-  <div ng-repeat="course in courses"  class="test" style="display: inline-block;">
-    <div class="category-video-thumbnail">
-    <!-- <div class="category-video-thumbnail" ng-show="showCategoryCourses"> -->
+  <div ng-repeat="course in courses"  class="test" style="display: inline;">
 
-      <a ui-sref="courses.show({id: course.id})">
-        <div class="category-thumbnail-overlay">
+    <div class="row" style="margin: 0;">
+      <div class="col-sm-12 thumbnail-description-container">
+
+        <div class="row" style="margin: 0;">
+          <div class="col-sm-4" style="padding: 0;">
+
+            <div class="category-video-thumbnail" style="background-image: url('../images/LLTV_animation_category_img.jpg');">
+            <!-- <div class="category-video-thumbnail" ng-style="{'background-image':'url({{course.banner_url}})'}"> -->
+            <!-- <div class="category-video-thumbnail" ng-show="showCategoryCourses"> -->
+
+              <a ui-sref="courses.show({id: course.id})">
+                <div class="category-thumbnail-overlay">
 
 
-          <div class="playbtn-overlay">
-            <img ng-src="{{'images/LLTV_thumbnail_play_btn.png'}}" style="width: 50px; height: 50px"/>
+                  <div class="playbtn-overlay">
+                    <img ng-src="{{'images/LLTV_thumbnail_play_btn.png'}}" style="width: 50px; height: 50px"/>
+                  </div>
+                  <!-- <img ng-src="{{course.banner_url}}" style="width: 100%; height: 129px"> -->
+                  <!-- <img ng-src="{{'images/LLTV_animation_category_img.jpg'}}" style="width: 100%; height: 129px"> -->
+
+                  <div class="category-course-title cat-course-title-overlay">
+                    {{course.title}}
+                  </div>
+
+                </div>
+
+              </a>
+            </div>
+
+
+
+            </div>
+
+        <div class="col-sm-8" style="padding: 0;">
+          <div class="category-course-video-details">
+            <div class="row" style="margin: 0;">
+              <p class="course-video-title">{{course.title}}</p>
+            </div>
+
+            <div class="row" style="margin: 0;">
+              <p class="course-video-details">{{course.details}}</p>
+            </div>
+
+            <div class="row" style="margin: 0;">
+              <p class="course-video-author">by: steven smith</p>
+              <p class="course-video-duration">{{ course.duration | secondsToHHMM | date: "H'H' mm'M'" }}</p>
+            </div>
+
           </div>
-          <img ng-src="{{course.banner_url}}" style="width: 229px; height: 129px">
-          <div class="category-course-title cat-course-title-overlay">
-            {{course.title}}
           </div>
-
         </div>
 
-      </a>
+      </div>
     </div>
+
   </div>
- 
+
 <!-- </div> --><!-- end of row -->

@@ -6,7 +6,8 @@ angular.module('lltv')
 '$auth',
 'currentUser',
 '$compile',
-function($rootScope, $scope, $location, $auth, currentUser, $compile) {
+'$cookieStore',
+function($rootScope, $scope, $location, $auth, currentUser, $compile, $cookieStore) {
 
 $scope.jsRun = function(userData){
   var li = document.createElement('li');
@@ -31,6 +32,18 @@ $scope.jsRun = function(userData){
           ul.setAttribute('class','profile-dropdown dropdown-menu dropdown-menu-right');
           ul.setAttribute('role','menu');
           ul.setAttribute('id','profile-navbar');
+
+  var innerLiAccount = document.createElement('li');
+      var innerAcc = document.createElement('a');
+          // console.log(JSON.stringify(userData));
+          innerAcc.setAttribute('ui-sref', 'accountSetting.show');
+          // innerAcc.setAttribute('ui-sref', 'account.show');
+          innerAcc.setAttribute('style', 'color: #787d7f; height: 15px');
+
+          var accountSetting = document.createTextNode('account settings');
+          innerAcc.appendChild(accountSetting);
+          innerLiAccount.appendChild(innerAcc);
+      ul.appendChild(innerLiAccount);
 
   var innerLiOne = document.createElement('li');
       var innerA = document.createElement('a');
@@ -146,6 +159,7 @@ $scope.jsRun = function(userData){
     // console.log("validation-log2: ", userData);
     // console.log("Login Success event: ", ev);
     // console.log("Login Success: ", userData);
+    $cookieStore.put('userObj', userData);
     $location.path("categories");
     signedIn(userData);
   });

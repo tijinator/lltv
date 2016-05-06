@@ -59,6 +59,11 @@
   font-size: 18px;
 }
 
+.payment-step-ifuser{
+  padding: 0;
+  margin: 20px 0 10px;
+}
+
 .country-dropdown, .year-select, .month-select{
   background-color: transparent;
   border: 1px solid rgba(255,255,255, 0.3);
@@ -133,12 +138,12 @@
   line-height: 14px;
 }
 
-.back-btn, .submit-payment-btn{
-  width: 150px;
-  margin-top: 20px;
+#back-btn, .submit-payment-btn{
+  width: 130px;
+  /*margin-top: 20px;*/
 }
 
-.submit-payment-btn{ margin-left: 30px;}
+.payment-option-btns{ padding: 0;}
 /**************************/
 
 /*slide menu*/
@@ -147,3 +152,12 @@
 .active-slide{ display: block; }
 
 /*************/
+
+@media (max-width: 768px){
+  .payment-step-ifuser{ margin-bottom: 20px;}
+
+  .payment-option-btns{ float: left;}
+
+  .submit-payment-btn{ margin-left: 30px;}
+  
+}

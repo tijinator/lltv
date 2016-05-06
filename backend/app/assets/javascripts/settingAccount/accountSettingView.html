@@ -1,0 +1,291 @@
+<div style="width: 100%; height: 95px;"></div><!-- add height behind navbar-->
+
+<div class="col-sm-12 account-setting-container">
+  <div class="row" style="margin: 0; height: 100%;">
+
+      <div class="col-sm-3 account-sidebar" style="padding: 0;">
+
+        <div class="row" style="margin: 0;">
+          <div ng-click="activeSetting = 1" ng-class="{'account-active': activeSetting == 1}" class="col-sm-12 account-option-box">
+            account settings
+          </div>
+        </div>
+        <div class="row" style="margin: 0;">
+          <div ng-click="activeSetting = 2" ng-class="{'account-active': activeSetting == 2}" class="col-sm-12 account-option-box">
+            personal info
+          </div>
+        </div>
+        <div class="row" style="margin: 0;">
+          <div ng-click="activeSetting = 3" ng-class="{'account-active': activeSetting == 3}" class="col-sm-12 account-option-box">
+            subscription
+          </div>
+        </div>
+
+      </div><!-- end col-sm-3 account-sidebar -->
+
+      <div class="col-sm-9 account-option-slide account-option-view" style="padding: 0;" ng-show="activeSetting == 1">
+        <div id="updateEmailMsg"></div>
+        <div class="row" style="margin: 0;">
+          <div class="col-sm-10 col-sm-offset-1 offset-responsive-container">
+
+            <div class="row", style="margin: 0;">
+              <h2 class="account-email-title">email address</h2>
+            </div>
+
+            <div class="row", style="margin: 0;">
+              <p class="account-email-text">
+                changing your email address is an easy, two-step process. Specify the new email
+                address you want to use, and we will send an email to that address allowing you
+                to complete the update.
+              </p>
+            </div>
+
+            <div class="row" style="margin: 0;">
+              <form ng-submit="updateAccount(updateAccountForm)" role="form" ng-init="updateAccountForm = {email: userEmail}">
+                <div class="col-sm-6 account-input-container" style="padding: 0;">
+                  <div class="auth-body">
+                    <div class="form-group">
+                      <label>email address</label>
+                      <input type="email" name="email" ng-model="updateAccountForm.email"
+                      required="required" class="form-control">
+                    </div>
+                  </div>
+
+                  <div>
+                    <button type="submit" class="bubble-btn submit-btn pull-left" style="float: none !important;">update</button>
+                  </div>
+                </div>
+              </form>
+            </div> <!-- end row -->
+
+            <div class="row", style="margin: 0;">
+              <h2 class="account-password-title">Password</h2>
+            </div>
+
+            <div class="row", style="margin: 0;">
+              <div class="col-sm-6 account-input-container" style="padding: 0;">
+                <div class="form-group" style="margin-bottom: 40px">
+                  <label>current password</label>
+                  <input type="password" name="password" value="********"
+                   class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="margin: 0; margin-bottom: 40px;">
+              <form ng-submit="updatePassword(changePasswordForm)" role="form" ng-init="changePasswordForm = {}">
+                <div class="col-sm-6 account-input-container" style="padding: 0;">
+                  <div class="auth-body">
+                    <div class="form-group">
+                      <label>new password</label>
+                      <input type="password" name="password" ng-model="changePasswordForm.password"
+                      required="required" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                      <label>confirm password</label>
+                      <input type="password" name="password_confirmation" ng-model="changePasswordForm.password_confirmation"
+                      required="required" class="form-control">
+                    </div>
+
+                    <button type="submit" class="bubble-btn submit-btn pull-left" style="float: none !important;">update</button>
+
+                  </div>
+                </div>
+              </form>
+            </div><!-- end row -->
+
+          </div>
+
+        </div>
+
+      </div><!-- end account-option-view -->
+
+      <div class="col-sm-9 account-option-slide profile-info-view" style="padding: 0;" ng-show="activeSetting == 2">
+        <div id="updateInfoMsg"></div>
+        <div class="row" style="margin: 0;">
+          <div class="col-sm-10 col-sm-offset-1 offset-responsive-container">
+
+            <div class="row", style="margin: 0;">
+              <h2 class="account-email-title">personal info</h2>
+            </div>
+
+            <div class="row", style="margin: 0;">
+              <form role="form" ng-submit="updatePersonal(updatePersonalForm)"
+              ng-init="updatePersonalForm = {first_name: userFirstName,
+                last_name: userLastName, job_title: userJobTitle, company_name: userCompanyName,
+                location: userLocation, website: userWebsite}">
+
+                <div class="auth-body">
+                  <div class="row" style="margin: 0;">
+                    <div class="col-sm-6 account-input-container" style="padding: 0;">
+                      <div class="form-group personal-form-group">
+                        <label>first name</label>
+                        <input type="text" name="first_name"
+                        required="required" class="form-control" ng-model="updatePersonalForm.first_name">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 account-input-container" style="padding: 0;">
+                      <div class="form-group personal-form-group">
+                        <label>last name</label>
+                        <input type="text" name="last_name"
+                        required="required" class="form-control" ng-model="updatePersonalForm.last_name">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin: 0;">
+                    <div class="col-sm-6 account-input-container" style="padding: 0;">
+                      <div class="form-group personal-form-group">
+                        <label>job title</label>
+                        <input type="text" name="job_title" ng-model="updatePersonalForm.job_title"
+                         class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 account-input-container" style="padding: 0;">
+                      <div class="form-group personal-form-group">
+                        <label>location</label>
+                        <input type="text" name="location" ng-model="updatePersonalForm.location"
+                         class="form-control">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin: 0;">
+                    <div class="col-sm-6 account-input-container" style="padding: 0;">
+                      <div class="form-group personal-form-group">
+                        <label>company name</label>
+                        <input type="text" name="company_name" ng-model="updatePersonalForm.company_name"
+                         class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 account-input-container" style="padding: 0;">
+                      <div class="form-group personal-form-group">
+                        <label>personal website</label>
+                        <input type="text" name="personal_website" ng-model="updatePersonalForm.website"
+                         class="form-control">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin: 0;">
+                    <div class="col-sm-6 account-input-container" style="padding: 0;">
+                      <button type="submit" class="bubble-btn submit-btn pull-left" style="float: none !important;">update</button>
+                    </div>
+                  </div>
+                </div>
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div><!-- end profile-info-view -->
+
+      <div class="col-sm-9 account-option-slide billing-option-view" style="padding: 0;" ng-show="activeSetting == 3">
+        <div class="row" style="margin: 0;">
+          <div class="col-sm-10 col-sm-offset-1 offset-responsive-container">
+
+            <div class="row" style="margin: 0;">
+              <h2 class="account-email-title">Subscription Info</h2>
+            </div>
+
+            <div class="row" style="margin: 0;">
+              <p>choose your plan</p>
+            </div>
+
+            <div class="row" style="margin: 0;">
+              <div class="col-sm-6 account-input-container" style="padding: 0;">
+
+                <div class="form-group" style="margin-bottom: 30px;">
+                  <label class="radio-inline radio-month-option">
+                    <input type="radio" name="optradio" style="height: inherit">
+                    $24.92 / mo
+                  </label>
+
+                  <label class="radio-inline radio-single-option">
+                    <input type="radio" name="optradio" style="height: inherit">
+                    single purchase
+                  </label>
+                </div>
+
+                <div class="form-group">
+                  <label>card number</label>
+                  <input type="text" id="card_number" required="required" class="form-control" ng-required="true"/>
+                </div>
+
+                <div class="form-group">
+                  <label>ccv</label>
+                  <input type="text" id="card_code" required="required" class="form-control" ng-required="true"/>
+                </div>
+
+                <div class="form-group">
+                  <label>expiration date</label>
+                  <!-- <input type="text" name="ccv" ng-model="paymentForm.ccv" required="required" class="form-control" ng-required="true"/> -->
+                  <div class="row" style="margin: 0;">
+
+                    <div class="form-group account-month-select account-date-select">
+                      <select class="form-control select-style" id="card_month" style="width: 135px;">
+                          <option value="01">January</option>
+                          <option value="02">February</option>
+                          <option value="03">March</option>
+                          <option value="04">April</option>
+                          <option value="05">May</option>
+                          <option value="06">June</option>
+                          <option value="07">July</option>
+                          <option value="08">August</option>
+                          <option value="09">September</option>
+                          <option value="10">October</option>
+                          <option value="11">November</option>
+                          <option value="12">December</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group account-date-select">
+                      <select class="form-control select-style" id="card_year" style="width: 135px;">
+                        <option>2016</option>
+                        <option>2017</option>
+                        <option>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                      </select>
+                    </div>
+
+
+                  </div>
+                </div>
+
+                <div class="row" style="margin: 0;">
+                  <div>
+                    <p class="small-print-agreement">
+                      some important bits from our license agreement, in non-lawyer terms: this
+                      is a single-user license; you may not share it with anyone else.  you may only
+                      view the library using the players we provide, including both our web-based
+                      players and our mobile apps. this is trademarked material, and may not be
+                      copied, modified, or shared in any way. please read the full text of our
+                      terms of use for more detail.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row" style="margin: 0;">
+                  <div class="col-sm-6 account-input-container" style="padding: 0;">
+                    <button type="submit" class="bubble-btn submit-btn pull-left" style="float: none !important;">update</button>
+                  </div>
+                </div>
+
+              </div><!-- end col-sm-6 -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+  <!-- end row -->
+
+</div>

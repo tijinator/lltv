@@ -2,9 +2,13 @@ angular.module('lltv')
 .controller('profileUsernameCtrl', [
 '$rootScope',
 '$scope',
-function($rootScope, $scope) {
-  // $scope.current_user = $scope.user.first_name;
-  // $scope.current_user = $rootScope.user_name;
-  $scope.current_user = localStorage.getItem("username");
+'currentUser',
+'$cookieStore',
+function($rootScope, $scope, currentUser, $cookieStore) {
+
+  var userObj = currentUser.getUserObj();
+  // console.log(userObj);
+
+  $scope.current_user = userObj.username;
 
 }]);
