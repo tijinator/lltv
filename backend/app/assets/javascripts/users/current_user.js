@@ -14,6 +14,7 @@ function($rootScope, $auth, $http, $cookieStore) {
       return userObj;
     }else{
       console.log('you are not logged in!');
+      return false;
     }
   }
 
