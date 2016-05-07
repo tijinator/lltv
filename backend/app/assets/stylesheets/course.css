@@ -43,7 +43,7 @@
 .course-info-dynamic-ldr{
 	color: #FFF;
 	font-family: Avenir-Book;
-	display: inline-block
+	display: inline-block;
 }
 
 .course-profile{
@@ -184,7 +184,7 @@
 	height: 500px;
 }
 
-.chapter-tabs
+/*.chapter-tabs{}*/
 
 .chapter-tabs h5{
 	text-transform: uppercase;
