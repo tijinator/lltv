@@ -97,7 +97,7 @@
 }
 
 #lltv .homepage-category-nav li > div {
-  position: absolute;; /* it was relative */
+  position: absolute; /* it was relative */
   height: 100%;
   width:  100%;
   /*top: 55%; turn off  it was 50% */
