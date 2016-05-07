@@ -19,10 +19,10 @@
   "dependencies": {
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.6",
-    "angular": "~1.4.8",
+    "angular": "^1.5.5",
     "angular-animate": "~1.4.9",
     "ng-token-auth": "~0.0.28",
-    "angular-cookie": "~4.0.9",
+    "angular-cookie": "^4.1.0",
     "metisMenu": "~2.2.0",
     "video.js": "~5.4.6",
     "angular-bootstrap": "~0.14.3",
@@ -31,6 +31,7 @@
     "angular-cookies": "^1.5.5"
   },
   "resolutions": {
-    "metisMenu": "~2.2.0"
+    "metisMenu": "~2.2.0",
+    "angular": "1.5.5"
   }
 }

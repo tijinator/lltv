@@ -13,6 +13,12 @@ gem 'pg'
 gem 'dotenv-rails'
 
 gem 'sprockets', '2.12.3'
+# gem 'sprockets-es6'
+
+# gem 'sprockets'
+# gem "browserify-rails"
+# gem 'sprockets-es6', require: 'sprockets/es6'
+
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'angular_rails_csrf'
 gem 'angular-rails-templates'
