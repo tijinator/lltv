@@ -88,7 +88,7 @@
 }
 
 .course-video{
-    position:relative;
+    position: relative;
 }
 
 .course-video > video {
@@ -183,8 +183,6 @@
 	padding: 0 20px;
 	height: 500px;
 }
-
-/*.chapter-tabs{}*/
 
 .chapter-tabs h5{
 	text-transform: uppercase;
