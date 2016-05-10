@@ -167,6 +167,7 @@
   font-size: 13.5px;
   font-family: avenir-black;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .sign-up {
@@ -220,12 +221,12 @@
   .category-img-container{
     width: 50%;
   }
-  .category-img-container > div > img { 
+  .category-img-container > div > img {
     width: 100%;
   }
 
-  .category-titles h3{ 
-    font-size: 29px; 
+  .category-titles h3{
+    font-size: 29px;
   }
 
   .category-details{
