@@ -316,13 +316,12 @@
 	color: #ffffff;
 }
 
-#chapter_position{
-	margin-right: 62%;
-}
+#chapter_position{ float: left; }
 
 #chapter_duration{
 	margin-right: 20px;
 	color: #787D7F;
+	float: right;
 }
 
 @media screen and (max-width: 1230px) {

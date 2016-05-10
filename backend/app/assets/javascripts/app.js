@@ -8,9 +8,9 @@ angular.module('lltv', [
 'lltvFilters',
 'countrySelect',
 'ngAnimate'])
-.constant('baseUrl', 'http://beta.learninglibrary.tv')
+// .constant('baseUrl', 'http://beta.learninglibrary.tv')
 // .constant('baseUrl', 'http://localhost:3000')
-// .constant('baseUrl', 'http://lvh.me:3000')
+.constant('baseUrl', 'http://lvh.me:3000')
 .config([
 'baseUrl',
 '$stateProvider',

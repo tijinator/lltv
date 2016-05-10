@@ -86,9 +86,9 @@
             <div class="chapter-index-row" ng-repeat='chapter in course.chapters'>
               <div class="chapter-index-element" ng-click="chapter_title = !chapter_title">
                   <span id='chapter_position'> ch {{chapter.position}} </span>
+                  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="color: #ffffff;font-size: 10px; float: right;" ng-show="!chapter_title"></span>
+                  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" style="color: #ffffff;font-size: 10px; float: right;" ng-show="chapter_title"></span>
                   <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</span>
-                  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="chapter_title"></span>
-                  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="color: #ffffff;font-size: 10px;" ng-show="!chapter_title"></span>
               </div>
           </a>
 
