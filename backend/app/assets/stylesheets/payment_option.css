@@ -8,7 +8,7 @@
   position: absolute;
   min-height: 100%;
   width: 100%;
-  background-color: #2E3335;
+  /*background-color: #2E3335;*/
 }
 
 .payment-option-title{
@@ -159,5 +159,5 @@
   .payment-option-btns{ float: left;}
 
   .submit-payment-btn{ margin-left: 30px;}
-  
+
 }

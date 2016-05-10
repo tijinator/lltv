@@ -63,6 +63,11 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         //   templateUrl: 'profile/profileVideoHistory.html',
         // }
       },
+      resolve: {
+        auth: function($auth) {
+          return $auth.validateUser();
+        }
+      },
       onEnter: function() {
         $('#landing-homepage').hide();
         $('#lltv-app-content').show();
@@ -77,6 +82,11 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         accountSettingView: {
           templateUrl: 'settingAccount/accountSettingView.html',
           controller: 'accountSettingCtrl'
+        }
+      },
+      resolve: {
+        auth: function($auth) {
+          return $auth.validateUser();
         }
       },
       onEnter: function() {

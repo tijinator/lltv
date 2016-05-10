@@ -25,7 +25,6 @@
                   <div class="category-course-title cat-course-title-overlay">
                     {{course.title}}
                   </div>
-
                 </div>
 
               </a>
@@ -38,11 +37,15 @@
         <div class="col-sm-8" style="padding: 0;">
           <div class="category-course-video-details">
             <div class="row" style="margin: 0;">
-              <p class="course-video-title">{{course.title}}</p>
+              <p class="course-video-title">
+                {{course.title | limitTo: 40}}{{course.title.length > 40 ? '...' : ''}}
+              </p>
             </div>
 
             <div class="row" style="margin: 0;">
-              <p class="course-video-details">{{course.details}}</p>
+              <p class="course-video-details">
+                {{course.details | limitTo: 220}}{{course.details.length > 220 ? '...' : ''}}
+              </p>
             </div>
 
             <div class="row" style="margin: 0;">

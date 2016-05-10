@@ -50,7 +50,7 @@ $scope.jsRun = function(userFirstName){
       var innerA = document.createElement('a');
           // console.log(JSON.stringify(userData));
 
-          innerA.setAttribute('ui-sref', "profileUsername.show({username:" + userFirstName + "})");
+          innerA.setAttribute('ui-sref', "profileUsername.show({username:" + JSON.stringify(userFirstName) + "})");
           // innerA.setAttribute('ui-sref', "profileUsername.show({username:" + JSON.stringify(userData.username) + "})");
           innerA.setAttribute('style', 'color: #787d7f; height: 15px');
 
