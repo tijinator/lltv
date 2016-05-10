@@ -194,6 +194,8 @@
   text-transform: capitalize;
 }
 
+.course-video-title:hover{ color: #000;}
+
 .course-video-details{
   font-size: 15px;
   font-family: avenir-book;
