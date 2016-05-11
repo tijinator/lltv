@@ -252,7 +252,8 @@
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #353A3D;
+    /*border-bottom: 1px solid #353A3D;*/
+		border-bottom: 0;
 }
 
 

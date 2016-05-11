@@ -22,8 +22,15 @@
                 style="background-color: <%= category.html_tab_color %>"
                 <% if idx == 0 %>class="active"<% end %>>
 
-                <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><p><%= category.title %><p></div></li>
+                <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab">
+                  <p><%= category.title %>
+                    <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true"></span>
+
+                    <p>
+                </div>
+            </li>
             <% end %>
+            <li><div><p>More</p></div><span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true"></span></li>
           </ul>
 
         </div>
