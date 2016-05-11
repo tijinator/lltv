@@ -287,11 +287,9 @@
   .quote-container{ display: none;}
   #lltv .homepage-category-nav li.active:after{ display: none;}
 
-  #lltv .colored-bar{ bottom: 10%; }
-
   #lltv .homepage-category-nav li{
     width: 100%;
-    height: 50px;
+    height: 60px;
     text-transform: capitalize;
     font-size: 22px;
   }
