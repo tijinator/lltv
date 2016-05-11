@@ -7,7 +7,6 @@
     <ul class="small-categories">
       <li ng-repeat="category in categories" style="display: inline-block;">
         <a ui-sref="category.show({id: category.id})">
-          <!-- <div class="small-category-block" style="background-image: url('{{category.small_image_url.small_image_url.url}}');"> -->
           <div class="small-category-block" style="background-image: url('{{category.small_image_url}}');">
             {{category.title}}
           </div>

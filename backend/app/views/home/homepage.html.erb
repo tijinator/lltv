@@ -30,7 +30,7 @@
                 </div>
             </li>
             <% end %>
-            <li><div><p>More</p></div><span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true"></span></li>
+            <!-- <li><div><p>More</p></div><span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true"></span></li> -->
           </ul>
 
         </div>
@@ -112,11 +112,13 @@
 <script>
 
   $("#category-button div").click(function() {
-    $('html, body').animate({
-        scrollTop: $(".colored-bar").offset().top - 103
-    }, 600, "easeOutCirc", function(){
-      console.log("scroll!");
-    });
+    if($(window).width() > 768){ //enable scroll if screen width is greater 768
+      $('html, body').animate({
+          scrollTop: $(".colored-bar").offset().top - 103
+      }, 600, "easeOutCirc", function(){
+        // console.log("scroll!");
+      });
+    }
   });
 
 </script>

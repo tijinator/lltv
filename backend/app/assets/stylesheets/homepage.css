@@ -217,7 +217,7 @@
 
 .colored-bar-plus-icon{ display: none;}
 
-#lltv .homepage-category-nav li:last-child{ display: none;}
+/*#lltv .homepage-category-nav li:last-child{ display: none;}*/
 
 /* responsive design desktop/laptop*/
 
@@ -284,13 +284,16 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .quote-container{ display: none;}
   #lltv .homepage-category-nav li.active:after{ display: none;}
 
-  #lltv .colored-bar{ bottom: 20%; }
+  #lltv .colored-bar{ bottom: 10%; }
 
   #lltv .homepage-category-nav li{
     width: 100%;
     height: 50px;
+    text-transform: capitalize;
+    font-size: 22px;
   }
 
   #lltv .homepage-category-nav li > div p{
@@ -303,7 +306,8 @@
     display: block;
     position: absolute;
     right: 10%;
-    top: calc(50% - 5px);
+    font-size: 14px;
+    top: calc(50% - 7px);
   }
 
   #lltv .homepage-category-nav li:last-child{
@@ -332,8 +336,6 @@
   }*/
 
   .category-details{ width: 360px; }
-
-  #lltv .homepage-category-nav li { font-size: 10px; }
 
   #lltv .homepage-category-nav li.active:after { display: none;}
 

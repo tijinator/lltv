@@ -38,13 +38,13 @@
           <div class="category-course-video-details">
             <div class="row" style="margin: 0;">
               <a ui-sref="courses.show({id: course.id})" class="course-video-title">
-                {{course.title | limitTo: 40}}{{course.title.length > 40 ? '...' : ''}}
+                {{course.title | limitTo: 44}}{{course.title.length > 44 ? '...' : ''}}
               </a>
             </div>
 
             <div class="row" style="margin: 0;">
               <p class="course-video-details">
-                {{course.details | limitTo: 220}}{{course.details.length > 220 ? '...' : ''}}
+                {{course.details | limitTo: 146}}{{course.details.length > 146 ? '...' : ''}}
               </p>
             </div>
 
