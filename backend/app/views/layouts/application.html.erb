@@ -17,6 +17,7 @@
   <div ng-include="'nav/_nav.html'" ng-controller="NavCtrl"></div>
   <div class="content-container" ng-class="{'homepage-content-container': isActive('/')}" ng-controller="MainCtrl" style="position: absolute; height: 100%; width: 100%;">
     <ui-view autoscroll="true"><%=yield%></ui-view>
+    <%= js_env %>
   </div>
 </body>
 </html>

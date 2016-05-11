@@ -26,7 +26,7 @@ gem 'angular-rails-templates'
 gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'jquery-easing-rails'
 
-gem 'devise'
+# gem 'devise'
 gem 'devise_token_auth'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-facebook'

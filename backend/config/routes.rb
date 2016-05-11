@@ -10,9 +10,8 @@ Rails.application.routes.draw do
   end
 
   # Subdomains -
-  constraints subdomain: 'admin.beta' do
-  # constraints subdomain: 'admin' do
-
+  admin_url = Rails.env.production? ? 'admin.beta' : 'admin'  
+  constraints subdomain: admin_url do
     resources :videos, controller: 'admin/videos_admin'
 
     # Category -> Course

@@ -9,17 +9,17 @@ angular.module('lltv', [
 'countrySelect',
 'ngAnimate'])
 .constant('baseUrl', 'http://beta.learninglibrary.tv')
-// .constant('baseUrl', 'http://localhost:3000')
-// .constant('baseUrl', 'http://lvh.me:3000')
 .config([
 'baseUrl',
 '$stateProvider',
 '$locationProvider',
 '$urlRouterProvider',
 '$authProvider',
-function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authProvider) {
-  $locationProvider.html5Mode(true);
+'Rails',
+function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authProvider, Rails) {
+baseUrl = (Rails.env == 'production') ? 'http://beta.learninglibrary.tv' : 'http://lvh.me:3000'
 
+  $locationProvider.html5Mode(true);
   $authProvider.configure({
     apiUrl: baseUrl + '/api/v1',
     handleLoginResponse: function(resp) {

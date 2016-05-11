@@ -362,7 +362,6 @@ DEPENDENCIES
   carrierwave-aws
   coffee-rails (~> 4.1.0)
   coffee-rails-source-maps
-  devise
   devise_token_auth
   dotenv-rails
   elastic_transcoder
