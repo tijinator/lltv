@@ -45,11 +45,11 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         $('#landing-homepage').show();
       }
     })
-    .state('faqPage',{
+    .state('aboutPage',{
       url: '/about',
       templateUrl: 'about/aboutPage.html'
     })
-    .state('aboutPage',{
+    .state('faqPage',{
       url: '/faq',
       templateUrl: 'about/faqPage.html'
     })
