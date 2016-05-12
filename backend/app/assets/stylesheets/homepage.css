@@ -288,12 +288,12 @@
 
 @media only screen and (max-width: 768px) {
   #lltv .colored-bar{
-    position: relative;
-    top: calc(100% - 300px);
-    /*width: 100%;
-    bottom: 0;
-    margin-left: 0;*/
+    /*position: relative;*/
+    /*top: calc(100% - 300px);*/
+
   }
+
+  .category-details{ line-height: 26px;}
   .quote-container{ display: none;}
 
   .homepage-category-nav{ display: none; }
