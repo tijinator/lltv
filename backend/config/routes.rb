@@ -93,5 +93,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'home#home' #about page
 
+  get '/faq' => 'home#home' #frequently asked questions
+
   root to: 'home#home'
 end

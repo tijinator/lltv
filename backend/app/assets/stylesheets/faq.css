@@ -1,0 +1,11 @@
+.faq-container{
+  height: calc(100vh - 95px);
+}
+
+.faq-first-text{ margin: 149px 0 48px;}
+
+.faq-lists > li > a{
+  color: #fff;
+  font-family: avenir-book;
+  cursor: pointer;
+}
