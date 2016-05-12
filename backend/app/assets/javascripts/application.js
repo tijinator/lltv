@@ -3,6 +3,7 @@
 //= require jquery.easing
 //= require bootstrap
 //= require bootstrap/js/tab
+//= require bootstrap/js/collapse
 //= require angular
 //= require angular-cookie
 //= require angular-cookies
