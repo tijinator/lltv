@@ -39,11 +39,13 @@
 
               <div class="panel panel-default" style="margin: 0; border: 0;">
                 <div class="panel-heading" role="tab" id="heading<%= idx %>" style="background-color: <%= category.html_tab_color %>; padding: 0; height: 60px;">
-                  <h4 class="panel-title">
-                    <div role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse<%= idx %>" <% if idx==0 %>aria-expanded="true"<% end %>  aria-controls="collapse<%= idx %>">
-                      <p><%= category.title %><span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true"></p>
+
+                    <div class="panel-title" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse<%= idx %>" aria-expanded="false"  aria-controls="collapse<%= idx %>">
+                      <!-- <p class="panel-title"> -->
+                        <%= category.title %>
+                      <!-- </p> -->
+                      <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
                     </div>
-                  </h4>
                 </div>
                 <div id="collapse<%= idx %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= idx %>">
                   <div class="panel-body">
@@ -175,13 +177,15 @@
     }
   });
 
-  $(document).on('show.bs.collapse', function () {
+  $('.collapse').on('show.bs.collapse', function () {
   //  $(".collapse-test").css({"position":"relative", "top":"330px"});
-  console.log('hey');
+    $(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
   });
 
-  $(document).on('hidden.bs.collapse', function () {
+  $(".collapse").on('hidden.bs.collapse', function () {
     // $(".collapse-test").css({"position":"relative", "top":"0"});
+    $(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+
   });
 
 </script>
