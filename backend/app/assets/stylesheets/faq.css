@@ -2,7 +2,10 @@
   height: calc(100vh - 95px);
 }
 
-.faq-first-text{ margin: 149px 0 48px;}
+.faq-first-text{
+  margin: 149px 0 48px;
+  font-size: 28px;
+}
 
 .faq-lists > li > a{
   color: #fff;
@@ -55,5 +58,9 @@
 
 @media (max-width: 768px){
 
+  .faq-first-text{ font-size: 23px;}
+
   .membership-faq-left, .membership-faq-right{padding: 0 40px;}
+
+  .about-second-text-container{ font-size: 19px;}
 }

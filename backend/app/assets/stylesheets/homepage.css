@@ -258,7 +258,7 @@
 
   .category-img-container > div > img { width: 100%; }
 
-  .bubble-btn{ font-size: 12px; }
+  .bubble-btn{ font-size: 14px; }
 
 }
 
@@ -397,13 +397,31 @@
   .category-details{ width: 320px;}
 }
 
+/*iphone 6 plus*/
+@media (max-width:414px) and (min-width:376px){
+  .panel-title{ font-size: 26px;}
+  
+  .category-details{
+    width: 348px;
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+  .bubble-btn{ font-size: 16px; }
+
+}
+
+/*iphone 5*/
 @media (max-width: 320px){
   .category-details{
-    line-height: 15px;
+    line-height: 18px;
     font-size: 12px;
+    width: 280px;
   }
 
   .category-details p{ margin-bottom: 15px;}
+
+  .bubble-btn{ font-size: 8px; }
 }
 
 
