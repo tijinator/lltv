@@ -7,17 +7,19 @@
       <h2 class="faq-first-text">FAQs / Help Topics:</h2>
     </div>
 
-    <div class="row" style="margin: 0;">
+    <div id="" class="row faq-view" style="margin: 0;">
       <div class="col-sm-8 col-sm-offset-2 about-second-text-container">
         <ul class="faq-lists">
-          <li><a data-spy="scroll" href="#membership-view" class="page-scroll">Memberships / Plans / Group Memberships</a></li>
-          <li><a>Site issues / Video Playback</a></li>
-          <li><a>The Library</a></li>
+          <li><a id="membership-link">Memberships / Plans / Group Memberships</a></li>
+          <li><a id="site-issue-link">Site issues / Video Playback</a></li>
+          <li><a id="library-link">The Library</a></li>
         </ul>
       </div>
     </div>
 
   </div><!-- end faq-container -->
+
+  <div data-spy="scroll" data-target=".faq-view">
 
   <div id="membership-view" class="col-sm-12 membership-faq">
     <div class="row" style="margin: 0;">
@@ -74,38 +76,26 @@
           <li class="membership-answer">
             Click on the “Forget Password” link on the Sign In page and enter your email address to recover your username or password; your username or password will be emailed to you (temporary password?). If you continue to have problems logging in, contact us at info@learninglibrary.tv.
           </li>
-          <!-- <li class="membership-question">What type of membership plans do you offer? How much do plans cost?</li>
-          <li class="membership-answer">Currently, $24.92 per month (or one annual payment of $299) gives you unlimited access to our courses and learning modules on your computer, tablet, or mobile phone.</li>
-          <li class="membership-question">How can I change my membership plan?</li>
-          <li class="membership-answer">Click on your name drop down and select “Account Settings”. Then on the left click on “Subscription Info”. You can change your plan here.</li>
-          <li class="membership-question">Is my credit card transaction secure?</li>
-          <li class="membership-answer">The credit card information is you give us is protected by SSL technology and secured networks that are only accessible to our webmaster.</li> -->
         </ul>
       </div>
       <div class="col-sm-6 membership-faq-right">
         <ul>
           <li class="membership-question">My video won’t play on my laptop/phone/tablet. What should I do? </li>
           <li class="membership-answer">
-            We recommend these troubleshooting tips to solve any playback issues you might have:
-            Logging out and logging back into your Learning Library TV account.
-            Clearing your web browser’s cache and cookies. You may also try using a different browser.
+            We recommend these troubleshooting tips to solve any playback issues you might have:<br>
+            Logging out and logging back into your Learning Library TV account.<br>
+            Clearing your web browser’s cache and cookies. You may also try using a different browser.<br>
             Check the settings for any privacy or security software or browser add-ons you may have running.
           </li>
           <li class="membership-question">Can I watch videos offline? </li>
           <li class="membership-answer">Not at this time.</li>
-          <!-- <li class="membership-question">Can I access LLTV from multiple devices?</li>
-          <li class="membership-answer">Yes. Your subscription allows you to watch our learning videos on your computer, tablet, or mobile device.</li>
-          <li class="membership-question">How do I cancel my membership?</li>
-          <li class="membership-answer">We’re sorry to see you go! If you need to cancel your membership please contact us at 917-588-6261.</li>
-          <li class="membership-question">What’s your privacy policy?</li>
-          <li class="membership-answer">We will never rent, sell, or reveal to outside persons or companies any email list, personal or purchase information you have given us, without your permission.</li> -->
         </ul>
       </div>
     </div>
   </div>
 
 
-  <div id="libray-view" class="col-sm-12 membership-faq">
+  <div id="library-view" class="col-sm-12 membership-faq">
     <div class="row" style="margin: 0;">
       <h2 class="membership-title">The Library</h2>
     </div>
@@ -131,18 +121,39 @@
           </li>
           <li class="membership-question">I’m a subject matter expert in (blank). How can I create a Learning Module or MOOC?</li>
           <li class="membership-answer">Contact us at info@learninglibrary.tv with your credentials and the subject you’d like to teach and we’ll be in touch with more info.</li>
-          <!-- <li class="membership-question">Can I access LLTV from multiple devices?</li>
-          <li class="membership-answer">Yes. Your subscription allows you to watch our learning videos on your computer, tablet, or mobile device.</li>
-          <li class="membership-question">How do I cancel my membership?</li>
-          <li class="membership-answer">We’re sorry to see you go! If you need to cancel your membership please contact us at 917-588-6261.</li>
-          <li class="membership-question">What’s your privacy policy?</li>
-          <li class="membership-answer">We will never rent, sell, or reveal to outside persons or companies any email list, personal or purchase information you have given us, without your permission.</li> -->
         </ul>
       </div>
     </div>
   </div>
 
+</div>
+
 
 </div>
 
 <div ng-include="'footer/_footer.html'"></div>
+
+<script>
+  document.getElementById("membership-link").onclick=function(){
+    var msg = "#membership-view";
+    scrollFAQ(msg);
+  }
+
+  document.getElementById("site-issue-link").onclick=function(){
+    var msg = "#site-issue-view";
+    scrollFAQ(msg);
+  }
+
+  document.getElementById("library-link").onclick=function(){
+    var msg = "#library-view";
+    scrollFAQ(msg);
+  }
+
+  function scrollFAQ(msg){
+    $('html, body').animate({
+        scrollTop: $(msg).offset().top - 95
+    }, 600, "easeOutCirc", function(){
+      // console.log("scroll!");
+    });
+  }
+</script>
