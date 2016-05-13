@@ -52,3 +52,8 @@
   font-family: avenir-roman;
   margin-bottom: 20px
 }
+
+@media (max-width: 768px){
+
+  .membership-faq-left, .membership-faq-right{padding: 0 40px;}
+}

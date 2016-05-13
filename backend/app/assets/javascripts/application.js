@@ -4,6 +4,7 @@
 //= require bootstrap
 //= require bootstrap/js/tab
 //= require bootstrap/js/collapse
+//= require bootstrap/js/scrollspy
 //= require angular
 //= require angular-cookie
 //= require angular-cookies
