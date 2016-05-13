@@ -194,9 +194,14 @@
   text-transform: capitalize;
 }
 
+.course-video-title:hover{ color: #000;}
+
 .course-video-details{
   font-size: 15px;
   font-family: avenir-book;
+  text-align: left;
+  color: #50585b;
+  line-height: 2;
 }
 
 .course-video-author, .course-video-duration{

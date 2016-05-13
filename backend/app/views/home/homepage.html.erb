@@ -16,15 +16,71 @@
         <div class="colored-bar" id="cat-bar">
 
           <ul class="nav nav-tabs homepage-category-nav" role="tablist">
+
             <% @categories.each_with_index do |category, idx| %>
 
-            <li id="category-button" role="presentation"
+            <li id="category-button" class="bar-option" role="presentation"
                 style="background-color: <%= category.html_tab_color %>"
                 <% if idx == 0 %>class="active"<% end %>>
 
-                <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab"><p><%= category.title %><p></div></li>
+                <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab">
+                  <p><%= category.title %>
+                    <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true"></span>
+
+                    <p>
+                </div>
+            </li>
             <% end %>
+            <!-- <li><div><p>More</p></div><span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true"></span></li> -->
           </ul>
+
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <% @categories.each_with_index do |category, idx| %>
+
+              <div class="panel panel-default" style="margin: 0; border: 0;">
+                <div class="panel-heading" role="tab" id="heading<%= idx %>" style="background-color: <%= category.html_tab_color %>; padding: 0; height: 60px;">
+
+                    <div class="panel-title" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse<%= idx %>" aria-expanded="false"  aria-controls="collapse<%= idx %>">
+                      <!-- <p class="panel-title"> -->
+                        <%= category.title %>
+                      <!-- </p> -->
+                      <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
+                    </div>
+                </div>
+                <div id="collapse<%= idx %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= idx %>">
+                  <div class="panel-body">
+                    <div class="category-details">
+                      <p><%= category.details %></p>
+                    </div>
+                    <ul class="category-buttons" style="height: 100%;">
+
+                      <li>
+                        <a ui-sref="category.show({id: <%= category.id %>})">
+                          <div class="bubble-btn pull-left" style="background-color: <%= category.html_color %>;">
+                            Browse <%= category.title %> 
+                          </div>
+                        </a>
+
+                      </li>
+                        <!-- <a ui-sref="register"> -->
+
+                      <li>
+                        <div ng-controller="AuthModalCtrl">
+                          <div class="pull-right bubble-btn create-account" ng-click="openModal('register')">
+                              Create Account
+                          </div>
+                        </div>
+                        <!-- </a> -->
+
+                      </li>
+
+                    </ul><!-- end ul category-buttons -->
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
 
         </div>
 
@@ -99,17 +155,37 @@
 
   </div>
 
-  <div ng-include="'footer/_footer.html'"></div>
+  <div class="collapse-test" ng-include="'footer/_footer.html'"></div>
 
+  <!-- <li id="popup" style="display: none;">
+    <div  style="background-color: white;">
+      <p style="color: #000;">message</p>
+    </div>
+  </li> -->
 </div>
 <script>
 
   $("#category-button div").click(function() {
-    $('html, body').animate({
-        scrollTop: $(".colored-bar").offset().top - 103
-    }, 600, "easeOutCirc", function(){
-      console.log("scroll!");
-    });
+    if($(window).width() > 768){ //enable scroll if screen width is greater 768
+      $('html, body').animate({
+          scrollTop: $(".colored-bar").offset().top - 103
+      }, 600, "easeOutCirc", function(){
+        // console.log("scroll!");
+      });
+    }else{
+
+    }
+  });
+
+  $('.collapse').on('show.bs.collapse', function () {
+  //  $(".collapse-test").css({"position":"relative", "top":"330px"});
+    $(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+  });
+
+  $(".collapse").on('hidden.bs.collapse', function () {
+    // $(".collapse-test").css({"position":"relative", "top":"0"});
+    $(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+
   });
 
 </script>

@@ -8,8 +8,8 @@
         <div class="row" style="margin: 0;">
           <div class="col-sm-4" style="padding: 0;">
 
-            <!-- <div class="category-video-thumbnail" style="background-image: url('../images/LLTV_animation_category_img.jpg');"> -->
-            <div class="category-video-thumbnail" ng-style="{'background-image':'url({{course.banner_url}})'}">
+            <div class="category-video-thumbnail" style="background-image: url('../images/LLTV_animation_category_img.jpg');">
+            <!-- <div class="category-video-thumbnail" ng-style="{'background-image':'url({{course.banner_url}})'}"> -->
             <!-- <div class="category-video-thumbnail" ng-show="showCategoryCourses"> -->
 
               <a ui-sref="courses.show({id: course.id})">
@@ -37,14 +37,14 @@
         <div class="col-sm-8" style="padding: 0;">
           <div class="category-course-video-details">
             <div class="row" style="margin: 0;">
-              <p class="course-video-title">
-                {{course.title | limitTo: 40}}{{course.title.length > 40 ? '...' : ''}}
-              </p>
+              <a ui-sref="courses.show({id: course.id})" class="course-video-title">
+                {{course.title | limitTo: 44}}{{course.title.length > 44 ? '...' : ''}}
+              </a>
             </div>
 
             <div class="row" style="margin: 0;">
               <p class="course-video-details">
-                {{course.details | limitTo: 220}}{{course.details.length > 220 ? '...' : ''}}
+                {{course.details | limitTo: 146}}{{course.details.length > 146 ? '...' : ''}}
               </p>
             </div>
 

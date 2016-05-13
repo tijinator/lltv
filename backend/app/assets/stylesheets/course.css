@@ -166,6 +166,14 @@
 	margin-right: 53%;
 }
 
+.table-contents{
+	font-size: 13px;
+  font-family: avenir-black;
+  color: #787D7F;
+  text-transform: uppercase;
+  padding: 28px 0 0 20px;
+}
+
 @media screen and (max-width: 1230px) {
 	.course-chapter-collaps #exp-all{
 		margin-right: 38%;
@@ -244,7 +252,8 @@
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #353A3D;
+    /*border-bottom: 1px solid #353A3D;*/
+		border-bottom: 0;
 }
 
 
@@ -294,7 +303,7 @@
 }
 
 .course-chapters{
-	padding: 20px 0;
+	padding: 10px 0 20px;
 }
 
 .chapter-index-row{
@@ -308,13 +317,12 @@
 	color: #ffffff;
 }
 
-#chapter_position{
-	margin-right: 62%;
-}
+#chapter_position{ float: left; }
 
 #chapter_duration{
 	margin-right: 20px;
 	color: #787D7F;
+	float: right;
 }
 
 @media screen and (max-width: 1230px) {

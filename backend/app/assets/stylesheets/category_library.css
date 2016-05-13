@@ -20,12 +20,15 @@
 }
 
 .small-category-block {
-  width: 250px;
-  height: 250px;
+  width: 288px;
+  height: 288px;
   color: #FFFFFF;
   text-align: center;
   font-size: 25px;
-  margin: 30px;
+  margin: 10px;
   padding-top: 108px;
   font-family: avenir-black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

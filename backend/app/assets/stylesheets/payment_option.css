@@ -43,7 +43,17 @@
 
 .price-list>ul>li{ margin-bottom: 20px;}
 
-.price-item-container{ margin-bottom: 20px; }
+.price-list>ul>li:first-child{
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.price-list>ul>li:nth-child(2){
+  font-family: avenir-black;
+  color: #fff;
+}
+
+.price-item-container{ margin-bottom: 7px; }
 
 .pricing-dollar{
   margin-left: 70px;

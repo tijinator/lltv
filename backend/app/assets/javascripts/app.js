@@ -108,6 +108,10 @@ $authProvider.configure({
       url: '/about',
       templateUrl: 'about/aboutPage.html'
     })
+    .state('faqPage',{
+      url: '/faq',
+      templateUrl: 'about/faqPage.html'
+    })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
     })

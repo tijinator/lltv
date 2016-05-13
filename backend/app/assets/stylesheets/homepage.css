@@ -202,7 +202,7 @@
 
 .footer-list-first-row{ margin: 0 0 10px 0;}
 
-.footer-list-first-row > div > a{
+.footer-list-first-row > div > a, .footer-list-second-row > div > a{
   text-decoration: none;
   color: inherit;
 }
@@ -214,6 +214,13 @@
   margin: 50px 0 0;
   font-family: avenir-medium;
 }
+
+.colored-bar-plus-icon{ display: none;}
+
+#accordion{ display: none;}
+
+
+/*#lltv .homepage-category-nav li:last-child{ display: none;}*/
 
 /* responsive design desktop/laptop*/
 
@@ -251,7 +258,7 @@
 
   .category-img-container > div > img { width: 100%; }
 
-  .bubble-btn{ font-size: 12px; }
+  .bubble-btn{ font-size: 14px; }
 
 }
 
@@ -268,15 +275,89 @@
     width: 300px;
     left: calc(50% - 300px/2); /* it was 348px */
     font-size: 24px;
+    top: 18%;
   }
 
   .quote-container > br:first-child{ display: none;}
 
   .quote-container img{ width: 70%; }
 
+  /*.category-button-extra{ display: none;}*/
+
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
+  #lltv .colored-bar{
+    /*position: relative;*/
+    /*top: calc(100% - 300px);*/
+
+  }
+
+  .category-details{ line-height: 26px;}
+  .quote-container{ display: none;}
+
+  .homepage-category-nav{ display: none; }
+
+  #accordion{
+    display: block;
+    text-align: center;
+    margin: 0;
+    font-family: avenir-black;
+  }
+
+  .panel-title{
+    color: #fff;
+    font-size: 22px;
+    height: 60px;
+    line-height: 60px;
+  }
+
+  #lltv .homepage-category-nav li.active:after{ display: none;}
+
+  #lltv .homepage-category-nav li{
+    width: 100%;
+    height: 60px;
+    text-transform: capitalize;
+    font-size: 22px;
+  }
+
+  #lltv .homepage-category-nav li > div p{
+    margin: 0;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .colored-bar-plus-icon{
+    display: block;
+    right: 10%;
+    float: right;
+    font-size: 14px;
+    top: calc(50% - 7px);
+  }
+
+  #details{display: none;}
+
+  .category-details{
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .category-buttons{
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .category-buttons li{
+    float: none;
+    padding-right: 0;
+    display: inline-block;
+  }
+
+  .footer-collapse{
+    position: relative;
+    top: 330px;
+  }
+
   .homepage-footer{ text-align: center;}
 
   .footer-list-first-row{ margin: 0;}
@@ -296,11 +377,7 @@
     margin: 0 calc(100%/16);
   }*/
 
-  .category-details{ width: 360px; }
-
-  #lltv .homepage-category-nav li { font-size: 10px; }
-
-  #lltv .homepage-category-nav li.active:after { top: 70px; }
+  #lltv .homepage-category-nav li.active:after { display: none;}
 
 }
 
@@ -314,6 +391,37 @@
     margin: 0 calc(100%/16);
   }
 
+}
+
+@media (max-width: 411px){
+  .category-details{ width: 320px;}
+}
+
+/*iphone 6 plus*/
+@media (max-width:414px) and (min-width:376px){
+  .panel-title{ font-size: 26px;}
+  
+  .category-details{
+    width: 348px;
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+  .bubble-btn{ font-size: 16px; }
+
+}
+
+/*iphone 5*/
+@media (max-width: 320px){
+  .category-details{
+    line-height: 18px;
+    font-size: 12px;
+    width: 280px;
+  }
+
+  .category-details p{ margin-bottom: 15px;}
+
+  .bubble-btn{ font-size: 8px; }
 }
 
 
