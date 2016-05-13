@@ -34,8 +34,7 @@ if Rails.env.production?
 
 else
 
-    CarrierWave.configure do |config|
-
+  CarrierWave.configure do |config|
     config.storage    = :aws
     config.aws_bucket = ENV.fetch('S3_BUCKET')
     config.aws_acl    = :public_read

@@ -26,7 +26,7 @@ gem 'angular-rails-templates'
 gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'jquery-easing-rails'
 
-# gem 'devise'
+gem 'devise'
 gem 'devise_token_auth'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-facebook'
@@ -39,6 +39,8 @@ gem 'carrierwave-aws'
 
 # Figaro to hide secret keys
 gem 'figaro', '~> 1.1'
+#cors
+gem 'rack-cors', :require => 'rack/cors'
 
 
 # gem 'aws-sdk-v1'

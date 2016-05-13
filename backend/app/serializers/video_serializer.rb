@@ -5,18 +5,11 @@ class VideoSerializer < ActiveModel::Serializer
 # delegate :russel, to: :scope
 
   def video_url
-      # object.video_url.url
-
     unless scope
-        if object.position == 1
-          object.video_url.url
-        else
-          nil
-        end
+      object.position == 1 ? object.video_url.url : nil
     else
       object.video_url.url
     end
-
   end
  
 
