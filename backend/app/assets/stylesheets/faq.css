@@ -9,3 +9,46 @@
   font-family: avenir-book;
   cursor: pointer;
 }
+
+.membership-faq{
+  padding: 0;
+  text-align: center;
+  font-family: avenir-black;
+}
+
+.membership-title{
+  font-size: 28px;
+  color: #666666;
+  margin: 86px 0 40px 0;
+}
+
+.faq-square-divider{
+  width: 50px;
+  height: 8px;
+  background-color: #ebeef0;
+  margin: 0 auto 40px;
+}
+
+.membership-faq-container{ margin: 0 0 100px 0;}
+
+.membership-faq-left, .membership-faq-right{
+  padding: 0;
+  text-align: left;
+  color: #666666;
+  font-size: 14px;
+}
+
+.membership-faq-left{ padding: 0 30px 0 183px;}
+
+.membership-faq-right{ padding: 0 183px 0 30px;}
+
+.membership-question{
+  font-style: oblique;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.membership-answer{
+  font-family: avenir-roman;
+  margin-bottom: 20px
+}
