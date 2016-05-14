@@ -163,6 +163,7 @@ $scope.jsRun = function(userFirstName){
     // console.log("validation-log2: ", userData);
     // console.log("Login Success event: ", ev);
     // console.log("Login Success: ", userData);
+
     $cookieStore.put('userObj', userData);
     $location.path("categories");
     signedIn();

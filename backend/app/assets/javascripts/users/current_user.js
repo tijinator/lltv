@@ -22,7 +22,6 @@ function($rootScope, $auth, $http, $cookieStore) {
     $auth.signOut()
       .then(function(resp) {
         userObject = null;
-        console.log('Sign OUT - current_user', resp);
         // localStorage.removeItem("username");
       })
       .catch(function(resp) {
