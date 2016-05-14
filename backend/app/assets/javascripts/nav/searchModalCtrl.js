@@ -3,7 +3,8 @@ angular.module('lltv')
 '$scope',
 'searchModalService',
 'CategoryService',
-function($scope, searchModalService, CategoryService){
+'searchCourseService',
+function($scope, searchModalService, CategoryService, searchCourseService){
 
   $scope.openSearch = function(){
     searchModalService.openModal();
@@ -14,25 +15,41 @@ function($scope, searchModalService, CategoryService){
   }
 
 
-  CategoryService.getCategories().then(function(obj){
+  // CategoryService.getCategories().then(function(obj){
+  //
+  //   var categoryArr = [];
+  //   var categoryArrObj = obj.data;
+  //
+  //   for(var i = 0; i < categoryArrObj.length; i++){
+  //     // console.log(categoryArrObj[i].title);
+  //
+  //     categoryArr.push(categoryArrObj[i].title);
+  //   }
+  //
+  //   $scope.complete=function(){
+  //     console.log(categoryArr);
+  //     $( "#tags" ).autocomplete({
+  //       source: categoryArr,
+  //       minLength: 2
+  //     });
+  //   }
+  // });
+
+  searchCourseService.getCourses().then(function(obj){
     // $scope.searchCategories = obj.data;
 
-    var categoryArr = [];
-    var categoryArrObj = obj.data;
+    var coursesArr = [];
+    var courseArrObj = obj.data;
 
-    for(var i = 0; i < categoryArrObj.length; i++){
-      // console.log(categoryArrObj[i].title);
+    for(var i = 0; i < courseArrObj.length; i++){
 
-      categoryArr.push(categoryArrObj[i].title);
+      coursesArr.push(courseArrObj[i].title);
     }
-    // console.log(categoryArr);
-
-    // console.log(categoryTitleArr);
 
     $scope.complete=function(){
-      console.log(categoryArr);
+      console.log(coursesArr);
       $( "#tags" ).autocomplete({
-        source: categoryArr,
+        source: coursesArr,
         minLength: 2
       });
     }
