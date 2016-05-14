@@ -305,6 +305,16 @@
     font-family: avenir-black;
   }
 
+  .panel{
+    margin: 0;
+    border: 0;
+    background: none;
+  }
+
+  .panel-body{
+    background-color: #fff;
+  }
+
   .panel-title{
     color: #fff;
     font-size: 22px;
@@ -400,7 +410,7 @@
 /*iphone 6 plus*/
 @media (max-width:414px) and (min-width:376px){
   .panel-title{ font-size: 26px;}
-  
+
   .category-details{
     width: 348px;
     line-height: 32px;
