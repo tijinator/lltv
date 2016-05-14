@@ -13,8 +13,8 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse pull-right homepage-nav-links" id="navbarCollapse">
 	      <ul class="nav navbar-nav">
-	        <li ui-sref-active="">
-            <a ui-sref="categories.show"><i class="fa fa-search" style="font-size: 18px;"></i></a>
+	        <li ng-controller="searchModalCtrl">
+            <a ng-click="openSearch()"><i class="fa fa-search" style="font-size: 18px;"></i></a>
             <a class="nav-search-text" ui-sref="categories.show">Search</a>
           </li>
 	        <!-- <li><a ui-sref="category.show({id: 3})">Browse</a></li> -->
