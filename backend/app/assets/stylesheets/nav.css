@@ -118,21 +118,24 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
    }
 
    #lltv .homepage-nav-links {
-    color: #787d7f;
-    background-color: white;
-    width: 160px;
+    color: #FFF;
+    /*background-color: white;*/
+    width: 100%;
     text-align: center;
-    margin-right: -52px;
-    margin-top: 10px;
+    /*margin-right: -52px;
+    margin-top: 10px;*/
     padding: 0;
     border: 0px;
+
   }
 
   #lltv .homepage-nav-links .navbar-nav {
     margin: 0;
   }
 
+  /*dropdown triangle*/
   #lltv .navbar-collapse:after {
+    display: none;
     content: '';
     position: absolute;
     top: 22%;
@@ -142,10 +145,6 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
     border-left: solid 13px transparent;
     border-right: solid 13px transparent;
     border-bottom: solid 13px #FFF;
-  }
-
-  #lltv .homepage-nav-links li > a{
-    color: #787d7f;
   }
 
   #lltv .homepage-nav-links ul > li:first-child > a:first-child{
@@ -168,4 +167,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
     width: 212px;
     height: 41px;
   }
+  #lltv .homepage-nav-links li:first-child{ margin-top: 20px;}
+
+  #lltv .homepage-nav-links li{margin-bottom: 20px;}
 }
