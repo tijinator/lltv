@@ -1,7 +1,7 @@
 angular.module('lltv')
 .service('searchModalService', ['$uibModal', function($uibModal){
 
-  this.loginType = null;
+  // this.loginType = null;
   this.modalInstance = null;
 
 
@@ -12,7 +12,7 @@ angular.module('lltv')
       animation: true,
       templateUrl: templateUrl,
       controller: 'searchModalCtrl',
-      // windowTopClass: 'auth-template',late
+      windowTopClass: 'auth-template',
       backdrop: 'static',
       backdropClass: 'auth-backdrop'
     });

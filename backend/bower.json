@@ -28,7 +28,8 @@
     "angular-bootstrap": "~0.14.3",
     "startbootstrap-sb-admin-2": "~1.0.8",
     "ng-country-select": "^0.1.4",
-    "angular-cookies": "^1.5.5"
+    "angular-cookies": "^1.5.5",
+    "jquery-ui": "^1.11.4"
   },
   "resolutions": {
     "metisMenu": "~2.2.0",
