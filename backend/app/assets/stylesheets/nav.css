@@ -57,9 +57,6 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   padding: 10px 20px 10px 20px;
   margin-top: -12px;
 }
-/*#lltv .homepage-nav-links .profile-option-arrow{
-  background-image:url('/images/LLTV_responsive_mobile_downarrow.png');
-}*/
 
 .logo-img{
   position: absolute;
@@ -68,22 +65,6 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   height: 51px;
   width: 266px;
 }
-
-/* end profile nav options */
-
-/*@media (max-width: 797px) {
-	.icon-menu{
-    position: absolute;
-    top: 32px;
-    right: 50px;
-    cursor: pointer;
-    color: white;
-  }
-}
-
-@media (min-width: 600px) {
-	.icon-menu{  display: none;}
-}*/
 
 #lltv .homepage-nav-links ul > li:first-child > .nav-search-text{
   display: none;
@@ -98,6 +79,19 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   height: 4px;
   background: white;
 }
+
+/*searchcourses css*/
+.custom-typehead .dropdown-menu{
+  background-color: #000;
+  font-family: avenir-black;
+  top: 200px !important;
+}
+.custom-typehead .dropdown-menu li{
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/*end searchcourses css*/
 
 @media (max-width: 768px){
   #lltv .homepage-nav-links li:first-child{

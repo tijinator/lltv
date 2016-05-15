@@ -7,9 +7,30 @@
     <li>{{cats.title}}</li>
   </ul> -->
 
-  <div class="widget">
+  <!-- <div class="widget">
     <label for="tags">Tags: </label>
     <input id="tags" ng-keyup="complete()"/>
+  </div> -->
+
+  <!-- <ul ng-repeat="courses in searchCourses">
+    <li>{{courses.title}}</li>
+  </ul> -->
+  <div class="custom-typehead">
+    <input type="text" ng-model="selected" placeholder="search a course"
+    uib-typeahead="courses.title for courses in searchCourses | filter:$viewValue:startsWith" typeahead-loading="loadingLocations"
+    typeahead-no-results="noResults" typeahead-template-url="searchResults.html" class="form-control">
   </div>
+  <!-- <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+  <div ng-show="noResults">
+    <i class="glyphicon glyphicon-remove"></i> No Results Found
+  </div> -->
+
+  <script type="text/ng-template" id="searchResults.html">
+    <div>
+        <div>
+          {{match.model.title}}
+        </div>
+    </div>
+  </script>
 
 </div>
