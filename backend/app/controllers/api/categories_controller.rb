@@ -1,18 +1,19 @@
 class Api::CategoriesController < Api::ApiController
   
-  def featured_course
-    if params[:category_id]
-    else
-      # render json: CourseSerializer.new(Course.where({featured: true}).last)
-      # render json: CourseSerializer.new(Course.where({featured: true}).first)
-      render json: Category.where(parent_id: nil).order('id'), each_serializer: CategoriesSerializer, root: false
-    end
-  end
+  # def featured_course
+  #   if params[:category_id]
+  #   else
+  #     # render json: CourseSerializer.new(Course.where({featured: true}).last)
+  #     # render json: CourseSerializer.new(Course.where({featured: true}).first)
+  #     render json: Category.where(parent_id: nil).order('id'), each_serializer: CategoriesSerializer, root: false
+  #   end
+  # end
 
   def index
     # render json: Category.where.not({small_image_url: nil}), root: false
     # render json: CategoriesSerializer.new(Category.all)
-    render json: Category.where(parent_id: nil).order('id'), each_serializer: CategoriesSerializer, root: false
+    categories = Category.where(parent_id: nil).order('id')
+    render json: categories, each_serializer: CategoriesSerializer, root: false
   end
 
   def show
@@ -28,7 +29,8 @@ class Api::CategoriesController < Api::ApiController
 
   def courses
     category = Category.find(params[:id])
-    render json: category.courses, root: false
+    # render json: category.courses, root: false
+    render json: category.courses, each_serializer: CategoryCoursesSerializer, root: false
   end
   
 end

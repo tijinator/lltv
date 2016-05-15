@@ -1,13 +1,5 @@
 class Api::CoursesController < Api::ApiController
 
-  before_action :detecto
-
-  def detecto
-        puts "*"*100
-        puts "current_user from API: #{current_user}"
-        puts "*"*100
-  end
-
   def featured_course
     if params[:category_id]
     else

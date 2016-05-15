@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
+  protect_from_forgery with: :exception, if: Proc.new { |c| c.request.path_info.include?('auth') }
 
   respond_to :html, :json
   layout :layout_by_resource
@@ -11,7 +12,13 @@ class ApplicationController < ActionController::Base
   # helper_method :user_signed_in?
   # helper_method :current_user
 
-  
+  # after_action :gg
+  #   def gg
+  #     puts "*"*100
+  #     puts "CURRENT_USER IN AUTH: #{current_user}"
+  #     puts "*"*100
+  #   end
+    
   def error_message(type=nil)
     if type == nil
       return {"messsage" => "Unexpected error occurred"}

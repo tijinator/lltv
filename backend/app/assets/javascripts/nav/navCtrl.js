@@ -130,6 +130,7 @@ $scope.jsRun = function(userFirstName){
     $cookieStore.remove('userObj'); //remove current userObj cookie
     $cookieStore.put('userObj', userData); //update userObj cookie
     // console.log(userData);
+
     $location.path("categories");
     signedIn();
   });
@@ -164,6 +165,7 @@ $scope.jsRun = function(userFirstName){
     // console.log("Login Success event: ", ev);
     // console.log("Login Success: ", userData);
     $cookieStore.put('userObj', userData);
+    
     $location.path("categories");
     signedIn();
   });

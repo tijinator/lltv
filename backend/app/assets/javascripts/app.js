@@ -17,30 +17,9 @@ angular.module('lltv', [
 '$authProvider',
 'Rails',
 function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authProvider, Rails) {
-baseUrl = (Rails.env == 'production') ? 'http://beta.learninglibrary.tv' : 'http://lvh.me:3000'
-
+  baseUrl = (Rails.env == 'production') ? 'http://beta.learninglibrary.tv' : 'http://lvh.me:3000'
   $locationProvider.html5Mode(true);
-  // $authProvider.configure({
-  //   apiUrl: baseUrl + '/api/v1',
-  //   handleLoginResponse: function(resp) {
-  //     // currentUserProvider.set(resp);
-  //     // console.log("handleLoginResponse: ", resp);
-  //     return resp.data;
-  //   },
-  //   handleAccountUpdateResponse: function(resp) {
-  //     // console.log("handleAccountUpdateResponse: ", resp);
-  //       return resp.data;
-  //   },
-  //   handleTokenValidationResponse: function(resp) {
-  //     // console.log("handleTokenValidationResponse: ", resp);
-  //     return resp.data;
-  //   }
-  // });
-
-
-
-
-$authProvider.configure({
+  $authProvider.configure({
       apiUrl: baseUrl + '/api/v1',
       // tokenValidationPath:     '/auth/validate_token',
       // signOutUrl:              '/auth/sign_out',
@@ -53,7 +32,7 @@ $authProvider.configure({
       // passwordResetSuccessUrl: window.location.href,
       // emailSignInPath:         '/auth/sign_in',
       // storage:                 'cookies',
-      // forceValidateToken:      false,
+      forceValidateToken:      false,
       // validateOnPageLoad:      true,
       // proxyIf:                 function() { return false; },
       // proxyUrl:                '/proxy',
@@ -79,16 +58,17 @@ $authProvider.configure({
       //   // convert from UTC ruby (seconds) to UTC js (milliseconds)
       //   return (parseInt(headers['expiry']) * 1000) || null;
       // },
-      // handleLoginResponse: function(response) {
-      //   return response.data;
-      // },
-      // handleAccountUpdateResponse: function(response) {
-      //   return response.data;
-      // },
-      // handleTokenValidationResponse: function(response) {
-      //   return response.data;
-      // }
-    });
+      handleLoginResponse: function(response) {
+        
+        return response.data;
+      },
+      handleAccountUpdateResponse: function(response) {
+        return response.data;
+      },
+      handleTokenValidationResponse: function(response) {
+        return response.data;
+      }
+  });
 
 
 
@@ -163,17 +143,19 @@ $authProvider.configure({
     .state('categories.show', {
       url: '/categories',
       views: {
-        featuredCourse: {
-          templateUrl: 'categories/featuredCourse.html',
-          controller: 'FeaturedCourseCtrl',
-          resolve: {
-            featuredCourse: ['CategoryService',
-              function(categoriesService) {
-                return categoriesService.getFeaturedCourse(null);
-              }
-            ]
-          }
-        },
+        
+        // featuredCourse: {
+        //   templateUrl: 'categories/featuredCourse.html',
+        //   controller: 'FeaturedCourseCtrl',
+        //   resolve: {
+        //     featuredCourse: ['CategoryService',
+        //       function(categoriesService) {
+        //         return categoriesService.getFeaturedCourse(null);
+        //       }
+        //     ]
+        //   }
+        // },
+        
         categoryLibrary: {
           templateUrl: 'categories/categoryLibrary.html',
           controller: 'CategoryLibraryCtrl',
@@ -223,18 +205,18 @@ $authProvider.configure({
               }
             ]
           }
-        },
-        'recommendedCourses@category.show': {
-          templateUrl: 'category/categoryCourseList.html',
-          controller: "CategoryCourseListCtrl",
-          resolve: {
-            courses: ['$stateParams', 'CategoryService',
-              function($stateParams, categoriesService) {
-                return categoriesService.getCategoryCourses($stateParams.id);
-              }
-            ]
-          },
         }
+        // 'recommendedCourses@category.show': {
+        //   templateUrl: 'category/categoryCourseList.html',
+        //   controller: "CategoryCourseListCtrl",
+        //   resolve: {
+        //     courses: ['$stateParams', 'CategoryService',
+        //       function($stateParams, categoriesService) {
+        //         return categoriesService.getCategoryCourses($stateParams.id);
+        //       }
+        //     ]
+        //   },
+        // }
       },
       onEnter: function() {
         $('#landing-homepage').hide();
