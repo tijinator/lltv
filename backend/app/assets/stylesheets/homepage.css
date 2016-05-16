@@ -224,7 +224,7 @@
 
 /* responsive design desktop/laptop*/
 
-@media (max-width: 1060px){
+@media screen and (max-width: 1060px){
   .category-img-container{
     width: 50%;
   }
@@ -245,7 +245,7 @@
 
 }
 
-@media (max-width: 992px){
+@media screen and (max-width: 992px){
   .category-img-container{
     width: 45%;
     float: left;
@@ -262,7 +262,7 @@
 
 }
 
-@media (max-width: 850px){
+@media screen and (max-width: 850px){
   .category-img-container{ display: none; } /*turn off category image container*/
 
   .category-details-container{
@@ -286,7 +286,7 @@
 
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   #lltv .colored-bar{
     /*position: relative;*/
     /*top: calc(100% - 300px);*/
@@ -379,7 +379,7 @@
   .footer-copy-text{ margin-bottom: 10px;}
 }
 
-@media (max-width: 700px){
+@media screen and (max-width: 700px){
 
   /*.category-details-container{
     width: 90%;
@@ -391,7 +391,7 @@
 
 }
 
-@media (max-width: 600px){
+@media screen and (max-width: 600px){
 
   #lltv .container{ padding-right: 15px;}
 
@@ -403,12 +403,12 @@
 
 }
 
-@media (max-width: 411px){
+@media screen and (max-width: 411px){
   .category-details{ width: 320px;}
 }
 
 /*iphone 6 plus*/
-@media (max-width:414px) and (min-width:376px){
+@media screen and (max-width:414px) and (min-width:376px){
   .panel-title{ font-size: 26px;}
 
   .category-details{
@@ -422,7 +422,7 @@
 }
 
 /*iphone 5*/
-@media (max-width: 320px){
+@media screen and (max-width: 320px){
   .category-details{
     line-height: 18px;
     font-size: 12px;

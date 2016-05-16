@@ -5,7 +5,9 @@ angular.module('lltv')
 'CategoryService',
 'searchCourseService',
 '$http',
-function($scope, searchModalService, CategoryService, searchCourseService, $http){
+'$log',
+'$location',
+function($scope, searchModalService, CategoryService, searchCourseService, $http, $log, $location){
 
   $scope.openSearch = function(){
     searchModalService.openModal();
@@ -36,8 +38,25 @@ function($scope, searchModalService, CategoryService, searchCourseService, $http
     });
 
 
+  // $scope.$watch('selected', function(newValue, oldValue) {
+  //     if (newValue){
+  //       // $log.info('/100_Ages/' + $scope.selectedPerson.id);
+  //       console.log($scope.selected.id);
+  //       // $location.path('/courses/' + $scope.selected.id);
+  //     }
+  //   });
 
-  // console.log($scope.searchCourses);
+
+  $scope.onSelect = function($item, $model, $label){
+    $scope.$item = $item;
+    $scope.$model = $model;
+    $scope.$label = $label;
+    // $log.info($scope.$item);
+    // $log.info($scope.$model);
+    // $log.info($scope.$label);
+    $location.path('/courses/' + $scope.$item.id);
+    $scope.closeSearch();
+  }
 
 
 // another way to do this but w/ two services
