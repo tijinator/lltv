@@ -15,9 +15,8 @@ class Api::CoursesController < Api::ApiController
 
   def show
     if c = Course.find(params[:id])
-      # puts current_user
-      # if current_user.course_permissions.pluck(:course_id).include?(c.id)
 
+      # if current_user.course_permissions.pluck(:course_id).include?(c.id)
           render json: CourseSerializer.new(c, :scope => current_user), root: false
       
         # render json: CourseSerializer.new(c), root: false
@@ -26,7 +25,6 @@ class Api::CoursesController < Api::ApiController
       render json: error_message('db'), root: false
     end
   end
-
 end
 
 

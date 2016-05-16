@@ -1,5 +1,14 @@
 class AuthorSerializer < ActiveModel::Serializer
   self.root = false
 
-  attributes :first_name, :last_name, :avatar_file_name
+  attributes :full_name
+
+  def full_name
+  	if object
+  		"#{object.first_name} #{object.last_name}"
+  	else
+  		nil
+  	end
+  end
+
 end

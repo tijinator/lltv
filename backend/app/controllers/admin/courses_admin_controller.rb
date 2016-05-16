@@ -24,7 +24,7 @@ class Admin::CoursesAdminController < Admin::AdminController
   end
 
   def show
-    @chapters = @course.chapters
+    @chapters = @course.chapters.order('position ASC')
   end
 
   def create

@@ -8,32 +8,71 @@ angular.module('lltv', [
 'lltvFilters',
 'countrySelect',
 'ngAnimate'])
-// .constant('baseUrl', 'http://beta.learninglibrary.tv')
-// .constant('baseUrl', 'http://localhost:3000')
-.constant('baseUrl', 'http://lvh.me:3000')
+.constant('baseUrl', 'http://beta.learninglibrary.tv')
 .config([
 'baseUrl',
 '$stateProvider',
 '$locationProvider',
 '$urlRouterProvider',
 '$authProvider',
-function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authProvider) {
+'Rails',
+function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authProvider, Rails) {
+  baseUrl = (Rails.env == 'production') ? 'http://beta.learninglibrary.tv' : 'http://lvh.me:3000'
   $locationProvider.html5Mode(true);
-
   $authProvider.configure({
-    apiUrl: baseUrl + '/api/v1',
-    handleLoginResponse: function(resp) {
-      // currentUserProvider.set(resp);
-      return resp.data;
-    },
-    handleAccountUpdateResponse: function(resp) {
-        return resp.data;
-    },
-    handleTokenValidationResponse: function(resp) {
-      // console.log(resp);
-      return resp.data;
-    }
+      apiUrl: baseUrl + '/api/v1',
+      // tokenValidationPath:     '/auth/validate_token',
+      // signOutUrl:              '/auth/sign_out',
+      // emailRegistrationPath:   '/auth',
+      // accountUpdatePath:       '/auth',
+      // accountDeletePath:       '/auth',
+      // confirmationSuccessUrl:  window.location.href,
+      // passwordResetPath:       '/auth/password',
+      // passwordUpdatePath:      '/auth/password',
+      // passwordResetSuccessUrl: window.location.href,
+      // emailSignInPath:         '/auth/sign_in',
+      // storage:                 'cookies',
+      forceValidateToken:      false,
+      // validateOnPageLoad:      true,
+      // proxyIf:                 function() { return false; },
+      // proxyUrl:                '/proxy',
+      // omniauthWindowType:      'sameWindow',
+      // tokenFormat: {
+      //   "access-token": "{{ token }}",
+      //   "token-type":   "Bearer",
+      //   "client":       "{{ clientId }}",
+      //   "expiry":       "{{ expiry }}",
+      //   "uid":          "{{ uid }}"
+      // },
+      // cookieOps: {
+      //   path: "/",
+      //   expires: 9999,
+      //   expirationUnit: 'days',
+      //   secure: false,
+      //   domain: 'lvh.me'
+      // },
+      // createPopup: function(url) {
+      //   return window.open(url, '_blank', 'closebuttoncaption=Cancel');
+      // },
+      // parseExpiry: function(headers) {
+      //   // convert from UTC ruby (seconds) to UTC js (milliseconds)
+      //   return (parseInt(headers['expiry']) * 1000) || null;
+      // },
+      handleLoginResponse: function(response) {
+        
+        return response.data;
+      },
+      handleAccountUpdateResponse: function(response) {
+        return response.data;
+      },
+      handleTokenValidationResponse: function(response) {
+        return response.data;
+      }
   });
+
+
+
+
 
   $stateProvider
     .state('home', {
@@ -104,17 +143,19 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
     .state('categories.show', {
       url: '/categories',
       views: {
-        featuredCourse: {
-          templateUrl: 'categories/featuredCourse.html',
-          controller: 'FeaturedCourseCtrl',
-          resolve: {
-            featuredCourse: ['CategoryService',
-              function(categoriesService) {
-                return categoriesService.getFeaturedCourse(null);
-              }
-            ]
-          }
-        },
+        
+        // featuredCourse: {
+        //   templateUrl: 'categories/featuredCourse.html',
+        //   controller: 'FeaturedCourseCtrl',
+        //   resolve: {
+        //     featuredCourse: ['CategoryService',
+        //       function(categoriesService) {
+        //         return categoriesService.getFeaturedCourse(null);
+        //       }
+        //     ]
+        //   }
+        // },
+        
         categoryLibrary: {
           templateUrl: 'categories/categoryLibrary.html',
           controller: 'CategoryLibraryCtrl',
@@ -164,18 +205,18 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
               }
             ]
           }
-        },
-        'recommendedCourses@category.show': {
-          templateUrl: 'category/categoryCourseList.html',
-          controller: "CategoryCourseListCtrl",
-          resolve: {
-            courses: ['$stateParams', 'CategoryService',
-              function($stateParams, categoriesService) {
-                return categoriesService.getCategoryCourses($stateParams.id);
-              }
-            ]
-          },
         }
+        // 'recommendedCourses@category.show': {
+        //   templateUrl: 'category/categoryCourseList.html',
+        //   controller: "CategoryCourseListCtrl",
+        //   resolve: {
+        //     courses: ['$stateParams', 'CategoryService',
+        //       function($stateParams, categoriesService) {
+        //         return categoriesService.getCategoryCourses($stateParams.id);
+        //       }
+        //     ]
+        //   },
+        // }
       },
       onEnter: function() {
         $('#landing-homepage').hide();
