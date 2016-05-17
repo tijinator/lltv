@@ -1,5 +1,5 @@
 module DeviseToken 
-	class RegistrationsController < DeviseTokenAuth::RegistrationsController
+	class RegistrationsController < DeviseTokenApplicationController
 
 		def	create
 			if options = params[:options] 

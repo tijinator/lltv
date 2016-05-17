@@ -24,7 +24,7 @@ class Admin::CoursesAdminController < Admin::AdminController
   end
 
   def show
-    @chapters = @course.chapters
+    @chapters = @course.chapters.order('position ASC')
   end
 
   def create
@@ -56,15 +56,16 @@ class Admin::CoursesAdminController < Admin::AdminController
     end
   end
 
-  # def update
-  #   @course.update_attributes!(course_params)
-  #   redirect_to category_path(@category)
-  # end
-
-  def update_published_status
-    course.update_attributes!(publish_params)
-    redirect_to :back
+  def update
+    @course.update_attributes!(course_params)
+      redirect_to :back
+    # redirect_to category_path(@category)
   end
+
+  # def update_published_status
+  #   course.update_attributes!(publish_params)
+  #   redirect_to :back
+  # end
 
   def destroy
     @course.destroy

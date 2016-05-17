@@ -12,7 +12,6 @@ class ChapterSerializer < ActiveModel::Serializer
   #   end
   # end
 
-
   # delegate :user_signed_in?, to: :scope
 
   # def videos

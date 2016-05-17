@@ -8,26 +8,27 @@ class Api::CoursesController < Api::ApiController
   end
 
   def index
-    render json: Course.all, root: false
+    render json: Course.all.order('id ASC'), each_serializer: CategoryCoursesSerializer, root: false
+
+    # render json: Course.all, each_serializer: CoursesSerializer, root: false
+    # render json: Course.all, root: false
     # render json: Course.where("id > 0"), root: false
-    # render json: CoursesSerializer.new(Course.all), root: false
+    # render json: CoursesSerializer.new(courses), root: false
   end
 
   def show
-    if c = Course.find(params[:id])
-      # puts current_user
-      # if current_user.course_permissions.pluck(:course_id).include?(c.id)
-
-          render json: CourseSerializer.new(c, :scope => current_user), root: false
-      
-        # render json: CourseSerializer.new(c), root: false
-        # render json: CoursePermissionSerializer.new(c), root: false
+    if c = Course.includes(:chapters).find(params[:id])
+      render json: CourseSerializer.new(c, :scope => course_permission(c.id)), root: false
+        # render json: CourseNoPermissionSerializer.new(c), root: false
     else
       render json: error_message('db'), root: false
     end
   end
 
+private
+  def course_permission(id)
+    current_user_permission = user_signed_in? ? current_user.course_permissions.pluck(:course_id).include?(id) : false
+  end
+
 end
 
-
-# if user_signed_in? && current_user.course_permissions.includes?(c.id)

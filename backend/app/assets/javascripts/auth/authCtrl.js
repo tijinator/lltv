@@ -4,7 +4,8 @@ angular.module('lltv')
 '$auth',
 'currentUser',
 'AuthService',
-function($scope, $auth, currentUser, authService) {
+'$cookieStore',
+function($scope, $auth, currentUser, authService, $cookieStore) {
   $scope.errors = '';
 
   $scope.submitRegistration = function(obj) {
@@ -13,12 +14,16 @@ function($scope, $auth, currentUser, authService) {
       .then(function(res) {
         $scope.close();
         localStorage.removeItem('course_id');
+
+        $scope.submitLogin({email: $scope.registrationForm.email,
+                            password: $scope.registrationForm.password});
+        
       })
       .catch(function(res) {
         $("#form-submit-btn").removeProp('disabled');
         if (res.data.errors) {
           $scope.errors = res.data.errors.full_messages.join(', ');
-          // console.log('if', res.data.errors.full_messages.join(', '));
+          console.log('if', res.data.errors.full_messages.join(', '));
         }else if(res.data && res.data.includes('declined')){
           $scope.errors = 'Card Declined';
         }else{
@@ -28,9 +33,11 @@ function($scope, $auth, currentUser, authService) {
   };
 
   $scope.submitLogin = function(obj) {
+    $scope.loginForm = obj || $scope.loginForm;
     $auth.submitLogin($scope.loginForm)
       .then(function(resp) {
         $scope.close();
+        $cookieStore.put('userObj', resp);
       })
       .catch(function(resp) {
          $scope.errors = "Email or Password invalid...";

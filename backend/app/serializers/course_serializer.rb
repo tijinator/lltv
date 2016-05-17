@@ -11,6 +11,10 @@ class CourseSerializer < ActiveModel::Serializer
     object.banner_url.url
   end
 
+  def chapters
+    object.chapters.order(:position)
+  end
+  
   # def chapters
   #   if user_signed_in?
   #     object.chapters.all
@@ -19,9 +23,6 @@ class CourseSerializer < ActiveModel::Serializer
   #   end
   # end
 
-  def chapters
-    object.chapters.order(:position)
-  end
 
   # def video
   #   object

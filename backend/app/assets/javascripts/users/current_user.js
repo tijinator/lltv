@@ -9,6 +9,7 @@ function($rootScope, $auth, $http, $cookieStore) {
 
   userObject.getUserObj = function(){
     var userObj = $cookieStore.get('userObj');
+    
 
     if(userObj){
       return userObj;
