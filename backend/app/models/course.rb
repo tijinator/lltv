@@ -1,8 +1,10 @@
 class Course < ActiveRecord::Base
   mount_uploader :banner_url, CourseUploader
+  default_scope {includes(:chapters)}
+  # Course.search "title_course", include: [:chapters, :author]
+
   belongs_to :user
   belongs_to :author
-
 
   has_many :course_permissions
   has_many :chapters

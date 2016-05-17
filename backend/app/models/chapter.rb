@@ -3,8 +3,8 @@
 class Chapter < ActiveRecord::Base
   # belongs_to :parent, class: 'Chapter'
   # has_many :children, class: 'Chapter', foreign_key: :parent_id
-
-
+  default_scope {includes(:video)}
+  
   # has_ancestry
 
   has_many :tags, through: :item_tags, source: :taggable, source_type: 'Tag'

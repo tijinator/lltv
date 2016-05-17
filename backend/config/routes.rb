@@ -1,14 +1,5 @@
 Rails.application.routes.draw do
 
-  # token auth routes available at /api/v1/auth
-  namespace :api do
-    scope :v1 do
-      mount_devise_token_auth_for 'User', at: 'auth', controllers: {
-        registrations: 'devise_token/registrations'
-      }
-    end
-  end
-
   # Subdomains -
   admin_url = Rails.env.production? ? 'admin.beta' : 'admin'  
   constraints subdomain: admin_url do
@@ -64,13 +55,17 @@ Rails.application.routes.draw do
 
   end
 
-
   # Api's  /api/course/:id
   namespace :api, defaults: { format: :json } do
+    # token auth routes available at /api/auth
+    mount_devise_token_auth_for 'User', at: 'auth', controllers: {
+      registrations: 'devise_token/registrations'
+    }
+      
     resources :categories, only: [:show, :index] do
-      collection do
-        get 'featured_course' => 'categories#featured_course'
-      end
+      # collection do
+      #   get 'featured_course' => 'categories#featured_course'
+      # end
       member do
         get 'courses' => 'categories#courses'
       end
@@ -78,20 +73,16 @@ Rails.application.routes.draw do
 
     resources :courses, controller: 'courses', only: [:index, :show]
     # get 'courses' => 'api/courses#index'
+    get 'search-all' => 'searches#all_searches'
   end
 
   get '/courses' => 'home#home'
   get '/courses/:course_id' => 'home#home'
-
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
-
   get '/users/:user_id' => 'home#home' #profile route
-
   get '/account' => 'home#home' #account routes
-
   get '/about' => 'home#home' #about page
-
   get '/faq' => 'home#home' #frequently asked questions
 
   root to: 'home#home'

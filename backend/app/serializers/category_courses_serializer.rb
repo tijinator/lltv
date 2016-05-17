@@ -1,5 +1,5 @@
 class CategoryCoursesSerializer < ActiveModel::Serializer
-	attributes :id, :level, :title, :details, :duration, :position
+	attributes :id, :level, :title, :details, :duration
 	# has_one :author
 
 	# def author

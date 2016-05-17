@@ -1,3 +1,4 @@
+
 module Api
 	class ApiController < ApplicationController
 		protect_from_forgery with: :null_session
@@ -11,7 +12,6 @@ module Api
 	    #     raise ArgumentError.new, "Invalid request from external domain"
 	    #   end
 	    # end
-
 	end
 end
 

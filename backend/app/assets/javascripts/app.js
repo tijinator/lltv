@@ -21,7 +21,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
   baseUrl = (Rails.env == 'production') ? 'http://beta.learninglibrary.tv' : 'http://lvh.me:3000'
   $locationProvider.html5Mode(true);
   $authProvider.configure({
-      apiUrl: baseUrl + '/api/v1',
+      apiUrl: baseUrl + '/api',
       // tokenValidationPath:     '/auth/validate_token',
       // signOutUrl:              '/auth/sign_out',
       // emailRegistrationPath:   '/auth',
@@ -33,7 +33,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       // passwordResetSuccessUrl: window.location.href,
       // emailSignInPath:         '/auth/sign_in',
       // storage:                 'cookies',
-      forceValidateToken:      false,
+      // forceValidateToken:      false,
       // validateOnPageLoad:      true,
       // proxyIf:                 function() { return false; },
       // proxyUrl:                '/proxy',
