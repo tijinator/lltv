@@ -7,7 +7,8 @@ angular.module('lltv')
 '$http',
 '$log',
 '$location',
-function($scope, searchModalService, CategoryService, searchCourseService, $http, $log, $location){
+'$q',
+function($scope, searchModalService, CategoryService, searchCourseService, $http, $log, $location, $q){
 
   $scope.openSearch = function(){
     searchModalService.openModal();
@@ -27,17 +28,29 @@ function($scope, searchModalService, CategoryService, searchCourseService, $http
 
   $scope.searchCourses = [];
 
-  $http.get('api/courses')
-    .then(function(response){
-      $scope.searchCourses = response.data;
-
-      // $scope.startsWith = function(state, viewValue) {
-      //   return state.substr(0, viewValue.length).toLowerCase() == viewValue.toLowerCase();
-      // }
-
-    });
+  //this is the right answer so far
+  // $http.get('api/courses')
+  // .then(function(response){
+  //     $scope.searchCourses = response.data;
+  // });
 
 
+  $scope.courseSearchList = $http.get('api/courses', {cache: false});
+  $scope.categorySearchList = $http.get('api/categories', {'cache': false});
+
+  $q.all([$scope.categorySearchList, $scope.courseSearchList]).then(function(values) {
+
+      $scope.searchCourseTest = values[0].data;
+      $scope.searchCatTest = values[1].data;
+
+      var a = values[0].data;
+      var b = values[1].data;
+      var c = a.concat(b); //c is now an an array with: ['a','b','c','d','e','f']
+      $scope.searchResults = a.concat(b);
+  });
+
+
+  // console.log($scope.searchCourses);
   // $scope.$watch('selected', function(newValue, oldValue) {
   //     if (newValue){
   //       // $log.info('/100_Ages/' + $scope.selectedPerson.id);
