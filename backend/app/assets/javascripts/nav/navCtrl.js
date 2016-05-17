@@ -127,52 +127,41 @@ $scope.jsRun = function(userFirstName){
   $rootScope.$on('auth:registration-email-success', function(ev, userData) {
     // alert("A registration email was sent to " + message.email);
     // console.log('Register Success: ',userData);
+    // console.log(userData);
+    
     $cookieStore.remove('userObj'); //remove current userObj cookie
     $cookieStore.put('userObj', userData); //update userObj cookie
-    // console.log(userData);
 
     $location.path("categories");
     signedIn();
   });
 
   $rootScope.$on('auth:validation-success', function(ev, userData) {
-    // console.log("validation event: ", ev);
-    // console.log("validation: ", userData);
     signedIn();
   });
 
   $rootScope.$on('auth:validation-error', function(ev, userData) {
-    // console.log('Err auth-valid: ', userData);
-    // alert("THERE");
   });
 
   $rootScope.$on('auth:validateUser', function(ev, userData) {
-    alert("THERE");
+    // alert("THERE");
   });
 
   $rootScope.$on('auth:invalid', function(ev, userData) {
-    alert("INVALID USER AUTH");
+    // alert("INVALID USER AUTH");
   });
 
   $rootScope.$on('auth:login-error', function(ev, userData) {
-    // console.log("ERRRORRR - auth:login-error");
-    // console.log("that err: ", userData.errors[0]);
   });
 
   $rootScope.$on('auth:login-success', function(ev, userData) {
-    // console.log("validation-log1: ", ev);
-    // console.log("validation-log2: ", userData);
-    // console.log("Login Success event: ", ev);
-    // console.log("Login Success: ", userData);
-    $cookieStore.put('userObj', userData);
+    // $cookieStore.put('userObj', userData);
     
     $location.path("categories");
     signedIn();
   });
 
   $rootScope.$on('auth:logout-success', function(ev) {
-    // console.log("LogOut Success");
-    // console.log('signOut: ', ev);
     $cookieStore.remove('userObj'); //remove current userObj cookie
     $location.path("/");
     signOut();

@@ -1,4 +1,7 @@
 class Category < ActiveRecord::Base
+
+	# default_scope {includes(:courses)}
+
 	mount_uploader :small_image_url, CategoryUploader
 	mount_uploader :banner_url, CategoryUploader
 	
