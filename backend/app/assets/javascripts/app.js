@@ -7,6 +7,7 @@ angular.module('lltv', [
 'ngCookies',
 'lltvFilters',
 'countrySelect',
+'ngSanitize',
 'ngAnimate'])
 .constant('baseUrl', 'http://beta.learninglibrary.tv')
 .config([
@@ -59,7 +60,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       //   return (parseInt(headers['expiry']) * 1000) || null;
       // },
       handleLoginResponse: function(response) {
-        
+
         return response.data;
       },
       handleAccountUpdateResponse: function(response) {
@@ -143,7 +144,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
     .state('categories.show', {
       url: '/categories',
       views: {
-        
+
         // featuredCourse: {
         //   templateUrl: 'categories/featuredCourse.html',
         //   controller: 'FeaturedCourseCtrl',
@@ -155,7 +156,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         //     ]
         //   }
         // },
-        
+
         categoryLibrary: {
           templateUrl: 'categories/categoryLibrary.html',
           controller: 'CategoryLibraryCtrl',

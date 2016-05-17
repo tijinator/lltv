@@ -110,7 +110,7 @@
 	height: 500px;
 	background: #222628;
 	padding: 0 45px;
-	overflow: auto;
+	overflow-y: hidden;
 	padding-bottom: 80px;
 }
 

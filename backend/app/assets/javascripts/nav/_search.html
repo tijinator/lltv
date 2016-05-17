@@ -25,31 +25,49 @@
     <li>{{cats.title}}</li>
   </ul> -->
 
-  <ul ng-repeat="result in searchResults">
+  <!-- <ul ng-repeat="result in searchResults">
     <li>{{result.title}}</li>
-  </ul>
+  </ul> -->
 
 
-  <div class="custom-typehead">
+  <!-- <div class="custom-typehead">
     <input type="text" ng-model="selected" placeholder="search a course"
-    uib-typeahead="courses.title for courses in searchCourses | filter:$viewValue:startsWith" typeahead-loading="loadingLocations"
+    uib-typeahead="items for items in searchResults | filter:$viewValue:startsWith" typeahead-loading="loadingLocations"
     typeahead-no-results="noResults" typeahead-template-url="searchResults.html"
-    typeahead-on-select="onSelect($item, $model, $label)" typeahead-min-length="2" class="form-control" ng-init="">
+    typeahead-on-select="onSelect($item, $model, $label)" typeahead-min-length="1" class="form-control" ng-init="">
   </div>
-  <!-- <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-  <div ng-show="noResults">
-    <i class="glyphicon glyphicon-remove"></i> No Results Found
-  </div> -->
 
   <script type="text/ng-template" id="searchResults.html">
     <div>
         <div>
-          <!-- <a href="/cousres/{{match.model.id}}">{{match.model.title}}</a> -->
-          <!-- <a ui-sref="courses.show({id: match.model.id})" ng-click="closeTest()">{{match.model.title}}</a> -->
-          {{match.model.title}}
+
+          {{match.label}}
 
         </div>
+
     </div>
-  </script>
+  </script> -->
+
+
+
+  <div class="custom-typehead">
+    <input type="text" ng-model="selected" placeholder="search a course"
+    uib-typeahead="test as courses.title for courses in searchResults | filter:$viewValue:startsWith" typeahead-loading="loadingLocations"
+    typeahead-no-results="noResults" typeahead-template-url="searchResults.html"
+    typeahead-on-select="onSelect($item, $model, $label)" typeahead-min-length="3" class="form-control" ng-init="">
+  </div>
+
+
 
 </div>
+<script type="text/ng-template" id="searchResults.html">
+  <div>
+      <div ng-show="match.model.id == 1 && match.model.hasOwnProperty('parent_id')">Category
+        <!-- {{match.model.hasOwnProperty('parent_id') ? 'cat' : 'courses'}} -->
+        <!-- {{match.model.title}} -->
+      </div>
+      <div ng-show="match.model.id == 3 && match.model.hasOwnProperty('chapters')"> Courses</div>
+      <span ng-bind-html="match.label"></span>
+
+  </div>
+</script>

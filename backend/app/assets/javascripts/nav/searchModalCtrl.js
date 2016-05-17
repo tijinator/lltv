@@ -35,17 +35,36 @@ function($scope, searchModalService, CategoryService, searchCourseService, $http
   // });
 
 
-  $scope.courseSearchList = $http.get('api/courses', {cache: false});
+  $scope.courseSearchList = $http.get('api/courses', {'cache': false});
   $scope.categorySearchList = $http.get('api/categories', {'cache': false});
+
+
+  // $q.all([$scope.categorySearchList, $scope.courseSearchList]).then(function(values) {
+  //
+  //     var a = values[0].data;
+  //     var b = values[1].data;
+  //     var c = [];
+  //
+  //     c.push(a);
+  //     c.push(b);
+  //
+  //     // console.log(c[0], 'categories');
+  //     // console.log(c[1], 'courses');
+  //     console.log(c, 'combo');
+  //
+  //     $scope.searchResults = c;
+  // });
 
   $q.all([$scope.categorySearchList, $scope.courseSearchList]).then(function(values) {
 
-      $scope.searchCourseTest = values[0].data;
-      $scope.searchCatTest = values[1].data;
-
       var a = values[0].data;
       var b = values[1].data;
-      var c = a.concat(b); //c is now an an array with: ['a','b','c','d','e','f']
+
+      // console.log(a, 'cats');
+      // console.log(b, 'courses');
+
+      var c = a.concat(b);
+      console.log(c, 'combo');
       $scope.searchResults = a.concat(b);
   });
 
