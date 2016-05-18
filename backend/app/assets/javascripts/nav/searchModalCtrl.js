@@ -3,12 +3,12 @@ angular.module('lltv')
 '$scope',
 'searchModalService',
 'CategoryService',
-'searchCourseService',
 '$http',
 '$log',
 '$location',
 '$q',
-function($scope, searchModalService, CategoryService, searchCourseService, $http, $log, $location, $q){
+'filterFilter',
+function($scope, searchModalService, CategoryService, $http, $log, $location, $q, filterFilter){
 
   $scope.openSearch = function(){
     searchModalService.openModal();
@@ -18,25 +18,64 @@ function($scope, searchModalService, CategoryService, searchCourseService, $http
     searchModalService.closeModal();
   }
 
+
+  $scope.selected = '';
+
+  //this is the right answer so far
+  $http.get('api/search-all')
+  .then(function(response){
+      var searchData = response.data;
+
+      $scope.getSearch = function (search) {
+
+        var filtered = filterFilter(angular.copy(searchData), search);
+
+        var results = _.chain(filtered)
+          .groupBy('group')
+          .map(function (g) {
+            g[0].firstInGroup = true;  // the first item in each group
+            return g;
+          })
+          .flatten()
+          .value();
+
+        return results;
+      }
+
+  });
+
+
+  $scope.onSelect = function($item, $model, $label){
+    $scope.$item = $item;
+    $scope.$model = $model;
+    $scope.$label = $label;
+    // $log.info($scope.$item);
+    // $log.info($scope.$model);
+    // $log.info($scope.$label);
+    if($scope.$item.group == "course"){
+      $location.path('/courses/' + $scope.$item.id);
+    }else {
+      $location.path('/categories/' + $scope.$item.id);
+    }
+    $scope.closeSearch();
+  }
+
+
+
+  //previous work below this comment
+  
+  // $scope.searchCourses = [];
+
   // $scope.searchCourses = function(val){
   //   return $http.get('api/courses')
   //   .then(function(response){
   //     return response.data;
   //   });
   // }
-  $scope.selected = undefined;
-
-  $scope.searchCourses = [];
-
-  //this is the right answer so far
-  // $http.get('api/courses')
-  // .then(function(response){
-  //     $scope.searchCourses = response.data;
-  // });
 
 
-  $scope.courseSearchList = $http.get('api/courses', {'cache': false});
-  $scope.categorySearchList = $http.get('api/categories', {'cache': false});
+  // $scope.courseSearchList = $http.get('api/courses', {'cache': false});
+  // $scope.categorySearchList = $http.get('api/categories', {'cache': false});
 
 
   // $q.all([$scope.categorySearchList, $scope.courseSearchList]).then(function(values) {
@@ -55,18 +94,18 @@ function($scope, searchModalService, CategoryService, searchCourseService, $http
   //     $scope.searchResults = c;
   // });
 
-  $q.all([$scope.categorySearchList, $scope.courseSearchList]).then(function(values) {
-
-      var a = values[0].data;
-      var b = values[1].data;
-
-      // console.log(a, 'cats');
-      // console.log(b, 'courses');
-
-      var c = a.concat(b);
-      console.log(c, 'combo');
-      $scope.searchResults = a.concat(b);
-  });
+  // $q.all([$scope.categorySearchList, $scope.courseSearchList]).then(function(values) {
+  //
+  //     var a = values[0].data;
+  //     var b = values[1].data;
+  //
+  //     // console.log(a, 'cats');
+  //     // console.log(b, 'courses');
+  //
+  //     var c = a.concat(b);
+  //     console.log(c, 'combo');
+  //     $scope.searchResults = a.concat(b);
+  // });
 
 
   // console.log($scope.searchCourses);
@@ -77,18 +116,6 @@ function($scope, searchModalService, CategoryService, searchCourseService, $http
   //       // $location.path('/courses/' + $scope.selected.id);
   //     }
   //   });
-
-
-  $scope.onSelect = function($item, $model, $label){
-    $scope.$item = $item;
-    $scope.$model = $model;
-    $scope.$label = $label;
-    // $log.info($scope.$item);
-    // $log.info($scope.$model);
-    // $log.info($scope.$label);
-    $location.path('/courses/' + $scope.$item.id);
-    $scope.closeSearch();
-  }
 
 
 // another way to do this but w/ two services

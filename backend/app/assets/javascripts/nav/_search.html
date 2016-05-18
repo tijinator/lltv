@@ -50,7 +50,27 @@
 
 
 
+
   <div class="custom-typehead">
+    <input type="text" class="form-control" placeholder="search our library"
+        ng-model="selected"
+        uib-typeahead="searchTitle as searchData.title for searchData in getSearch($viewValue) | filter:$viewValue:startsWith"
+        typeahead-template-url="typeahead-item.html"
+        typeahead-min-length="2"
+        typeahead-on-select="onSelect($item, $model, $label)"/>
+  </div>
+
+  <script type="text/ng-template" id="typeahead-item.html">
+    <div class="typeahead-group-header" ng-if="match.model.firstInGroup">{{match.model.group}}</div>
+    <a>
+      <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
+    </a>
+  </script>
+
+
+
+</div>
+  <!-- <div class="custom-typehead">
     <input type="text" ng-model="selected" placeholder="search a course"
     uib-typeahead="test as courses.title for courses in searchResults | filter:$viewValue:startsWith" typeahead-loading="loadingLocations"
     typeahead-no-results="noResults" typeahead-template-url="searchResults.html"
@@ -63,11 +83,9 @@
 <script type="text/ng-template" id="searchResults.html">
   <div>
       <div ng-show="match.model.id == 1 && match.model.hasOwnProperty('parent_id')">Category
-        <!-- {{match.model.hasOwnProperty('parent_id') ? 'cat' : 'courses'}} -->
-        <!-- {{match.model.title}} -->
       </div>
       <div ng-show="match.model.id == 3 && match.model.hasOwnProperty('chapters')"> Courses</div>
       <span ng-bind-html="match.label"></span>
 
   </div>
-</script>
+</script> -->

@@ -15,6 +15,7 @@
 //= require angular-bootstrap
 //= require ng-country-select
 //= require angular-sanitize
+//= require underscore
 //= require jquery-ui
 //= require_tree .
 //= stub payment
