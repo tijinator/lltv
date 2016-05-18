@@ -15,7 +15,7 @@
 	      <ul class="nav navbar-nav">
 	        <li ng-controller="searchModalCtrl">
             <a ng-click="openSearch()"><i class="fa fa-search" style="font-size: 18px;"></i></a>
-            <a class="nav-search-text" ui-sref="categories.show">Search</a>
+            <a class="nav-search-text" ng-click="openSearch()">Search</a>
           </li>
 	        <!-- <li><a ui-sref="category.show({id: 3})">Browse</a></li> -->
 	        <li><a ui-sref="categories.show">Browse</a></li>

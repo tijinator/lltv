@@ -1,0 +1,55 @@
+.search-modal{
+  clear: both;
+  margin: 0 auto;
+  width: 80%;
+  font-family: avenir-black;
+  text-transform: capitalize;
+}
+
+.search-modal-close{
+  padding: 20px;
+  margin: 30px 30px 0 0;
+}
+
+.search-modal-title{
+  /*text-transform: capitalize;*/
+  margin: 0 0 10px 0;
+}
+
+.custom-typehead .dropdown-menu{
+  background-color: transparent;
+  /*font-family: avenir-black;*/
+  top: 200px !important;
+}
+.custom-typehead .dropdown-menu li{
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.custom-typehead .dropdown-menu li a {
+  padding: 3px 0px;
+  font-size: 30px;
+  color: #666666;
+  font-family: avenir-book;
+}
+
+.search-modal .custom-typehead input:not([type=submit]):not([type=file]){
+  background-color: transparent;
+  box-shadow: none;
+  border: 0;
+  height: 60px;
+  border-radius: 0px;
+  font-size: 55px;
+  font-family: Avenir-Black;
+  color: #fff;
+  padding: 0;
+}
+
+.custom-typehead .dropdown-menu li div{
+  padding-bottom: 12px;
+  font-size: 24px;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus{
+  background-color: transparent;
+}
