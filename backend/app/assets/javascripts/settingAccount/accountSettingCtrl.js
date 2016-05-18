@@ -119,4 +119,5 @@ function($rootScope, $scope, currentUser, $auth, $cookieStore, $location, $windo
 
    //end update password
 
+
 }]);

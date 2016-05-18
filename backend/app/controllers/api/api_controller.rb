@@ -1,7 +1,9 @@
 
 module Api
-	class ApiController < ApplicationController
-		protect_from_forgery with: :null_session
+	class ApiController <ActionController::Base
+	# class ApiController < ApplicationController
+		# include DeviseTokenAuth::Concerns::SetUserByToken
+		# protect_from_forgery with: :null_session
 
 		# serialization_scope :view_context
 		# serialization_scope :user_signed_in?
