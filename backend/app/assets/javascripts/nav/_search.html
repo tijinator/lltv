@@ -1,8 +1,28 @@
-<div class="auth-content">
+<div class="search-modal">
+  <div class="">
+    Search
+  </div>
   <div>
     <img src="/images/LLTV_x.png" class="auth-close pull-right" ng-click="closeSearch()" style="cursor: pointer;">
   </div>
 
+  <div class="custom-typehead">
+    <input type="text" class="form-control search-input"
+        ng-model="selected"
+        uib-typeahead="searchTitle as searchData.title for searchData in getSearch($viewValue) | filter:$viewValue:startsWith"
+        typeahead-template-url="typeahead-item.html"
+        typeahead-min-length="2"
+        typeahead-on-select="onSelect($item, $model, $label)" autofocus/>
+  </div>
+
+  <script type="text/ng-template" id="typeahead-item.html">
+    <div class="typeahead-group-header" ng-if="match.model.firstInGroup">{{match.model.group}}</div>
+    <a>
+      <span ng-bind-html="match.label"></span>
+    </a>
+  </script>
+
+</div>
   <!-- <ul ng-repeat="cats in searchCategories">
     <li>{{cats.title}}</li>
   </ul> -->
@@ -49,27 +69,6 @@
   </script> -->
 
 
-
-
-  <div class="custom-typehead">
-    <input type="text" class="form-control" placeholder="search our library"
-        ng-model="selected"
-        uib-typeahead="searchTitle as searchData.title for searchData in getSearch($viewValue) | filter:$viewValue:startsWith"
-        typeahead-template-url="typeahead-item.html"
-        typeahead-min-length="2"
-        typeahead-on-select="onSelect($item, $model, $label)"/>
-  </div>
-
-  <script type="text/ng-template" id="typeahead-item.html">
-    <div class="typeahead-group-header" ng-if="match.model.firstInGroup">{{match.model.group}}</div>
-    <a>
-      <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
-    </a>
-  </script>
-
-
-
-</div>
   <!-- <div class="custom-typehead">
     <input type="text" ng-model="selected" placeholder="search a course"
     uib-typeahead="test as courses.title for courses in searchResults | filter:$viewValue:startsWith" typeahead-loading="loadingLocations"

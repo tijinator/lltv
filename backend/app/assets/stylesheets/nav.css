@@ -82,13 +82,24 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
 /*searchcourses css*/
 .custom-typehead .dropdown-menu{
-  background-color: #000;
+  background-color: transparent;
   font-family: avenir-black;
   top: 200px !important;
 }
 .custom-typehead .dropdown-menu li{
   margin-bottom: 20px;
   cursor: pointer;
+}
+
+.auth-template .custom-typehead input:not([type=submit]):not([type=file]){
+  background-color: transparent;
+  box-shadow: none;
+  border: 0;
+  height: 60px;
+  border-radius: 0px;
+  font-size: 55px;
+  font-family: Avenir-Black;
+  color: #fff;
 }
 
 /*end searchcourses css*/
