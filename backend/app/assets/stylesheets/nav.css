@@ -59,11 +59,11 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 }
 
 .logo-img{
-  position: absolute;
-  top: 25px;
-  left: 29px;
+  /*position: absolute;*/
+  /*top: 25px;*/
+  /*left: 29px;*/
   height: 51px;
-  width: 266px;
+  /*width: 266px;*/
 }
 
 #lltv .homepage-nav-links ul > li:first-child > .nav-search-text{
@@ -144,8 +144,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 }
 
 @media (max-width: 320px){
-  .logo-img{
-    width: 212px;
+  nav.navbar-fixed-top > div > a > .logo-img{
     height: 41px;
   }
   #lltv .homepage-nav-links li:first-child{ margin-top: 20px;}
