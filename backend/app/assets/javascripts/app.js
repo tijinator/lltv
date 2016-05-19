@@ -20,6 +20,7 @@ angular.module('lltv', [
 function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authProvider, Rails) {
   baseUrl = (Rails.env == 'production') ? 'http://beta.learninglibrary.tv' : 'http://lvh.me:3000'
   $locationProvider.html5Mode(true);
+
   $authProvider.configure({
       apiUrl: baseUrl + '/api',
       // tokenValidationPath:     '/auth/validate_token',
@@ -70,10 +71,6 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         return response.data;
       }
   });
-
-
-
-
 
   $stateProvider
     .state('home', {

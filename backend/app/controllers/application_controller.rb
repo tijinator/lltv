@@ -1,10 +1,9 @@
 class ApplicationController < ActionController::Base
   include JsEnv
-  
   protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   # protect_from_forgery with: :exception, if: Proc.new { |c| c.request.path_info.include?('auth') }
-
+  
   respond_to :html, :json
   layout :layout_by_resource
 
@@ -13,12 +12,15 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   after_action :gg
-    def gg
-      puts "*"*100
+  def gg
+    puts "*"*100
+    if user_signed_in?
       puts "CURRENT_USER IN AUTH: #{current_user}"
-      puts "*"*100
     end
-    
+    puts "*"*100
+  end
+
+  
   def error_message(type=nil)
     if type == nil
       return {"messsage" => "Unexpected error occurred"}
@@ -44,9 +46,9 @@ protected
     end
   end
 
-  # def after_sign_out_path_for(user)
-  #   redirect_to 'https://google.com'
-  # end
+  def after_sign_out_path_for(user)
+    redirect_to 'https://google.com'
+  end
 
   def layout_by_resource
     if devise_controller?
@@ -64,4 +66,5 @@ protected
   # def verified_request?
   #   super || valid_authenticity_token?(session, request.headers['X-XSRF-TOKEN'])
   # end
+
 end

@@ -13,6 +13,7 @@ function($http) {
     return $http.get(url);
   };
 
+
   this.getCategories = function() {
     return $http.get('/api/categories');
   };

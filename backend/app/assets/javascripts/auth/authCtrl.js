@@ -65,8 +65,8 @@ var planObject = {};
     
     stripeToken(function(err, token){
       if (err){
-        arrError = err.toString().split(' ');
-        arrError.shift();
+        var arrError = err.toString().split(' ');
+            arrError.shift();
         $scope.errors = arrError.join(' ');
         throw err
       };
@@ -79,7 +79,7 @@ var planObject = {};
 
 
       // console.log("register: ", $scope.registerForm);
-      console.log("Payment: ", $scope.paymentForm);
+      // console.log("Payment: ", $scope.paymentForm);
 
       $scope.submitRegistration($scope.registerForm);
     });

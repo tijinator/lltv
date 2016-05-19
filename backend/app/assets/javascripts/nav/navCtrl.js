@@ -141,6 +141,7 @@ $scope.jsRun = function(userFirstName){
   });
 
   $rootScope.$on('auth:validation-error', function(ev, userData) {
+    alert("Sorry Your Session Expired");
   });
 
   $rootScope.$on('auth:validateUser', function(ev, userData) {
@@ -155,15 +156,11 @@ $scope.jsRun = function(userFirstName){
   });
 
   $rootScope.$on('auth:login-success', function(ev, userData) {
-    // console.log("validation-log1: ", ev);
-    // console.log("validation-log2: ", userData);
-    // console.log("Login Success event: ", ev);
-    // console.log("Login Success: ", userData);
-
     $cookieStore.put('userObj', userData);
-    // $cookieStore.put('userObj', userData);
-
+    
     $location.path("categories");
+    // $location.path("/about");
+    
     signedIn();
   });
 
@@ -172,6 +169,8 @@ $scope.jsRun = function(userFirstName){
     $location.path("/");
     signOut();
   });
+
+
 
 
 }]);
