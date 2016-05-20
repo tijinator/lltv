@@ -18,7 +18,8 @@
 }
 
 .unlock-title, .unlock-description{
-  font-family: Avenir-Black;
+  font-family: Avenir-Black, avenir;
+  font-weight: 900;
   text-align: center;
 }
 
