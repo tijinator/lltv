@@ -38,7 +38,8 @@
   left: calc(50% - 575px/2);
   font-size: 36px;
   color: #fff;
-  font-family: avenir-black;
+  font-family: avenir-black, avenir;
+  font-weight: 900;
 }
 
 #lltv .homepage-nav-links {
@@ -46,7 +47,8 @@
   color: #FFFFFF;
   font-size: 13px;
   text-transform: uppercase;
-  font-family: avenir-black;
+  font-family: avenir-black, avenir;
+  font-weight: bold;
 }
 
 #lltv .homepage-nav-links li {
@@ -91,7 +93,8 @@
   color: #FFFFFF;
   cursor: pointer;
   font-size: 13.5px; /*was 25px */
-  font-family: avenir-black;
+  font-family: avenir-black, avenir;
+  font-weight: 900;
   text-transform: uppercase;
   position: relative;
 }
@@ -137,14 +140,15 @@
 
 .category-titles h3{
   font-size: 36px; /* it was 41px */
-  font-family: avenir-black;
+  font-family: avenir-black, avenir;
+  font-weight: 900;
   margin-top: 15px;
   margin-bottom: 21px; /* it was 41px */
 }
 
 .category-details {
   font-size: 19px;
-  font-family: avenir-light;
+  font-family: avenir-light, avenir;
   line-height: 40px;
   width: 511px;
 }
@@ -165,8 +169,8 @@
   text-transform: uppercase;
   color: #FFFFFF;
   font-size: 13.5px;
-  font-family: avenir-black;
-  font-weight: bold;
+  font-family: avenir-black, avenir;
+  font-weight: 900;
   cursor: pointer;
 }
 
@@ -184,7 +188,8 @@
   min-height: 236px;
   background-color: #000;
   color: #fff;
-  font-family: avenir-black;
+  font-family: avenir-black, avenir;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -212,7 +217,8 @@
   color: #989898;
   font-size: 10px;
   margin: 50px 0 0;
-  font-family: avenir-medium;
+  font-family: avenir-medium, avenir;
+  font-weight: 800;
 }
 
 .colored-bar-plus-icon{ display: none;}
