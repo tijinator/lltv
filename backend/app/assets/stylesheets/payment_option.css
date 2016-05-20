@@ -11,8 +11,15 @@
   /*background-color: #2E3335;*/
 }
 
+.payment-boxes-container{
+  padding: 0;
+  margin-left: 20%;
+  width: 850px;
+}
+
 .payment-option-title{
-  font-family: Avenir-black;
+  font-family: Avenir-black, avenir;
+  font-weight: 900;
   text-align: center;
   text-transform: capitalize;
 }
@@ -82,7 +89,8 @@
   border-radius: 25px;
   opacity: 1;
   font-size: 13px;
-  font-family: Avenir-Black;
+  font-family: Avenir-Black, avenir;
+  font-weight: 900;
   color: #fff;
 }
 
@@ -163,11 +171,46 @@
 
 /*************/
 
-@media (max-width: 768px){
+@media screen (max-width: 768px){
   .payment-step-ifuser{ margin-bottom: 20px;}
 
   .payment-option-btns{ float: left;}
 
   .submit-payment-btn{ margin-left: 30px;}
+
+}
+
+@media screen and (max-width: 435px){
+  .payment-option-title{ font-size: 25px;}
+
+  .payment-boxes-container{
+    width: 67%;
+    margin: 0 auto;
+  }
+
+  .monthly-box, .onetime-box{ width: 100%;}
+
+  .price-item-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  .pricing-dollar{
+    margin: 0;
+    font-size: 35px;
+  }
+
+  .change-container{ position: relative;}
+
+  .price-change{
+    left: 5px;
+    top: 9px;
+  }
+
+  .price-list{ text-align: center;}
+
+  .price-list > ul{ margin: 0;}
+
+  .subscribe-now-btn{ margin-left: calc(50% - 190px/2);}
 
 }
