@@ -33,9 +33,14 @@
   padding: 0;
 }
 
-/*.auth-login-center > div > div {
-  margin-bottom: 30px;
-}*/
+.alert-msg{
+  color: #ff0000;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  position: relative;
+  left: 25%;
+}
 
 .auth-left-column{
   padding-left: 0px;
@@ -133,6 +138,10 @@
 
 .modal-backdrop.auth-backdrop.in {
   opacity: 0.88;
+}
+
+@media screen and (max-width: 768px){
+  .alert-msg{ left: 0;}
 }
 
 @media screen and (max-width: 435px) {

@@ -7,7 +7,7 @@
       <img class="logo-img" src="/images/LLTV_logo_platform@2x_white.png">
     </div>
   </div>
-  <div ng-if='errors.length > 0' class="alert alert-danger">{{ errors }}</div>
+  <div ng-if='errors.length > 0' class="alert alert-danger alert-msg">{{ errors }}</div>
   <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}" style="height: 100%;">
     <div class="col-sm-6 col-sm-offset-3 auth-login-center">
       <div class="auth-body">
@@ -24,7 +24,7 @@
       </div>
       <div class="auth-footer">
         <button type="submit" class="bubble-btn submit-btn pull-right">Sign in</button>
-        
+
         <div class="bubble-btn switch-btn switch-btn-sign-in pull-right" ng-click="switch('register')">create account</div>
       </div>
     </div>
