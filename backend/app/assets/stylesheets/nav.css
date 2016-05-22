@@ -17,18 +17,17 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   border: 0;
   padding: 0;
   width: 229px;
-  /*height: 287px;*/
   text-align: center;
   font-size: 13px;
   top: 56px;
-  right: -64px;
+  right: -26px;
 }
 
 .profile-dropdown:after {
   content: '';
   position: absolute;
   bottom: 100%;
-  left: 50%;
+  left: 65%;
   margin-left: 31px;
   width: 0;
   height: 0;
@@ -40,6 +39,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 #lltv .homepage-nav-links .profile-dropdown li{
   margin: 0 auto;
   margin-bottom: 40px;
+  float: none;
 }
 
 #lltv .homepage-nav-links .profile-dropdown li:first-child{
@@ -117,7 +117,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   }
 
   #lltv .homepage-nav-links .navbar-nav {
-    width: 30%;
+    width: 60%;
     margin: 0 auto;
   }
 
@@ -142,6 +142,8 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   #lltv .homepage-nav-links ul > li:last-child > .nav-search-text{
     display: block;
   }
+
+  .profile-dropdown:after{ display: none;}
 
 }
 
