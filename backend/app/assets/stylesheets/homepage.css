@@ -15,11 +15,13 @@
 
 #lltv .container {
   width: 100%;
-  padding: 10px 80px 0px 30px; /*padding right was 30px*/
+  padding: 10px 30px 0px 30px; /*padding right was 30px*/
 }
 
 #lltv .navbar-brand {
   height: auto;
+  padding: 6px 0 0 0;
+  margin: 0;
 }
 
 #lltv .header{
@@ -52,8 +54,8 @@
 }
 
 #lltv .homepage-nav-links li {
-  /*was 47px*/
   margin-left: 43px;
+  float: right;
 }
 
 #lltv .homepage-nav-links .no-btn-nav {
@@ -293,6 +295,12 @@
 }
 
 @media screen and (max-width: 768px) {
+
+  #lltv .container{
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
   #lltv .colored-bar{
     /*position: relative;*/
     /*top: calc(100% - 300px);*/
@@ -398,8 +406,6 @@
 }
 
 @media screen and (max-width: 600px){
-
-  #lltv .container{ padding-right: 15px;}
 
   .category-details-container{
     width: 90%;

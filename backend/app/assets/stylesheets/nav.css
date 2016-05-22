@@ -66,12 +66,12 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   /*width: 266px;*/
 }
 
-#lltv .homepage-nav-links ul > li:first-child > .nav-search-text{
+#lltv .homepage-nav-links ul > li:last-child > .nav-search-text{
   display: none;
 }
 
 .navbar-toggle{
-  margin-top: 25px;
+  margin-top: 16px;
 }
 
 .navbar-toggle .icon-bar{
@@ -89,6 +89,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
     margin-right: 0px;
     margin-left: 0px;
     margin-bottom: 40px;
+    float: none;
   }
 
   #lltv #sign-up-bubble {
@@ -100,18 +101,16 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
    #lltv .homepage-nav-links {
     color: #FFF;
-    /*background-color: white;*/
     width: 100%;
     text-align: center;
-    /*margin-right: -52px;
-    margin-top: 10px;*/
     padding: 0;
     border: 0px;
-
+    position: absolute;
   }
 
   #lltv .homepage-nav-links .navbar-nav {
-    margin: 0;
+    width: 30%;
+    margin: 0 auto;
   }
 
   /*dropdown triangle*/
@@ -128,25 +127,23 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
     border-bottom: solid 13px #FFF;
   }
 
-  #lltv .homepage-nav-links ul > li:first-child > a:first-child{
+  #lltv .homepage-nav-links ul > li:last-child > a:first-child{
     display: none;
   }
 
-  #lltv .homepage-nav-links ul > li:first-child > .nav-search-text{
+  #lltv .homepage-nav-links ul > li:last-child > .nav-search-text{
     display: block;
   }
-}
 
-@media (min-width: 768px){
-  .navbar-toggle {
-    display: none;
-  }
 }
 
 @media (max-width: 320px){
   nav.navbar-fixed-top > div > a > .logo-img{
     height: 41px;
   }
+
+  .navbar-toggle{margin-top: 11px;}
+
   #lltv .homepage-nav-links li:first-child{ margin-top: 20px;}
 
   #lltv .homepage-nav-links li{margin-bottom: 20px;}

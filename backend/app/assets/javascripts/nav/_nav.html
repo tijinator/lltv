@@ -13,21 +13,24 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse pull-right homepage-nav-links" id="navbarCollapse">
 	      <ul class="nav navbar-nav">
-	        <li ng-controller="searchModalCtrl">
-            <a ng-click="openSearch()"><i class="fa fa-search" style="font-size: 18px;"></i></a>
-            <a class="nav-search-text" ng-click="openSearch()">Search</a>
-          </li>
-	        <!-- <li><a ui-sref="category.show({id: 3})">Browse</a></li> -->
-	        <li><a ui-sref="categories.show">Browse</a></li>
-          	<!-- <li class="dropdown-toggle" ng-click='signedIn()'> Call me </li> -->
-          	<li id='signedIn'></li>
 
-    			<li ng-controller="AuthModalCtrl" class='sign_up_in'>
-    				<div ng-click="openModal(signin)" style="cursor: pointer;">Sign In</div>
-    			</li>
     			<li id="sign-up-bubble" ng-controller="AuthModalCtrl" class='sign_up_in'>
     				<div style="cursor: pointer;" ng-click="openModal('register')">Sign Up</div>
     			</li>
+
+          <li ng-controller="AuthModalCtrl" class='sign_up_in'>
+    				<div ng-click="openModal(signin)" style="cursor: pointer;">Sign In</div>
+    			</li>
+
+          <li id='signedIn'></li>
+
+          <li><a ui-sref="categories.show">Browse</a></li>
+
+          <li ng-controller="searchModalCtrl">
+            <a ng-click="openSearch()"><i class="fa fa-search" style="font-size: 18px;"></i></a>
+            <a class="nav-search-text" ng-click="openSearch()">Search</a>
+          </li>
+
 	      </ul>
 			<!-- <li ng-show='true'><div ng-click="signOut()">Sign Out</div></li> -->
 	    </div>
