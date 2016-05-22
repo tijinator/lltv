@@ -56,7 +56,7 @@
   margin-bottom: 20px
 }
 
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
 
   .faq-first-text{ font-size: 23px;}
 

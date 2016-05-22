@@ -216,7 +216,7 @@
   margin-right: 40px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .category-page-options, .category-page-courses{ float:left;}
 
   .category-page-options{

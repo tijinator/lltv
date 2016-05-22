@@ -178,7 +178,7 @@
 
 /*************/
 
-@media screen (max-width: 768px){
+@media screen and (max-width: 768px){
   .payment-step-ifuser{ margin-bottom: 20px;}
 
   .payment-option-btns{ float: left;}

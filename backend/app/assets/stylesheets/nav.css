@@ -80,7 +80,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   background: white;
 }
 
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
   nav.navbar.navbar-fixed-top.ng-scope.homepage-nav > div > .navbar-collapse{
     background-color: transparent;
   }
@@ -145,7 +145,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
 }
 
-@media (max-width: 320px){
+@media screen and (max-width: 320px){
   nav.navbar-fixed-top > div > a > .logo-img{
     height: 41px;
   }
