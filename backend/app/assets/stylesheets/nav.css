@@ -81,6 +81,14 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 }
 
 @media (max-width: 768px){
+  nav.navbar.navbar-fixed-top.ng-scope.homepage-nav > div > .navbar-collapse{
+    background-color: transparent;
+  }
+
+  nav.navbar.navbar-fixed-top.ng-scope > div > .navbar-collapse{
+    background-color: #000;
+  }
+
   #lltv .homepage-nav-links li:first-child{
     margin-top: 40px;
   }
