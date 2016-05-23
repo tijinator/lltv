@@ -142,6 +142,7 @@ $scope.jsRun = function(userFirstName){
 
   $rootScope.$on('auth:validation-error', function(ev, userData) {
     alert("Sorry Your Session Expired");
+    $cookieStore.remove('userObj'); //remove current userObj cookie
   });
 
   $rootScope.$on('auth:validateUser', function(ev, userData) {
@@ -149,10 +150,11 @@ $scope.jsRun = function(userFirstName){
   });
 
   $rootScope.$on('auth:invalid', function(ev, userData) {
-    // alert("INVALID USER AUTH");
+    alert("INVALID USER AUTH");
   });
 
   $rootScope.$on('auth:login-error', function(ev, userData) {
+    $cookieStore.remove('userObj'); //remove current userObj cookie
   });
 
   $rootScope.$on('auth:login-success', function(ev, userData) {

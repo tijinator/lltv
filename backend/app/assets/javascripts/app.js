@@ -35,7 +35,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       // emailSignInPath:         '/auth/sign_in',
       // storage:                 'cookies',
       // forceValidateToken:      false,
-      // validateOnPageLoad:      true,
+      validateOnPageLoad:      true,
       // proxyIf:                 function() { return false; },
       // proxyUrl:                '/proxy',
       // omniauthWindowType:      'sameWindow',
@@ -61,7 +61,6 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       //   return (parseInt(headers['expiry']) * 1000) || null;
       // },
       handleLoginResponse: function(response) {
-
         return response.data;
       },
       handleAccountUpdateResponse: function(response) {

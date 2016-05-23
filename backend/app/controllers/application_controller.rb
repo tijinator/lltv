@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
-  include JsEnv
-  protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
-  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
+  protect_from_forgery with: :null_session
+  # include DeviseTokenAuth::Concerns::SetUserByToken
+  include JsEnv #return Rails.evn to front-end
+  # protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
+  # protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   # protect_from_forgery with: :exception, if: Proc.new { |c| c.request.path_info.include?('auth') }
   
   respond_to :html, :json
@@ -11,16 +13,17 @@ class ApplicationController < ActionController::Base
   helper_method :user_signed_in?
   helper_method :current_user
 
-  after_action :gg
+  before_action :gg
   def gg
     puts "*"*100
+      # puts "Cookie: #{cookies[:userObj]}" if cookies[:userObj]
     if user_signed_in?
       puts "CURRENT_USER IN AUTH: #{current_user}"
     end
     puts "*"*100
+
   end
 
-  
   def error_message(type=nil)
     if type == nil
       return {"messsage" => "Unexpected error occurred"}
@@ -46,9 +49,9 @@ protected
     end
   end
 
-  def after_sign_out_path_for(user)
-    redirect_to 'https://google.com'
-  end
+  # def after_sign_out_path_for(user)
+  #   redirect_to 'https://google.com'
+  # end
 
   def layout_by_resource
     if devise_controller?
@@ -59,6 +62,10 @@ protected
   end
 
   def configure_permitted_parameters
+    # from new devise -v 4.1.1 gem
+    # devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :first_name, :last_name, :stripe_card_token])
+    # devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :location, :job_title, :website, :company_name])
+
     devise_parameter_sanitizer.for(:sign_up) << [:username, :first_name, :last_name, :stripe_card_token]
     devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :location, :job_title, :website, :company_name]
   end

@@ -1,5 +1,5 @@
 class ChapterSerializer < ActiveModel::Serializer
-  self.root = false
+  # self.root = false
   # attributes :id, :title, :details, :duration, :position, :video
   attributes :title, :details, :duration, :position, :video
   has_one :video

@@ -1,8 +1,8 @@
 
 module Api
-	class ApiController <ActionController::Base
-	# class ApiController < ApplicationController
-		# include DeviseTokenAuth::Concerns::SetUserByToken
+	class ApiController < ApplicationController
+		include DeviseTokenAuth::Concerns::SetUserByToken
+		respond_to :json
 		# protect_from_forgery with: :null_session
 
 		# serialization_scope :view_context

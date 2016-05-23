@@ -1,5 +1,5 @@
 class CourseSerializer < ActiveModel::Serializer
-  self.root = false
+  # self.root = false
   attributes :id, :level, :title, :details, :duration, :position, :banner_url, :chapters
   # attributes :id, :level, :title, :details, :banner_url, :duration, :released_on, :author, :chapter, :video
 
