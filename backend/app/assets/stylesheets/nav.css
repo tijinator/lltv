@@ -135,7 +135,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
     border-bottom: solid 13px #FFF;
   }
 
-  #lltv .homepage-nav-links ul > li:last-child > a:first-child{
+  #lltv .homepage-nav-links ul.nav.navbar-nav > li:last-child > a:first-child{
     display: none;
   }
 

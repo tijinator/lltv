@@ -120,9 +120,8 @@
 	height: 500px;
 	background: #222628;
 	padding: 0 45px;
-	/*overflow-y: hidden;*/
 	overflow: auto;
-	padding-bottom: 80px;
+	padding-bottom: 10px;
 }
 
 .course-chapter-search{
@@ -209,7 +208,7 @@
 
 .nav-tabs{
 	margin-left: 10px;
-	height: 70px;
+	height: 58px;
 }
 
 .chapter-tabs-ul{
@@ -284,7 +283,7 @@
 }
 
 .tab-content{
-	margin-top: 50px;
+	margin-top: 0px;
 	margin-left: 10px;
 	min-height: 350px;
 	margin-bottom: 50px; /*add space to white section on homepage */
