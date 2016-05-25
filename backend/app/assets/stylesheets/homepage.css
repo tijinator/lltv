@@ -26,11 +26,11 @@
 
 #lltv .header{
   padding: 0;
-  height: 100%;
+  height: calc(100% - 95px);
   background-size: cover;
   background-position: center;
-  background-image: url('../images/LLTV_homepage.jpg');
-  /*background: transparent;*/
+  background-image: url('../images/LLTV_homepage_new.jpg');
+  background-repeat: no-repeat;
 }
 
 .quote-container{
@@ -46,7 +46,7 @@
 
 #lltv .homepage-nav-links {
   padding-top: 27px; /*was 37x */
-  color: #FFFFFF;
+  color: #5D5D5D;
   font-size: 13px;
   text-transform: uppercase;
   font-family: avenir-black, avenir;
@@ -63,7 +63,7 @@
 }
 
 #lltv .homepage-nav-links li > a {
-  color: #FFFFFF;
+  color: #5D5D5D;
   padding: 0px;
   cursor: pointer;
 }

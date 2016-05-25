@@ -4,16 +4,15 @@
 
     <div class="container" style="height: 100%; padding: 0;">
       <div class="col-md-12 header">
-
+        <div style="width: 100%; height: 95px;"></div><!-- add height behind navbar-->
         <div class="quote-container">
           "Education is the kindling of a <br>
           flame, not the filling of a vessel." <br>
           <div align="right">– Socrates</div>
 
-          <!-- <img src="<%= image_path('LLTV_overlay_text_1.png')%>" > -->
         </div>
 
-        <div class="colored-bar" id="cat-bar">
+        <div class="colored-bar" id="cat-bar" style="display: none;">
 
           <ul class="nav nav-tabs homepage-category-nav" role="tablist">
 
@@ -57,7 +56,7 @@
                       <li>
                         <a ui-sref="category.show({id: <%= category.id %>})">
                           <div class="bubble-btn pull-left" style="background-color: <%= category.html_color %>;">
-                            Browse <%= category.title %> 
+                            Browse <%= category.title %>
                           </div>
                         </a>
 

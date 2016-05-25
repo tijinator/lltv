@@ -1,7 +1,7 @@
-<nav ng-class="{'homepage-nav': isActive('/')}" class="navbar navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-fixed-top" role="navigation">
  	<div class="container" style="position: relative; top: 0; left: 0">
 
- 		<a class="navbar-brand" ng-href="/"><img  class="logo-img" ng-src="{{'images/LLTV_logo_platform@2x_white.png'}}"/></a>
+ 		<a class="navbar-brand" ng-href="/"><img  class="logo-img" ng-src="{{'images/lltv_logo_final.png'}}"/></a>
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="true">
 	        <span class="sr-only">Toggle navigation</span>
@@ -23,6 +23,10 @@
     			</li>
 
           <li data-toggle="collapse" data-target=".in" id='signedIn' style="margin: 0;"></li>
+
+          <li data-toggle="collapse" data-target=".in"><a ui-sref="categories.show">Learn</a></li>
+
+          <li data-toggle="collapse" data-target=".in"><a ui-sref="categories.show">Teach</a></li>
 
           <li data-toggle="collapse" data-target=".in"><a ui-sref="categories.show">Browse</a></li>
 

@@ -1,11 +1,11 @@
 nav.navbar.navbar-fixed-top.ng-scope{
-    background-color: #000000;
+    background-color: #FFF;
     min-height: 95px;
+    margin: 0;
 }
 
 nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
-  background: transparent;
-  background-image: url('/images/LLTV_blackgradient2.png');
+  background: #FFF;
   min-height: 103px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,6 +53,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
 #lltv #sign-up-bubble{
   border: 2px solid #FFFFFF;
+  background-color: #9CCC58;
   border-radius: 25px;
   padding: 10px 20px 10px 20px;
   margin-top: -12px;
@@ -77,7 +78,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 .navbar-toggle .icon-bar{
   width: 24px;
   height: 4px;
-  background: white;
+  background: #5D5D5D;
 }
 
 @media screen and (max-width: 768px){
