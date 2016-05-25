@@ -52,11 +52,12 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
 
 #lltv #sign-up-bubble{
-  border: 2px solid #FFFFFF;
+  border: 2px solid #FFF;
   background-color: #9CCC58;
   border-radius: 25px;
   padding: 10px 20px 10px 20px;
   margin-top: -12px;
+  color: #FFF;
 }
 
 .logo-img{

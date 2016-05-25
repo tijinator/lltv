@@ -3,13 +3,30 @@
   <div class="row" style="height: 100%;">
 
     <div class="container" style="height: 100%; padding: 0;">
-      <div class="col-md-12 header">
-        <div style="width: 100%; height: 95px;"></div><!-- add height behind navbar-->
+      <div style="width: 100%; height: 95px;"></div><!-- add height behind navbar-->
+      <div class="col-md-12 header" style="background-image: url('../images/LLTV_homepage_new.jpg')">
         <div class="quote-container">
-          "Education is the kindling of a <br>
-          flame, not the filling of a vessel." <br>
-          <div align="right">– Socrates</div>
-
+          <p>Learn from experts.</p>
+          <p>Anytime, anywhere</p>
+          <div class="quote-subtitle">Expand your knowledge in every way possible.</div>
+          <div class="quote-container-buttons">
+            <ul>
+              <li>
+                <a>
+                  <div class="quote-browse-btn bubble-btn pull-left">
+                    Browse all courses
+                  </div>
+                </a>
+              </li>
+              <li>
+                <div ng-controller="AuthModalCtrl">
+                  <div class="pull-left bubble-btn create-account" ng-click="openModal('register')">
+                      Create Account
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="colored-bar" id="cat-bar" style="display: none;">
@@ -30,7 +47,6 @@
                 </div>
             </li>
             <% end %>
-            <!-- <li><div><p>More</p></div><span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true"></span></li> -->
           </ul>
 
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -89,8 +105,12 @@
 
   </div><!-- end of row -->
 
+  <div class="row" style="margin: 0;">
 
-  <div class="row">
+  </div>
+
+
+  <div class="row" style="display: none;">
 
 
     <!-- Tab panes -->
