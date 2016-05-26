@@ -15,9 +15,9 @@ gem 'pg'
 gem 'dotenv-rails'
 
 gem 'sprockets', '2.12.3'
-# gem 'sprockets-es6'
 
 # gem 'sprockets'
+# gem 'sprockets-es6'
 # gem "browserify-rails"
 # gem 'sprockets-es6', require: 'sprockets/es6'
 

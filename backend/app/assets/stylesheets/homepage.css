@@ -38,7 +38,8 @@
   left: calc(50% - 575px/2);
   font-size: 36px;
   color: #fff;
-  font-family: avenir-black;
+  /*font-family: "Avenir Black" !important;*/
+  font-family: 'Avenir Black', 'Arial Black', sans-serif;
 }
 
 #lltv .homepage-nav-links {
