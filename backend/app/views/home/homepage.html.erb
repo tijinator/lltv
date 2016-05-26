@@ -28,77 +28,6 @@
             </ul>
           </div>
         </div>
-
-        <div class="colored-bar" id="cat-bar" style="display: none;">
-
-          <ul class="nav nav-tabs homepage-category-nav" role="tablist">
-
-            <% @categories.each_with_index do |category, idx| %>
-
-            <li id="category-button" class="bar-option" role="presentation"
-                style="background-color: <%= category.html_tab_color %>"
-                <% if idx == 0 %>class="active"<% end %>>
-
-                <div href="#<%= category.html_tab_id %>" aria-controls="<%= category.html_tab_id %>" role="tab" data-toggle="tab">
-                  <p><%= category.title %>
-                    <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true"></span>
-
-                    <p>
-                </div>
-            </li>
-            <% end %>
-          </ul>
-
-          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <% @categories.each_with_index do |category, idx| %>
-
-              <div class="panel panel-default" style="margin: 0; border: 0;">
-                <div class="panel-heading" role="tab" id="heading<%= idx %>" style="background-color: <%= category.html_tab_color %>; padding: 0; height: 60px;">
-
-                    <div class="panel-title" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse<%= idx %>" aria-expanded="false"  aria-controls="collapse<%= idx %>">
-                      <!-- <p class="panel-title"> -->
-                        <%= category.title %>
-                      <!-- </p> -->
-                      <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
-                    </div>
-                </div>
-                <div id="collapse<%= idx %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= idx %>">
-                  <div class="panel-body">
-                    <div class="category-details">
-                      <p><%= category.details %></p>
-                    </div>
-                    <ul class="category-buttons" style="height: 100%;">
-
-                      <li>
-                        <a ui-sref="category.show({id: <%= category.id %>})">
-                          <div class="bubble-btn pull-left" style="background-color: <%= category.html_color %>;">
-                            Browse <%= category.title %>
-                          </div>
-                        </a>
-
-                      </li>
-                        <!-- <a ui-sref="register"> -->
-
-                      <li>
-                        <div ng-controller="AuthModalCtrl">
-                          <div class="pull-right bubble-btn create-account" ng-click="openModal('register')">
-                              Create Account
-                          </div>
-                        </div>
-                        <!-- </a> -->
-
-                      </li>
-
-                    </ul><!-- end ul category-buttons -->
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-
-
-        </div>
-
       </div>
 
     </div>
@@ -106,6 +35,68 @@
   </div><!-- end of row -->
 
   <div class="row" style="margin: 0;">
+    <div class="col-sm-12 homepage-category-row">
+      <div class="row" style="margin: 0;">
+        <p>Popular videos</p>
+        <a>See All</a>
+      </div>
+      <div class="col-sm-4 homepage-course-box">
+        <div class="row" style="margin:0">
+          <div class="course-img" style="background-image: url('../images/cabin.png')"></div>
+          <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
+        </div>
+        <div class="row" style="margin:0">
+          <p class="homepage-course-title">learn to design on devices</p>
+        </div>
+        <div class="row homepage-course-last-row">
+          <p>author's name</p>
+          <p>11 minutes</p>
+        </div>
+      </div>
+
+      <div class="col-sm-4 homepage-course-box">
+        <div class="row" style="margin:0">
+          <div class="course-img" style="background-image: url('../images/cake.png')"></div>
+          <div class="author-avatar" style="background-image: url('../images/2.jpg')"></div>
+        </div>
+        <div class="row" style="margin:0">
+          <p class="homepage-course-title">learn to design on devices</p>
+        </div>
+        <div class="row homepage-course-last-row" style="margin:0">
+          <p>author's name</p>
+          <p>11 minutes</p>
+        </div>
+      </div>
+
+      <div class="col-sm-4 homepage-course-box">
+        <div class="row" style="margin:0">
+          <div class="course-img" style="background-image: url('../images/circus.png')"></div>
+          <div class="author-avatar" style="background-image: url('../images/3.jpg')"></div>
+        </div>
+        <div class="row" style="margin:0">
+          <p class="homepage-course-title">learn to design on devices</p>
+        </div>
+        <div class="row homepage-course-last-row" style="margin:0">
+          <p>author's name</p>
+          <p>11 minutes</p>
+        </div>
+      </div>
+
+      <div class="col-sm-4 homepage-course-box" style="margin: 0;">
+        <div class="row" style="margin:0">
+          <div class="course-img" style="background-image: url('../images/game.png')"></div>
+          <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
+        </div>
+        <div class="row" style="margin:0">
+          <p class="homepage-course-title">learn to design on devices</p>
+        </div>
+        <div class="row homepage-course-last-row" style="margin:0">
+          <p>author's name</p>
+          <p>11 minutes</p>
+        </div>
+      </div>
+
+    </div>
 
   </div>
 
