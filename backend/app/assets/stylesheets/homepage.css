@@ -37,7 +37,7 @@
   position: absolute;
   max-width: 600px; /* it was 500px */
   top: 9%;
-  right: 10%;
+  left: 52%;
   font-size: 40px;
   color: #fff;
   font-family: avenir-black, avenir;
@@ -146,12 +146,12 @@
   text-transform: capitalize;
 }
 
-.col-sm-4.homepage-course-box div.row p{
+.col-sm-3.homepage-course-box div.row p{
   font-size: 10px;
   text-transform: uppercase;
 }
 
-.col-sm-4.homepage-course-box div.row p:first-child{
+.col-sm-3.homepage-course-box div.row p:first-child{
   float: left;
   margin-right: 85px;
   margin-left: 20px;
@@ -275,6 +275,15 @@
 
 .footer-second-row ul li{display: inline-block;}
 
+.footer-third-row div.col-sm-8.col-sm-offset-4 p{
+  margin: 10px 20px 0 0;
+  color: #989898;
+  font-size: 10px;
+  font-family: avenir-medium, avenir;
+  font-weight: 800;
+  float: left;
+}
+
 .social-media-list{ margin: 0 0 20px;}
 
 .social-media-list li{
@@ -283,13 +292,13 @@
   text-align: center;
 }
 
-.social-media-list li:first-child{
+/*.social-media-list li:first-child{
   margin-right: 30px;
   color: #989898;
   font-size: 10px;
   font-family: avenir-medium, avenir;
   font-weight: 800;
-}
+}*/
 
 .social-media-list li a{
   display: block;
@@ -311,13 +320,17 @@
 
 /* responsive design desktop/laptop*/
 @media screen and (max-width: 1240px){
-  #lltv .homepage-courses-row div.col-sm-4.homepage-course-box:last-child{ display: none;}
+  #lltv .homepage-courses-row div.col-sm-3.homepage-course-box:last-child{ display: none;}
 }
 
 @media screen and (max-width: 990px){
+  .quote-container { font-size: 30px;}
+
+  .quote-browse-btn{ margin-bottom: 20px;}
+
   #lltv .homepage-nav-links li{margin-left: 20px;}
 
-  #lltv .homepage-courses-row div.col-sm-4.homepage-course-box:nth-child(3){ display: none;}
+  #lltv .homepage-courses-row div.col-sm-3.homepage-course-box:nth-child(3){ display: none;}
 }
 
 /*@media screen and (max-width: 1000px){
@@ -326,6 +339,7 @@
 
 
 @media screen and (max-width: 768px) {
+  .quote-browse-btn{margin-right: 0;}
 
   .row.discover-info-row div.col-sm-4:nth-child(2){ margin: 20px 0 20px;}
 
@@ -348,9 +362,17 @@
 
   .footer-second-row div.col-sm-8 form div.form-group input{ margin: 0 auto;}
 
-  .footer-copy-text{ margin-bottom: 10px;}
+  .footer-third-row div.col-sm-8.col-sm-offset-4 p {
+    float: none;
+    margin-bottom: 10px;
+  }
 }
 
+@media screen and (max-width: 700px) {
+  #lltv .homepage-courses-row{ display: block;}
+
+  #lltv .homepage-course-box{ margin: 0 auto 20px;}
+}
 
 /*@media screen and (max-width: 1060px){
   .category-img-container{
