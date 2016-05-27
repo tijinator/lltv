@@ -51,6 +51,7 @@
 .quote-container .quote-subtitle{
   font-family: avenir-medium;
   font-size: 22px;
+  font-weight: normal;
 }
 
 .quote-container-buttons ul{ margin-bottom: 26px;}
@@ -188,18 +189,15 @@
   background-size: cover;
   margin: 0 auto;
 }
+
 .discover-row-button{
   margin: 0;
   display: flex;
   justify-content: center;
 }
 
-.discover-signup-button{
-  cursor: pointer;
-  font-size: 13px;
-  text-transform: uppercase;
-  font-family: avenir-black;
-  width: 104px;
+.discover-lltv-section div.discover-signup-button{
+  background-color: #9CCC58;
 }
 
 
@@ -250,7 +248,9 @@
   color: #989898;
 }
 
-.footer-list-first-row{ margin: 0 0 10px 0;}
+.footer-list-first-row{ margin: 10px 0 0;}
+
+.footer-list-second-row{ margin: 10px 0 10px;}
 
 .footer-list-first-row > div > a, .footer-list-second-row > div > a{
   text-decoration: none;
@@ -315,10 +315,44 @@
 }
 
 @media screen and (max-width: 990px){
+  #lltv .homepage-nav-links li{margin-left: 20px;}
+
   #lltv .homepage-courses-row div.col-sm-4.homepage-course-box:nth-child(3){ display: none;}
 }
 
-@media screen and (max-width: 1060px){
+/*@media screen and (max-width: 1000px){
+  #lltv .homepage-nav-links li{margin-left: 20px;}
+}*/
+
+
+@media screen and (max-width: 768px) {
+
+  .row.discover-info-row div.col-sm-4:nth-child(2){ margin: 20px 0 20px;}
+
+  .footer-first-row div.col-sm-4{ margin-bottom: 10px;}
+
+  .footer-collapse{
+    position: relative;
+    top: 330px;
+  }
+
+  .homepage-footer{ text-align: center;}
+
+  .footer-list-first-row{ margin: 0;}
+
+  .footer-list-first-row > div{ margin-bottom: 10px;}
+
+  .footer-list .row:nth-child(2) > div{ margin-bottom: 10px;}
+
+  .footer-list .row:nth-child(3) > div{ margin-bottom: 10px;}
+
+  .footer-second-row div.col-sm-8 form div.form-group input{ margin: 0 auto;}
+
+  .footer-copy-text{ margin-bottom: 10px;}
+}
+
+
+/*@media screen and (max-width: 1060px){
   .category-img-container{
     width: 50%;
   }
@@ -337,9 +371,9 @@
 
   .bubble-btn{ font-size: 14px; }
 
-}
+}*/
 
-@media screen and (max-width: 992px){
+/*@media screen and (max-width: 992px){
   .category-img-container{
     width: 45%;
     float: left;
@@ -354,10 +388,10 @@
 
   .bubble-btn{ font-size: 14px; }
 
-}
+}*/
 
-@media screen and (max-width: 850px){
-  .category-img-container{ display: none; } /*turn off category image container*/
+/*@media screen and (max-width: 850px){
+  .category-img-container{ display: none; }
 
   .category-details-container{
     width: 100%;
@@ -365,9 +399,10 @@
     margin: 0 calc(100%/4);
   }
 
-}
+}*/
 
-@media screen and (max-width: 768px) {
+
+/*@media screen and (max-width: 768px) {
 
   #lltv .container{
     padding-right: 15px;
@@ -459,9 +494,9 @@
   .footer-list .row:nth-child(2) > div{ margin-bottom: 10px;}
 
   .footer-copy-text{ margin-bottom: 10px;}
-}
+}*/
 
-@media screen and (max-width: 700px){
+/*@media screen and (max-width: 700px){
 
   #lltv .homepage-category-nav li.active:after { display: none;}
 
@@ -475,10 +510,9 @@
     margin: 0 calc(100%/16);
   }
 
-}
+}*/
 
-/*iphone 6 plus*/
-@media screen and (max-width:414px) and (min-width:360px){
+/*@media screen and (max-width:414px) and (min-width:360px){
   .panel-title{ font-size: 26px;}
 
   .category-details{
@@ -491,7 +525,6 @@
 
 }
 
-/*iphone 5---it was 320px*/
 @media screen and (max-width: 384px){
   .category-details{
     line-height: 18px;
@@ -502,7 +535,7 @@
   .category-details p{ margin-bottom: 15px;}
 
   .bubble-btn{ font-size: 8px; }
-}
+}*/
 
 
 /* end of responsive design */
