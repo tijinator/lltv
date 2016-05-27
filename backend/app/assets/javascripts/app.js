@@ -78,7 +78,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
   $stateProvider
     .state('home', {
       url: '/',
-      // templateUrl: 'home/_home.html',
+      templateUrl: 'home/_home.html',
       controller: 'MainCtrl',
       onEnter: function() {
         $('#lltv-app-content').hide();

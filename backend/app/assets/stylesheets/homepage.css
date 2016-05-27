@@ -164,15 +164,21 @@
 }
 
 .discover-lltv-section{
-  font-family: avenir-book;
+  font-family: avenir-medium;
   padding: 0;
   text-align: center;
   color: #5d5d5d;
 }
 
-.discover-lltv-section div.row { margin: 0 0 40px}
+.discover-lltv-section div.row { margin: 0 0 40px;}
 
-.discover-lltv-section div.row:first-child { margin-top: 40px}
+.discover-lltv-section div.row:first-child { margin-top: 40px;}
+
+.discover-lltv-section div.row h1{ font-family: avenir-black;}
+
+.discover-info-row div.col-sm-4 h4{ font-size: 20px;}
+
+.discover-info-row div.col-sm-4 p{ font-size: 15px;}
 
 .discover-icons{
   height: 43px;
