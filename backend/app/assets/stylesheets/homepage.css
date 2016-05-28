@@ -28,7 +28,7 @@
   padding: 0;
   height: calc(100% - 95px);
   background-size: cover;
-  background-position: center;
+  background-position: 100% 0;
   /*background-image: url('../images/LLTV_homepage_new.jpg');*/
   background-repeat: no-repeat;
 }
@@ -392,6 +392,9 @@
 }
 
 @media screen and (max-width: 700px) {
+
+  #lltv .header{background-position: 32%;}
+
   #lltv .homepage-courses-row{ display: block;}
 
   #lltv .homepage-course-box{ margin: 0 auto 20px;}
