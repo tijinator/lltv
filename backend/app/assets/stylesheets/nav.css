@@ -93,6 +93,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
     background-color: transparent;
   }
 
+  /*delete this one*/
   nav.navbar.navbar-fixed-top.ng-scope > div > .navbar-collapse{
     background-color: #000;
   }
@@ -104,28 +105,33 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   #lltv .homepage-nav-links li {
     margin-right: 0px;
     margin-left: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     float: none;
   }
 
-  #lltv #sign-up-bubble {
-   border: 0;
-   border-radius: 0;
-   padding: 0;
-   margin-top: 0;
+  #lltv #sign-up-bubble{
+     border: 0;
+     border-radius: 0;
+     padding: 0;
+     margin-top: 20px;
+     background-color: transparent;
+     color: #5D5D5D;
    }
 
    #lltv .homepage-nav-links {
-    color: #FFF;
     width: 100%;
     text-align: center;
     padding: 0;
     border: 0px;
     position: absolute;
+    margin: 0;
+    left: 0;
+    top: 127%;
+    background-color: white;
   }
 
   #lltv .homepage-nav-links .navbar-nav {
-    width: 60%;
+    width: 30%;
     margin: 0 auto;
   }
 
