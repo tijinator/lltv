@@ -28,7 +28,7 @@
   padding: 0;
   height: calc(100% - 95px);
   background-size: cover;
-  background-position: 100% 0;
+  background-position: center;
   /*background-image: url('../images/LLTV_homepage_new.jpg');*/
   background-repeat: no-repeat;
 }
@@ -355,7 +355,7 @@
 
 
 @media screen and (max-width: 768px) {
-  .quote-browse-btn{margin-right: 0;}
+  /*.quote-browse-btn{margin-right: 0;}*/
 
   .homepage-category-left, .homepage-category-right{ width: 50%;}
 
@@ -393,7 +393,7 @@
 
 @media screen and (max-width: 700px) {
 
-  #lltv .header{background-position: 32%;}
+  #lltv .header{background-position: 38%;}
 
   #lltv .homepage-courses-row{ display: block;}
 
@@ -405,5 +405,22 @@
 
   #lltv .homepage-category-row div:first-child a{ margin-left: 100px;}
 }
+
+@media screen and (max-width: 500px) {
+
+  .quote-container{
+    top: 30%;
+    left: 40%;
+    font-size: 20px;
+  }
+
+  .quote-container .quote-subtitle{ font-size: 15px;}
+
+  .quote-browse-btn, .quote-create-btn{font-size: 9px;}
+}
+
+/*@media screen and (max-height: 1024px){
+
+}*/
 
 /* end of responsive design */

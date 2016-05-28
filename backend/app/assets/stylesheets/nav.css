@@ -155,6 +155,11 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
 }
 
+@media screen and (max-width: 500px){
+  .logo-img{ height: 48px;}
+
+}
+
 @media screen and (max-width: 320px){
   nav.navbar-fixed-top > div > a > .logo-img{
     height: 41px;
