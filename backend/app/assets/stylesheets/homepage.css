@@ -327,7 +327,9 @@
 
 /* responsive design desktop/laptop*/
 @media screen and (max-width: 1240px){
-  #lltv .homepage-courses-row div.col-sm-3.homepage-course-box:last-child{ display: none;}
+  /*#lltv .homepage-courses-row div.col-sm-3.homepage-course-box:last-child{ display: none;}*/
+
+  #lltv .homepage-courses-row div.popCourse-section:last-child{ display: none;}
 
   #lltv .homepage-category-title-box{margin-right: 253px;}
 
@@ -342,7 +344,8 @@
 
   #lltv .homepage-nav-links li{margin-left: 20px;}
 
-  #lltv .homepage-courses-row div.col-sm-3.homepage-course-box:nth-child(3){ display: none;}
+  /*#lltv .homepage-courses-row div.col-sm-3.homepage-course-box:nth-child(3){ display: none;}*/
+  #lltv .homepage-courses-row div.popCourse-section:nth-child(3){ display: none;}
 
   #lltv .homepage-category-title-box{margin-right: 100px;}
 

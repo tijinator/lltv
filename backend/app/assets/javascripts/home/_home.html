@@ -49,7 +49,26 @@
       </div>
       <div class="row homepage-courses-row">
 
-        <div class="col-sm-3 homepage-course-box">
+        <div class="popCourse-section" ng-repeat="popCourse in popularCourses">
+
+          <div class="col-sm-3 homepage-course-box">
+            <div class="row" style="margin:0;">
+              <div class="course-img" ng-style="{'background-image':'url({{popCourse.banner_url}})'}"></div>
+              <!-- <div class="course-img" style="background-image: url('../images/cabin.png')"></div> -->
+              <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
+            </div>
+            <div class="row" style="margin:0;">
+              <p class="homepage-course-title">{{popCourse.title}}</p>
+            </div>
+            <div class="row homepage-course-last-row">
+              <p>author's name</p>
+              <p>{{popCourse.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- <div class="col-sm-3 homepage-course-box">
           <div class="row" style="margin:0;">
             <div class="course-img" style="background-image: url('../images/cabin.png')"></div>
             <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
@@ -103,7 +122,7 @@
             <p>author's name</p>
             <p>11 minutes</p>
           </div>
-        </div>
+        </div> -->
 
       </div>
 
@@ -228,7 +247,7 @@
         </div>
       </div>
       <div class="row discover-row-button">
-        <div class="bubble-btn submit-btn discover-signup-button" ng-click="openModal('register')">Sign Up</div>
+        <div class="bubble-btn submit-btn discover-signup-button" ng-controller="AuthModalCtrl" ng-click="openModal('register')">Sign Up</div>
       </div>
     </div>
   </div>
