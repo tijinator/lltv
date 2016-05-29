@@ -2,7 +2,7 @@ class Admin::CoursesAdminController < Admin::AdminController
   # before_filter :require_data_entry
   # before_filter :require_publisher, only: [:update_published_status]
   before_action :set_course, except: [:new, :create]
-  before_action :set_category, except: [:show, :destroy]
+  before_action :set_category, except: [:show, :destroy, :course_popular]
 
   # def index
   #   # @current_user = current_user
@@ -60,6 +60,11 @@ class Admin::CoursesAdminController < Admin::AdminController
     @course.update_attributes!(course_params)
       redirect_to :back
     # redirect_to category_path(@category)
+  end
+
+  def course_popular
+      @course.update_attributes!(popular: params[:course])
+      render :nothing => true, :status => 200, :content_type => 'text/html'
   end
 
   # def update_published_status

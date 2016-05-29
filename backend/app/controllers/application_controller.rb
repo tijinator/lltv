@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
   before_action :gg
   def gg
     puts "*"*100
-    puts "HEADERS: #{request.headers['access-token']}"
-    puts "PARAMS: #{request.headers.inspect}"
+    # puts "HEADERS: #{request.headers['access-token']}"
+    # puts "PARAMS: #{request.headers.inspect}"
     # puts "HEADERS: #{request.headers['Authorization']}"
     # puts "HEADERS: #{request.headers.inspect}"
       # puts "Cookie: #{cookies[:userObj]}" if cookies[:userObj]

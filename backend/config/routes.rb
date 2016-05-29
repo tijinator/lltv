@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
     get '/'          => 'admin/index_admin#home'
     get '/dashboard' => 'admin/index_admin#dashboard'
+    put '/course_popular/:id'          => 'admin/courses_admin#course_popular', as: :course_popular
     # get '/categories' => 'admin/category_admin#index'
 
     # get '/tags' => 'admin#tags'
@@ -73,6 +74,7 @@ Rails.application.routes.draw do
 
     resources :courses, controller: 'courses', only: [:index, :show]
     # get 'courses' => 'api/courses#index'
+    get 'home' => 'api#home'
     get 'search-all' => 'searches#all_searches'
   end
 
