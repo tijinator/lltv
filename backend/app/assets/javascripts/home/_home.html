@@ -12,7 +12,7 @@
           <div class="quote-container-buttons">
             <ul>
               <li>
-                <a>
+                <a ui-sref="categories.show">
                   <div class="quote-browse-btn bubble-btn pull-left">
                     Browse all courses
                   </div>
@@ -68,62 +68,6 @@
 
         </div>
 
-        <!-- <div class="col-sm-3 homepage-course-box">
-          <div class="row" style="margin:0;">
-            <div class="course-img" style="background-image: url('../images/cabin.png')"></div>
-            <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
-          </div>
-          <div class="row" style="margin:0;">
-            <p class="homepage-course-title">learn to design on devices</p>
-          </div>
-          <div class="row homepage-course-last-row">
-            <p>author's name</p>
-            <p>11 minutes</p>
-          </div>
-        </div>
-
-        <div class="col-sm-3 homepage-course-box">
-          <div class="row" style="margin:0;">
-            <div class="course-img" style="background-image: url('../images/cake.png')"></div>
-            <div class="author-avatar" style="background-image: url('../images/2.jpg')"></div>
-          </div>
-          <div class="row" style="margin:0;">
-            <p class="homepage-course-title">learn to design on devices</p>
-          </div>
-          <div class="row homepage-course-last-row" style="margin:0">
-            <p>author's name</p>
-            <p>11 minutes</p>
-          </div>
-        </div>
-
-        <div class="col-sm-3 homepage-course-box">
-          <div class="row" style="margin:0;">
-            <div class="course-img" style="background-image: url('../images/circus.png')"></div>
-            <div class="author-avatar" style="background-image: url('../images/3.jpg')"></div>
-          </div>
-          <div class="row" style="margin:0;">
-            <p class="homepage-course-title">learn to design on devices</p>
-          </div>
-          <div class="row homepage-course-last-row" style="margin:0">
-            <p>author's name</p>
-            <p>11 minutes</p>
-          </div>
-        </div>
-
-        <div class="col-sm-3 homepage-course-box" style="margin: 0;">
-          <div class="row" style="margin:0;">
-            <div class="course-img" style="background-image: url('../images/game.png')"></div>
-            <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
-          </div>
-          <div class="row" style="margin:0;">
-            <p class="homepage-course-title">learn to design on devices</p>
-          </div>
-          <div class="row homepage-course-last-row" style="margin:0;">
-            <p>author's name</p>
-            <p>11 minutes</p>
-          </div>
-        </div> -->
-
       </div>
 
 
@@ -131,85 +75,47 @@
 
   </div>
   <!-- end popular courses -->
-
-  <!-- it courses category -->
-  <div class="row" style="margin: 0;">
-    <div class="col-sm-12 homepage-category-row">
-      <div class="row" style="margin: 0;">
-        <div class="col-sm-6 homepage-category-left" style="padding: 0;">
-          <div class="homepage-category-title-box">
-            <p>IT</p>
+  <div class="" ng-repeat="category in homeCategories">
+    <div class="row" style="margin: 0;">
+      <div class="col-sm-12 homepage-category-row">
+        <div class="row" style="margin: 0;">
+          <div class="col-sm-6 homepage-category-left" style="padding: 0;">
+            <div class="homepage-category-title-box">
+              <p>{{category.title}}</p>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-6 homepage-category-right" style="padding: 0;">
-          <a>See All</a>
-        </div>
-      </div>
-
-      <div class="row homepage-courses-row">
-
-        <div class="col-sm-3 homepage-course-box">
-          <div class="row" style="margin:0;">
-            <div class="course-img" style="background-image: url('../images/cabin.png')"></div>
-            <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
-          </div>
-          <div class="row" style="margin:0;">
-            <p class="homepage-course-title">learn to design on devices</p>
-          </div>
-          <div class="row homepage-course-last-row">
-            <p>author's name</p>
-            <p>11 minutes</p>
+          <div class="col-sm-6 homepage-category-right" style="padding: 0;">
+            <a ui-sref="category.show({id: category.id })">See All</a>
           </div>
         </div>
 
-        <div class="col-sm-3 homepage-course-box">
-          <div class="row" style="margin:0;">
-            <div class="course-img" style="background-image: url('../images/cake.png')"></div>
-            <div class="author-avatar" style="background-image: url('../images/2.jpg')"></div>
+        <div class="row homepage-courses-row">
+
+          <div class="popCourse-section" ng-repeat="course in category.courses">
+
+            <div class="col-sm-3 homepage-course-box">
+              <div class="row" style="margin:0;">
+                <div class="course-img" ng-style="{'background-image':'url({{course.banner_url}})'}"></div>
+                <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
+              </div>
+              <div class="row" style="margin:0;">
+                <p class="homepage-course-title">{{course.title}}</p>
+              </div>
+              <div class="row homepage-course-last-row">
+                <p>author's name</p>
+                <p>{{course.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
+              </div>
+            </div>
+
           </div>
-          <div class="row" style="margin:0;">
-            <p class="homepage-course-title">learn to design on devices</p>
-          </div>
-          <div class="row homepage-course-last-row" style="margin:0;">
-            <p>author's name</p>
-            <p>11 minutes</p>
-          </div>
+
         </div>
 
-        <div class="col-sm-3 homepage-course-box">
-          <div class="row" style="margin:0;">
-            <div class="course-img" style="background-image: url('../images/circus.png')"></div>
-            <div class="author-avatar" style="background-image: url('../images/3.jpg')"></div>
-          </div>
-          <div class="row" style="margin:0;">
-            <p class="homepage-course-title">learn to design on devices</p>
-          </div>
-          <div class="row homepage-course-last-row" style="margin:0;">
-            <p>author's name</p>
-            <p>11 minutes</p>
-          </div>
-        </div>
-
-        <div class="col-sm-3 homepage-course-box" style="margin: 0;">
-          <div class="row" style="margin:0;">
-            <div class="course-img" style="background-image: url('../images/game.png')"></div>
-            <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
-          </div>
-          <div class="row" style="margin:0;">
-            <p class="homepage-course-title">learn to design on devices</p>
-          </div>
-          <div class="row homepage-course-last-row" style="margin:0;">
-            <p>author's name</p>
-            <p>11 minutes</p>
-          </div>
-        </div>
       </div>
 
     </div>
 
   </div>
-
-  <!-- end courses category -->
 
   <!-- discover learning library tv -->
   <div class="row" style="margin: 0;">

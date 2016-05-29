@@ -13,10 +13,13 @@ function($scope,$location, $http, $log){
     }
 	}
 
+  //get home api for popular courses and featured categories
   $http.get('api/home')
   .then(function(response){
 
     $scope.popularCourses = response.data.populars;
+
+    $scope.homeCategories = response.data.categories;
 
   });
 
