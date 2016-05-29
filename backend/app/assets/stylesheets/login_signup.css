@@ -1,7 +1,7 @@
 .auth-header > div{
   margin: auto;
-  width: 222px;
-  padding-bottom: 67px;
+  width: 265px;
+  padding-bottom: 45px;
 }
 .auth-template {
   text-transform: uppercase;
@@ -25,15 +25,22 @@
 .auth-template .auth-content {
   clear: both;
   margin: 0px auto;
-  width: 650px;
+  width: 78%;
+  /*height: 100%;*/
 }
 .auth-login-center{
-  margin-left: 160px;
+  /*margin-left: 160px;*/
+  padding: 0;
 }
 
-/*.auth-login-center > div > div {
-  margin-bottom: 30px;
-}*/
+.alert-msg{
+  color: #ff0000;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  position: relative;
+  left: 25%;
+}
 
 .auth-left-column{
   padding-left: 0px;
@@ -124,11 +131,33 @@
 
 .switch-btn-sign-in {
   width: 155px;
-  /*margin-right: 10px;*/
+  margin-right: 10px;
   padding-right: 15px;
   padding-left: 17px;
 }
 
 .modal-backdrop.auth-backdrop.in {
   opacity: 0.88;
+}
+
+@media screen and (max-width: 768px){
+  .alert-msg{ left: 0;}
+}
+
+@media screen and (max-width: 435px) {
+
+  .auth-header > div{ width: 215px;}
+
+  .auth-header > div > .logo-img { height: 41px;}
+
+  .auth-footer{ text-align: center;}
+
+  .auth-footer .pull-right { float: none !important;}
+
+  .auth-footer button{ margin-bottom: 10px;}
+
+  .auth-footer .switch-btn-sign-in{ margin: 0 auto;}
+
+  .auth-footer .switch-btn-sign-up{ margin: 0 auto;}
+
 }

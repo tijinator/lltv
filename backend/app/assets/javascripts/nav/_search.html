@@ -13,7 +13,7 @@
         ng-model="selected"
         uib-typeahead="searchTitle as searchData.title for searchData in getSearch($viewValue) | filter:$viewValue:startsWith"
         typeahead-template-url="typeahead-item.html"
-        typeahead-min-length="2"
+        typeahead-min-length="3"
         typeahead-on-select="onSelect($item, $model, $label)" autofocus/>
   </div>
 

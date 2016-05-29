@@ -61,7 +61,7 @@
   margin-top: 50px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
   .profile-sidebar{ height: inherit;}
 }
@@ -152,11 +152,11 @@
 
 .radio-month-option{ padding-right: 20px;}
 
-@media (max-width: 930px) {
+@media screen and (max-width: 930px) {
   .radio-single-option{ margin-left: 0 !important;}
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
   /*.account-sidebar{ height: inherit;}*/
   .account-sidebar, .account-option-slide{ height: initial;}

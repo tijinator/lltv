@@ -18,7 +18,8 @@
 }
 
 .unlock-title, .unlock-description{
-  font-family: Avenir-Black;
+  font-family: Avenir-Black, avenir;
+  font-weight: 900;
   text-align: center;
 }
 
@@ -50,7 +51,7 @@
 
 
 /*responsive design*/
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .col-responsive{
     padding: 0 150px;
   }
@@ -72,18 +73,20 @@
   .subscribe-btn{ margin-bottom: 10px;}
 }
 
-@media (max-width: 500px) {
-
-  .close-unlock{
-    margin-right: 75px;
-    cursor: pointer;
+@media screen and (max-width: 435px){
+  .gray-box{
+    width: 300px;
+    left: calc(50% - 300px/2);
   }
-}
 
-@media (max-width: 370px) {
+  .close-unlock{ cursor: pointer;}
 
-  .close-unlock{
-    margin-right: 125px;
-    cursor: pointer;
+  .unlock-title{ font-size: 28px;}
+
+  .unlock-description{
+    font-size: 10px;
+    margin: 0 40px 10px 40px;
   }
+
+  .col-responsive{ padding: 0 55px;}
 }

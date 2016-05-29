@@ -1,11 +1,11 @@
 nav.navbar.navbar-fixed-top.ng-scope{
-    background-color: #000000;
+    background-color: #FFF;
     min-height: 95px;
+    margin: 0;
 }
 
 nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
-  background: transparent;
-  background-image: url('/images/LLTV_blackgradient2.png');
+  background: #FFF;
   min-height: 103px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,18 +17,17 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   border: 0;
   padding: 0;
   width: 229px;
-  /*height: 287px;*/
   text-align: center;
   font-size: 13px;
   top: 56px;
-  right: -64px;
+  right: -26px;
 }
 
 .profile-dropdown:after {
   content: '';
   position: absolute;
   bottom: 100%;
-  left: 50%;
+  left: 65%;
   margin-left: 31px;
   width: 0;
   height: 0;
@@ -40,6 +39,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 #lltv .homepage-nav-links .profile-dropdown li{
   margin: 0 auto;
   margin-bottom: 40px;
+  float: none;
 }
 
 #lltv .homepage-nav-links .profile-dropdown li:first-child{
@@ -52,35 +52,52 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
 
 #lltv #sign-up-bubble{
-  border: 2px solid #FFFFFF;
+  border: 2px solid #FFF;
+  background-color: #9CCC58;
   border-radius: 25px;
   padding: 10px 20px 10px 20px;
   margin-top: -12px;
+  color: #FFF;
 }
 
 .logo-img{
-  position: absolute;
-  top: 25px;
-  left: 29px;
+  /*position: absolute;*/
+  /*top: 25px;*/
+  /*left: 29px;*/
   height: 51px;
-  width: 266px;
+  /*width: 266px;*/
 }
 
-#lltv .homepage-nav-links ul > li:first-child > .nav-search-text{
+#lltv .homepage-nav-links ul > li:last-child > .nav-search-text{
   display: none;
 }
 
 .navbar-toggle{
-  margin-top: 25px;
+  margin-top: 16px;
 }
 
 .navbar-toggle .icon-bar{
   width: 24px;
   height: 4px;
-  background: white;
+  background: #5D5D5D;
 }
 
-@media (max-width: 768px){
+@media screen and (max-width: 1000px){
+  .logo-img{height: 35px;}
+}
+
+@media screen and (max-width: 768px){
+  .logo-img{height: 52px;}
+
+  nav.navbar.navbar-fixed-top.ng-scope.homepage-nav > div > .navbar-collapse{
+    background-color: transparent;
+  }
+
+  /*delete this one*/
+  nav.navbar.navbar-fixed-top.ng-scope > div > .navbar-collapse{
+    background-color: #000;
+  }
+
   #lltv .homepage-nav-links li:first-child{
     margin-top: 40px;
   }
@@ -88,30 +105,34 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   #lltv .homepage-nav-links li {
     margin-right: 0px;
     margin-left: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    float: none;
   }
 
-  #lltv #sign-up-bubble {
-   border: 0;
-   border-radius: 0;
-   padding: 0;
-   margin-top: 0;
+  #lltv #sign-up-bubble{
+     border: 0;
+     border-radius: 0;
+     padding: 0;
+     margin-top: 20px;
+     background-color: transparent;
+     color: #5D5D5D;
    }
 
    #lltv .homepage-nav-links {
-    color: #FFF;
-    /*background-color: white;*/
     width: 100%;
     text-align: center;
-    /*margin-right: -52px;
-    margin-top: 10px;*/
     padding: 0;
     border: 0px;
-
+    position: absolute;
+    margin: 0;
+    left: 0;
+    top: 127%;
+    background-color: white;
   }
 
   #lltv .homepage-nav-links .navbar-nav {
-    margin: 0;
+    width: 30%;
+    margin: 0 auto;
   }
 
   /*dropdown triangle*/
@@ -128,26 +149,30 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
     border-bottom: solid 13px #FFF;
   }
 
-  #lltv .homepage-nav-links ul > li:first-child > a:first-child{
+  #lltv .homepage-nav-links ul.nav.navbar-nav > li:last-child > a:first-child{
     display: none;
   }
 
-  #lltv .homepage-nav-links ul > li:first-child > .nav-search-text{
+  #lltv .homepage-nav-links ul > li:last-child > .nav-search-text{
     display: block;
   }
+
+  .profile-dropdown:after{ display: none;}
+
 }
 
-@media (min-width: 768px){
-  .navbar-toggle {
-    display: none;
-  }
+@media screen and (max-width: 500px){
+  .logo-img{ height: 48px;}
+
 }
 
-@media (max-width: 320px){
-  .logo-img{
-    width: 212px;
+@media screen and (max-width: 320px){
+  nav.navbar-fixed-top > div > a > .logo-img{
     height: 41px;
   }
+
+  .navbar-toggle{margin-top: 11px;}
+
   #lltv .homepage-nav-links li:first-child{ margin-top: 20px;}
 
   #lltv .homepage-nav-links li{margin-bottom: 20px;}

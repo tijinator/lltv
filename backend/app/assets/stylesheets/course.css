@@ -88,15 +88,25 @@
 }
 
 .course-video{
-    position: relative;
+    /*position: relative;*/
+		position: relative;
+		padding-bottom: 52.25%;
+		padding-top: 25px;
+		height: 0;
 }
 
 .course-video > video {
-	margin-bottom: -6px;
+	/*margin-bottom: -6px;
 	width: 100%;
 	max-width: 1000px;
 	min-width: 500px;
-	display: block;
+	display: block;*/
+	position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
 }
 .player-button{
 	font-size: 120px;
@@ -110,9 +120,8 @@
 	height: 500px;
 	background: #222628;
 	padding: 0 45px;
-	/*overflow-y: hidden;*/
 	overflow: auto;
-	padding-bottom: 80px;
+	padding-bottom: 10px;
 }
 
 .course-chapter-search{
@@ -199,7 +208,7 @@
 
 .nav-tabs{
 	margin-left: 10px;
-	height: 70px;
+	height: 58px;
 }
 
 .chapter-tabs-ul{
@@ -274,7 +283,7 @@
 }
 
 .tab-content{
-	margin-top: 50px;
+	margin-top: 0px;
 	margin-left: 10px;
 	min-height: 350px;
 	margin-bottom: 50px; /*add space to white section on homepage */
