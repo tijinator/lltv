@@ -25,7 +25,7 @@
 .auth-template .auth-content {
   clear: both;
   margin: 0px auto;
-  width: 78%;
+  width: 45%;
   /*height: 100%;*/
 }
 .auth-login-center{
@@ -102,7 +102,7 @@
 
 .auth-close {
   /*padding: 20px;*/
-  margin: 30px 30px 0 0;
+  margin: 30px 30px 46px 0;
   height: 24px;
   cursor: pointer;
 }
