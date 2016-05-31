@@ -233,11 +233,6 @@ a:hover{ text-decoration: none; }
   justify-content: center;
 }
 
-.discover-lltv-section div.discover-signup-button{
-  background-color: #9CCC58;
-}
-
-
 /*delete section*/
 
 
@@ -319,7 +314,7 @@ a:hover{ text-decoration: none; }
 }
 /*end input subcribe text color*/
 
-.footer-second-row div.col-sm-8 form button{background-color: #9CCC58;}
+/*.footer-second-row div.col-sm-8 form button{background-color: #9CCC58;}*/
 
 .footer-second-row ul li{display: inline-block;}
 

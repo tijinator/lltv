@@ -78,18 +78,18 @@
 .auth-body .form-group > label{
   font-size: 13px;
   font-family: Avenir-Black;
-  color: #fff;
+  color: #5d5d5d;
 }
 
 .auth-template input:not([type=submit]):not([type=file]) {
   background-color: transparent;
-  border: 1px solid rgba(255,255,255, 0.3);
+  border: 1px solid #ccc;
   height: 40px;
   border-radius: 25px;
   opacity: 1;
   font-size: 13px;
   font-family: Avenir-Black;
-  color: #fff;
+  /*color: #fff;*/
 }
 
 .auth-footer{
@@ -101,13 +101,15 @@
 }
 
 .auth-close {
-  padding: 20px;
+  /*padding: 20px;*/
   margin: 30px 30px 0 0;
+  height: 24px;
+  cursor: pointer;
 }
 
 .submit-btn {
   border: none;
-  background-color: #33ACE0;
+  background-color: #9CCC58;
   font-family: Avenir-Black;
   font-size: 13px;
   width: 120px;
@@ -118,7 +120,7 @@
 
 
 .switch-btn {
-  background-color: #4D4D4D;
+  background-color: #a09d98;
   border: none;
   font-family: Avenir-Black;
   font-size: 13px;
@@ -137,8 +139,7 @@
 }
 
 .modal-backdrop.auth-backdrop.in {
-  /*opacity: 0.88;*/
-  opacity: 0.92;
+  opacity: 1;
   background: #fff;
 }
 

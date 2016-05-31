@@ -14,7 +14,7 @@ angular.module('lltv')
       controller: 'searchModalCtrl',
       windowTopClass: 'auth-template',
       backdrop: 'static',
-      backdropClass: 'auth-backdrop'
+      backdropClass: 'search-backdrop'
     });
   }
 
