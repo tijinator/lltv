@@ -58,7 +58,7 @@
               <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
             </div>
             <div class="row" style="margin:0;">
-              <p class="homepage-course-title">{{popCourse.title}}</p>
+              <a ui-sref="courses.show({id: popCourse.id})" class="homepage-course-title">{{popCourse.title}}</a>
             </div>
             <div class="row homepage-course-last-row">
               <p>author's name</p>
@@ -67,17 +67,17 @@
           </div>
 
         </div>
-
+        <!-- end popCourse-section -->
       </div>
-
 
     </div>
 
   </div>
   <!-- end popular courses -->
+
   <div class="" ng-repeat="category in homeCategories">
     <div class="row" style="margin: 0;">
-      <div class="col-sm-12 homepage-category-row">
+      <div class="col-sm-12 homepage-category-row" ng-class="{'homepage-category-row-color' : ($index+1) % 2}">
         <div class="row" style="margin: 0;">
           <div class="col-sm-6 homepage-category-left" style="padding: 0;">
             <div class="homepage-category-title-box">
@@ -99,7 +99,7 @@
                 <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
               </div>
               <div class="row" style="margin:0;">
-                <p class="homepage-course-title">{{course.title}}</p>
+                <a ui-sref="courses.show({id: course.id})" class="homepage-course-title">{{course.title}}</a>
               </div>
               <div class="row homepage-course-last-row">
                 <p>author's name</p>
