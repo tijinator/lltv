@@ -1,9 +1,12 @@
+a:hover{text-decoration: none;}
+
 .search-modal{
   clear: both;
   margin: 0 auto;
   width: 80%;
   font-family: avenir-black;
   text-transform: capitalize;
+  color: #5d5d5d;
 }
 
 .search-modal-close{
@@ -18,8 +21,9 @@
 
 .custom-typehead .dropdown-menu{
   background-color: transparent;
-  /*font-family: avenir-black;*/
   top: 200px !important;
+  border: 0;
+  box-shadow: none;
 }
 .custom-typehead .dropdown-menu li{
   margin: 20px 0;
@@ -29,7 +33,7 @@
 .custom-typehead .dropdown-menu li a {
   padding: 3px 0px;
   font-size: 30px;
-  color: #939393;
+  color: #a09d98;
   font-family: avenir-book;
 }
 
@@ -41,7 +45,7 @@
   border-radius: 0px;
   font-size: 55px;
   font-family: Avenir-Black;
-  color: #fff;
+  color: #5d5d5d;
   padding: 0;
 }
 
@@ -52,4 +56,5 @@
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus{
   background-color: transparent;
+  color: #a09d98;
 }

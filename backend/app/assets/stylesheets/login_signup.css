@@ -137,7 +137,9 @@
 }
 
 .modal-backdrop.auth-backdrop.in {
-  opacity: 0.88;
+  /*opacity: 0.88;*/
+  opacity: 0.92;
+  background: #fff;
 }
 
 @media screen and (max-width: 768px){
