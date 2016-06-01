@@ -61,7 +61,7 @@
               <a ui-sref="courses.show({id: popCourse.id})" class="homepage-course-title">{{popCourse.title}}</a>
             </div>
             <div class="row homepage-course-last-row">
-              <p>author's name</p>
+              <p>{{popCourse.author.full_name}}</p>
               <p>{{popCourse.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
             </div>
           </div>
@@ -102,7 +102,7 @@
                 <a ui-sref="courses.show({id: course.id})" class="homepage-course-title">{{course.title}}</a>
               </div>
               <div class="row homepage-course-last-row">
-                <p>author's name</p>
+                <p>{{course.author.full_name}}</p>
                 <p>{{course.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
               </div>
             </div>

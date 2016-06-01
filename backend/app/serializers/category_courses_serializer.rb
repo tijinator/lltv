@@ -1,5 +1,10 @@
 class CategoryCoursesSerializer < ActiveModel::Serializer
-	attributes :id, :level, :title, :details, :duration
+	attributes :id, :level, :title, :details, :duration, :banner_url
+	has_one :author
+
+	def banner_url
+		object.banner_url_url
+	end
 	# has_one :author
 
 	# def author

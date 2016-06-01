@@ -49,7 +49,7 @@
             </div>
 
             <div class="row" style="margin: 0;">
-              <p class="course-video-author">by: steven smith</p>
+              <p class="course-video-author">by: {{course.author.full_name}}</p>
               <p class="course-video-duration">{{ course.duration | secondsToHHMM | date: "H'H' mm'M'" }}</p>
             </div>
 
