@@ -8,8 +8,9 @@
 }
 
 .close-unlock{
-  margin: 25px 25px 20px 0;
+  margin: 30px 30px 20px 0;
   cursor: pointer;
+  height: 24px;
 }
 
 .lock-container{

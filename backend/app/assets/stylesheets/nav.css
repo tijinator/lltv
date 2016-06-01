@@ -60,12 +60,10 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   color: #FFF;
 }
 
+#lltv #sign-up-bubble a div{ color: #fff;}
+
 .logo-img{
-  /*position: absolute;*/
-  /*top: 25px;*/
-  /*left: 29px;*/
   height: 51px;
-  /*width: 266px;*/
 }
 
 #lltv .homepage-nav-links ul > li:last-child > .nav-search-text{
