@@ -7,9 +7,8 @@ a:hover{text-decoration: none;}
 
 .search-modal{
   clear: both;
-  /*margin: 0 auto;
-  width: 80%;*/
-  font-family: avenir-black;
+  font-weight: 700;
+  /*font-family: avenir-black;*/
   text-transform: capitalize;
   color: #5d5d5d;
 }
@@ -53,7 +52,8 @@ a:hover{text-decoration: none;}
   padding: 3px 0px;
   font-size: 30px;
   color: #a09d98;
-  font-family: avenir-book;
+  font-weight: 300;
+  /*font-family: avenir-book;*/
 }
 
 .search-modal .custom-typehead input:not([type=submit]):not([type=file]){
@@ -63,7 +63,8 @@ a:hover{text-decoration: none;}
   height: 70px;
   border-radius: 0px;
   font-size: 55px;
-  font-family: Avenir-Black;
+  font-weight: 700;
+  /*font-family: Avenir-Black;*/
   color: #5d5d5d;
   padding: 0;
 }

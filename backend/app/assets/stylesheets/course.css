@@ -5,7 +5,8 @@
 	/*margin-top: -50px;*/
 }
 .course-info-title{
-	font-family: Avenir-Black;
+	/*font-family: Avenir-Black;*/
+	font-weight: 700;
 	text-transform: capitalize;
 	padding-bottom: 10px;
 	margin-top: -50px;
@@ -14,7 +15,8 @@
 }
 
 .course-info-details{
-	font-family: Avenir-Book;
+	/*font-family: Avenir-Book;*/
+	font-weight: 300;
 	font-size: 15px;
 	line-height: 30px;
 	color: #FFF;
@@ -34,7 +36,8 @@
 
 .course-info-static-ldr{
 	text-transform: uppercase;
-	font-family: Avenir-Black;
+	/*font-family: Avenir-Black;*/
+	font-weight: 700;
 	color: #787D7F;
 	margin-right: 40px;
 	display: inline-block;
@@ -42,7 +45,8 @@
 
 .course-info-dynamic-ldr{
 	color: #FFF;
-	font-family: Avenir-Book;
+	/*font-family: Avenir-Book;*/
+	font-weight: 300;
 	display: inline-block;
 }
 
@@ -70,7 +74,8 @@
 	text-transform: uppercase;
 }
 .course-profile-info span{
-	font-family: Avenir-Black;
+	/*font-family: Avenir-Black;*/
+	font-weight: 700;
 	color: #787D7F;
 }
 
@@ -144,14 +149,16 @@
 
 .course-chapter-search > p > a > span {
 	text-transform: uppercase;
-	font-family: Avenir-Black;
+	/*font-family: Avenir-Black;*/
+	font-weight: 700;
 	font-size: 13px;
 	margin-right: 10px;
 }
 
 .course-chapter-search > p > span > input {
 	text-transform: uppercase;
-	font-family: Avenir-Black;
+	/*font-family: Avenir-Black;*/
+	font-weight: 700;
 	font-size: 12px;
 	padding: 0 6px;
 	width: 75%;
@@ -167,7 +174,8 @@
 }
 
 .course-chapter-collaps{
-	font-family: Avenir-Black;
+	/*font-family: Avenir-Black;*/
+	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 13px;
 }
@@ -178,7 +186,8 @@
 
 .table-contents{
 	font-size: 13px;
-  font-family: avenir-black;
+  /*font-family: avenir-black;*/
+	font-weight: 700;
   color: #787D7F;
   text-transform: uppercase;
   padding: 28px 0 0 20px;
@@ -217,7 +226,8 @@
 }
 
 .chapter-tabs-ul > li {
-	font-family: Avenir-Black;
+	/*font-family: Avenir-Black;*/
+	font-weight: 700;
 	font-size: 13px;
 	color: #787D7F;
 	margin-top: 18px;
@@ -276,7 +286,8 @@
 }
 
 .tab-panel{
-	font-family: Avenir-Book;
+	/*font-family: Avenir-Book;*/
+	font-weight: 300;
 	font-size: 15px;
 	line-height: 30px;
 	color: #FFF;
@@ -290,7 +301,8 @@
 }
 
 .tab-inner-panel{
-	font-family: Avenir-Book;
+	/*font-family: Avenir-Book;*/
+	font-weight: 300;
 	font-size: 15px;
 	line-height: 30px;
 	color: #FFF;
@@ -298,13 +310,6 @@
 }
 
 .tab-inner-panel h5{ font-size: 15px;}
-
-/*.exp-all{
-	font-family: Avenir-Black;
-	text-transform: uppercase;
-	font-size: 13px;
-	color: #787D7F;
-}*/
 
 .course-chapter-content .exp-coll-all a{
 	float: left;
@@ -346,15 +351,16 @@
 	padding: 10px 0 0 20px;
 	text-align: left;
 	width: 100%;
-	/**/
-	font-family: Avenir-Black;
+	/*font-family: Avenir-Black;*/
+	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 13px;
 	color: #FFF;
 }
 
 .chapter-index-element > p > a{
-	font-family: Avenir-Black;
+	/*font-family: Avenir-Black;*/
+	font-weight: 700;
 	font-size: 15px;
 	margin-right: 10px;
 }
@@ -371,7 +377,8 @@
 }
 
 .chapter-index-element.index-title-row a{
-	font-family: Avenir-Black;
+	/*font-family: Avenir-Black;*/
+	font-weight: 700;
 	font-size: 13px;
 	line-height: 30px;
 	color: #787D7F;

@@ -9,14 +9,16 @@
 
 .faq-lists > li > a{
   color: #fff;
-  font-family: avenir-book;
+  /*font-family: avenir-book;*/
+  font-weight: 300;
   cursor: pointer;
 }
 
 .membership-faq{
   padding: 0;
   text-align: center;
-  font-family: avenir-black;
+  /*font-family: avenir-black;*/
+  font-weight: 700;
 }
 
 .membership-title{
@@ -52,7 +54,8 @@
 }
 
 .membership-answer{
-  font-family: avenir-roman;
+  /*font-family: avenir-roman;*/
+  font-weight: 300;
   margin-bottom: 20px
 }
 

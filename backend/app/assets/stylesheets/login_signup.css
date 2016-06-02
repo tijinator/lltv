@@ -72,12 +72,14 @@
 .auth-body .form-group > p > a{
   color: #29aae1;
   font-size: 12px;
-  font-family: Avenir-Black;
+  font-weight: 700;
+  /*font-family: Avenir-Black;  */
 }
 
 .auth-body .form-group > label{
   font-size: 13px;
-  font-family: Avenir-Black;
+  font-weight: 700;
+  /*font-family: Avenir-Black;*/
   color: #5d5d5d;
 }
 
@@ -88,7 +90,8 @@
   border-radius: 25px;
   opacity: 1;
   font-size: 13px;
-  font-family: Avenir-Black;
+  font-weight: 700;
+  /*font-family: Avenir-Black;*/
   /*color: #fff;*/
 }
 
@@ -110,7 +113,8 @@
 .submit-btn {
   border: none;
   background-color: #9CCC58;
-  font-family: Avenir-Black;
+  font-weight: 700;
+  /*font-family: Avenir-Black;*/
   font-size: 13px;
   width: 120px;
 }
@@ -122,7 +126,8 @@
 .switch-btn {
   background-color: #a09d98;
   border: none;
-  font-family: Avenir-Black;
+  font-weight: 700;
+  /*font-family: Avenir-Black;*/
   font-size: 13px;
 }
 

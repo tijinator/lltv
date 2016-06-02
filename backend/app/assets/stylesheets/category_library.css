@@ -27,7 +27,8 @@
   font-size: 25px;
   margin: 10px;
   padding-top: 108px;
-  font-family: avenir-black;
+  /*font-family: avenir-black;*/
+  font-weight: 700;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

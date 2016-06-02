@@ -3,7 +3,8 @@
   height: calc(100vh - 95px);
   color: #FFF;
   text-transform: uppercase;
-  font-family: avenir-black;
+  font-weight: 700;
+  /*font-family: avenir-black;*/
 }
 
 .anchor-link{
@@ -40,7 +41,8 @@
   height: calc(100vh - 95px);
   text-transform: uppercase;
   color: #FFF;
-  font-family: avenir-black;
+  font-weight: 700;
+  /*font-family: avenir-black;*/
 }
 
 .profile-welcome{
@@ -80,7 +82,8 @@
   height: 100%;
   color: #FFF;
   text-transform: uppercase;
-  font-family: avenir-black;
+  font-weight: 700;
+  /*font-family: avenir-black;*/
   font-size: 13px;
 }
 
@@ -89,7 +92,8 @@
   min-height: 100vh;
   text-transform: uppercase;
   color: #FFF;
-  font-family: avenir-black;
+  font-weight: 700;
+  /*font-family: avenir-black;*/
 }
 
 .account-option-box{
@@ -123,7 +127,8 @@
   border-radius: 25px;
   opacity: 1;
   font-size: 13px;
-  font-family: Avenir-Black;
+  font-weight: 700;
+  /*font-family: Avenir-Black;*/
   color: #fff;
 }
 
@@ -143,7 +148,8 @@
   border-radius: 25px;
   opacity: 1;
   font-size: 13px;
-  font-family: Avenir-Black;
+  font-weight: 700;
+  /*font-family: Avenir-Black;*/
   color: #fff;
   padding-left: 15px;
 }

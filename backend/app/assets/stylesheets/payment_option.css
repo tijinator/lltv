@@ -18,8 +18,8 @@
 }
 
 .payment-option-title{
-  font-family: Avenir-black, avenir;
-  font-weight: 900;
+  font-weight: 700;
+  /*font-family: Avenir-black;*/
   text-align: center;
   text-transform: capitalize;
   color: #5d5d5d;
@@ -27,8 +27,8 @@
 
 .price-title{
   font-size: 15px;
-  font-family: avenir-black, avenir;
-  font-weight: 900;
+  font-weight: 700;
+  /*font-family: avenir-black;*/
   text-align: center;
   margin: 30px 0 35px;
   color: #B2B2B2;
@@ -47,8 +47,8 @@
   margin-left: 70px;
   font-size: 12px;
   color: #B2B2B2;
-  font-family: avenir-medium, avenir;
-  font-weight: 800;
+  font-weight: 400;
+  /*font-family: avenir-medium;*/
 }
 
 .price-list>ul>li{ margin-bottom: 20px;}
@@ -59,9 +59,8 @@
 }
 
 .price-list>ul>li:nth-child(2){
-  font-family: avenir-black, avenir;
-  font-weight: 900;
-  /*color: #fff;*/
+  font-weight: 700;
+  /*font-family: avenir-black;*/
 }
 
 .price-item-container{ margin-bottom: 7px; color: #5d5d5d; }
@@ -69,16 +68,16 @@
 .pricing-dollar{
   margin-left: 70px;
   font-size: 50px;
-  font-family: avenir-black, avenir;
-  font-weight: 900;
+  font-weight: 700;
+  /*font-family: avenir-black;*/
 }
 
 .change-container{ position: absolute;}
 
 .price-change{
   top: 13px;
-  font-family: avenir-black, avenir;
-  font-weight: 900;
+  font-weight: 700;
+  /*font-family: avenir-black;*/
   font-size: 18px;
 }
 
@@ -95,8 +94,8 @@
   border-radius: 25px;
   opacity: 1;
   font-size: 13px;
-  font-family: Avenir-Black, avenir;
-  font-weight: 900;
+  font-weight: 700;
+  /*font-family: Avenir-Black;*/
   color: #fff;
 }
 
@@ -135,16 +134,16 @@
 
 .payment-form-title{
     text-transform: capitalize;
-    font-family: avenir-black, avenir;
-    font-weight: 900;
+    font-weight: 700;
+    /*font-family: avenir-black;*/
     text-align: center;
     margin-bottom: 60px;
     color: #5d5d5d;
 }
 
 .payment-step{
-  font-family: avenir-black, avenir;
-  font-weight: 900;
+  font-weight: 700;
+  /*font-family: avenir-black;*/
   color: #B2B2B2;
 }
 

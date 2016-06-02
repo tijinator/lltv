@@ -31,7 +31,8 @@
   line-height: 30px;
   margin: 0px 35px;
   font-size: 13px;
-  font-family: avenir-book;
+  /*font-family: avenir-book;*/
+  font-weight: 300;
 }
 
 .category-info-title {
@@ -40,7 +41,8 @@
   margin-left: 35px;
   font-weight: bold;
   font-size: 36px;
-  font-family: avenir-black;
+  /*font-family: avenir-black;*/
+  font-weight: 700;
 }
 
 .category-banner-section{
@@ -53,7 +55,8 @@
   text-align: center;
   font-size: 36px;
   line-height: 200px;
-  font-family: avenir-black;
+  /*font-family: avenir-black;*/
+  font-weight: 700;
   text-transform: capitalize;
 }
 
@@ -65,9 +68,9 @@
 .category-subjects-section{
   padding: 0 50px;
   text-transform: uppercase;
-  /*height: 118px;*/
   color: #5d5d5d;
-  font-family: avenir-black;
+  /*font-family: avenir-black;*/
+  font-weight: 700;
 }
 
 .category-subjects-section div.row:first-child{ margin: 0 0 44px 0;}
@@ -114,33 +117,22 @@
 
 .category-page-option-title, .category-sub-section{ margin-left: 35px;}
 
-/*.category-page-option-title p{
-  size: 12px;
-  color: #787D7F;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 40px;
-}*/
-
 .category-page-option-title h5{
-  /*size: 12px;*/
-  /*font-weight: bold;*/
   color: #787D7F;
   text-transform: uppercase;
   margin-top: 35px;
   margin-bottom: 20px;
-  font-family: avenir-black;
+  /*font-family: avenir-black;*/
+  font-weight: 700;
   font-size: 12px;
 }
 
 .category-sub-section a{
-  /*size: 12px;*/
   font-size: 12px;
   color: #000;
   text-transform: uppercase;
-  /*font-weight: bold;*/
-  font-family: avenir-black;
-
+  /*font-family: avenir-black;*/
+  font-weight: 700;
 }
 
 
@@ -170,8 +162,8 @@
 }
 
 .category-seeall-link, .category-courses-title{
-  /*size: 12px;*/
-  font-family: avenir-black;
+  /*font-family: avenir-black;*/
+  font-weight: 700;
 }
 
 .category-recommended{
@@ -232,7 +224,8 @@
 
 .course-video-title{
   font-size: 21px;
-  font-family: avenir-black;
+  /*font-family: avenir-black;*/
+  font-weight: 700;
   color: #000;
   text-transform: capitalize;
 }
@@ -241,7 +234,8 @@
 
 .course-video-details{
   font-size: 15px;
-  font-family: avenir-book;
+  /*font-family: avenir-book;*/
+  font-weight: 300;
   text-align: left;
   color: #50585b;
   line-height: 2;
@@ -249,7 +243,8 @@
 
 .course-video-author, .course-video-duration{
   font-size: 11px;
-  font-family: avenir-black;
+  /*font-family: avenir-black;*/
+  font-weight: 700;
   color: #000;
   text-transform: uppercase;
 }
