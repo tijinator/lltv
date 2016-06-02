@@ -1,6 +1,67 @@
+<div class="col-sm-12 homepage-category-row">
+
+  <div class="row homepage-courses-row">
+
+    <div class="popCourse-section" ng-repeat="course in courses">
+
+      <div class="col-sm-3 homepage-course-box">
+        <div class="row" style="margin:0;">
+          <div class="course-img" ng-style="{'background-image':'url({{course.banner_url}})'}"></div>
+          <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
+        </div>
+        <div class="row" style="margin:0;">
+          <a ui-sref="courses.show({id: course.id})" class="homepage-course-title">{{course.title}}</a>
+        </div>
+        <div class="row homepage-course-last-row">
+          <p>{{course.author.full_name}}</p>
+          <p>{{course.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!--
+<div class="row" style="margin: 0;">
+  <div class="col-sm-12 homepage-category-row" ng-class="{'homepage-category-row-color' : ($index+1) % 2}">
+
+    <div class="row homepage-courses-row">
+
+      <div class="popCourse-section" ng-repeat="course in category.courses">
+
+        <div class="col-sm-3 homepage-course-box">
+          <div class="row" style="margin:0;">
+            <div class="course-img" ng-style="{'background-image':'url({{course.banner_url}})'}"></div>
+            <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
+          </div>
+          <div class="row" style="margin:0;">
+            <a ui-sref="courses.show({id: course.id})" class="homepage-course-title">{{course.title}}</a>
+          </div>
+          <div class="row homepage-course-last-row">
+            <p>{{course.author.full_name}}</p>
+            <p>{{course.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div> -->
+
+
+
+
+
+
 <!-- <div class="row"> -->
 
-  <div ng-repeat="course in courses"  class="test" style="display: inline;">
+  <!-- <div ng-repeat="course in courses"  class="test" style="display: inline;">
 
     <div class="row" style="margin: 0;">
       <div class="col-sm-12 thumbnail-description-container">
@@ -8,9 +69,7 @@
         <div class="row" style="margin: 0;">
           <div class="col-sm-4" style="padding: 0;">
 
-            <!-- <div class="category-video-thumbnail" style="background-image: url('../images/LLTV_animation_category_img.jpg');"> -->
             <div class="category-video-thumbnail" ng-style="{'background-image':'url({{course.banner_url}})'}">
-            <!-- <div class="category-video-thumbnail" ng-show="showCategoryCourses"> -->
 
               <a ui-sref="courses.show({id: course.id})">
                 <div class="category-thumbnail-overlay">
@@ -19,8 +78,6 @@
                   <div class="playbtn-overlay">
                     <img ng-src="{{'images/LLTV_thumbnail_play_btn.png'}}" style="width: 50px; height: 50px"/>
                   </div>
-                  <!-- <img ng-src="{{course.banner_url}}" style="width: 100%; height: 129px"> -->
-                  <!-- <img ng-src="{{'images/LLTV_animation_category_img.jpg'}}" style="width: 100%; height: 129px"> -->
 
                   <div class="category-course-title cat-course-title-overlay">
                     {{course.title}}
@@ -60,6 +117,6 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
 
 <!-- </div> --><!-- end of row -->
