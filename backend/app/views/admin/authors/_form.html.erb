@@ -1,0 +1,27 @@
+<%= form_for (@author), html: {id: 'author_new'} do |f| %>
+<div class="form-group">
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name, placeholder: 'First name' %>
+</div>
+
+<div class="form-group">
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name %>
+</div>
+
+<div class="form-group">
+	<%= f.file_field :avatar, class: 'form-control' %>
+
+	<%= image_tag(@author.avatar_url) if @author.avatar.url %>
+	<%= f.hidden_field :avatar_cache %>
+	<p>
+	<%= f.check_box :remove_avatar, {}, true , false %>
+	Remove Image
+	</p>
+</div>
+
+<div class="form-group">
+	<%= f.submit %>
+<%#= content_tag :button, "Add", {type: :submit} %>
+</div>
+<% end %>

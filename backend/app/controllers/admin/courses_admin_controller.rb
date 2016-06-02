@@ -89,7 +89,7 @@ private
   end
 
 	def course_params
-		params.require(:course).permit(:level, :title, :banner_url, :details, :position, :featured, :published, :duration)
+		params.require(:course).permit(:author_id, :level, :title, :banner_url, :details, :position, :featured, :published, :duration)
 	end
 
 	def publish_params
