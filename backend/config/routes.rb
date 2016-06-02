@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     # get '/courses' => 'admin#courses'
     # get '/courses/:id' => 'admin#show_course'
 
+    resources :authors, controller: 'admin/authors'
     resources :courses, controller: 'admin/courses_admin'
 
     # Trash routes dnt delete it yet...

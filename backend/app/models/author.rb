@@ -1,6 +1,10 @@
 class Author < ActiveRecord::Base
+  mount_uploader :avatar, AuthorUploader
   has_many :courses
+  
   validates :first_name, length: {minimum: 3}
+  validates :last_name, length: {minimum: 3}
+  # validates :avatar, presence: true
 
   # def full_name
   #   if self.first_name && self.last_name

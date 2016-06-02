@@ -1,0 +1,55 @@
+
+<div class="alert-author"></div>
+<div class='col-md-12'>
+	<div class='col-md-6'>
+		<div class='authors-list'>
+				<% @authors.each do |a| %>
+						<p class='author_full_name'><%= "#{a.first_name} #{a.last_name}" %></p>
+						<div class="author_avatar"></div>
+				<% end %>
+		</div>
+	</div>
+	<div class='col-md-6'>
+		<%= form_for (:author), url: :authors, html: {id: 'author_new'} do |f| %>
+		<div class="form-group">
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name, placeholder: 'First name' %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :last_name %>
+			<%= f.text_field :last_name %>
+		</div>
+
+		<div class="form-group">
+			<%= f.file_field :avatar, class: 'form-control' %>
+		</div>
+
+			<br>
+			<%#= f.submit 'Add' %>
+			<%= content_tag :button, "Add", {type: :submit} %>
+		<% end %>
+		  
+	</div>
+</div>
+
+
+
+<script>
+$('#author_new').on("ajax:success", function (e, data, status, xhr){
+	// console.log(status);
+	// console.log(xhr);
+	// console.log(data.first_name);
+	var data = data.data;
+	$('.authors-list').append("<p class='author_full_name'>"+data.first_name +" "+ data.last_name+"</p>");
+	$( "#author_new :input").val('');
+
+}).on("ajax:error", function(e, data, status, xhr){
+  	var errors = data.responseJSON.errors;
+  	  $.each(errors, function(k, v) {
+	    // var result += k + " , " + v + "\n";
+	    console.log(k + " , " + v + "\n");
+	  });
+	$('.alert-author').after().append("<div class='alert alert-danger'> Author's not been added ! </div>");
+});
+</script>

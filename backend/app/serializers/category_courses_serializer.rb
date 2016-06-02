@@ -1,6 +1,6 @@
 class CategoryCoursesSerializer < ActiveModel::Serializer
-	attributes :id, :level, :title, :details, :duration
-	# has_one :author
+	attributes :id, :level, :title, :details, :duration, :banner_url
+	has_one :author
 
 	# def author
 	# 	if a = Author.find(id)
@@ -10,5 +10,9 @@ class CategoryCoursesSerializer < ActiveModel::Serializer
 	# 		nil
 	# 	end
 	# end
+
+	def banner_url
+		object.banner_url_url
+	end
 
 end
