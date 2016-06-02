@@ -20,7 +20,7 @@
 
 .unlock-title, .unlock-description{
   font-weight: 700;
-  /*font-family: Avenir-Black;*/
+  font-family: avenir-black, 'Work Sans';
   text-align: center;
 }
 

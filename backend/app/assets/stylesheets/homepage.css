@@ -41,8 +41,8 @@ a:hover{ text-decoration: none; }
   left: 52%;
   font-size: 40px;
   color: #fff;
-  /*font-family: avenir-black, avenir;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
 }
 
 .quote-container p:first-child{
@@ -50,9 +50,9 @@ a:hover{ text-decoration: none; }
 }
 
 .quote-container .quote-subtitle{
-  /*font-family: avenir-medium;*/
   font-size: 22px;
   font-weight: 400;
+  font-family: avenir-medium, 'Work Sans';
 }
 
 .quote-container-buttons ul{ margin-bottom: 26px;}
@@ -67,8 +67,8 @@ a:hover{ text-decoration: none; }
   color: #5D5D5D;
   font-size: 12px;
   text-transform: uppercase;
-  /*font-family: avenir-black, avenir;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
 }
 
 #lltv .homepage-nav-links li {
@@ -84,6 +84,7 @@ a:hover{ text-decoration: none; }
   color: #5D5D5D;
   padding: 0px;
   cursor: pointer;
+  font-weight: 700;
 }
 
 #lltv .homepage-nav-links li > a:hover {
@@ -92,8 +93,8 @@ a:hover{ text-decoration: none; }
 
 #lltv .homepage-category-row{
   padding: 0;
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
   color: #5D5D5D;
 }
 
@@ -183,8 +184,8 @@ a:hover{ text-decoration: none; }
 }
 
 .discover-lltv-section{
-  /*font-family: avenir-medium;*/
   font-weight: 400;
+  font-family: avenir-medium, 'Work Sans';
   padding: 0;
   text-align: center;
   color: #5d5d5d;
@@ -200,8 +201,8 @@ a:hover{ text-decoration: none; }
 .discover-lltv-section div.row:last-child { margin: 0 0 72px;}
 
 .discover-lltv-section div.row h1{
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
   font-size: 28px;
   margin-top: 0;
 }
@@ -243,8 +244,8 @@ a:hover{ text-decoration: none; }
   text-transform: uppercase;
   color: #FFFFFF;
   font-size: 13.5px;
-  /*font-family: avenir-black, avenir;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
   cursor: pointer;
 }
 
@@ -261,8 +262,8 @@ a:hover{ text-decoration: none; }
 .homepage-footer{
   min-height: 236px;
   color: #989898;
-  /*font-family: avenir-black, avenir;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
   text-transform: uppercase;
   border-top: 1px solid #e6e6e6;
   background-color: #fff;
@@ -321,8 +322,8 @@ a:hover{ text-decoration: none; }
   margin: 10px 20px 0 0;
   color: #989898;
   font-size: 10px;
-  /*font-family: avenir-medium, avenir;*/
   font-weight: 400;
+  font-family: avenir-medium, 'Work Sans';
   float: left;
 }
 

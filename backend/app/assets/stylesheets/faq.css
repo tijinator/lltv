@@ -9,16 +9,16 @@
 
 .faq-lists > li > a{
   color: #fff;
-  /*font-family: avenir-book;*/
   font-weight: 300;
+  font-family: avenir-book, 'Work Sans';
   cursor: pointer;
 }
 
 .membership-faq{
   padding: 0;
   text-align: center;
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
 }
 
 .membership-title{
@@ -54,8 +54,8 @@
 }
 
 .membership-answer{
-  /*font-family: avenir-roman;*/
-  font-weight: 300;
+  font-weight: 400;
+  font-family: avenir-medium, 'Work Sans';
   margin-bottom: 20px
 }
 

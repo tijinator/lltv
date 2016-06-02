@@ -9,11 +9,11 @@
 */
 
 body{
-  font-family: avenir-black;
+  font-family: avenir-black, 'Work Sans', 'Roboto', sans-serif;
   font-size: 12px;
 }
 
-.edit-btn, .delete-btn{ 
+.edit-btn, .delete-btn{
   font-size: 12px;
 }
 

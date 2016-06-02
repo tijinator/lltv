@@ -1,11 +1,4 @@
-/*.category-side-navbar{
-  position: absolute;
-  height: 100%;
-}*/
-
 .category-info {
-  /*position: relative;
-  height: 286px;*/
   overflow: hidden;
   background-color: #000000;
   color: #FFFFFF;
@@ -31,8 +24,8 @@
   line-height: 30px;
   margin: 0px 35px;
   font-size: 13px;
-  /*font-family: avenir-book;*/
   font-weight: 300;
+  font-family: avenir-book, 'Work Sans';
 }
 
 .category-info-title {
@@ -41,8 +34,8 @@
   margin-left: 35px;
   font-weight: bold;
   font-size: 36px;
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
 }
 
 .category-banner-section{
@@ -55,8 +48,8 @@
   text-align: center;
   font-size: 36px;
   line-height: 200px;
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
   text-transform: capitalize;
 }
 
@@ -69,8 +62,8 @@
   padding: 0 50px;
   text-transform: uppercase;
   color: #5d5d5d;
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
 }
 
 .category-subjects-section div.row:first-child{ margin: 0 0 44px 0;}
@@ -82,6 +75,7 @@
   color: #000;
   text-transform: capitalize;
   font-size: 22px;
+  font-weight: 700;
 }
 
 .category-subjects-section div.row a{
@@ -122,8 +116,8 @@
   text-transform: uppercase;
   margin-top: 35px;
   margin-bottom: 20px;
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
   font-size: 12px;
 }
 
@@ -131,8 +125,8 @@
   font-size: 12px;
   color: #000;
   text-transform: uppercase;
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
 }
 
 
@@ -162,8 +156,8 @@
 }
 
 .category-seeall-link, .category-courses-title{
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
 }
 
 .category-recommended{
@@ -224,8 +218,8 @@
 
 .course-video-title{
   font-size: 21px;
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
   color: #000;
   text-transform: capitalize;
 }
@@ -234,8 +228,8 @@
 
 .course-video-details{
   font-size: 15px;
-  /*font-family: avenir-book;*/
   font-weight: 300;
+  font-family: avenir-book, 'Work Sans';
   text-align: left;
   color: #50585b;
   line-height: 2;
@@ -243,8 +237,8 @@
 
 .course-video-author, .course-video-duration{
   font-size: 11px;
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
   color: #000;
   text-transform: uppercase;
 }

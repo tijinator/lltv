@@ -34,8 +34,8 @@
   font-size: 15px;
   margin-top: 10px;
   margin-right: 50px;
-  /*font-family: Avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
   background-color: rgba(26, 157, 7, 0.78);
 }
 
@@ -49,8 +49,8 @@
   text-transform: capitalize;
   font-size: 30px;
   font-weight: bold;
-  /*font-family: avenir-black;*/
   font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
   margin: 15px 50px 15px 50px;
 }
 
@@ -62,8 +62,9 @@
   line-height: 30px;
   margin: 0 50px;
   font-size: 15px;
-  /*font-family: avenir-book;*/
   font-weight: 300;
+  font-family: avenir-book, 'Work Sans';
+
 }
 
 .featured-course-details p{

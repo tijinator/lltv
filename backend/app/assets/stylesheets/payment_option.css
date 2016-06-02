@@ -19,7 +19,7 @@
 
 .payment-option-title{
   font-weight: 700;
-  /*font-family: Avenir-black;*/
+  font-family: avenir-black, 'Work Sans';
   text-align: center;
   text-transform: capitalize;
   color: #5d5d5d;
@@ -28,7 +28,7 @@
 .price-title{
   font-size: 15px;
   font-weight: 700;
-  /*font-family: avenir-black;*/
+  font-family: avenir-black, 'Work Sans';
   text-align: center;
   margin: 30px 0 35px;
   color: #B2B2B2;
@@ -48,19 +48,18 @@
   font-size: 12px;
   color: #B2B2B2;
   font-weight: 400;
-  /*font-family: avenir-medium;*/
+  font-family: avenir-medium, 'Work Sans';
 }
 
 .price-list>ul>li{ margin-bottom: 20px;}
 
 .price-list>ul>li:first-child{
-  /*color: #fff;*/
   margin-bottom: 0;
 }
 
 .price-list>ul>li:nth-child(2){
   font-weight: 700;
-  /*font-family: avenir-black;*/
+  font-family: avenir-black, 'Work Sans';
 }
 
 .price-item-container{ margin-bottom: 7px; color: #5d5d5d; }
@@ -69,7 +68,7 @@
   margin-left: 70px;
   font-size: 50px;
   font-weight: 700;
-  /*font-family: avenir-black;*/
+  font-family: avenir-black, 'Work Sans';
 }
 
 .change-container{ position: absolute;}
@@ -77,7 +76,7 @@
 .price-change{
   top: 13px;
   font-weight: 700;
-  /*font-family: avenir-black;*/
+  font-family: avenir-black, 'Work Sans';
   font-size: 18px;
 }
 
@@ -95,7 +94,7 @@
   opacity: 1;
   font-size: 13px;
   font-weight: 700;
-  /*font-family: Avenir-Black;*/
+  font-family: avenir-black, 'Work Sans';
   color: #fff;
 }
 
@@ -135,7 +134,7 @@
 .payment-form-title{
     text-transform: capitalize;
     font-weight: 700;
-    /*font-family: avenir-black;*/
+    font-family: avenir-black, 'Work Sans';
     text-align: center;
     margin-bottom: 60px;
     color: #5d5d5d;
@@ -143,7 +142,7 @@
 
 .payment-step{
   font-weight: 700;
-  /*font-family: avenir-black;*/
+  font-family: avenir-black, 'Work Sans';
   color: #B2B2B2;
 }
 

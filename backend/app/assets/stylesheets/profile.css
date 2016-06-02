@@ -4,7 +4,7 @@
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
-  /*font-family: avenir-black;*/
+  font-family: avenir-black, 'Work Sans';
 }
 
 .anchor-link{
@@ -42,7 +42,7 @@
   text-transform: uppercase;
   color: #FFF;
   font-weight: 700;
-  /*font-family: avenir-black;*/
+  font-family: avenir-black, 'Work Sans';
 }
 
 .profile-welcome{
@@ -57,6 +57,7 @@
 .profile-video-history .profile-welcome, .profile-course-message, .browse-btn{
   margin-left: 80px;
   margin-bottom: 40px;
+  font-weight: 700;
 }
 
 .profile-video-history h1{
@@ -83,7 +84,7 @@
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
-  /*font-family: avenir-black;*/
+  font-family: avenir-black, 'Work Sans';
   font-size: 13px;
 }
 
@@ -93,7 +94,7 @@
   text-transform: uppercase;
   color: #FFF;
   font-weight: 700;
-  /*font-family: avenir-black;*/
+  font-family: avenir-black, 'Work Sans';
 }
 
 .account-option-box{
@@ -110,6 +111,7 @@
 .account-email-title{
   text-transform: capitalize;
   margin: 40px 0 24px;
+  font-weight: 700;
 }
 
 .account-email-text{
@@ -128,13 +130,14 @@
   opacity: 1;
   font-size: 13px;
   font-weight: 700;
-  /*font-family: Avenir-Black;*/
+  font-family: avenir-black, 'Work Sans';
   color: #fff;
 }
 
 .account-password-title{
   margin: 60px 0 40px;
   text-transform: capitalize;
+  font-weight: 700;
 }
 
 .personal-form-group{ margin-right: 20px; }
@@ -149,7 +152,7 @@
   opacity: 1;
   font-size: 13px;
   font-weight: 700;
-  /*font-family: Avenir-Black;*/
+  font-family: avenir-black, 'Work Sans';
   color: #fff;
   padding-left: 15px;
 }
