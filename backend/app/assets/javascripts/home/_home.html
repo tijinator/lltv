@@ -54,8 +54,7 @@
           <div class="col-sm-3 homepage-course-box">
             <div class="row" style="margin:0;">
               <div class="course-img" ng-style="{'background-image':'url({{popCourse.banner_url}})'}"></div>
-              <!-- <div class="course-img" style="background-image: url('../images/cabin.png')"></div> -->
-              <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
+              <div class="author-avatar" ng-style="{'background-image':'url({{popCourse.author.avatar}})'}"></div>
             </div>
             <div class="row" style="margin:0;">
               <a ui-sref="courses.show({id: popCourse.id})" class="homepage-course-title">{{popCourse.title}}</a>
@@ -96,7 +95,7 @@
             <div class="col-sm-3 homepage-course-box">
               <div class="row" style="margin:0;">
                 <div class="course-img" ng-style="{'background-image':'url({{course.banner_url}})'}"></div>
-                <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
+                <div class="author-avatar" ng-style="{'background-image':'url({{course.author.avatar}})'}"></div>
               </div>
               <div class="row" style="margin:0;">
                 <a ui-sref="courses.show({id: course.id})" class="homepage-course-title">{{course.title}}</a>

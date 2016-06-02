@@ -5,7 +5,7 @@ class CategoryCoursesSerializer < ActiveModel::Serializer
 	def banner_url
 		object.banner_url_url
 	end
-	# has_one :author
+
 
 	# def author
 	# 	if a = Author.find(id)
@@ -15,5 +15,4 @@ class CategoryCoursesSerializer < ActiveModel::Serializer
 	# 		nil
 	# 	end
 	# end
-
 end

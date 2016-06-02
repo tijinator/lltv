@@ -1,7 +1,7 @@
 class AuthorSerializer < ActiveModel::Serializer
   # self.root = false
 
-  attributes :full_name
+  attributes :full_name, :avatar
 
   def full_name
   	if object
@@ -11,4 +11,8 @@ class AuthorSerializer < ActiveModel::Serializer
   	end
   end
 
+  def avatar
+  	object.avatar_url
+  end
+  
 end
