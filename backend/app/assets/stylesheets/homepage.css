@@ -161,17 +161,19 @@ a:hover{ text-decoration: none; }
   text-transform: capitalize;
   color: #5D5D5D;
   margin-left: 20px;
+  display: block;
 }
 
 .col-sm-3.homepage-course-box div.row p{
   font-size: 10px;
   text-transform: uppercase;
+  float: right;
+  margin-right: 20px;
 }
 
 /*.col-sm-3.homepage-course-box div.row a.homepage-course-title,*/
 .col-sm-3.homepage-course-box div.row p:first-child{
   float: left;
-  margin-right: 117px;
   margin-left: 20px;
 }
 
