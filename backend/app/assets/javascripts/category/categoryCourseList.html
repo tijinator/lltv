@@ -1,20 +1,20 @@
 <div class="col-sm-12 homepage-category-row">
 
-  <div class="row homepage-courses-row">
+  <div class="row homepage-courses-row" style="display: block;">
 
     <div class="popCourse-section" ng-repeat="course in courses">
 
       <div class="col-sm-3 homepage-course-box">
         <div class="row" style="margin:0;">
           <div class="course-img" ng-style="{'background-image':'url({{course.banner_url}})'}"></div>
-          <div class="author-avatar" style="background-image: url('../images/1.jpg')"></div>
+          <div class="author-avatar" ng-style="{'background-image':'url({{course.author.avatar}})'}"></div>
         </div>
         <div class="row" style="margin:0;">
           <a ui-sref="courses.show({id: course.id})" class="homepage-course-title">{{course.title}}</a>
         </div>
         <div class="row homepage-course-last-row">
-          <p>{{course.author.full_name}}</p>
-          <p>{{course.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
+          <p class="author-name">{{course.author.full_name}}</p>
+          <p class="course-duration">{{course.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
         </div>
       </div>
 

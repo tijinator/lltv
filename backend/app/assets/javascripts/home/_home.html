@@ -60,8 +60,8 @@
               <a ui-sref="courses.show({id: popCourse.id})" class="homepage-course-title">{{popCourse.title}}</a>
             </div>
             <div class="row homepage-course-last-row">
-              <p>{{popCourse.author.full_name}}</p>
-              <p>{{popCourse.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
+              <p class="author-name">{{popCourse.author.full_name}}</p>
+              <p class="course-duration">{{popCourse.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
             </div>
           </div>
 

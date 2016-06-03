@@ -108,13 +108,13 @@ a:hover{ text-decoration: none; }
   margin-right: 396px;
 }
 
-#lltv .homepage-category-row div.row:first-child p{
+#lltv .homepage-category-row div.homepage-category-title-box p{
   font-size: 24px;
   margin-bottom: 26px;
   margin-top: 47px;
 }
 
-#lltv .homepage-category-row div.row:first-child a{
+#lltv .homepage-category-row div.homepage-category-right a{
   font-size: 13px;
   float: left;
   color: #5D5D5D;
@@ -164,15 +164,22 @@ a:hover{ text-decoration: none; }
   display: block;
 }
 
-.col-sm-3.homepage-course-box div.row p{
+/*.col-sm-3.homepage-course-box div.row p{*/
+.col-sm-3.homepage-course-box div.row.homepage-course-last-row .course-duration,
+.col-sm-3.homepage-course-box div.row.homepage-course-last-row .author-name{
   font-size: 10px;
   text-transform: uppercase;
-  float: right;
+}
+.col-sm-3.homepage-course-box div.row.homepage-course-last-row .course-duration{
+  /*font-size: 10px;
+  text-transform: uppercase;*/
   margin-right: 20px;
+  float: right;
 }
 
 /*.col-sm-3.homepage-course-box div.row a.homepage-course-title,*/
-.col-sm-3.homepage-course-box div.row p:first-child{
+/*.col-sm-3.homepage-course-box div.row p:first-child{*/
+.col-sm-3.homepage-course-box div.row.homepage-course-last-row .author-name{
   float: left;
   margin-left: 20px;
 }
@@ -360,7 +367,7 @@ a:hover{ text-decoration: none; }
 
   #lltv .homepage-category-title-box{margin-right: 253px;}
 
-  #lltv .homepage-category-row div.row:first-child a{margin-left: 390px;}
+  #lltv .homepage-category-row div.homepage-category-right a{margin-left: 390px;}
 
 }
 
@@ -376,7 +383,7 @@ a:hover{ text-decoration: none; }
 
   #lltv .homepage-category-title-box{margin-right: 100px;}
 
-  #lltv .homepage-category-row div.row:first-child a{margin-left: 240px;}
+  #lltv .homepage-category-row div.homepage-category-right a{margin-left: 240px;}
 }
 
 /*@media screen and (max-width: 1000px){
@@ -433,7 +440,7 @@ a:hover{ text-decoration: none; }
 
   #lltv .homepage-category-row{margin-bottom: 20px;}
 
-  #lltv .homepage-category-row div.row:first-child a{ margin-left: 100px;}
+  #lltv .homepage-category-row div.homepage-category-right a{ margin-left: 100px;}
 }
 
 @media screen and (max-width: 500px) {
