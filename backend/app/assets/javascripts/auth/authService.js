@@ -22,14 +22,19 @@ function($uibModal) {
     this.type = type;
     if(type == 'register'){
       var templateUrl = 'auth/_register.html';
+      var backdropClass = 'auth-backdrop';
     }else if(type == 'signupBeforePayment'){
       var templateUrl = 'auth/_register_payment.html';
+      var backdropClass = 'auth-backdrop';
     }else if(type == 'signupPayment'){
       var templateUrl = 'auth/_payment_option.html';
+      var backdropClass = 'auth-backdrop';
     }else if(type == 'unlockVideo'){
       var templateUrl = 'auth/_unlock_video.html';
+      var backdropClass = 'unlock-backdrop';
     }else{
       var templateUrl = 'auth/_sign_in.html';
+      var backdropClass = 'auth-backdrop';
     }
     this.modalInstance = $uibModal.open({
       animation: true,
@@ -37,7 +42,7 @@ function($uibModal) {
       controller: 'AuthCtrl',
       windowTopClass: 'auth-template',
       backdrop: 'static',
-      backdropClass: 'auth-backdrop'
+      backdropClass: backdropClass
     });
   };
 

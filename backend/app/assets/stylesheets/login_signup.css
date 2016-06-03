@@ -146,6 +146,11 @@
   background: #fff;
 }
 
+.modal-backdrop.unlock-backdrop.in {
+  opacity: .50;
+  background: #000;
+}
+
 @media screen and (max-width: 768px){
   .alert-msg{ left: 0;}
 }
