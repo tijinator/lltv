@@ -101,8 +101,8 @@
                 <a ui-sref="courses.show({id: course.id})" class="homepage-course-title">{{course.title}}</a>
               </div>
               <div class="row homepage-course-last-row">
-                <p>{{course.author.full_name}}</p>
-                <p>{{course.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
+                <p class="author-name">{{course.author.full_name}}</p>
+                <p class="course-duration">{{course.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
               </div>
             </div>
 
