@@ -1,10 +1,10 @@
 <div class="col-sm-12 homepage-category-row">
 
-  <div class="row homepage-courses-row" style="display: block;">
+  <div class="row homepage-courses-row category-courses-list" style="display: block;">
 
-    <div class="popCourse-section" ng-repeat="course in courses">
+    <!-- <div class="popCourse-section" ng-repeat="course in courses"> -->
 
-      <div class="col-sm-3 homepage-course-box">
+      <div class="col-sm-3 homepage-course-box category-course-box" ng-repeat="course in courses">
         <div class="row" style="margin:0;">
           <div class="course-img" ng-style="{'background-image':'url({{course.banner_url}})'}"></div>
           <div class="author-avatar" ng-style="{'background-image':'url({{course.author.avatar}})'}"></div>
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-    </div>
+    <!-- </div> -->
 
   </div>
 

@@ -138,6 +138,8 @@ a:hover{ text-decoration: none; }
   background-color: #FFF;
 }
 
+#lltv .homepage-courses-row div.popCourse-section:last-child div.homepage-course-box{ margin-right: 0;}
+
 #lltv .course-img, .author-avatar{
   background-size: cover;
   background-position: center;
@@ -241,11 +243,6 @@ a:hover{ text-decoration: none; }
   display: flex;
   justify-content: center;
 }
-
-/*delete section*/
-
-
-/*end delete section*/
 
 .bubble-btn {
   padding: 10px 20px 10px 20px;
@@ -355,15 +352,13 @@ a:hover{ text-decoration: none; }
   border-radius: 50%;
 }
 
-.colored-bar-plus-icon{ display: none;}
-
-#accordion{ display: none;}
-
 /* responsive design desktop/laptop*/
 @media screen and (max-width: 1240px){
   /*#lltv .homepage-courses-row div.col-sm-3.homepage-course-box:last-child{ display: none;}*/
 
   #lltv .homepage-courses-row div.popCourse-section:last-child{ display: none;}
+
+  #lltv .homepage-courses-row div.popCourse-section:nth-child(3) div.homepage-course-box{ margin-right: 0;}
 
   #lltv .homepage-category-title-box{margin-right: 253px;}
 
@@ -380,6 +375,8 @@ a:hover{ text-decoration: none; }
 
   /*#lltv .homepage-courses-row div.col-sm-3.homepage-course-box:nth-child(3){ display: none;}*/
   #lltv .homepage-courses-row div.popCourse-section:nth-child(3){ display: none;}
+
+  #lltv .homepage-courses-row div.popCourse-section:nth-child(2) div.homepage-course-box{ margin-right: 0;}
 
   #lltv .homepage-category-title-box{margin-right: 100px;}
 
@@ -430,6 +427,9 @@ a:hover{ text-decoration: none; }
 
 @media screen and (max-width: 700px) {
 
+  #lltv .homepage-courses-row div.popCourse-section:nth-child(2) div.homepage-course-box{ margin-right: auto;}
+
+
   #lltv .header{background-position: 38%;}
 
   #lltv .homepage-courses-row{ display: block;}
@@ -455,9 +455,5 @@ a:hover{ text-decoration: none; }
 
   .quote-browse-btn, .quote-create-btn{font-size: 9px;}
 }
-
-/*@media screen and (max-height: 1024px){
-
-}*/
 
 /* end of responsive design */
