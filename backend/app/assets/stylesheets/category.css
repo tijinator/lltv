@@ -82,13 +82,21 @@
   font-size: 12px;
 }
 
-.category-courses-title {
+.category-trending-courses{
   text-transform: uppercase;
+  font-size: 12px;
+  font-family: avenir-black, 'Work Sans';
+  color: #5d5d5d;
+}
+
+.category-courses-title {
   float: left;
   margin-left: 25px;
   margin-bottom: 30px;
-  font-size: 12px;
+  font-weight: 700;
 }
+
+.category-courses-title span:last-child{ color: #000;}
 
 #lltv .category-courses-list{
   width: 1190px;

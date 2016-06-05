@@ -17,13 +17,13 @@
   </div>
 </div>
 
-
-
-
 <div class="row category-courses-row" style="margin: 0;">
   <div class="col-sm-12 category-trending-courses" style="padding: 0">
     <div class="row" style="margin: 0;">
-      <h5 class="category-courses-title">{{subcategory}} courses</h5>
+      <h5 class="category-courses-title">{{category_details.title}}
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span>{{subcategory || 'All'}}</span>
+      </h5>
     </div>
   </div>
 </div>
