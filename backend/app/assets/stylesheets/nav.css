@@ -11,6 +11,35 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   background-size: cover;
 }
 
+#lltv .homepage-nav-links {
+  padding-top: 27px;
+  color: #5D5D5D;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: avenir-black, 'Work Sans';
+}
+
+#lltv .homepage-nav-links li {
+  margin-left: 43px;
+  float: right;
+}
+
+#lltv .homepage-nav-links .no-btn-nav {
+  margin-top: 10px;
+}
+
+#lltv .homepage-nav-links li > a {
+  color: #5D5D5D;
+  padding: 0px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#lltv .homepage-nav-links li > a:hover {
+  background-color: transparent;
+}
+
 /* profile nav options */
 
 .profile-dropdown{
@@ -84,7 +113,11 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   .logo-img{height: 35px;}
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
+  .logo-img{height: 30px;}
+}
+
+@media screen and (max-width: 767px){
   .logo-img{height: 52px;}
 
   nav.navbar.navbar-fixed-top.ng-scope.homepage-nav > div > .navbar-collapse{
@@ -92,9 +125,9 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   }
 
   /*delete this one*/
-  nav.navbar.navbar-fixed-top.ng-scope > div > .navbar-collapse{
+  /*nav.navbar.navbar-fixed-top.ng-scope > div > .navbar-collapse{
     background-color: #000;
-  }
+  }*/
 
   #lltv .homepage-nav-links li:first-child{
     margin-top: 40px;
@@ -103,9 +136,13 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   #lltv .homepage-nav-links li {
     margin-right: 0px;
     margin-left: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     float: none;
   }
+
+  #lltv .homepage-nav-links li:last-child{ margin-bottom: 44px;}
+
+  #lltv #sign-up-bubble a div{color: inherit;}
 
   #lltv #sign-up-bubble{
      border: 0;
@@ -124,8 +161,9 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
     position: absolute;
     margin: 0;
     left: 0;
-    top: 127%;
+    top: 110%;
     background-color: white;
+    font-size: 15px;
   }
 
   #lltv .homepage-nav-links .navbar-nav {
@@ -171,7 +209,4 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
   .navbar-toggle{margin-top: 11px;}
 
-  #lltv .homepage-nav-links li:first-child{ margin-top: 20px;}
-
-  #lltv .homepage-nav-links li{margin-bottom: 20px;}
 }
