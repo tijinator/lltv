@@ -2,6 +2,9 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs chapter-tabs-ul" role="tablist">
     <li role="presentation" class="active">
+      <a href="#table-contents" aria-controls="table-contents" role="tab" data-toggle="tab">Table of contents</a>
+    </li>
+    <li role="presentation">
       <a href="#video-details" aria-controls="video-details" role="tab" data-toggle="tab">Video Details</a>
     </li>
     <li role="presentation">
@@ -17,12 +20,32 @@
   </ul>
   <!-- Tab panes -->
   <div class="tab-content" style="margin-bottom: 0;">
-      <div role="tabpanel" class="tab-pane active" id="video-details">
+      <div role="tabpanel" class="tab-pane active" id="table-contents">
+        <div class="tab-inner-panel">
+          <div class="course-chapters">
+          <a href="">
+            <div class="chapter-index-row" ng-repeat='chapter in course.chapters'>
+              <div class="chapter-index-element" ng-click="chapter_title = !chapter_title">
+                  <span id='chapter_position'> ch {{chapter.position}} </span>
+                  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="color: #ffffff;font-size: 10px; float: right;" ng-show="!chapter_title"></span>
+                  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" style="color: #ffffff;font-size: 10px; float: right;" ng-show="chapter_title"></span>
+                  <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</span>
+              </div>
+          </a>
+
+            <div class="chapter-index" ng-show="chapter_title">
+              <div class="chapter-index-element index-title-row">
+                <a ng-href='#' ng-click="chapters(chapter.position)">{{chapter.title}}</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="video-details">
         <div class="tab-inner-panel">
           <h5>{{chapter.title}}</h5>
-          <!-- <p>&nbsp;</p> -->
-          <!-- <h5>Viewers: 400</h5> -->
-          <!-- <p>&nbsp;</p> -->
           <p>{{chapter_video.details}}</p>
         </div>
       </div>
