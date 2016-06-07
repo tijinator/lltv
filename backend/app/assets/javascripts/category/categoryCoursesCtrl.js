@@ -24,7 +24,11 @@ function($scope, category, CategoryService) {
     // });
     $scope.subcategory = 'All';
 
-    CategoryService.getCategoryCourses(id).then(function(courses) {
+    // CategoryService.getCategoryCourses(id).then(function(courses) {
+    // 	$scope.$broadcast( 'subcategory', courses);
+    // });
+
+		CategoryService.getCategoryAllCourses(id).then(function(courses) {
     	$scope.$broadcast( 'subcategory', courses);
     });
 

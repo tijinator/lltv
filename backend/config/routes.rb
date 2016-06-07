@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
   # Subdomains -
   admin_url = Rails.env.production? ? 'admin.beta' : 'admin'  
   constraints subdomain: admin_url do
@@ -39,6 +40,7 @@ Rails.application.routes.draw do
     # get '/courses' => 'admin#courses'
     # get '/courses/:id' => 'admin#show_course'
 
+    resources :subscribers, controller: 'admin/email_digets'
     resources :authors, controller: 'admin/authors'
     resources :courses, controller: 'admin/courses_admin'
 
@@ -69,12 +71,14 @@ Rails.application.routes.draw do
       #   get 'featured_course' => 'categories#featured_course'
       # end
       member do
+        get 'all_courses' => 'categories#all_courses'
         get 'courses' => 'categories#courses'
       end
     end
 
     resources :courses, controller: 'courses', only: [:index, :show]
     # get 'courses' => 'api/courses#index'
+    post 'subscribe' => 'api#email_subscribes'
     get 'home' => 'api#home'
     get 'search-all' => 'searches#all_searches'
   end

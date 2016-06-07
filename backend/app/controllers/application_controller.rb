@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :null_session
+  # protect_from_forgery with: :null_session
   # include DeviseTokenAuth::Concerns::SetUserByToken
   include JsEnv #return Rails.evn to front-end
-  # protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
-  # protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
+  protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   # protect_from_forgery with: :exception, if: Proc.new { |c| c.request.path_info.include?('auth') }
   
   respond_to :html, :json

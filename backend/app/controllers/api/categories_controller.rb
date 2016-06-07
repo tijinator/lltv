@@ -27,6 +27,25 @@ class Api::CategoriesController < Api::ApiController
     # render json: CategorySerializer.new(subcategory)
   end
 
+  def all_courses
+    courses = []
+    category     = Category.find(params[:id]).courses
+    subcategory  = Category.where(parent_id: 1).includes(:courses)
+
+    subcategory.each do |s|
+      courses << s.courses
+    end
+    render json: category + courses.flatten, each_serializer: CategoryCoursesSerializer, root: false
+
+
+    # categories = Category.where(parent_id: params[:id]).collect{ |i| i.as_json(:only => [:id, :title, :banner_url, :author])}
+    # courses    = Category.find(params[:id]).courses.collect{ |i| i.as_json(:only => [:id, :title])}
+    # render json: courses + categories, root: false
+
+    # render json: category.courses, root: false
+    # render json: courses + categories, each_serializer: CategoryCoursesSerializer, root: false
+  end
+
   def courses
     category = Category.find(params[:id])
     # render json: category.courses, root: false
