@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Email Digets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @email_digets.each do |email_diget| %>
+      <tr>
+        <td><%= email_diget.email %></td>
+        <td><%= link_to 'Show', email_diget %></td>
+        <td><%= link_to 'Edit', edit_email_diget_path(email_diget) %></td>
+        <td><%= link_to 'Destroy', email_diget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Email diget', new_email_diget_path %>
