@@ -17,7 +17,7 @@ function($http) {
   this.getCategories = function() {
     return $http.get('/api/categories');
   };
-  
+
   this.getCategory = function(id) {
     return $http.get('/api/categories/' + id);
   };
@@ -25,5 +25,9 @@ function($http) {
   this.getCategoryCourses = function(id) {
     return $http.get('/api/categories/' + id + '/courses');
   };
-  
+
+  this.getCategoryAllCourses = function(id) {
+    return $http.get('/api/categories/' + id + '/all_courses');
+  };
+
 }]);

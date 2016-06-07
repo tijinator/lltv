@@ -198,7 +198,7 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
           resolve: {
             courses: ['$stateParams', 'CategoryService',
               function($stateParams, categoriesService) {
-                return categoriesService.getCategoryCourses($stateParams.id);
+                return categoriesService.getCategoryAllCourses($stateParams.id);
               }
             ]
           }
