@@ -1,0 +1,2 @@
+module EmailDigetsHelper
+end
