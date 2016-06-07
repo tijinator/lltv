@@ -1,8 +1,18 @@
-<div class="row">
+<div class="row" style="margin: 0">
+  <div class="coursepage-banner" ng-style="{'background-image':'url({{currentCourse.banner_url}})'}">
+    <div class="coursepage-banner-details">
+      <h3>{{currentCourse.title}}</h3>
+      <p class="coursepage-banner-author">by: {{currentCourse.author.full_name}}</p>
+      <p>{{currentCourse.details}}</p>
+    </div>
+  </div>
+  <!-- <img  ng-src="{{course.banner_url}}" alt="" /> -->
+</div>
+
+
+<!-- <div class="row">
   <div class="course-video" id='course-video'>
     <video id="my-video" class="video-js" controls preload="auto" poster="{{course.banner_url}}" data-setup="{}">
-        <!-- <source ng-src="{{'/videos/Vi1.mp4'}}" type='video/mp4'> -->
-          <!-- <source ng-src="{{video}}" type='video/mp4'> -->
           <source ng-if="booleanTest" ng-src="{{video | trusted}}" type="video/mp4"/>
         <p class="vjs-no-js">
           To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -22,4 +32,4 @@ var video = document.getElementById('my-video');
             video.pause();
         }
     },false);
-</script>
+</script> -->

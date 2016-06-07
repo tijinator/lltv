@@ -204,11 +204,11 @@
 }
 
 .chapter-tabs{
+	/*using*/
 	background: #2E3335;
 	color: #ffffff;
-	margin-left: -15px;
-	padding: 0 20px;
 	height: 500px;
+	overflow: auto;
 }
 
 .chapter-tabs h5{
@@ -226,17 +226,18 @@
 }
 
 .chapter-tabs-ul > li {
+	/*using*/
 	font-weight: 700;
 	font-family: avenir-black, 'Work Sans';
 	font-size: 13px;
 	color: #787D7F;
 	margin-top: 18px;
-	margin-right: 10%;
+	margin-right: 7%;
 }
 
 @media screen and (max-width:1160px) {
 	.chapter-tabs-ul > li {
-		margin-right: 7%;
+		margin-right: 5%;
 	}
 }
 
@@ -384,3 +385,24 @@
 	color: #787D7F;
 	text-transform: uppercase;
 }
+
+/*recently added*/
+.coursepage-banner{
+	height: 470px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.coursepage-banner-details{
+	position: relative;
+  top: 20%;
+  left: 4%;
+  font-size: 15px;
+  color: #fff;
+  width: 60%;
+}
+
+.coursepage-banner-details h3{margin: 0;}
+
+.coursepage-banner-details p:first-child {margin: 20px 0}
