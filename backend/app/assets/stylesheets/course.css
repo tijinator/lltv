@@ -492,8 +492,9 @@
 @media screen and (max-width: 1100px){
 	.course-banner-table-container, .course-author-sidebar{ display: block; }
 
-	.chapter-tabs-ul > li{
+	/*.chapter-tabs-ul > li{
 		margin-right: 72px;
-	}
+	}*/
 
+	.chapter-tabs{display: none;}
 }
