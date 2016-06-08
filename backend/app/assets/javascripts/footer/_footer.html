@@ -1,4 +1,4 @@
-<footer class="homepage-footer">
+<footer class="homepage-footer" ng-controller="FooterCtrl">
   <div class="row footer-first-row">
     <div class="col-sm-4" style="padding: 0;">
       <img  class="logo-img" ng-src="{{'images/lltv_logo_final.png'}}"/>
@@ -32,13 +32,14 @@
   <div class="row footer-second-row">
     <div class="col-sm-8 col-sm-offset-4" style="padding: 0;">
       <p>subscribe to our newsletter</p>
-      <form class="form-inline">
+      <form ng-submit="emailSubscription(subsFrom)" role="form" ng-init="subsFrom = {};" class="form-inline">
         <div class="form-group">
           <label for="visitorEmail" style="display: none;">Email</label>
-          <input type="email" class="form-control" id="visitorEmail" placeholder="Email Address">
+          <input type="email" class="form-control" id="visitorEmail" placeholder="Email Address" ng-model="subsFrom.email">
         </div>
         <button type="submit" class="bubble-btn submit-btn">Subscribe</button>
       </form>
+
     </div>
   </div>
 
