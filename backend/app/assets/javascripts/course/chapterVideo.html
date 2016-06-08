@@ -1,12 +1,17 @@
 <div class="row" style="margin: 0">
-  <div class="coursepage-banner" ng-style="{'background-image':'url({{currentCourse.banner_url}})'}">
+  <div class="coursepage-banner" style="background-image: url('../images/LLTV_coursepage_image.jpg')">
+  <!-- <div class="coursepage-banner" ng-style="{'background-image':'url({{currentCourse.banner_url}})'}"> -->
     <div class="coursepage-banner-details">
-      <h3>{{currentCourse.title}}</h3>
+      <h1>{{currentCourse.title}}</h1>
       <p class="coursepage-banner-author">by: {{currentCourse.author.full_name}}</p>
-      <p>{{currentCourse.details}}</p>
+      <p class="coursepage-banner-course-details">{{currentCourse.details}}</p>
+      <a>
+        <div class="quote-browse-btn bubble-btn pull-left">
+          Watch Video
+        </div>
+      </a>
     </div>
   </div>
-  <!-- <img  ng-src="{{course.banner_url}}" alt="" /> -->
 </div>
 
 

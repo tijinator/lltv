@@ -25,19 +25,21 @@
           <div class="course-chapters">
           <a href="">
             <div class="chapter-index-row" ng-repeat='chapter in course.chapters'>
-              <div class="chapter-index-element" ng-click="chapter_title = !chapter_title">
-                  <span id='chapter_position'> ch {{chapter.position}} </span>
-                  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="color: #ffffff;font-size: 10px; float: right;" ng-show="!chapter_title"></span>
-                  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" style="color: #ffffff;font-size: 10px; float: right;" ng-show="chapter_title"></span>
-                  <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</span>
+              <div class="chapter-index-element">
+              <!-- <div class="chapter-index-element" ng-click="chapter_title = !chapter_title"> -->
+                  <span id='chapter_position'>{{chapter.title}} </span>
+                  <!-- <span id='chapter_position'> ch {{chapter.position}} </span> -->
+                  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="color: #999;font-size: 10px; float: right;" ng-show="!chapter_title"></span>
+                  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" style="color: #999;font-size: 10px; float: right;" ng-show="chapter_title"></span>
+                  <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date: "m'M' s'S'"}}</span>
               </div>
           </a>
 
-            <div class="chapter-index" ng-show="chapter_title">
+            <!-- <div class="chapter-index" ng-show="chapter_title">
               <div class="chapter-index-element index-title-row">
                 <a ng-href='#' ng-click="chapters(chapter.position)">{{chapter.title}}</a>
               </div>
-            </div>
+            </div> -->
 
           </div>
         </div>
