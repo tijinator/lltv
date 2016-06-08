@@ -27,8 +27,6 @@ module Api
 
 	    def email_subscribes
 			@email_diget = EmailDiget.new(email: params[:email])
-
-
 			if @email_diget.save
 				render status: 200, json: {
 					message: "'#{@email_diget.email.capitalize}' has successfully subscribed",
