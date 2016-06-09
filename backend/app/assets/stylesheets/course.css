@@ -278,6 +278,8 @@
 
 /*recently added*/
 
+.accordion{display: none;}
+
 .course-banner-table-container{
 	padding: 0;
   display: table-cell;
@@ -396,6 +398,7 @@
 	text-transform: uppercase;
 	background-color: transparent;
 	padding: 10px 2px;
+	cursor: pointer;
 }
 
 .nav-tabs > li.active > a,
@@ -451,6 +454,8 @@
 
 .tab-inner-panel h5{ font-size: 15px;}
 
+.accordion-container{display: none;}
+
 @media screen and (max-width: 1250px){
 	.chapter-tabs-ul > li{
 		margin-right: 5%;
@@ -490,11 +495,37 @@
 }
 
 @media screen and (max-width: 1100px){
-	.course-banner-table-container, .course-author-sidebar{ display: block; }
+	.course-banner-table-container, .course-author-sidebar, .accordion-container{ display: block; }
 
 	/*.chapter-tabs-ul > li{
 		margin-right: 72px;
 	}*/
 
 	.chapter-tabs{display: none;}
+
+	.accordion-container{
+		font-weight: 700;
+		padding: 0 50px;
+    font-size: 13px;
+    text-transform: uppercase;
+	}
+
+	.accordion-header{
+		height: 50px;
+		line-height: 50px;
+		cursor: pointer;
+	}
+
+	.accordion-header span{
+		float: right;
+		margin-top: 16px;
+	}
+
+	.accordion-details{
+		/*min-height: 100px;*/
+	}
+}
+
+@media screen and (max-width: 500px){
+	.coursepage-banner-details h1{font-size: 26px;}
 }
