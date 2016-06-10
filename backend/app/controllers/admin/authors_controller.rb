@@ -64,7 +64,7 @@ class Admin::AuthorsController < Admin::AdminController
 private
 
 	def author_params
-    	params.require(:author).permit(:first_name, :last_name, :avatar)
+    	params.require(:author).permit(:first_name, :last_name, :avatar, :bio)
   	end
 
   	def set_author

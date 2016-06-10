@@ -10,6 +10,11 @@
 </div>
 
 <div class="form-group">
+	<%= f.label :bio %>
+	<%= f.text_area :bio, cols: "50", rows: "10" %>
+</div>
+
+<div class="form-group">
 	<%= f.file_field :avatar, class: 'form-control' %>
 
 	<%= image_tag(@author.avatar_url) if @author.avatar.url %>

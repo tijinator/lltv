@@ -4,6 +4,7 @@ class Author < ActiveRecord::Base
   
   validates :first_name, length: {minimum: 2}
   validates :last_name, length: {minimum: 2}
+  validates :bio, length: {minimum: 10}
   validates :avatar, presence: true
 
   # def full_name
