@@ -25,7 +25,7 @@
   margin: 50px 0 20px;
   color: #5d5d5d;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
 }
 
 .unlock-description{
@@ -34,7 +34,7 @@
   margin: 0 40px 40px 40px; /*was 0 100px 40px 100px*/
   line-height: 30px; /*was 25px*/
   font-weight: 400;
-  font-family: avenir-medium, 'Work Sans';
+  /*font-family: avenir-medium, 'Work Sans';*/
 }
 
 .subscribe-btn, .purchase-btn{

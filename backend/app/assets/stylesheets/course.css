@@ -6,7 +6,7 @@
 }
 .course-info-title{
 	font-weight: 700;
-	font-family: avenir-black, 'Work Sans';
+	/*font-family: avenir-black, 'Work Sans';*/
 	text-transform: capitalize;
 	padding-bottom: 10px;
 	margin-top: -50px;
@@ -16,7 +16,7 @@
 
 .course-info-details{
 	font-weight: 300;
-	font-family: avenir-book, 'Work Sans';
+	/*font-family: avenir-book, 'Work Sans';*/
 	font-size: 15px;
 	line-height: 30px;
 	color: #FFF;
@@ -52,14 +52,12 @@
 }
 
 .course-profile-info{
-	/*width: 80$;*/
-	/*margin-left: 15px;*/
 	display: inline-block;
 	text-transform: uppercase;
 }
 .course-profile-info span{
 	font-weight: 700;
-	font-family: avenir-black, 'Work Sans';
+	/*font-family: avenir-black, 'Work Sans';*/
 	color: #787D7F;
 }
 
@@ -134,7 +132,7 @@
 .course-chapter-search > p > a > span {
 	text-transform: uppercase;
 	font-weight: 700;
-	font-family: avenir-black, 'Work Sans';
+	/*font-family: avenir-black, 'Work Sans';*/
 	font-size: 13px;
 	margin-right: 10px;
 }
@@ -142,7 +140,7 @@
 .course-chapter-search > p > span > input {
 	text-transform: uppercase;
 	font-weight: 700;
-	font-family: avenir-black, 'Work Sans';
+	/*font-family: avenir-black, 'Work Sans';*/
 	font-size: 12px;
 	padding: 0 6px;
 	width: 75%;
@@ -159,7 +157,7 @@
 
 .course-chapter-collaps{
 	font-weight: 700;
-	font-family: avenir-black, 'Work Sans';
+	/*font-family: avenir-black, 'Work Sans';*/
 	text-transform: uppercase;
 	font-size: 13px;
 }
@@ -171,7 +169,7 @@
 .table-contents{
 	font-size: 13px;
 	font-weight: 700;
-	font-family: avenir-black, 'Work Sans';
+	/*font-family: avenir-black, 'Work Sans';*/
   color: #787D7F;
   text-transform: uppercase;
   padding: 28px 0 0 20px;
@@ -213,7 +211,7 @@
 
 .tab-panel{
 	font-weight: 300;
-	font-family: avenir-book, 'Work Sans';
+	/*font-family: avenir-book, 'Work Sans';*/
 	font-size: 15px;
 	line-height: 30px;
 	color: #FFF;
@@ -237,7 +235,7 @@
 
 .chapter-index-element > p > a{
 	font-weight: 700;
-	font-family: avenir-black, 'Work Sans';
+	/*font-family: avenir-black, 'Work Sans';*/
 	font-size: 15px;
 	margin-right: 10px;
 }
@@ -255,7 +253,7 @@
 
 .chapter-index-element.index-title-row a{
 	font-weight: 700;
-	font-family: avenir-black, 'Work Sans';
+	/*font-family: avenir-black, 'Work Sans';*/
 	font-size: 13px;
 	line-height: 30px;
 	color: #787D7F;
@@ -386,7 +384,7 @@
 .chapter-tabs-ul > li {
 	/*using*/
 	font-weight: 700;
-	font-family: avenir-black, 'Work Sans';
+	/*font-family: avenir-black, 'Work Sans';*/
 	font-size: 13px;
 	margin-top: 12px;
 	margin-right: 6%;
@@ -426,7 +424,7 @@
 	text-align: left;
 	width: 100%;
 	font-weight: 700;
-	font-family: avenir-black, 'Work Sans';
+	/*font-family: avenir-black, 'Work Sans';*/
 	text-transform: uppercase;
 	font-size: 13px;
 	color: #5d5d5d;
@@ -447,7 +445,7 @@
 
 .tab-inner-panel{
 	font-weight: 300;
-	font-family: avenir-book, 'Work Sans';
+	/*font-family: avenir-book, 'Work Sans';*/
 	font-size: 15px;
 	line-height: 30px;
 	color: inherit;

@@ -22,13 +22,13 @@
 .small-category-block {
   width: 288px;
   height: 288px;
+  line-height: 288px;
   color: #FFFFFF;
   text-align: center;
   font-size: 25px;
   margin: 10px;
-  padding-top: 108px;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

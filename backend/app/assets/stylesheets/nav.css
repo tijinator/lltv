@@ -17,7 +17,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
 }
 
 #lltv .homepage-nav-links li {
@@ -109,7 +109,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
 @media screen and (max-width: 900px){
   #lltv .homepage-nav-links li{margin-left: 25px;}
-  
+
   .logo-footer-img{ height: 45px;}
 }
 
@@ -163,7 +163,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   }
 
   #lltv .homepage-nav-links .navbar-nav {
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
   }
 

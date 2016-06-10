@@ -4,7 +4,7 @@
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
 }
 
 .anchor-link{
@@ -42,7 +42,7 @@
   text-transform: uppercase;
   color: #FFF;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
 }
 
 .profile-welcome{
@@ -84,7 +84,7 @@
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   font-size: 13px;
 }
 
@@ -94,7 +94,7 @@
   text-transform: uppercase;
   color: #FFF;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
 }
 
 .account-option-box{
@@ -130,7 +130,7 @@
   opacity: 1;
   font-size: 13px;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   color: #fff;
 }
 
@@ -152,7 +152,7 @@
   opacity: 1;
   font-size: 13px;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   color: #fff;
   padding-left: 15px;
 }

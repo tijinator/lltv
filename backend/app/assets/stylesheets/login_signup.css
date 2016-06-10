@@ -73,13 +73,13 @@
   color: #9CCC58;
   font-size: 12px;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
 }
 
 .auth-body .form-group > label{
   font-size: 13px;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   color: #5d5d5d;
 }
 
@@ -91,7 +91,7 @@
   opacity: 1;
   font-size: 13px;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
 }
 
 .auth-footer{
@@ -112,7 +112,7 @@
   border: none;
   background-color: #9CCC58;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   font-size: 13px;
   width: 120px;
 }
@@ -125,7 +125,7 @@
   background-color: #a09d98;
   border: none;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   font-size: 13px;
 }
 

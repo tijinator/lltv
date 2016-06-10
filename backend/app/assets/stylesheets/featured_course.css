@@ -35,7 +35,7 @@
   margin-top: 10px;
   margin-right: 50px;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   background-color: rgba(26, 157, 7, 0.78);
 }
 
@@ -50,7 +50,7 @@
   font-size: 30px;
   font-weight: bold;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   margin: 15px 50px 15px 50px;
 }
 
@@ -63,7 +63,7 @@
   margin: 0 50px;
   font-size: 15px;
   font-weight: 300;
-  font-family: avenir-book, 'Work Sans';
+  /*font-family: avenir-book, 'Work Sans';*/
 
 }
 

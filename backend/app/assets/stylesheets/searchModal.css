@@ -8,7 +8,7 @@ a:hover{text-decoration: none;}
 .search-modal{
   clear: both;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   text-transform: capitalize;
   color: #5d5d5d;
 }
@@ -53,7 +53,7 @@ a:hover{text-decoration: none;}
   font-size: 30px;
   color: #a09d98;
   font-weight: 300;
-  font-family: avenir-book, 'Work Sans';
+  /*font-family: avenir-book, 'Work Sans';*/
 }
 
 .search-modal .custom-typehead input:not([type=submit]):not([type=file]){
@@ -64,7 +64,7 @@ a:hover{text-decoration: none;}
   border-radius: 0px;
   font-size: 55px;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   color: #5d5d5d;
   padding: 0;
 }

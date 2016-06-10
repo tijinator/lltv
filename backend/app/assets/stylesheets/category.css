@@ -8,7 +8,7 @@
   font-size: 36px;
   line-height: 200px;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   text-transform: capitalize;
   color: #fff;
 }
@@ -24,7 +24,7 @@
   text-transform: uppercase;
   color: #999;
   font-weight: 700;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
 }
 
 .category-subjects-section div.row:first-child{ margin: 0 0 44px 0;}
@@ -51,7 +51,7 @@
 .category-trending-courses{
   text-transform: uppercase;
   font-size: 12px;
-  font-family: avenir-black, 'Work Sans';
+  /*font-family: avenir-black, 'Work Sans';*/
   color: #999;
 }
 
