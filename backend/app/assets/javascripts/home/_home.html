@@ -51,7 +51,7 @@
 
         <div class="popCourse-section" ng-repeat="popCourse in popularCourses">
 
-          <div class="col-sm-3 homepage-course-box">
+          <div class="col-sm-3 homepage-course-box" ui-sref="courses.show({id: popCourse.id})">
             <div class="row" style="margin:0;">
               <div class="course-img" ng-style="{'background-image':'url({{popCourse.banner_url}})'}"></div>
               <div class="author-avatar" ng-style="{'background-image':'url({{popCourse.author.avatar}})'}"></div>
@@ -92,7 +92,7 @@
 
           <div class="popCourse-section" ng-repeat="course in category.courses">
 
-            <div class="col-sm-3 homepage-course-box">
+            <div class="col-sm-3 homepage-course-box" ui-sref="courses.show({id: course.id})">
               <div class="row" style="margin:0;">
                 <div class="course-img" ng-style="{'background-image':'url({{course.banner_url}})'}"></div>
                 <div class="author-avatar" ng-style="{'background-image':'url({{course.author.avatar}})'}"></div>

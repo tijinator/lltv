@@ -1,48 +1,37 @@
 <div class="chapter-tabs">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs chapter-tabs-ul" role="tablist">
-    <!-- <li role="presentation" class="active">
-      <a href="#table-contents" aria-controls="table-contents" role="tab" data-toggle="tab">Table of contents</a>
-    </li> -->
     <li role="presentation" class="active">
-      <a href="#video-details" aria-controls="video-details" role="tab" data-toggle="tab">Video Details</a>
+      <a data-target="#table-contents" aria-controls="table-contents" role="tab" data-toggle="tab">Table of contents</a>
     </li>
     <li role="presentation">
-      <a href="#transcript" aria-controls="transcript" role="tab" data-toggle="tab">Transcript</a>
+      <a data-target="#video-details" aria-controls="video-details" role="tab" data-toggle="tab">Video Details</a>
     </li>
-    <li role="presentation" ><a href="#faqs" aria-controls="faqs" role="tab" data-toggle="tab">FAQs</a></li>
     <li role="presentation">
-      <a href="#exercise-files" aria-controls="exercise-files" role="tab" data-toggle="tab">Exercise Files</a>
+      <a data-target="#transcript" aria-controls="transcript" role="tab" data-toggle="tab">Transcript</a>
+    </li>
+    <li role="presentation" ><a data-target="#faqs" aria-controls="faqs" role="tab" data-toggle="tab">FAQs</a></li>
+    <li role="presentation">
+      <a data-target="#exercise-files" aria-controls="exercise-files" role="tab" data-toggle="tab">Exercise Files</a>
     </li>
     <li role="presentation" style='padding-right: 0px; margin-right: 0px'>
-      <a href="#discussion" aria-controls="discussion" role="tab" data-toggle="tab">Discussion</a>
+      <a data-target="#discussion" aria-controls="discussion" role="tab" data-toggle="tab">Discussion</a>
     </li>
   </ul>
   <!-- Tab panes -->
   <div class="tab-content" style="margin-bottom: 0;">
-      <!-- <div role="tabpanel" class="tab-pane active" id="table-contents">
+      <div role="tabpanel" class="tab-pane active" id="table-contents">
         <div class="tab-inner-panel">
           <div class="course-chapters">
-          <a href="">
             <div class="chapter-index-row" ng-repeat='chapter in course.chapters'>
-              <div class="chapter-index-element" ng-click="chapter_title = !chapter_title">
-                  <span id='chapter_position'> ch {{chapter.position}} </span>
-                  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="color: #ffffff;font-size: 10px; float: right;" ng-show="!chapter_title"></span>
-                  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" style="color: #ffffff;font-size: 10px; float: right;" ng-show="chapter_title"></span>
-                  <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date:'HH:mm:ss'}}</span>
-              </div>
-          </a>
-
-            <div class="chapter-index" ng-show="chapter_title">
-              <div class="chapter-index-element index-title-row">
-                <a ng-href='#' ng-click="chapters(chapter.position)">{{chapter.title}}</a>
+              <div class="chapter-index-element">
+                <span id='chapter_position'>{{chapter.title}} </span>
+                <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date: "m'M' s'S'"}}</span>
               </div>
             </div>
-
           </div>
         </div>
-        </div>
-      </div> -->
+      </div>
       <div role="tabpanel" class="tab-pane" id="video-details">
         <div class="tab-inner-panel">
           <h5>{{chapter.title}}</h5>
@@ -65,3 +54,108 @@
       </div>
   </div>
 </div>
+
+<!-- accordion -->
+<div class="accordion-container" id="accordion2">
+  <div class="accordion-section">
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
+    data-target="#tableOfContetnsAccordion">
+        table of contents
+        <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
+    </div>
+    <div id="tableOfContetnsAccordion" class="accordion-details collapse">
+      <div class="accordion-inner">
+
+        <div class="course-chapters">
+          <div class="chapter-index-row" ng-repeat='chapter in course.chapters'>
+            <div class="chapter-index-element">
+              <span id='chapter_position'>{{chapter.title}} </span>
+              <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date: "m'M' s'S'"}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
+    data-target="#videoDetailsAccordion">
+        Video Details
+        <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
+    </div>
+    <div id="videoDetailsAccordion" class="accordion-details collapse">
+      <div class="accordion-inner">
+Forage organic slow-carb, banh mi iPhone hashtag bespoke +1. Health goth sriracha poutine, wolf chia authentic pitchfork trust fund kickstarter next level leggings keytar blue bottle narwhal. Kitsch schlitz ennui keffiyeh typewriter knausgaard. Semiotics ramps normcore, portland actually try-hard you probably haven't heard of them chillwave fashion axe intelligentsia godard
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
+      data-target="#transcriptAccordion">
+        transcript
+        <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
+    </div>
+    <div id="transcriptAccordion" class="accordion-details collapse">
+      <div class="accordion-inner">Forage organic slow-carb, banh mi iPhone hashtag bespoke +1. Health goth sriracha poutine, wolf chia authentic pitchfork trust fund kickstarter next level leggings keytar blue bottle narwhal. Kitsch schlitz ennui keffiyeh typewriter knausgaard. Semiotics ramps normcore, portland actually try-hard you probably haven't heard of them chillwave fashion axe intelligentsia godard
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
+      data-target="#faqAccordion">
+        faqs
+        <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
+    </div>
+    <div id="faqAccordion" class="accordion-details collapse">
+      <div class="accordion-inner">Forage organic slow-carb, banh mi iPhone hashtag bespoke +1. Health goth sriracha poutine, wolf chia authentic pitchfork trust fund kickstarter next level leggings keytar blue bottle narwhal. Kitsch schlitz ennui keffiyeh typewriter knausgaard. Semiotics ramps normcore, portland actually try-hard you probably haven't heard of them chillwave fashion axe intelligentsia godard
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
+      data-target="#exerciseAccordion">
+        exercise files
+        <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
+    </div>
+    <div id="exerciseAccordion" class="accordion-details collapse">
+      <div class="accordion-inner">Forage organic slow-carb, banh mi iPhone hashtag bespoke +1. Health goth sriracha poutine, wolf chia authentic pitchfork trust fund kickstarter next level leggings keytar blue bottle narwhal. Kitsch schlitz ennui keffiyeh typewriter knausgaard. Semiotics ramps normcore, portland actually try-hard you probably haven't heard of them chillwave fashion axe intelligentsia godard
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
+      data-target="#discussionAccordion">
+        discussion
+        <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
+    </div>
+    <div id="discussionAccordion" class="accordion-details collapse">
+      <div class="accordion-inner">
+        Forage organic slow-carb, banh mi iPhone hashtag bespoke +1. Health goth sriracha poutine, wolf chia authentic pitchfork trust fund kickstarter next level leggings keytar blue bottle narwhal. Kitsch schlitz ennui keffiyeh typewriter knausgaard. Semiotics ramps normcore, portland actually try-hard you probably haven't heard of them chillwave fashion axe intelligentsia godard
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+  $('.collapse').on('show.bs.collapse', function(){
+    $(this).parent().find('.glyphicon-plus').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+
+  });
+
+  $(".collapse").on('hidden.bs.collapse', function() {
+    $(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+  });
+
+</script>
+
+
+
+​

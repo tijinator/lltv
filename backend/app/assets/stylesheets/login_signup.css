@@ -25,7 +25,7 @@
 .auth-template .auth-content {
   clear: both;
   margin: 0px auto;
-  width: 45%;
+  width: 600px;
   /*height: 100%;*/
 }
 .auth-login-center{
@@ -70,7 +70,7 @@
 }
 
 .auth-body .form-group > p > a{
-  color: #29aae1;
+  color: #9CCC58;
   font-size: 12px;
   font-weight: 700;
   font-family: avenir-black, 'Work Sans';
@@ -153,11 +153,11 @@
 
 @media screen and (max-width: 768px){
   .alert-msg{ left: 0;}
+  .auth-template .auth-content{width: 400px;}
 }
 
-@media screen and (max-width: 435px) {
-
-  .auth-header > div{ width: 215px;}
+@media screen and (max-width: 500px){
+  .auth-template .auth-content{width: 275px;}
 
   .auth-header > div > .logo-img { height: 41px;}
 

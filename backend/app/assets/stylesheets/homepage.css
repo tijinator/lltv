@@ -38,7 +38,7 @@ a:hover{ text-decoration: none; }
   position: absolute;
   max-width: 600px;
   top: 9%;
-  left: 52%;
+  left: 48%;
   font-size: 40px;
   color: #fff;
   font-weight: 700;
@@ -51,6 +51,7 @@ a:hover{ text-decoration: none; }
   font-size: 22px;
   font-weight: 400;
   font-family: avenir-medium, 'Work Sans';
+  margin-right: 5px;
 }
 
 .quote-container-buttons ul{ margin-bottom: 26px;}
@@ -105,6 +106,7 @@ a:hover{ text-decoration: none; }
   border: 1px solid #e6e6e6;
   margin: 0 18px 20px 0;
   background-color: #FFF;
+  cursor: pointer;
 }
 
 #lltv .homepage-courses-row div.popCourse-section:last-child div.homepage-course-box{ margin-right: 0;}
@@ -189,8 +191,8 @@ a:hover{ text-decoration: none; }
 
 .discover-info-row div.col-sm-4 h4{
   font-size: 20px;
-  margin-bottom: 27px;
-  margin-top: 45px;
+  margin-bottom: 18px;
+  margin-top: 27px;
 }
 
 .discover-info-row div.col-sm-4 p{
@@ -365,7 +367,7 @@ a:hover{ text-decoration: none; }
 
   .homepage-category-right{ float: right;}
 
-  .row.discover-info-row div.col-sm-4:nth-child(2){ margin: 20px 0 20px;}
+  .row.discover-info-row div.col-sm-4:nth-child(2){ margin: 48px 0 48px;}
 
   .footer-first-row div.col-sm-4{ margin-bottom: 30px;}
 
@@ -438,6 +440,8 @@ a:hover{ text-decoration: none; }
   .quote-browse-btn, .quote-create-btn{font-size: 15px;}
 
   .quote-browse-btn {margin-bottom: 13px;}
+
+  .discover-lltv-section div.row h1{font-size: 24px;}
 }
 
 /* end of responsive design */

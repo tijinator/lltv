@@ -4,9 +4,10 @@ angular.module('lltv').controller('ChapterVideoCtrl',
  'currentUser',
  'AuthService',
  	function($scope, course, currentUser, AuthService) {
+    $scope.currentCourse = course.data;
 		var chapters = course.data.chapters;
 		var chapter  = chapters[0];
-		$scope.video = chapter.video.video_url;
+		// $scope.video = chapter.video.video_url;
 		$scope.booleanTest = true;
 
 		$scope.$on('chapters', function(e, position) {
@@ -47,15 +48,15 @@ angular.module('lltv').controller('ChapterVideoCtrl',
 
 		}); // end of Chapters scope.on
 
-		document.getElementById('my-video').addEventListener('ended', myHandler, false);
-		function myHandler(e) {
-
-			// using for save course_id to DB for payment
-			localStorage.setItem('course_id', course.data.id);
-
-			// openModule('unlockVideo'); Russel's
-			AuthService.openModal('unlockVideo');
-		}
+		// document.getElementById('my-video').addEventListener('ended', myHandler, false);
+		// function myHandler(e) {
+    //
+		// 	// using for save course_id to DB for payment
+		// 	localStorage.setItem('course_id', course.data.id);
+    //
+		// 	// openModule('unlockVideo'); Russel's
+		// 	AuthService.openModal('unlockVideo');
+		// }
 
 } //end of function
 ]).filter('trusted', ['$sce', function ($sce) {
