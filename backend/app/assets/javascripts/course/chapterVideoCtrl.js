@@ -7,7 +7,7 @@ angular.module('lltv').controller('ChapterVideoCtrl',
     $scope.currentCourse = course.data;
 		var chapters = course.data.chapters;
 		var chapter  = chapters[0];
-		$scope.video = chapter.video.video_url;
+		// $scope.video = chapter.video.video_url;
 		$scope.booleanTest = true;
 
 		$scope.$on('chapters', function(e, position) {

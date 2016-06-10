@@ -158,11 +158,6 @@
 
 @media screen and (max-width: 500px){
   .auth-template .auth-content{width: 275px;}
-/*}*/
-
-/*@media screen and (max-width: 435px) {*/
-
-  /*.auth-header > div{ width: 215px;}*/
 
   .auth-header > div > .logo-img { height: 41px;}
 
