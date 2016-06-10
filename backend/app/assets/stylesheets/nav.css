@@ -91,7 +91,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
 #lltv #sign-up-bubble a div{ color: #fff;}
 
-.logo-img, .logo-modal-img{ height: 51px;}
+.logo-img, .logo-modal-img, .logo-footer-img{ height: 51px;}
 
 #lltv .homepage-nav-links ul > li:last-child > .nav-search-text{
   display: none;
@@ -107,12 +107,10 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   background: #5D5D5D;
 }
 
-@media screen and (max-width: 1000px){
-  .logo-img{height: 35px;}
-}
-
-@media screen and (max-width: 800px){
-  .logo-img{height: 30px;}
+@media screen and (max-width: 900px){
+  #lltv .homepage-nav-links li{margin-left: 25px;}
+  
+  .logo-footer-img{ height: 45px;}
 }
 
 @media screen and (max-width: 767px){
