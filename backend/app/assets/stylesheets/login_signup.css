@@ -155,6 +155,10 @@
   .alert-msg{ left: 0;}
 }
 
+@media screen and (max-width: 500px){
+  .auth-template .auth-content{width: 70%;}  
+}
+
 @media screen and (max-width: 435px) {
 
   .auth-header > div{ width: 215px;}

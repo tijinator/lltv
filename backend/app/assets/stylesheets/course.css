@@ -191,16 +191,6 @@
 	text-transform: uppercase;
 }
 
-.nav-tabs{
-	margin-left: 10px;
-	height: 58px;
-}
-
-.chapter-tabs-ul{
-	width: 100%;
-	padding-right: 0px;
-}
-
 @media screen and (max-width:1160px) {
 	.chapter-tabs-ul > li {
 		margin-right: 5%;
@@ -235,19 +225,15 @@
 	color: #787D7F;
 }
 
-.course-chapters{
-	padding: 10px 0 20px;
-}
-
 .course-chapter-content a{
 	color: #ffffff;
 }
 
-@media screen and (max-width: 1230px) {
+/*@media screen and (max-width: 1230px) {
 	#chapter_position{
 		margin-right: 54%;
 	}
-}
+}*/
 
 .chapter-index-element > p > a{
 	font-weight: 700;
@@ -311,6 +297,7 @@
 	color: #5d5d5d;
 	margin-right: 40px;
 	display: inline-block;
+	font-size: 12px;
 }
 
 .course-info-dynamic-ldr{
@@ -318,6 +305,9 @@
 	font-weight: 400;
 	/*font-family: avenir-book, 'Work Sans';*/
 	display: inline-block;
+	font-size: 12px;
+	text-transform: capitalize;
+	color: #5d5d5d;
 }
 
 #lltv .author-avatar-left{
@@ -330,6 +320,7 @@
 .author-name-right{
 	margin: 15px 0 0;
 	font-weight: 700;
+	color: #5d5d5d;
 }
 
 .coursepage-banner{
@@ -341,11 +332,11 @@
 
 .coursepage-banner-details{
 	position: relative;
-  top: 10%;
+  top: 6%;
   left: 10%;
   font-size: 15px;
   color: #fff;
-  width: 90%;
+  width: 80%;
 }
 
 .coursepage-banner-details p { font-size: 17px;}
@@ -364,6 +355,7 @@
 .coursepage-banner-details .coursepage-banner-course-details{
 	font-weight: 400;
 	margin-bottom: 20px;
+	line-height: 28px;
 }
 
 .tab-content{
@@ -372,9 +364,19 @@
 }
 
 .nav-tabs {
-	border-bottom: 0;
 	margin: 0;
 	padding: 0 30px;
+}
+
+.nav-tabs{
+	margin-left: 10px;
+	height: 58px;
+}
+
+.chapter-tabs-ul{
+	width: 100%;
+	padding-right: 0px;
+	border-bottom: 1px solid #e6e6e6;
 }
 
 .chapter-tabs-ul > li {
@@ -382,8 +384,7 @@
 	font-weight: 700;
 	font-family: avenir-black, 'Work Sans';
 	font-size: 13px;
-	color: #787D7F;
-	margin-top: 18px;
+	margin-top: 12px;
 	margin-right: 6%;
 }
 
@@ -418,8 +419,6 @@
 }
 
 .chapter-index-element{
-	float: left;
-	padding: 3px 0 0 0px;
 	text-align: left;
 	width: 100%;
 	font-weight: 700;
@@ -432,15 +431,13 @@
 #chapter_position{ float: left; }
 
 #chapter_duration{
-	margin-right: 20px;
 	color: #5d5d5d;
 	float: right;
 }
 
 .chapter-index-row{
-	padding-top: 8px;
-	height: 52px;
-	clear: both;
+	min-height: 55px;
+	line-height: 55px;
 	border-bottom: 1px solid #e6e6e6;
 }
 
@@ -506,26 +503,62 @@
 	.accordion-container{
 		font-weight: 700;
 		padding: 0 50px;
-    font-size: 13px;
+    font-size: 12px;
     text-transform: uppercase;
 	}
 
+	.accordion-section{ border-bottom: 1px solid #e6e6e6; }
+
 	.accordion-header{
-		height: 50px;
-		line-height: 50px;
+		height: 70px;
+		line-height: 70px;
 		cursor: pointer;
+		color: #5d5d5d;
 	}
 
 	.accordion-header span{
 		float: right;
-		margin-top: 16px;
+		margin-top: 26px;
 	}
 
 	.accordion-details{
-		/*min-height: 100px;*/
+
 	}
+
+	.accordion-inner{
+		text-transform: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: #5d5d5d;
+    line-height: 31px;
+    padding-bottom: 22px;
+    margin-top: -11px;
+	}
+
+	.course-author-sidebar p{text-transform: none;}
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 600px){
 	.coursepage-banner-details h1{font-size: 26px;}
+
+	.chapter-index-row{line-height: 30px;}
+
+	.accordion-container{font-size: 15px;}
+
+	.accordion-header span{
+		margin-top: 27px;
+		font-size: 12px;
+	}
+
+	#chapter_position{
+		width: 100%;
+		margin-right: 0;
+		color: #5d5d5d;
+	}
+
+	#chapter_duration{
+		margin-right: 0;
+		float: none;
+		color: #999;
+	}
 }

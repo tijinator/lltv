@@ -25,22 +25,11 @@
           <div class="course-chapters">
             <div class="chapter-index-row" ng-repeat='chapter in course.chapters'>
               <div class="chapter-index-element">
-              <!-- <div class="chapter-index-element" ng-click="chapter_title = !chapter_title"> -->
-                  <span id='chapter_position'>{{chapter.title}} </span>
-                  <!-- <span id='chapter_position'> ch {{chapter.position}} </span> -->
-                  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="color: #999;font-size: 10px; float: right;" ng-show="!chapter_title"></span>
-                  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" style="color: #999;font-size: 10px; float: right;" ng-show="chapter_title"></span>
-                  <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date: "m'M' s'S'"}}</span>
+                <span id='chapter_position'>{{chapter.title}} </span>
+                <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date: "m'M' s'S'"}}</span>
               </div>
-
-            <!-- <div class="chapter-index" ng-show="chapter_title">
-              <div class="chapter-index-element index-title-row">
-                <a ng-href='#' ng-click="chapters(chapter.position)">{{chapter.title}}</a>
-              </div>
-            </div> -->
-
+            </div>
           </div>
-        </div>
         </div>
       </div>
       <div role="tabpanel" class="tab-pane" id="video-details">
@@ -69,13 +58,10 @@
 <!-- accordion -->
 <div class="accordion-container" id="accordion2">
   <div class="accordion-section">
-    <div class="accordion-header" data-toggle="collapse" data-parent="#accordion2"
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
     data-target="#tableOfContetnsAccordion">
-      <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
-      data-target="#tableOfContetnsAccordion"> -->
         table of contents
         <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
-      <!-- </a> -->
     </div>
     <div id="tableOfContetnsAccordion" class="accordion-details collapse">
       <div class="accordion-inner">
@@ -83,11 +69,7 @@
         <div class="course-chapters">
           <div class="chapter-index-row" ng-repeat='chapter in course.chapters'>
             <div class="chapter-index-element">
-            <!-- <div class="chapter-index-element" ng-click="chapter_title = !chapter_title"> -->
               <span id='chapter_position'>{{chapter.title}} </span>
-              <!-- <span id='chapter_position'> ch {{chapter.position}} </span> -->
-              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="color: #999;font-size: 10px; float: right;" ng-show="!chapter_title"></span>
-              <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" style="color: #999;font-size: 10px; float: right;" ng-show="chapter_title"></span>
               <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date: "m'M' s'S'"}}</span>
             </div>
           </div>
@@ -98,91 +80,82 @@
   </div>
 
   <div class="accordion-section">
-    <div class="accordion-header" data-toggle="collapse" data-parent="#accordion2"
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
     data-target="#videoDetailsAccordion">
-      <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
-      data-target="#videoDetailsAccordion"> -->
-
         Video Details
         <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
-
-      <!-- </a> -->
     </div>
     <div id="videoDetailsAccordion" class="accordion-details collapse">
       <div class="accordion-inner">
-        Anim pariatur cliche...
+Forage organic slow-carb, banh mi iPhone hashtag bespoke +1. Health goth sriracha poutine, wolf chia authentic pitchfork trust fund kickstarter next level leggings keytar blue bottle narwhal. Kitsch schlitz ennui keffiyeh typewriter knausgaard. Semiotics ramps normcore, portland actually try-hard you probably haven't heard of them chillwave fashion axe intelligentsia godard
       </div>
     </div>
   </div>
 
   <div class="accordion-section">
-    <div class="accordion-header" data-toggle="collapse" data-parent="#accordion2"
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
       data-target="#transcriptAccordion">
         transcript
         <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
     </div>
     <div id="transcriptAccordion" class="accordion-details collapse">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
+      <div class="accordion-inner">Forage organic slow-carb, banh mi iPhone hashtag bespoke +1. Health goth sriracha poutine, wolf chia authentic pitchfork trust fund kickstarter next level leggings keytar blue bottle narwhal. Kitsch schlitz ennui keffiyeh typewriter knausgaard. Semiotics ramps normcore, portland actually try-hard you probably haven't heard of them chillwave fashion axe intelligentsia godard
       </div>
     </div>
   </div>
 
   <div class="accordion-section">
-    <div class="accordion-header" data-toggle="collapse" data-parent="#accordion2"
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
       data-target="#faqAccordion">
         faqs
         <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
     </div>
     <div id="faqAccordion" class="accordion-details collapse">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
+      <div class="accordion-inner">Forage organic slow-carb, banh mi iPhone hashtag bespoke +1. Health goth sriracha poutine, wolf chia authentic pitchfork trust fund kickstarter next level leggings keytar blue bottle narwhal. Kitsch schlitz ennui keffiyeh typewriter knausgaard. Semiotics ramps normcore, portland actually try-hard you probably haven't heard of them chillwave fashion axe intelligentsia godard
       </div>
     </div>
   </div>
 
   <div class="accordion-section">
-    <div class="accordion-header" data-toggle="collapse" data-parent="#accordion2"
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
       data-target="#exerciseAccordion">
         exercise files
         <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
     </div>
     <div id="exerciseAccordion" class="accordion-details collapse">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
+      <div class="accordion-inner">Forage organic slow-carb, banh mi iPhone hashtag bespoke +1. Health goth sriracha poutine, wolf chia authentic pitchfork trust fund kickstarter next level leggings keytar blue bottle narwhal. Kitsch schlitz ennui keffiyeh typewriter knausgaard. Semiotics ramps normcore, portland actually try-hard you probably haven't heard of them chillwave fashion axe intelligentsia godard
       </div>
     </div>
   </div>
 
   <div class="accordion-section">
-    <div class="accordion-header" data-toggle="collapse" data-parent="#accordion2"
+    <div class="accordion-header accordion-header-border-on" data-toggle="collapse" data-parent="#accordion2"
       data-target="#discussionAccordion">
         discussion
         <span class="glyphicon glyphicon-plus colored-bar-plus-icon" aria-hidden="true">
     </div>
     <div id="discussionAccordion" class="accordion-details collapse">
       <div class="accordion-inner">
-        Anim pariatur cliche...
+        Forage organic slow-carb, banh mi iPhone hashtag bespoke +1. Health goth sriracha poutine, wolf chia authentic pitchfork trust fund kickstarter next level leggings keytar blue bottle narwhal. Kitsch schlitz ennui keffiyeh typewriter knausgaard. Semiotics ramps normcore, portland actually try-hard you probably haven't heard of them chillwave fashion axe intelligentsia godard
       </div>
     </div>
   </div>
 
 </div>
 
-<!-- <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">
-  simple collapsible
-</button>
+<script type="text/javascript">
 
-<div id="demo" class="collapse">one</div>
+  $('.collapse').on('show.bs.collapse', function(){
+    $(this).parent().find('.glyphicon-plus').removeClass('glyphicon-plus').addClass('glyphicon-minus');
 
-<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo2">
-  simple collapsible
-</button>
+  });
 
-<div id="demo2" class="collapse">two</div>
+  $(".collapse").on('hidden.bs.collapse', function() {
+    $(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+  });
 
-<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo3">
-  simple collapsible
-</button>
+</script>
 
-<div id="demo3" class="collapse">three </div> -->
+
+
+​
