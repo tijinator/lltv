@@ -91,9 +91,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
 #lltv #sign-up-bubble a div{ color: #fff;}
 
-.logo-img{
-  height: 51px;
-}
+.logo-img, .logo-modal-img{ height: 51px;}
 
 #lltv .homepage-nav-links ul > li:last-child > .nav-search-text{
   display: none;
