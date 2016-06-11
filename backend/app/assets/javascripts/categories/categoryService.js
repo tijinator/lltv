@@ -18,6 +18,10 @@ function($http) {
     return $http.get('/api/categories');
   };
 
+  this.getPopularNewCourses = function(){
+    return $http.get('/api/categories'); //get russell to build api
+  };
+
   this.getCategory = function(id) {
     return $http.get('/api/categories/' + id);
   };

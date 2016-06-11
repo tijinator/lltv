@@ -141,17 +141,17 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       url: '/categories',
       views: {
 
-        // featuredCourse: {
-        //   templateUrl: 'categories/featuredCourse.html',
-        //   controller: 'FeaturedCourseCtrl',
-        //   resolve: {
-        //     featuredCourse: ['CategoryService',
-        //       function(categoriesService) {
-        //         return categoriesService.getFeaturedCourse(null);
-        //       }
-        //     ]
-        //   }
-        // },
+        categoryPopularNewCourses: {
+          templateUrl: 'categories/categoryPopularNewCourses.html',
+          controller: 'PopularNewCoursesCtrl',
+          resolve: {
+            categoryPopularNewCourses: ['CategoryService',
+              function(categoriesService) {
+                return categoriesService.getPopularNewCourses();
+              }
+            ]
+          }
+        },
 
         categoryLibrary: {
           templateUrl: 'categories/categoryLibrary.html',
