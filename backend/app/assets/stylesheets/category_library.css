@@ -33,3 +33,35 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.category-pop-column, .category-new-column{
+  padding: 0 15px;
+  text-transform: uppercase;
+  color: #5d5d5d;
+  margin-bottom: 20px;
+}
+
+.category-pop-new-container{
+  background: #f4f4f4;
+  padding-bottom: 30px;
+}
+
+.category-pop-new-container h3{font-weight: 700;}
+
+.category-pop-new-container > h3{
+  text-align: center;
+  padding-top: 20px;
+  margin: 0;
+}
+
+.category-pop-new-container ul li{
+  display: inline;
+  color: #999;
+  font-weight: 700;
+  padding-right: 15px;
+}
+
+.pop-new-course-row{
+  padding: 0 15px 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
