@@ -251,7 +251,25 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         $('#landing-homepage').hide();
         $('#lltv-app-content').show();
       }
-    });
+    })
+    .state('video', {
+      parent: 'courses.show',
+      url: '/:videoName',
+      resolve: {
+        course: ['$stateParams', 'CourseService',
+          function($stateParams, coursesService) {
+            return coursesService.getCourse($stateParams.id);
+          }
+        ]
+      },
+      views: {
+        courseVideo: {
+          templateUrl: 'course/courseVideo.html',
+          controller: 'courseVideoCtrl'
+        }
+      }
+    })
+    ;
 
     $urlRouterProvider.otherwise('/home');
 }]);

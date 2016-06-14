@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  
+
   # Subdomains -
-  admin_url = Rails.env.production? ? 'admin.beta' : 'admin'  
+  admin_url = Rails.env.production? ? 'admin.beta' : 'admin'
   constraints subdomain: admin_url do
     resources :videos, controller: 'admin/videos_admin'
 
@@ -65,7 +65,7 @@ Rails.application.routes.draw do
     mount_devise_token_auth_for 'User', at: 'auth', controllers: {
       registrations: 'devise_token/registrations'
     }
-      
+
     resources :categories, only: [:show, :index] do
       # collection do
       #   get 'featured_course' => 'categories#featured_course'
@@ -85,6 +85,7 @@ Rails.application.routes.draw do
 
   get '/courses' => 'home#home'
   get '/courses/:course_id' => 'home#home'
+  get '/courses/:course_id/:videoName' => 'home#home'
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
   get '/users/:user_id' => 'home#home' #profile route
