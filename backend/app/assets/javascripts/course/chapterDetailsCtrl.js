@@ -15,7 +15,7 @@ angular.module('lltv').controller('ChapterDetailsCtrl',
     $scope.getVideoPage = function(obj){
       console.log(obj);
 
-      $state.go('video', {videoName: obj});
+      $state.go('video.show', {videoName: obj});
     }
   }
 ]);

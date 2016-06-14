@@ -253,19 +253,17 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       }
     })
     .state('video', {
-      parent: 'courses.show',
+      abstract: true,
+      // parent: 'courses.show',
+      url: '/video',
+      templateUrl: 'video/courseVideoLayout.html'
+    })
+    .state( "video.show",  {
       url: '/:videoName',
-      resolve: {
-        course: ['$stateParams', 'CourseService',
-          function($stateParams, coursesService) {
-            return coursesService.getCourse($stateParams.id);
-          }
-        ]
-      },
+      controller: 'courseVideoCtrl',
       views: {
         courseVideo: {
-          templateUrl: 'course/courseVideo.html',
-          controller: 'courseVideoCtrl'
+          templateUrl: 'video/courseVideo.html',
         }
       }
     })

@@ -85,7 +85,7 @@ Rails.application.routes.draw do
 
   get '/courses' => 'home#home'
   get '/courses/:course_id' => 'home#home'
-  get '/courses/:course_id/:videoName' => 'home#home'
+  get '/video/:videoName' => 'home#home'
   get '/categories' => 'home#home'
   get '/categories/:cat_id' => 'home#home'
   get '/users/:user_id' => 'home#home' #profile route
