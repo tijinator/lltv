@@ -65,3 +65,7 @@ body {
   transition:0.5s linear all;
   opacity: 1;
 }
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}

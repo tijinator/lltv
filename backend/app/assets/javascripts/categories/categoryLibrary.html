@@ -1,5 +1,5 @@
 <div style="width: 100%; height: 95px;"></div><!-- add height behind navbar-->
-<div class="category-library">
+<!-- <div class="category-library">
   <div class="row" style="margin: 0;">
     <ul class="small-categories">
       <li ng-repeat="category in categories" ng-if="category.homepage_position != null" style="display: inline-block;">
@@ -11,19 +11,17 @@
       </li>
     </ul>
   </div>
-</div>
+</div> -->
 
-<!-- <div class="row" style="margin: 0 auto; max-width: 1400px;">
+<div class="row category-img-section">
   <div ng-repeat="category in categories"
   ng-if="category.homepage_position != null"
-  style="width: 25%; float: left; "
-  >
+  class="category-img-container">
     <a ui-sref="category.show({id: category.id})">
-      <div style="padding: 0 0.9375rem; margin-bottom: 10px;">
-        <img src="{{category.small_image_url}}"
-        style="width: 100%; display: block; margin: auto; height: auto;"
-         />
+      <div>
+      <!-- <div style="padding: 0 0.9375rem; margin-bottom: 10px;"> -->
+        <img src="{{category.small_image_url}}"/>
       </div>
     </a>
   </div>
-</div> -->
+</div>
