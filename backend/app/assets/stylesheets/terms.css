@@ -28,7 +28,19 @@
 
 .terms-table-column, .terms-details-column{ padding: 0;}
 
-.terms-table-column{ text-transform: uppercase;}
+.terms-table-column{
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.terms-table-column ul{margin-bottom: 50px;}
+
+.terms-table-column li a{
+  color: inherit;
+  cursor: pointer;
+}
+
+.terms-table-column li a:hover{ color: #5d5d5d; }
 
 .terms-table-column li{
   display: block;

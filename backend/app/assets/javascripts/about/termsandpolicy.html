@@ -18,30 +18,30 @@
   </div>
 
   <div class="row terms-bottom-row">
-    <div class="col-sm-3 terms-table-column">
+    <div class="col-md-4 terms-table-column">
       <p>table of contents</p>
       <ul>
-        <li>1. introduction</li>
-        <li>2. additional terms</li>
-        <li>3. site access and account registration</li>
-        <li>4. subscription plans</li>
-        <li>5. proprietery materials</li>
-        <li>6. mobile terms</li>
-        <li>7. user content and feedback</li>
-        <li>8. learning library tv "dos" and "donts"</li>
-        <li>9. representation, warranties, & covenants</li>
-        <li>10. Termination; cancellation</li>
-        <li>11. indemnification</li>
-        <li>12. no warranty; limitations on liability</li>
-        <li>13. modifications</li>
-        <li>14. general</li>
+        <li><a id="term-introduction">1. introduction</a></li>
+        <li><a id="term-additional">2. additional terms</a></li>
+        <li><a id="term-site-access">3. site access and account registration</a></li>
+        <li><a id="term-subscription">4. subscription plans</a></li>
+        <li><a id="">5. proprietery materials</a></li>
+        <li><a id="">6. mobile terms</a></li>
+        <li><a id="">7. user content and feedback</a></li>
+        <li><a id="">8. learning library tv "dos" and "donts"</a></li>
+        <li><a id="">9. representation, warranties, & covenants</a></li>
+        <li><a id="">10. Termination; cancellation</a></li>
+        <li><a id="">11. indemnification</li>
+        <li><a id="">12. no warranty; limitations on liability</a></li>
+        <li><a id="">13. modifications</a></li>
+        <li><a id="">14. general</a></li>
       </ul>
 
     </div>
 
-    <div class="col-sm-9 terms-details-column">
+    <div class="col-md-8 terms-details-column">
 
-      <div class="terms-section-title">
+      <div id="term-introduction-view" class="terms-section-title">
         <h5>1. introduction</h5>
       </div>
       <div class="terms-section-details">
@@ -56,7 +56,7 @@
           fingerstache tofu.
         </p>
       </div>
-      <div class="terms-section-title">
+      <div id="term-additional-view" class="terms-section-title">
         <h5>2. additional terms</h5>
       </div>
       <div class="terms-section-details">
@@ -80,7 +80,7 @@
           fingerstache tofu.
         </p>
       </div>
-      <div class="terms-section-title">
+      <div id="term-site-access-view" class="terms-section-title">
         <h5>3. site access and account registration</h5>
       </div>
       <div class="terms-section-details">
@@ -113,7 +113,7 @@
           fingerstache tofu.
         </p>
       </div>
-      <div class="terms-section-title">
+      <div id="term-subscription-view" class="terms-section-title">
         <h5>4. subscription plans</h5>
       </div>
       <div class="terms-section-details">
@@ -160,3 +160,33 @@
   </div>
 
 </div>
+<div class="collapse-test" ng-include="'footer/_footer.html'"></div>
+<script type="text/javascript">
+  document.getElementById("term-introduction").onclick=function(){
+    var msg = "#term-introduction-view";
+    scrollFAQ(msg);
+  }
+
+  document.getElementById("term-additional").onclick=function(){
+    var msg = "#term-introduction-view";
+    scrollFAQ(msg);
+  }
+
+  document.getElementById("term-site-access").onclick=function(){
+    var msg = "#term-site-access-view";
+    scrollFAQ(msg);
+  }
+
+  document.getElementById("term-subscription").onclick=function(){
+    var msg = "#term-subscription-view";
+    scrollFAQ(msg);
+  }
+
+  function scrollFAQ(msg){
+    $('html, body').animate({
+        scrollTop: $(msg).offset().top - 95
+    }, 600, "easeOutCirc", function(){
+      // console.log("scroll!");
+    });
+  }
+</script>
