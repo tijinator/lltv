@@ -255,7 +255,8 @@ a:hover{ text-decoration: none; }
 
 .footer-list-second-row{ margin: 10px 0 10px;}
 
-.footer-list-first-row > div > a, .footer-list-second-row > div > a{
+.footer-list-first-row > div > a, .footer-list-second-row > div > a,
+.footer-list-third-row > div > a{
   text-decoration: none;
   color: inherit;
 }

@@ -1,5 +1,5 @@
 .terms-container{
-  padding: 20px 40px 0;
+  padding: 20px 110px 0;
   color: #999;
 }
 
@@ -52,3 +52,18 @@
 .terms-section-details{line-height: 24px;}
 
 .terms-section-title h5, .terms-section-details p{ margin: 0 0 20px; }
+
+/*privacy css*/
+
+.privacy-top-row h3{margin-bottom: 70px;}
+
+.privacy-table-column p{margin-bottom: 20px;}
+
+.privacy-email-link{ margin-bottom: 30px;}
+
+.privacy-email-link a{
+  color: inherit;
+  cursor: pointer;
+}
+
+.privacy-email-link a:hover{ color: #5d5d5d;}

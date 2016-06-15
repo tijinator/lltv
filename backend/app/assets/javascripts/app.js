@@ -90,8 +90,12 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       templateUrl: 'about/faqPage.html'
     })
     .state('termsPolicyPage',{
-      url: '/termsandpolicy',
+      url: '/terms',
       templateUrl: 'about/termsandpolicy.html'
+    })
+    .state('privacyPage',{
+      url: '/privacy',
+      templateUrl: 'about/privacy.html'
     })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
