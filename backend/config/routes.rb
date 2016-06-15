@@ -92,6 +92,7 @@ Rails.application.routes.draw do
   get '/account' => 'home#home' #account routes
   get '/about' => 'home#home' #about page
   get '/faq' => 'home#home' #frequently asked questions
+  get '/termsandpolicy' => 'home#home' #terms and policy page
 
   root to: 'home#home'
 end
