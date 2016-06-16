@@ -10,9 +10,9 @@
     <div id="" class="row faq-view" style="margin: 0;">
       <div class="col-sm-8 col-sm-offset-2 about-second-text-container">
         <ul class="faq-lists">
-          <li><a id="membership-link">Memberships / Plans</a></li>
-          <li><a id="site-issue-link">Site issues / Video Playback</a></li>
-          <li><a id="library-link">The Library</a></li>
+          <li><a ng-click = goToElement("membership-link")>Memberships / Plans</a></li>
+          <li><a ng-click = goToElement("site-issue-link")>Site issues / Video Playback</a></li>
+          <li><a ng-click = goToElement("library-link")>The Library</a></li>
         </ul>
       </div>
     </div>
@@ -21,7 +21,7 @@
 
   <div data-spy="scroll" data-target=".faq-view">
 
-  <div id="membership-view" class="col-sm-12 membership-faq">
+  <div id="membership-link" class="col-sm-12 membership-faq">
     <div class="row" style="margin: 0;">
       <h2 class="membership-title">Membership / Plans</h2>
     </div>
@@ -60,7 +60,7 @@
     </div>
   </div>
 
-  <div id="site-issue-view" class="col-sm-12 membership-faq">
+  <div id="site-issue-link" class="col-sm-12 membership-faq">
     <div class="row" style="margin: 0;">
       <h2 class="membership-title">Site Issues / Video Playback</h2>
     </div>
@@ -95,7 +95,7 @@
   </div>
 
 
-  <div id="library-view" class="col-sm-12 membership-faq">
+  <div id="library-link" class="col-sm-12 membership-faq">
     <div class="row" style="margin: 0;">
       <h2 class="membership-title">The Library</h2>
     </div>
@@ -132,28 +132,3 @@
 </div>
 
 <div ng-include="'footer/_footer.html'"></div>
-
-<script>
-  document.getElementById("membership-link").onclick=function(){
-    var msg = "#membership-view";
-    scrollFAQ(msg);
-  }
-
-  document.getElementById("site-issue-link").onclick=function(){
-    var msg = "#site-issue-view";
-    scrollFAQ(msg);
-  }
-
-  document.getElementById("library-link").onclick=function(){
-    var msg = "#library-view";
-    scrollFAQ(msg);
-  }
-
-  function scrollFAQ(msg){
-    $('html, body').animate({
-        scrollTop: $(msg).offset().top - 95
-    }, 600, "easeOutCirc", function(){
-      // console.log("scroll!");
-    });
-  }
-</script>

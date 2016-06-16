@@ -83,19 +83,22 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
     })
     .state('aboutPage',{
       url: '/about',
-      templateUrl: 'about/aboutPage.html'
+      templateUrl: 'staticPages/aboutPage.html'
     })
     .state('faqPage',{
       url: '/faq',
-      templateUrl: 'about/faqPage.html'
+      templateUrl: 'staticPages/faqPage.html',
+      controller: 'StaticCtrl',
     })
     .state('termsPolicyPage',{
       url: '/terms',
-      templateUrl: 'about/termsandpolicy.html'
+      templateUrl: 'staticPages/termsandpolicy.html',
+      controller: 'StaticCtrl',
     })
     .state('privacyPage',{
       url: '/privacy',
-      templateUrl: 'about/privacy.html'
+      templateUrl: 'staticPages/privacy.html',
+      controller: 'StaticCtrl',
     })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
