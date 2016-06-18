@@ -48,7 +48,7 @@ a:hover{ text-decoration: none; }
 .quote-container p:first-child{ margin-bottom: -10px;}
 
 .quote-container .quote-subtitle{
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   /*font-family: avenir-medium, 'Work Sans';*/
   margin-right: 5px;
@@ -107,6 +107,15 @@ a:hover{ text-decoration: none; }
   margin: 0 18px 20px 0;
   background-color: #FFF;
   cursor: pointer;
+}
+
+#lltv div.homepage-course-box:hover{
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
 }
 
 #lltv .homepage-courses-row div.popCourse-section:last-child div.homepage-course-box{ margin-right: 0;}

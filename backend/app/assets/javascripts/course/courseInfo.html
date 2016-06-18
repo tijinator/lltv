@@ -25,7 +25,7 @@
       </ul>
     </div>
     <div class='course-info-dynamic-ldr'>
-      <ul style="color: #000;">
+      <ul>
         <li>{{ course.level }}</li>
         <li>{{ course.duration | secondsToHHMM | date: "H'H' mm'M'" }}</li>
         <li> 25/15/2015 </li>
@@ -33,7 +33,7 @@
     </div>
     <h3>Course Author</h3>
 
-    <div class="row" style="margin: 0;">
+    <div class="row" style="margin: 0 0 18px 0;">
       <div class="author-avatar author-avatar-left"
       ng-style="{'background-image':'url({{course.author.avatar}})'}"></div>
       <div class="author-name-right">

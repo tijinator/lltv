@@ -278,6 +278,7 @@
   background: #f4f4f4;
   display: table-cell;
   float: none;
+	color: #5d5d5d;
 }
 
 .course-author-sidebar h3{
@@ -325,7 +326,8 @@
 }
 
 .coursepage-banner{
-	height: calc(100vh - 95px); /*478px*/
+	/*height: calc(100vh - 95px);*/
+	height: 478px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -333,7 +335,7 @@
 
 .coursepage-banner-details{
 	position: relative;
-  top: 6%;
+  top: 11%;
   left: 10%;
   font-size: 15px;
   color: #fff;

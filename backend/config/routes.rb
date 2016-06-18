@@ -94,6 +94,7 @@ Rails.application.routes.draw do
   get '/faq' => 'home#home' #frequently asked questions
   get '/terms' => 'home#home' #terms and policy page
   get '/privacy' => 'home#home' #privacy page
+  get '/teach' => 'home#home' #privacy page
 
   root to: 'home#home'
 end
