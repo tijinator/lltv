@@ -15,7 +15,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 #lltv .homepage-nav-links {
   padding-top: 27px;
   color: #5D5D5D;
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   font-weight: 700;
   /*font-family: avenir-black, 'Work Sans';*/
@@ -77,7 +77,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
     text-align: center;
     font-size: 13px;
     top: 56px;
-    right: -26px;
+    right: -30px;
     border-radius: 0;
     margin: 0;
     box-shadow: none;
@@ -88,7 +88,7 @@ content: '';
 display: block;
 position: absolute;
 top: -22px;
-left: 183px;
+left: 181px;
 width: 0;
 height: 0;
 border-color: transparent transparent transparent #fff;
@@ -102,7 +102,7 @@ content: '';
 display: block;
 position: absolute;
 top: -24px;
-left: 182px;
+left: 180px;
 width: 0;
 height: 0;
 border-color: transparent transparent transparent #e6e6e6;

@@ -39,7 +39,7 @@ $scope.jsRun = function(userFirstName){
           // console.log(JSON.stringify(userData));
           innerAcc.setAttribute('ui-sref', 'accountSetting.show');
           // innerAcc.setAttribute('ui-sref', 'account.show');
-          innerAcc.setAttribute('style', 'color: #787d7f; height: 15px');
+          innerAcc.setAttribute('style', 'color: #5d5d5d;');
 
           var accountSetting = document.createTextNode('account settings');
           innerAcc.appendChild(accountSetting);
@@ -52,17 +52,41 @@ $scope.jsRun = function(userFirstName){
 
           innerA.setAttribute('ui-sref', "profileUsername.show({username:" + JSON.stringify(userFirstName) + "})");
           // innerA.setAttribute('ui-sref', "profileUsername.show({username:" + JSON.stringify(userData.username) + "})");
-          innerA.setAttribute('style', 'color: #787d7f; height: 15px');
+          innerA.setAttribute('style', 'color: #5d5d5d;');
 
           var profile = document.createTextNode('Profile');
           innerA.appendChild(profile);
           innerLiOne.appendChild(innerA);
       ul.appendChild(innerLiOne);
 
+  var innerLiCourses = document.createElement('li');
+      var innerCourses = document.createElement('a');
+          // console.log(JSON.stringify(userData));
+
+          // innerCourses.setAttribute('ui-sref', "profileUsername.show({username:" + JSON.stringify(userFirstName) + "})");
+          innerCourses.setAttribute('style', 'color: #5d5d5d;');
+
+          var profile = document.createTextNode('My Courses');
+          innerCourses.appendChild(profile);
+          innerLiCourses.appendChild(innerCourses);
+      ul.appendChild(innerLiCourses);
+
+  var innerLiCertificates = document.createElement('li');
+      var innerCerts = document.createElement('a');
+          // console.log(JSON.stringify(userData));
+
+          // innerCerts.setAttribute('ui-sref', "profileUsername.show({username:" + JSON.stringify(userFirstName) + "})");
+          innerCerts.setAttribute('style', 'color: #5d5d5d;');
+
+          var profile = document.createTextNode('My Certificates');
+          innerCerts.appendChild(profile);
+          innerLiCertificates.appendChild(innerCerts);
+      ul.appendChild(innerLiCertificates);
+
   var innerLiTwo = document.createElement('li');
       var innerO = document.createElement('a');
           innerO.setAttribute('ng-click', 'signOut()');
-          innerO.setAttribute('style', 'color: #787d7f; height: 15px');
+          innerO.setAttribute('style', 'color: #5d5d5d;');
 
           var signOut = document.createTextNode('Sign Out');
           innerO.appendChild(signOut);
@@ -159,10 +183,10 @@ $scope.jsRun = function(userFirstName){
 
   $rootScope.$on('auth:login-success', function(ev, userData) {
     $cookieStore.put('userObj', userData);
-    
+
     $location.path("categories");
     // $location.path("/about");
-    
+
     signedIn();
   });
 
