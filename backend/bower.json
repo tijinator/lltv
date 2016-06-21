@@ -31,7 +31,8 @@
     "angular-cookies": "^1.5.5",
     "jquery-ui": "^1.11.4",
     "angular-sanitize": "^1.5.5",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "angular-slick-carousel": "^3.1.5"
   },
   "resolutions": {
     "metisMenu": "~1.1.3",

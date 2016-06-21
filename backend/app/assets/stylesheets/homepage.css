@@ -103,8 +103,8 @@ a:hover{ text-decoration: none; }
 #lltv .homepage-course-box{
   padding: 0;
   height: 375px;
-  /*width: 20%;*/
-  width: 284px;
+  width: 20%;
+  /*width: 284px;*/
   border: 1px solid #e6e6e6;
   margin: 0 18px 20px 0;
   background-color: #FFF;
@@ -135,9 +135,11 @@ a:hover{ text-decoration: none; }
   height: 50px;
   border-radius: 50%;
   border: 3px solid #FFF;
-  position: relative;
+  float: right;
+  margin: -25px 20px 0 0;
+  /*position: relative;
   top: -25px;
-  left: 75%;
+  left: 75%;*/
 }
 
 #lltv .homepage-course-title{
