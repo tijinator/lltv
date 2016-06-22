@@ -105,6 +105,11 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       templateUrl: 'staticPages/teachPage.html',
       controller: 'StaticCtrl'
     })
+    .state('contactPage',{
+      url: '/contact',
+      templateUrl: 'staticPages/contactPage.html',
+      // controller: 'StaticCtrl'
+    })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
     })
