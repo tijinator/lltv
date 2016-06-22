@@ -23,4 +23,11 @@ function($scope,$location, $http, $log){
 
   });
 
+  $scope.slickConfig2 = {
+            method: {},
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 4
+        };
+
 }]);

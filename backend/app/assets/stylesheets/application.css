@@ -13,6 +13,7 @@
  *= require bootstrap/dist/css/bootstrap
  *= require font-awesome/css/font-awesome
  *= require jquery-ui/themes/smoothness/jquery-ui
+ *= require slick-carousel
  *= require homepage
  *= require nav
  *= require login_signup

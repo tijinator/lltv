@@ -49,7 +49,9 @@
       </div>
       <div class="row homepage-courses-row">
 
+        <slick settings="slickConfig2">
         <!-- <div class="popCourse-section" ng-repeat="popCourse in popularCourses"> -->
+
 
           <div class=" homepage-course-box" ui-sref="courses.show({id: popCourse.id})" ng-repeat="popCourse in popularCourses">
             <div class="row" style="margin:0;">
@@ -107,7 +109,7 @@
             </div>
           </div>
 
-        <!-- </div> -->
+        </slick>
         <!-- end popCourse-section -->
       </div>
 
