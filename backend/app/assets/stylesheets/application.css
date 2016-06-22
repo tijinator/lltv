@@ -13,6 +13,7 @@
  *= require bootstrap/dist/css/bootstrap
  *= require font-awesome/css/font-awesome
  *= require jquery-ui/themes/smoothness/jquery-ui
+ *= require bootstrap-formhelpers/dist/css/bootstrap-formhelpers
  *= require homepage
  *= require nav
  *= require login_signup
@@ -28,6 +29,7 @@
  *= require terms_privacy.css
  *= require searchModal.css
  *= require teachPage.css
+ *= require contactPage.css
  *= require_self
  */
 
