@@ -31,6 +31,10 @@ function($uibModal) {
       var backdropClass = 'auth-backdrop';
     }else if(type == 'unlockVideo'){
       var templateUrl = 'auth/_unlock_video.html';
+      // var backdropClass = 'unlock-backdrop';
+      // var backdropClass = 'auth-backdrop';
+    }else if(type == 'resetPassword'){
+      var templateUrl = 'auth/_reset_password.html';
       var backdropClass = 'unlock-backdrop';
     }else{
       var templateUrl = 'auth/_sign_in.html';
