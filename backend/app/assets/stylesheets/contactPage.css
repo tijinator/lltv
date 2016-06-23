@@ -1,0 +1,87 @@
+.contact-container{
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.contact-title-row{
+  margin: 0;
+  position: relative;
+  top: 41%;
+}
+
+.contact-title-row h2{
+  font-weight: 700;
+  font-size: 40px;
+}
+
+/*css contact info*/
+
+.contact-info-row, .contact-form-row{ margin: 0;}
+
+.contact-info-col{
+  padding: 0;
+  margin: 40px 0;
+  padding-top: 30px;
+  height: 200px;
+  border-right: 1px solid #e6e6e6;
+  color: #5d5d5d;
+}
+
+.contact-info-row div:last-child { border: 0;}
+
+.col-sm-3.contact-info-col h2{
+  margin: 0 0 20px 0;
+  font-size: 26px;
+}
+
+.col-sm-3.contact-info-col p{ margin: 0 0 5px 0;}
+
+.contact-info-col p, .contact-info-col a{
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.contact-info-col p:nth-child(2) ~ p, .contact-info-col a{
+  color: #9CCC58;
+}
+
+/*contact page form css row*/
+
+.contact-form-row {
+  background-color: #f4f4f4;
+  color: #5d5d5d;
+}
+
+.contact-form-row h3{
+  margin: 113px 0 70px;
+  font-weight: 700;
+}
+
+.contact-form-row div.author-form-app{
+  text-align: left;
+  padding: 0;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.contact-form-row div.author-form-app form div.col-sm-6{ padding: 0;}
+
+.contact-form-row div.author-form-app form div.col-sm-6:nth-child(odd){ padding-right: 26px;}
+
+.contact-form-row div.author-form-app form div.discover-row-button{
+  margin-top: 50px;
+}
+
+.contact-form-row div.author-form-app form div.discover-row-button button{ width: 200px;}
+
+@media screen and (max-width: 768px){
+  .contact-info-col{ height: initial;}
+
+  .contact-form-row div.author-form-app form div.col-sm-6{
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .contact-form-row div.author-form-app form div.col-sm-6:nth-child(odd){ padding: 0;}
+}
