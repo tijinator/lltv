@@ -92,7 +92,7 @@
 .input-custom{
   border-radius: 25px;
   font-size: 11px;
-  text-transform: uppercase;
+  height: 43px;
 }
 
 select:not([multiple]){
