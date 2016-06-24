@@ -271,6 +271,7 @@ a:hover{ text-decoration: none; }
 .footer-list-third-row > div > a{
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 .footer-second-row p{ margin: 0 0 12px; }
