@@ -44,6 +44,10 @@ function($scope, $auth, currentUser, authService, $cookieStore) {
       });
   };
 
+  $scope.submitReset = function(obj){
+    console.log(obj);
+  }
+
   // $scope.switch = function(type) {
   //   authService.switchModal(type);
   // }
