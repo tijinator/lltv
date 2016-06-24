@@ -24,10 +24,23 @@ function($scope,$location, $http, $log){
   });
 
   $scope.slickConfig2 = {
-            method: {},
-            infinite: true,
-            slidesToShow: 4,
-            slidesToScroll: 4
-        };
+    // enabled: true,
+    method: {},
+    // infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    arrows: true,
+    centerMode: false,
+    // autoplay: true,
+    autoplaySpeed: 2000,
+    draggable: true,
+    // swipe: true,
+    touchMove: true,
+    variableWidth: true
+  };
+
+  $scope.toggleSlick = function() {
+      $scope.slickConfig.enabled = !$scope.slickConfig2.enabled;
+    }
 
 }]);

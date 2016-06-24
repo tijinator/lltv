@@ -8,7 +8,8 @@ angular.module('lltv', [
 'lltvFilters',
 'countrySelect',
 'ngSanitize',
-'ngAnimate'])
+'ngAnimate',
+'slickCarousel'])
 .constant('baseUrl', 'http://beta.learninglibrary.tv')
 .config([
 'baseUrl',
