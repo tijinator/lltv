@@ -75,13 +75,12 @@
   position: relative;
   min-height: 100%;
   width: 100%;
-  background-color: #000;
+  background-color: #e0e1e2;
+  color: #5d5d5d;
 }
 
 .account-sidebar{
-  background-color: #000;
   height: 100%;
-  color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
   /*font-family: avenir-black, 'Work Sans';*/
@@ -89,7 +88,7 @@
 }
 
 .account-option-slide{
-  background-color: #2E3335;
+  background-color: #f4f4f4;
   min-height: 100vh;
   text-transform: uppercase;
   color: #FFF;
@@ -104,40 +103,45 @@
   cursor: pointer;
 }
 
-.account-active { background-color: #2E3335;}
+.account-active { background-color: #f4f4f4;}
 
-.offset-responsive-container, .account-input-container{ padding: 0;}
+.offset-responsive-container, .account-input-container{ padding: 0; color: #5d5d5d;}
 
 .account-email-title{
   text-transform: capitalize;
-  margin: 40px 0 24px;
+  margin: 40px 0 22px;
   font-weight: 700;
+  font-size: 25px;
 }
 
 .account-email-text{
   font-size: 13px;
-  color: #787D7F;
   margin-bottom: 24px;
-  padding-right: 180px;
   line-height: 26px;
+  text-transform: none;
+  font-weight: 400;
 }
 
 .account-option-slide input:not([type=submit]):not([type=file]) {
-  background-color: transparent;
-  border: 1px solid rgba(255,255,255, 0.3);
+  background-color: #fff;
+  border: 1px solid #ccc;
   height: 40px;
   border-radius: 25px;
   opacity: 1;
   font-size: 13px;
   font-weight: 700;
-  /*font-family: avenir-black, 'Work Sans';*/
-  color: #fff;
+}
+
+.account-option-slide input[type="radio"], input[type="checkbox"]{
+  margin: 3px 0 0;
+  margin-left: -20px;
 }
 
 .account-password-title{
-  margin: 60px 0 40px;
+  margin: 60px 0 26px;
   text-transform: capitalize;
   font-weight: 700;
+  font-size: 25px;
 }
 
 .personal-form-group{ margin-right: 20px; }
@@ -145,21 +149,21 @@
 .account-date-select{
   width: 170px;
   float: left;
-  background-color: transparent;
-  border: 1px solid rgba(255,255,255, 0.3);
+  background-color: #fff;
+  border: 1px solid #ccc;
   height: 40px;
   border-radius: 25px;
   opacity: 1;
   font-size: 13px;
   font-weight: 700;
-  /*font-family: avenir-black, 'Work Sans';*/
-  color: #fff;
-  padding-left: 15px;
+  /*padding-left: 15px;*/
 }
 
 .account-month-select{ margin-right: 20px;}
 
 .radio-month-option{ padding-right: 20px;}
+
+.radio-month-option, .radio-single-option{font-weight: 700;}
 
 @media screen and (max-width: 930px) {
   .radio-single-option{ margin-left: 0 !important;}

@@ -25,7 +25,9 @@
           <div class="course-chapters">
             <div class="chapter-index-row" ng-repeat='chapter in course.chapters'>
               <div class="chapter-index-element">
-                <span id='chapter_position'>{{chapter.title}} </span>
+                <!-- <span id='chapter_position'>{{chapter.title}} </span> -->
+                <span ng-click="getVideoPage(chapter.title)"
+                style="cursor: pointer" id='chapter_position'>{{chapter.title}} </span>
                 <span id="chapter_duration">{{chapter.duration | secondsToHHMM | date: "m'M' s'S'"}}</span>
               </div>
             </div>

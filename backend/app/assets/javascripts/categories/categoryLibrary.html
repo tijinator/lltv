@@ -1,11 +1,8 @@
 <div style="width: 100%; height: 95px;"></div><!-- add height behind navbar-->
-<div class="category-library">
-  <!-- <div class="category-library-header">
-    browse our library
-  </div> -->
-  <div>
+<!-- <div class="category-library">
+  <div class="row" style="margin: 0;">
     <ul class="small-categories">
-      <li ng-repeat="category in categories" style="display: inline-block;">
+      <li ng-repeat="category in categories" ng-if="category.homepage_position != null" style="display: inline-block;">
         <a ui-sref="category.show({id: category.id})">
           <div class="small-category-block" style="background-image: url('{{category.small_image_url}}');">
             {{category.title}}
@@ -13,7 +10,18 @@
         </a>
       </li>
     </ul>
+  </div>
+</div> -->
 
+<div class="row category-img-section">
+  <div ng-repeat="category in categories"
+  ng-if="category.homepage_position != null"
+  class="category-img-container">
+    <a ui-sref="category.show({id: category.id})">
+      <div>
+      <!-- <div style="padding: 0 0.9375rem; margin-bottom: 10px;"> -->
+        <img src="{{category.small_image_url}}"/>
+      </div>
+    </a>
   </div>
 </div>
-<div class="collapse-test" ng-include="'footer/_footer.html'"></div>

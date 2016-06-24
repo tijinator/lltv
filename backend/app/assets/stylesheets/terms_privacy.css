@@ -1,0 +1,75 @@
+.terms-container{
+  padding: 20px 110px 0;
+  color: #5d5d5d;
+}
+
+.terms-top-row, .terms-bottom-row{margin: 0;}
+
+.terms-top-row{
+  text-align: center;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 33px;
+}
+
+.terms-top-row h3, .terms-section-title h5{
+  /*color: #5d5d5d;*/
+  font-weight: 700;
+}
+
+.terms-top-row h3 { margin: 50px 0; }
+
+.terms-top-row p{margin-bottom: 20px;}
+
+.terms-top-intro{
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 24px;
+}
+
+.terms-table-column, .terms-details-column{ padding: 0;}
+
+.terms-table-column{
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #999;
+}
+
+.terms-table-column ul{margin-bottom: 50px;}
+
+.terms-table-column li a{
+  color: inherit;
+  cursor: pointer;
+}
+
+.terms-table-column li a:hover{ color: #5d5d5d; }
+
+.terms-table-column li{
+  display: block;
+  margin-bottom: 10px;
+}
+
+.terms-section-title{ text-transform: uppercase;}
+
+.terms-section-title h5{font-size: 12px;}
+
+.terms-section-details{
+  line-height: 24px;
+  /*color: #5d5d5d;*/
+}
+
+.terms-section-title h5, .terms-section-details p{ margin: 0 0 20px; }
+
+/*privacy css*/
+
+.privacy-top-row h3{margin-bottom: 70px;}
+
+.privacy-table-column p{margin-bottom: 20px;}
+
+.privacy-email-link{ margin-bottom: 30px;}
+
+.privacy-email-link a{
+  color: inherit;
+  cursor: pointer;
+}
+
+.privacy-email-link a:hover{ color: #5d5d5d;}

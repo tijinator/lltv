@@ -2,6 +2,7 @@ nav.navbar.navbar-fixed-top.ng-scope{
     background-color: #FFF;
     min-height: 95px;
     margin: 0;
+    border-bottom: 1px solid #e4e4e4;
 }
 
 nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
@@ -14,7 +15,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 #lltv .homepage-nav-links {
   padding-top: 27px;
   color: #5D5D5D;
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   font-weight: 700;
   /*font-family: avenir-black, 'Work Sans';*/
@@ -42,7 +43,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
 /* profile nav options */
 
-.profile-dropdown{
+/*.profile-dropdown{
   border: 0;
   padding: 0;
   width: 229px;
@@ -63,6 +64,52 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
   border-left: solid 13px transparent;
   border-right: solid 13px transparent;
   border-bottom: solid 13px #FFF;
+}*/
+
+.profile-dropdown {
+    /*margin-left: 15px;*/
+    width: 229px;
+    background: #FFFFFF;
+    border: 1px solid #e6e6e6;
+    padding: 0px;
+    /*position: relative;*/
+    /*min-height: 200px;*/
+    text-align: center;
+    font-size: 13px;
+    top: 56px;
+    right: -30px;
+    border-radius: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+.profile-dropdown:after {
+content: '';
+display: block;
+position: absolute;
+top: -22px;
+left: 181px;
+width: 0;
+height: 0;
+border-color: transparent transparent transparent #fff;
+border-style: solid;
+border-width: 11px;
+-moz-transform: rotate(-90deg);
+-webkit-transform: rotate(-90deg);
+}
+.profile-dropdown:before {
+content: '';
+display: block;
+position: absolute;
+top: -24px;
+left: 180px;
+width: 0;
+height: 0;
+border-color: transparent transparent transparent #e6e6e6;
+border-style: solid;
+border-width: 12px;
+-moz-transform: rotate(-90deg);
+-webkit-transform: rotate(-90deg);
 }
 
 #lltv .homepage-nav-links .profile-dropdown li{
@@ -169,7 +216,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
 
   /*dropdown triangle*/
   #lltv .navbar-collapse:after {
-    display: none;
+    /*display: none;*/
     content: '';
     position: absolute;
     top: 22%;
@@ -178,7 +225,7 @@ nav.navbar.navbar-fixed-top.ng-scope.homepage-nav{
     height: 0;
     border-left: solid 13px transparent;
     border-right: solid 13px transparent;
-    border-bottom: solid 13px #FFF;
+    border-bottom: solid 13px #fff;
   }
 
   #lltv .homepage-nav-links ul.nav.navbar-nav > li:last-child > a:first-child{

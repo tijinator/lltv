@@ -83,11 +83,32 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
     })
     .state('aboutPage',{
       url: '/about',
-      templateUrl: 'about/aboutPage.html'
+      templateUrl: 'staticPages/aboutPage.html'
     })
     .state('faqPage',{
       url: '/faq',
-      templateUrl: 'about/faqPage.html'
+      templateUrl: 'staticPages/faqPage.html',
+      controller: 'StaticCtrl',
+    })
+    .state('termsPolicyPage',{
+      url: '/terms',
+      templateUrl: 'staticPages/termsandpolicy.html',
+      controller: 'StaticCtrl',
+    })
+    .state('privacyPage',{
+      url: '/privacy',
+      templateUrl: 'staticPages/privacy.html',
+      controller: 'StaticCtrl',
+    })
+    .state('teachPage',{
+      url: '/teach',
+      templateUrl: 'staticPages/teachPage.html',
+      controller: 'StaticCtrl'
+    })
+    .state('contactPage',{
+      url: '/contact',
+      templateUrl: 'staticPages/contactPage.html',
+      controller: 'StaticCtrl'
     })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
@@ -141,17 +162,17 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       url: '/categories',
       views: {
 
-        // featuredCourse: {
-        //   templateUrl: 'categories/featuredCourse.html',
-        //   controller: 'FeaturedCourseCtrl',
-        //   resolve: {
-        //     featuredCourse: ['CategoryService',
-        //       function(categoriesService) {
-        //         return categoriesService.getFeaturedCourse(null);
-        //       }
-        //     ]
-        //   }
-        // },
+        categoryPopularNewCourses: {
+          templateUrl: 'categories/categoryPopularNewCourses.html',
+          controller: 'PopularNewCoursesCtrl',
+          resolve: {
+            categoryPopularNewCourses: ['CategoryService',
+              function(categoriesService) {
+                return categoriesService.getPopularNewCourses();
+              }
+            ]
+          }
+        },
 
         categoryLibrary: {
           templateUrl: 'categories/categoryLibrary.html',
@@ -251,7 +272,23 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         $('#landing-homepage').hide();
         $('#lltv-app-content').show();
       }
-    });
+    })
+    .state('video', {
+      abstract: true,
+      // parent: 'courses.show',
+      url: '/video',
+      templateUrl: 'video/courseVideoLayout.html'
+    })
+    .state( "video.show",  {
+      url: '/:videoName',
+      controller: 'courseVideoCtrl',
+      views: {
+        courseVideo: {
+          templateUrl: 'video/courseVideo.html',
+        }
+      }
+    })
+    ;
 
     $urlRouterProvider.otherwise('/home');
 }]);

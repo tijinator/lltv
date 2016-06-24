@@ -14,6 +14,7 @@
 //= require angular-ui-router
 //= require angular-bootstrap
 //= require ng-country-select
+//= require bootstrap-formhelpers/dist/js/bootstrap-formhelpers
 //= require angular-sanitize
 //= require underscore
 //= require jquery-ui
@@ -26,4 +27,3 @@
 //= stub startbootstrap-sb-admin-2
 //= stub video.js/dist/video
 //= require lang/en_US/bootstrap-formhelpers-countries.en_US
-//= require bootstrap-formhelpers-countries

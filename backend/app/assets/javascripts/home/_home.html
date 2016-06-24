@@ -49,9 +49,9 @@
       </div>
       <div class="row homepage-courses-row">
 
-        <div class="popCourse-section" ng-repeat="popCourse in popularCourses">
+        <!-- <div class="popCourse-section" ng-repeat="popCourse in popularCourses"> -->
 
-          <div class="col-sm-3 homepage-course-box" ui-sref="courses.show({id: popCourse.id})">
+          <div class="col-sm-3 homepage-course-box" ui-sref="courses.show({id: popCourse.id})" ng-repeat="popCourse in popularCourses">
             <div class="row" style="margin:0;">
               <div class="course-img" ng-style="{'background-image':'url({{popCourse.banner_url}})'}"></div>
               <div class="author-avatar" ng-style="{'background-image':'url({{popCourse.author.avatar}})'}"></div>
@@ -65,7 +65,49 @@
             </div>
           </div>
 
-        </div>
+          <!-- <div class="col-sm-3 homepage-course-box">
+            <div class="row" style="margin:0;">
+              <div class="course-img" style="background-image: url('../images/startup-framework.png')"></div>
+              <div class="author-avatar" style="background-image: url('../images/2.jpg')"></div>
+            </div>
+            <div class="row" style="margin:0;">
+              <a class="homepage-course-title">Learning Library Tv</a>
+            </div>
+            <div class="row homepage-course-last-row">
+              <p class="author-name">John Smith</p>
+              <p class="course-duration">2H 30M</p>
+            </div>
+          </div>
+
+          <div class="col-sm-3 homepage-course-box">
+            <div class="row" style="margin:0;">
+              <div class="course-img" style="background-image: url('../images/startup-framework.png')"></div>
+              <div class="author-avatar" style="background-image: url('../images/2.jpg')"></div>
+            </div>
+            <div class="row" style="margin:0;">
+              <a class="homepage-course-title">Learning Library Tv</a>
+            </div>
+            <div class="row homepage-course-last-row">
+              <p class="author-name">John Smith</p>
+              <p class="course-duration">2H 30M</p>
+            </div>
+          </div>
+
+          <div class="col-sm-3 homepage-course-box">
+            <div class="row" style="margin:0;">
+              <div class="course-img" style="background-image: url('../images/startup-framework.png')"></div>
+              <div class="author-avatar" style="background-image: url('../images/2.jpg')"></div>
+            </div>
+            <div class="row" style="margin:0;">
+              <a class="homepage-course-title">Learning Library Tv</a>
+            </div>
+            <div class="row homepage-course-last-row">
+              <p class="author-name">John Smith</p>
+              <p class="course-duration">2H 30M</p>
+            </div>
+          </div> -->
+
+        <!-- </div> -->
         <!-- end popCourse-section -->
       </div>
 
@@ -134,7 +176,6 @@
         </div>
         <div class="col-sm-4" style="padding: 0;">
           <div class="discover-icons" style="background-image: url('../images/lltv_school.png')"></div>
-          <!-- <span class="glyphicon glyphicon-education discover-icons" aria-hidden="true"></span> -->
           <h4>Learn from the Experts</h2>
           <p>
             Learn from industry experts who are<br>

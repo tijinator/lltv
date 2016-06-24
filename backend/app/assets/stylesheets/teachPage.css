@@ -1,0 +1,118 @@
+/*teach-banner-row css*/
+
+.teach-banner-row, .teach-learn-row, .teach-questions-row, .teach-form-row,
+.teach-learn-icons{
+  margin: 0;
+}
+
+.teach-banner-row{
+  height: calc(100vh - 95px);
+  background-size: cover;
+  background-position: center;
+  background-image: url('../images/LLTV_TEACH_banner.jpg');
+}
+
+.teach-banner-container{
+  color: #fff;
+  /*position: relative;
+  top: 30%;
+  left: 20%;*/
+  max-width: 500px;
+  margin: 83px auto 0 60px;
+  font-size: 24px;
+}
+
+.teach-banner-container h1{
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 22px;
+  font-size: 40px;
+}
+
+/*.teach-banner-container h1:nth-child(2),*/
+.teach-banner-container p:nth-child(2){margin-bottom: 30px;}
+
+.teach-banner-container p{
+  margin-bottom: 36px;
+  font-size: 20px;
+}
+
+/*teach-learn-row css*/
+
+.teach-learn-row, .teach-questions-row, .teach-form-row{
+  text-align: center;
+  color: #5d5d5d;
+}
+
+.teach-learn-row h3, .teach-questions-row h3, .teach-form-row h3{
+  margin: 60px 0 70px;
+  font-weight: 700;
+}
+
+.teach-learn-icons{margin: 0 150px;}
+
+.teach-learn-icons div.col-md-4{padding: 0;}
+
+.row.teach-learn-icons div.col-md-4 p{margin: 20px 0;}
+
+.teach-learn-row > div.discover-row-button{margin: 20px 0 50px;}
+
+.teach-learn-row > div.discover-row-button > div.submit-btn{width: 190px;}
+
+/*teach-questions-row css*/
+
+.teach-questions-row{
+  background-color: #f4f4f4;
+}
+
+.teach-questions-row div.col-sm-10.col-sm-offset-1{
+  padding: 0;
+  text-align: left;
+}
+
+.teach-questions-row div.col-sm-10.col-sm-offset-1 ul{margin-bottom: 50px;}
+
+/*teach-form-row css*/
+.teach-form-row div.author-form-app{
+  text-align: left;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+.teach-form-row div.author-form-app form div.col-sm-6{ padding: 0;}
+
+.teach-form-row div.author-form-app form div.col-sm-6:first-child{
+  padding-right: 26px;
+}
+
+.teach-form-row div.author-form-app form div.discover-row-button{ margin-top: 50px;}
+
+.teach-form-row div.author-form-app form div.discover-row-button button{ width: 200px;}
+
+.input-custom{
+  border-radius: 25px;
+  font-size: 11px;
+  height: 43px;
+}
+
+select:not([multiple]){
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    background-position:right 50%;
+    background-repeat:no-repeat;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
+    padding: .5em;
+    padding-left: 2em;
+    padding-right: 1.5em;
+}
+
+@media screen and (max-width: 768px){
+  .teach-form-row div.author-form-app{
+    width: 66.666667%;
+    margin-left: 16.666667%;
+  }
+
+  .teach-form-row div.author-form-app form div.col-sm-6:first-child{
+    padding-right: 0px;
+  }
+}

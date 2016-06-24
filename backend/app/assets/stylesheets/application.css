@@ -13,6 +13,7 @@
  *= require bootstrap/dist/css/bootstrap
  *= require font-awesome/css/font-awesome
  *= require jquery-ui/themes/smoothness/jquery-ui
+ *= require bootstrap-formhelpers/dist/css/bootstrap-formhelpers
  *= require homepage
  *= require nav
  *= require login_signup
@@ -25,7 +26,10 @@
  *= require profile.css
  *= require aboutPage.css
  *= require faq.css
+ *= require terms_privacy.css
  *= require searchModal.css
+ *= require teachPage.css
+ *= require contactPage.css
  *= require_self
  */
 
@@ -64,4 +68,8 @@ body {
 .fade.ng-show-add {
   transition:0.5s linear all;
   opacity: 1;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
