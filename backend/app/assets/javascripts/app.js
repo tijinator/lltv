@@ -110,6 +110,11 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       templateUrl: 'staticPages/contactPage.html',
       controller: 'StaticCtrl'
     })
+    .state('pressPage',{
+      url: '/newsroom',
+      templateUrl: 'press/pressPage.html',
+      // controller: 'PressCtrl'
+    })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
     })
