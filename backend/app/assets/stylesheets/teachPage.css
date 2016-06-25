@@ -104,6 +104,8 @@ select:not([multiple]){
     padding: .5em;
     padding-left: 2em;
     padding-right: 1.5em;
+    color: #5d5d5d;
+    font-weight: 700;
 }
 
 @media screen and (max-width: 768px){
