@@ -1,7 +1,17 @@
 angular.module('lltv')
-.controller('FooterCtrl', ['$scope','$http',
-function($scope, $http) {
+.controller('FooterCtrl', ['$scope','$http','currentUser', '$location', 'AuthService',
+function($scope, $http, currentUser, $location, AuthService) {
+	var userStatus = currentUser.getUserObj();
+	var userFirstName = userStatus.first_name;
 
+	//check if user is logged in
+	$scope.isLoggedIn = function(){
+		if(userStatus){
+			$location.path("/users/" + userFirstName);
+		}else{
+			AuthService.openModal('signin');
+		}
+	}
 
 	$scope.emailSubscription = function(data) {
 		console.log(data.email);
