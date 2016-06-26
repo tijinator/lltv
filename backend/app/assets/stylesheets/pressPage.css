@@ -9,13 +9,27 @@
 
 .press-top-row{
   text-align: center;
-  margin-bottom: 33px;
+  margin-bottom: 50px;
 }
 
-.press-top-row h3{
+/*.press-top-row h3{
   font-weight: 700;
   text-transform: none;
+}*/
+
+.press-top-row > ul{
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: none;
+  cursor: pointer;
+  margin: 20px 0 0;
 }
+
+.press-top-row > ul li{display: inline-block;}
+
+.press-top-row > ul li:first-child{margin-right: 20px;}
+
+.activeRelease{ color: #9CCC58;}
 
 .media-col, .news-col{padding: 0;}
 

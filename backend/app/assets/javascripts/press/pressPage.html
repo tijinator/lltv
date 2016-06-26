@@ -2,7 +2,14 @@
 <div class="press-container">
 
   <div class="row press-top-row">
-    <h3>Press Releases</h3>
+    <!-- <h3 ng-click="showRelease = false">Press Releases</h3>
+    <h3 ng-click="showRelease = true">In The News</h3> -->
+
+    <ul>
+      <li ng-click="showRelease = false" ng-class="{activeRelease:showRelease == false}">Press Releases</li>
+      <li ng-click="showRelease = true" ng-class="{activeRelease:showRelease == true}">In The News</li>
+
+    </ul>
   </div>
 
   <div class="row press-second-row">
@@ -18,7 +25,7 @@
 
     <div class="col-sm-8 news-col">
       <div class="row">
-        <!-- <div class="press-release-container">
+        <div ng-hide="showRelease" class="press-release-container">
           <div class="press-release-row">
             <div class="press-release-date">June 9, 2016</div>
             <div class="press-release-title">learning library appoints new industry leaders</div>
@@ -54,10 +61,10 @@
             <div class="press-release-title">learning library appoints new industry leaders</div>
           </div>
 
-        </div> -->
+        </div>
         <!-- end press-release-container -->
 
-        <div class="news-release-container">
+        <div ng-show="showRelease" class="news-release-container">
 
           <div class="row news-release-row">
             <div class="news-release-img">
