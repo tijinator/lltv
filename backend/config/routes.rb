@@ -97,6 +97,7 @@ Rails.application.routes.draw do
   get '/teach' => 'home#home' #privacy page
   get '/contact' => 'home#home' #privacy page
   get '/newsroom' => 'home#home' #newsroom page
+  get '/redeem' => 'home#home' #newsroom page
 
   root to: 'home#home'
 end

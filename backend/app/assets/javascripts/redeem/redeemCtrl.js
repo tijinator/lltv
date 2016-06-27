@@ -1,5 +1,5 @@
 angular.module('lltv')
-.controller('PressCtrl', [
+.controller('RedeemCtrl', [
 '$scope',
 function($scope){
 

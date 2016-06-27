@@ -113,7 +113,12 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
     .state('pressPage',{
       url: '/newsroom',
       templateUrl: 'press/pressPage.html',
-      // controller: 'PressCtrl'
+      controller: 'PressCtrl'
+    })
+    .state('redeemPage',{
+      url: '/redeem',
+      templateUrl: 'redeem/redeemPage.html',
+      controller: 'RedeemCtrl'
     })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
