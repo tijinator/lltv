@@ -28,4 +28,4 @@
 //= stub video.js/dist/video
 //= require lang/en_US/bootstrap-formhelpers-countries.en_US
 //= require slick-carousel
-//= require angular-slick-carousel
+//= require angular-slick
