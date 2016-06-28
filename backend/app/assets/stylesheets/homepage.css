@@ -95,7 +95,8 @@ a:hover{ text-decoration: none; }
 #lltv .homepage-courses-row{
   /*display: flex;
   justify-content: center;*/
-  margin: 0 50px;
+  /*margin: 0 50px;*/
+  padding: 0 50px;
   margin-bottom: 27px;
   overflow: scroll;
 }
@@ -458,3 +459,57 @@ a:hover{ text-decoration: none; }
 }
 
 /* end of responsive design */
+
+[class^="slick-"]:before,
+[class*=" slick-"]:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+button.slick-prev, button.slick-next{
+  position: absolute;
+  top: 0%;
+  height: 375px;
+  width: 40px;
+  padding: 0;
+  background: rgba(20,20,20,.5);
+  border: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+.slick-prev:before {
+    content: "\f053";
+}
+
+.slick-next:before {
+    content: "\f054";
+}
+
+.slick-prev:before, .slick-next:before {
+  /*font-family: 'slick';*/
+  font-size: 20px;
+  line-height: 1;
+  /*opacity: .75;*/
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-next {
+    right: 0;
+}
+/*.slick-prev:after {
+  content: ">";
+  color: red;
+  font-size: 30px;
+}
+
+.slick-next:before {
+  content: "<";
+  color: red;
+  font-size: 30px;
+}*/

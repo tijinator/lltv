@@ -50,11 +50,11 @@
       <div class="row homepage-courses-row">
       <!-- <div ng-if="popularCourses"> -->
         <slick infinite="true" slides-to-show="4" slides-to-scroll="4"
-        init-onload="true" data="popularCourses" variableWidth=true>
+        init-onload="true" data="popularCourses" variableWidth=true arrows="true">
           <!-- <div ng-repeat="popCourse in popularCourses"> -->
             <div class="homepage-course-box" ui-sref="courses.show({id: popCourse.id})" ng-repeat="popCourse in popularCourses">
               <div class="row" style="margin:0;">
-                <div class="course-img" ng-style="{'background-image':'url({{popCourse.banner_url}})'}"></div>
+                <div class="course-img" ui-sref="courses.show({id: popCourse.id})" ng-style="{'background-image':'url({{popCourse.banner_url}})'}"></div>
                 <div class="author-avatar" ng-style="{'background-image':'url({{popCourse.author.avatar}})'}"></div>
               </div>
               <div class="row" style="margin:0;">
