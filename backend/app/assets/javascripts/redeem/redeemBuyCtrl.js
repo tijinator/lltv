@@ -1,5 +1,5 @@
 angular.module('lltv')
-.controller('RedeemCtrl', [
+.controller('RedeemBuyCtrl', [
 '$scope',
 function($scope){
 
