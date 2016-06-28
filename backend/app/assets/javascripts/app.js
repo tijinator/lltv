@@ -115,6 +115,11 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       templateUrl: 'press/pressPage.html',
       controller: 'PressCtrl'
     })
+    .state('servicesPage',{
+      url: '/services',
+      templateUrl: 'staticPages/servicesPage.html',
+      controller: 'StaticCtrl'
+    })
     .state('redeemPage',{
       templateUrl: 'redeem/redeemLayout.html'
     })
