@@ -114,7 +114,28 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
     .state('pressPage',{
       url: '/newsroom',
       templateUrl: 'press/pressPage.html',
-      // controller: 'PressCtrl'
+      controller: 'PressCtrl'
+    })
+    .state('servicesPage',{
+      url: '/services',
+      templateUrl: 'staticPages/servicesPage.html',
+      controller: 'StaticCtrl'
+    })
+    .state('redeemPage',{
+      templateUrl: 'redeem/redeemLayout.html'
+    })
+    .state('redeemPage.show',{
+      url: '/redeem',
+      views: {
+        redeemAccountForm: {
+          templateUrl: 'redeem/redeemAccount.html',
+          controller: 'RedeemAccountCtrl'
+        },
+        redeemBuyForm: {
+          templateUrl: 'redeem/redeemBuy.html',
+          controller: 'RedeemBuyCtrl'
+        }
+      }
     })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
