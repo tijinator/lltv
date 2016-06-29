@@ -104,7 +104,7 @@ a:hover{ text-decoration: none; }
   white-space: nowrap;
 }
 
-#lltv .slick-slide{
+#lltv .slick-slide, #lltv .homepage-course-box{
   padding: 0;
   height: 375px;
   /*width: 20%;*/
@@ -136,7 +136,7 @@ a:hover{ text-decoration: none; }
   -webkit-transition: all 0.3s;
 }*/
 
-#lltv div.homepage-courses-row:hover{
+#lltv div.slick-track:hover{
   transform: translate3d(-30px, 0, 0);
 }
 
@@ -154,15 +154,6 @@ a:hover{ text-decoration: none; }
 }
 
 #lltv .homepage-courses-row div.popCourse-section:last-child div.homepage-course-box{ margin-right: 0;}
-
-/*#lltv div.homepage-course-box:hover{
-  -webkit-transform: scale(2);
-  -moz-transform: scale(1);
-  -o-transform: scale(2);
-  transform: scale(2);
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-}*/
 
 #lltv .course-img, .author-avatar{
   background-size: cover;
@@ -207,17 +198,19 @@ a:hover{ text-decoration: none; }
 
 /*.col-sm-3.homepage-course-box div.row a.homepage-course-title,*/
 /*.col-sm-3.homepage-course-box div.row p:first-child{*/
-.col-sm-3.homepage-course-box div.row.homepage-course-last-row .author-name{
+#lltv .homepage-course-box div.row.homepage-course-last-row .author-name{
   float: left;
   margin-left: 20px;
+  margin-right: 100px;
 }
 
 #lltv .homepage-course-last-row{
   margin: 0;
   position: absolute;
-  bottom: 0;
+  bottom: 15px;
   width: 100%;
   color: #9d9fa0;
+  font-size: 13px;
 }
 
 .discover-lltv-section{
@@ -509,10 +502,11 @@ a:hover{ text-decoration: none; }
   display: inline-block;
   text-decoration: inherit;
 }
+/*button.slick-prev{display: none;}*/
 
 button.slick-prev, button.slick-next{
   position: absolute;
-  top: 0%;
+  top: 5%;
   height: 375px;
   width: 40px;
   padding: 0;
@@ -541,5 +535,5 @@ button.slick-prev, button.slick-next{
   -moz-osx-font-smoothing: grayscale;
 }
 .slick-next {
-    right: 0;
+    right: 15px;
 }

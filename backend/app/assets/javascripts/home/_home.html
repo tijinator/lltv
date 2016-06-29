@@ -1,4 +1,4 @@
-<div id="landing-homepage" style="height: 100%;">
+<!-- <div id="landing-homepage" style="height: 100%;"> -->
 
   <div class="row" style="margin: 0; height: 100%;">
 
@@ -50,11 +50,12 @@
       <div class="row homepage-courses-row">
       <!-- <div ng-if="popularCourses"> -->
         <slick ng-if="popularCourses.length" infinite="true" slides-to-show="4" slides-to-scroll="4"
-        init-onload="true" data="popularCourses" variable-width="true" arrows="true">
+        init-onload="true" data="popularCourses" variable-width="true" prev-arrow="false">
           <!-- <div ng-repeat="popCourse in popularCourses"> -->
+          <!-- <div class="row slick-course-row" style="margin: 0;"> -->
             <div class="homepage-course-box" ui-sref="courses.show({id: popCourse.id})" ng-repeat="popCourse in popularCourses">
               <div class="row" style="margin:0;">
-                <div class="course-img" ui-sref="courses.show({id: popCourse.id})" ng-style="{'background-image':'url({{popCourse.banner_url}})'}"></div>
+                <a ui-sref="courses.show({id: popCourse.id})"><div class="course-img" ng-style="{'background-image':'url({{popCourse.banner_url}})'}"></div></a>
                 <div class="author-avatar" ng-style="{'background-image':'url({{popCourse.author.avatar}})'}"></div>
               </div>
               <div class="row" style="margin:0;">
@@ -65,7 +66,8 @@
                 <p class="course-duration">{{popCourse.duration | secondsToHHMM | date: "H'H' mm'M'"}}</p>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
+        <!-- </div> -->
         </slick>
 
 
@@ -94,9 +96,9 @@
 
         <div class="row homepage-courses-row">
 
-          <div class="popCourse-section" ng-repeat="course in category.courses">
+          <!-- <div class="popCourse-section" ng-repeat="course in category.courses"> -->
 
-            <div class="col-sm-3 homepage-course-box" ui-sref="courses.show({id: course.id})">
+            <div class="homepage-course-box" ui-sref="courses.show({id: course.id})" ng-repeat="course in category.courses">
               <div class="row" style="margin:0;">
                 <div class="course-img" ng-style="{'background-image':'url({{course.banner_url}})'}"></div>
                 <div class="author-avatar" ng-style="{'background-image':'url({{course.author.avatar}})'}"></div>
@@ -110,7 +112,7 @@
               </div>
             </div>
 
-          </div>
+          <!-- </div> -->
 
         </div>
 
