@@ -7,7 +7,10 @@ angular.module('lltv')
 'currentUser',
 '$compile',
 '$cookieStore',
-function($rootScope, $scope, $location, $auth, currentUser, $compile, $cookieStore) {
+'$state',
+function($rootScope, $scope, $location, $auth, currentUser, $compile, $cookieStore, $state) {
+
+$scope.state = $state;
 
 $scope.jsRun = function(userFirstName){
   var li = document.createElement('li');

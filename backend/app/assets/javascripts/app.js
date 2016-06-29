@@ -312,7 +312,8 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         courseVideo: {
           templateUrl: 'video/courseVideo.html',
         }
-      }
+      },
+      hideNavbar: true
     })
     ;
 
