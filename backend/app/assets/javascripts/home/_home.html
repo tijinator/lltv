@@ -49,8 +49,8 @@
       </div>
       <div class="row homepage-courses-row">
       <!-- <div ng-if="popularCourses"> -->
-        <slick infinite="true" slides-to-show="4" slides-to-scroll="4"
-        init-onload="true" data="popularCourses" variableWidth=true arrows="true">
+        <slick ng-if="popularCourses.length" infinite="true" slides-to-show="4" slides-to-scroll="4"
+        init-onload="true" data="popularCourses" variable-width="true" arrows="true">
           <!-- <div ng-repeat="popCourse in popularCourses"> -->
             <div class="homepage-course-box" ui-sref="courses.show({id: popCourse.id})" ng-repeat="popCourse in popularCourses">
               <div class="row" style="margin:0;">
