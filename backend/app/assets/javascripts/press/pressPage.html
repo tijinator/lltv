@@ -1,0 +1,119 @@
+<div style="width: 100%; height: 95px;"></div><!-- add height behind navbar-->
+<div class="press-container">
+
+  <div class="row press-top-row">
+    <!-- <h3 ng-click="showRelease = false">Press Releases</h3>
+    <h3 ng-click="showRelease = true">In The News</h3> -->
+
+    <ul>
+      <li ng-click="showRelease = false" ng-class="{activeRelease:showRelease == false}">Press Releases</li>
+      <li ng-click="showRelease = true" ng-class="{activeRelease:showRelease == true}">In The News</li>
+
+    </ul>
+  </div>
+
+  <div class="row press-second-row">
+
+    <div class="col-sm-4 media-col">
+      <div class="row">
+        <p>media</p>
+        <p>ashley smith</p>
+        <p>vp of communications</p>
+        <a href="mailto:martindevelops21@gmail.com?subject=Comments">pr-team@learninglibrarytv.com</a>
+      </div>
+    </div>
+
+    <div class="col-sm-8 news-col">
+      <div class="row">
+        <div ng-hide="showRelease" class="press-release-container">
+          <div class="press-release-row">
+            <div class="press-release-date">June 9, 2016</div>
+            <div class="press-release-title">learning library appoints new industry leaders</div>
+          </div>
+
+          <div class="press-release-row">
+            <div class="press-release-date">June 9, 2016</div>
+            <div class="press-release-title">learning library appoints new industry leaders</div>
+          </div>
+
+          <div class="press-release-row">
+            <div class="press-release-date">June 9, 2016</div>
+            <div class="press-release-title">learning library appoints new industry leaders</div>
+          </div>
+
+          <div class="press-release-row">
+            <div class="press-release-date">June 9, 2016</div>
+            <div class="press-release-title">learning library appoints new industry leaders</div>
+          </div>
+
+          <div class="press-release-row">
+            <div class="press-release-date">June 9, 2016</div>
+            <div class="press-release-title">learning library appoints new industry leaders</div>
+          </div>
+
+          <div class="press-release-row">
+            <div class="press-release-date">June 9, 2016</div>
+            <div class="press-release-title">learning library appoints new industry leaders</div>
+          </div>
+
+          <div class="press-release-row">
+            <div class="press-release-date">June 9, 2016</div>
+            <div class="press-release-title">learning library appoints new industry leaders</div>
+          </div>
+
+        </div>
+        <!-- end press-release-container -->
+
+        <div ng-show="showRelease" class="news-release-container">
+
+          <div class="row news-release-row">
+            <div class="news-release-img">
+              <!-- <img src="/images/tlnt.png"/> -->
+              <div class="news-outlet-img" style="background-image: url('../images/tlnt.png')">
+
+              </div>
+            </div>
+            <div class="news-release-box">
+              <div class="news-release-date">June 9, 2016</div>
+              <div class="news-release-title">learning library appoints new industry leaders</div>
+              <div class="news-release-details">
+                Chartreuse health goth poutine, master cleanse pitchfork direct trade
+                chambray authentic. Freegan chia selvage, letterpress intelligentsia
+                fap ennui keytar four loko listicle.
+              </div>
+              <div class="news-release-link">
+                <a target="_blank" href="https://www.google.com/">read more ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row news-release-row">
+            <div class="news-release-img">
+              <!-- <img src="/images/tlnt.png"/> -->
+              <div class="news-outlet-img" style="background-image: url('../images/tlnt.png')">
+
+              </div>
+            </div>
+            <div class="news-release-box">
+              <div class="news-release-date">June 9, 2016</div>
+              <div class="news-release-title">learning library appoints new industry leaders</div>
+              <div class="news-release-details">
+                Chartreuse health goth poutine, master cleanse pitchfork direct trade
+                chambray authentic. Freegan chia selvage, letterpress intelligentsia
+                fap ennui keytar four loko listicle.
+              </div>
+              <div class="news-release-link">
+                <a target="_blank" href="https://www.google.com/">read more ></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="collapse-test" ng-include="'footer/_footer.html'"></div>

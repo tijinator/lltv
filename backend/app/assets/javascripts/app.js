@@ -110,6 +110,32 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
       templateUrl: 'staticPages/contactPage.html',
       controller: 'StaticCtrl'
     })
+    .state('pressPage',{
+      url: '/newsroom',
+      templateUrl: 'press/pressPage.html',
+      controller: 'PressCtrl'
+    })
+    .state('servicesPage',{
+      url: '/services',
+      templateUrl: 'staticPages/servicesPage.html',
+      controller: 'StaticCtrl'
+    })
+    .state('redeemPage',{
+      templateUrl: 'redeem/redeemLayout.html'
+    })
+    .state('redeemPage.show',{
+      url: '/redeem',
+      views: {
+        redeemAccountForm: {
+          templateUrl: 'redeem/redeemAccount.html',
+          controller: 'RedeemAccountCtrl'
+        },
+        redeemBuyForm: {
+          templateUrl: 'redeem/redeemBuy.html',
+          controller: 'RedeemBuyCtrl'
+        }
+      }
+    })
     .state('profileUsername', {
       templateUrl: 'profile/profileLayout.html',
     })
@@ -286,7 +312,8 @@ function(baseUrl, $stateProvider, $locationProvider, $urlRouterProvider, $authPr
         courseVideo: {
           templateUrl: 'video/courseVideo.html',
         }
-      }
+      },
+      hideNavbar: true
     })
     ;
 
