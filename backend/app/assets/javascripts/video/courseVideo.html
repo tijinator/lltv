@@ -1,2 +1,33 @@
-<div style="width: 100%; height: 95px;"></div>
-<h1>this is the video page</h1>
+<div class="course-video-container">
+  <div class="col-md-9 video-column">
+    <div class="row">
+      <div class="video-box" id='course-video'>
+        <video id="my-video" class="video-js" controls preload="auto" poster="{{course.banner_url}}" data-setup="{}">
+            <!-- <source ng-src="{{'/videos/Vi1.mp4'}}" type='video/mp4'> -->
+              <!-- <source ng-src="{{video}}" type='video/mp4'> -->
+              <source ng-if="booleanTest" ng-src="{{video | trusted}}" type="video/mp4"/>
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider upgrading to a web browser that
+              <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+        </video>
+      </div>
+    </div>
+    ​
+    <script>
+    $('#my-video').bind('contextmenu',function() { return false; });
+    var video = document.getElementById('my-video');
+        video.addEventListener('click',function(){
+            if (video.paused) {
+                video.play();
+            }else{
+                video.pause();
+            }
+        },false);
+    </script>
+  </div>
+
+  <div class="col-md-3 video-sidebar">
+    hey
+  </div>
+</div>
